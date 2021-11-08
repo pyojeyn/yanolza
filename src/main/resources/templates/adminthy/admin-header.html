@@ -1,0 +1,109 @@
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<header th:fragment="admin-header">
+
+    <div class="header">
+        <div class="header-left">
+            <a href="/adminindex/" class="logo"> <img src="/admin/img/logowhite.png" width="30" height="50" alt="logo"></a>
+            <a href="/adminindex/" class="logo logo-small"> <img src="/admin/img/smalllogo.png" alt="Logo" width="30" height="30"> </a>
+        </div>
+        <a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
+        <a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
+        <ul class="nav user-menu">
+            <li class="nav-item dropdown noti-dropdown">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <i class="fe fe-bell"></i> <span class="badge badge-pill ques"></span> </a>
+                <div class="dropdown-menu notifications">
+                    <div class="topnav-dropdown-header"> <span class="notification-title">알림</span>
+                        <!--                        <a href="javascript:void(0)" class="clear-noti"> 모두 읽기 </a> -->
+                    </div>
+                    <div class="noti-content head"> </div>
+<!--                        &lt;!&ndash; <ul class="notification-list"> &ndash;&gt;-->
+<!--                        &lt;!&ndash; 알림 &ndash;&gt;-->
+<!--                        &lt;!&ndash;<li class="notification-message">-->
+<!--                            <a href="#">-->
+<!--                                <div class="media"> <span class="avatar avatar-sm">-->
+<!--                                    <img class="avatar-img rounded-circle" alt="User Image" src="/admin/img/smalllogo.png"></span>-->
+<!--                                    <div class="media-body">-->
+<!--                                        <p class="noti-details"><span class="noti-title qnames">김사과</span> 님이 문의를 <span class="noti-title">남기셨습니다 </span></p> &ndash;&gt;-->
+<!--                        &lt;!&ndash;                                            <p class="noti-time"><span class="notification-time">4 mins ago</span> </p>&ndash;&gt;-->
+<!--                        &lt;!&ndash;</div>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--            </li> &ndash;&gt;-->
+<!--                        &lt;!&ndash; 알림 끝&ndash;&gt;-->
+<!--                        &lt;!&ndash;</ul> &ndash;&gt;-->
+<!--                    </div>-->
+                    <div class="topnav-dropdown-footer"> <a href="/adminindex/qustion">전체 문의 보기</a> </div>
+                </div>
+            </li>
+            <li class="nav-item dropdown has-arrow">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <span class="user-img"><img class="rounded-circle" src="/admin/img/smalllogo.png" width="40" alt="Soeng Souy"></span> </a>
+                <div class="dropdown-menu">
+                    <div class="user-header">
+                        <div class="avatar avatar-sm"> <img src="/admin/img/smalllogo.png" alt="User Image" class="avatar-img rounded-circle"> </div>
+                        <div class="user-text">
+                            <h6>관리자</h6>
+                            <p class="text-muted mb-0">Administrator</p>
+                        </div>
+                    </div> <a class="dropdown-item" href="/adminindex/login">로그아웃</a>
+                </div>
+
+            </li>
+        </ul>
+        <div class="top-nav-search">
+
+            </form>
+        </div>
+    </div>
+
+    <script src="/admin/js/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // 1:1 문의 리스트
+        $(function(){
+            axios.get('/api/ques/qlist', {
+
+            }).then(function(response){
+                let questions = Object.keys(response.data).length
+                $('.ques').text(questions);
+                let tb = $('<ul class="notification-list"> ');//for문 밖
+
+                for(let i in response.data){
+                    let $qname = response.data[i].qname;
+                    let $qadate = response.data[i].qadate;
+
+                    // $('.qnames').text($qname);
+
+
+                    let row = $('<li class="notification-message">').append(
+                        `<a href="#">`+
+                        `<div class="media"> <span class="avatar avatar-sm">`+
+                        `<img class="avatar-img rounded-circle" alt="User Image"`+
+                        `src="/admin/img/smalllogo.png"></span>`+
+                        `<div class="media-body">`+
+                        `<p class="noti-details"><span class="noti-title qnames">`+ $qname +`</span> 님이`+
+                        ` 문의를 <span class="noti-title">남기셨습니다 </span></p>`+
+                        `<p class="noti-time"><span class="notification-time qadate">` + $qadate + `</span> </p>` +
+                        `</div>`+
+                        `</div>`+
+                        `</a>`+
+                        `</li>`
+                    )
+                    tb.append(row);
+                }
+                tb.append('</ul>');
+                $('.head').after(tb);
+
+            }).catch(function(err){
+                console.log('all-staff axios list 호출중 에러');
+                console.log(err);
+            });
+
+
+        });
+    </script>
+
+</header>
+
+</html>

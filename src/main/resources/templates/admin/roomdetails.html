@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>여기어때 관리자 페이지</title>
+
+<!--shortcut icon  -->
+	<link rel="shortcut icon" type="image/x-icon" href="/admin/img/favicon_170822.ico">
+<!--shortcut icon 끝  -->
+	<link rel="stylesheet" href="/admin/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/admin/plugins/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="/admin/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/admin/css/feathericon.min.css">
+	<link rel="stylesheet" href="/admin/plugins/morris/morris.css">
+	<link rel="stylesheet" type="text/css" href="/admin/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="/admin/css/style.css">
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+
+
+		<!-- 헤더  -->
+		<div th:replace="adminthy/admin-header :: admin-header"></div>
+		<!-- 헤더 끝 -->
+
+		<!-- 사이드바  -->
+		<div th:replace="adminthy/admin-sidebar :: admin-sidebar"></div>
+		<!-- 사이드바 끝  -->
+
+
+<!--	a태그 클릭시 넘어와야 하는 값-->
+<!--안연주 ID값 넘어옴-->
+		<input type="hidden" id="id" th:value="${id}">
+		<input type="hidden" id="tbMemId" th:value="${tbMemId}">
+		<div class="page-wrapper">
+			<div class="content container-fluid">
+				<div class="page-header mt-5">
+					<div class="row">
+						<div class="col">
+							<h3 class="page-title">숙소 정보</h3>
+
+							<ul class="breadcrumb">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="profile-header">
+							<div class="row align-items-center">
+								<div class="col-auto profile-image">
+									<a href="#"> <img class="rounded-circle" alt="User Image" src="/admin/img/smalllogo.png"> </a>
+								</div>
+								<div class="col ml-md-n2 profile-user-info">
+
+									<h4 class="user-name mb-3 myCorporate" ></h4>
+								</div>
+
+<!--								<div class="col-auto prsofile-btn" onclick="del()"> <a href="#" class="btn btn-primary">-->
+<!--									삭제하기</a>-->
+<!--								</div>-->
+							</div>
+						</div>
+						<div class="profile-menu">
+							<ul class="nav nav-tabs nav-tabs-solid">
+
+							</ul>
+						</div>
+						<div class="tab-content profile-tab-cont">
+							<div class="tab-pane fade show active" id="per_details_tab">
+								<div class="row">
+
+
+								<!-- 객실정보 -->
+
+										<div class="col-lg-6 mjmj">
+											<div class="card">
+												<div class="card-body card-body2">
+													<h5 class="card-title d-flex justify-content-between">
+														<span>&nbsp;&nbsp;&nbsp;객실정보1</span>
+														<div class="col-auto prsofile-btn"> <a href="/adminindex/roomphoto/" class="btn btn-primary roomphoto0">
+															객실사진
+														</a>
+														</div>
+													</h5>
+
+
+
+													<div class="card-body">
+														<div class="table-responsive">
+															<table class="table table-nowrap mb-0">
+																<thead>
+
+																<th></th>
+																	<th></th>
+
+
+																</thead>
+																<tbody>	</tbody>
+
+
+																<tr>
+																	<th>객실이름</th>
+																	<td class="rmName_0"></td>
+																</tr>
+
+																<tr>
+																	<th>입실시간</th>
+																	<td class="myStime_0"></td>
+																</tr>
+
+																<tr>
+																	<th>퇴실시간</th>
+																	<td class="myCtime_0"></td>
+																</tr>
+
+																<tr>
+																	<th>객실소개</th>
+																	<td class="rmIntro_0"></td>
+																</tr>
+
+																<tr>
+																	<th>평일요금</th>
+																	<td class="prSprice_0"></td>
+																</tr>
+
+																<tr>
+																	<th>주말요금</th>
+																	<td class="prPrice_0"></td>
+																</tr>
+
+
+
+
+
+																</table>
+														</div>
+													</div>
+
+
+												</div>
+											</div>
+
+										</div>
+										<div class="col-lg-6 mjmj">
+											<div class="card">
+												<div class="card-body card-body2">
+													<h5 class="card-title d-flex justify-content-between">
+														<span>&nbsp;&nbsp;&nbsp;객실정보2</span>
+														<div class="col-auto prsofile-btn"> <a href="/adminindex/roomphoto/" class="btn btn-primary roomphoto1">
+															객실사진
+														</a>
+														</div>
+													</h5>
+
+													<div class="card-body">
+														<div class="table-responsive">
+															<table class="table table-nowrap mb-0">
+																<thead>
+
+																<tr><th></th>
+																	<th></th>
+
+
+																</tr></thead>
+																<tbody>	</tbody>
+																<tbody>
+
+																<tr>
+																	<th>객실이름</th>
+																	<td class="rmName_1"></td>
+																</tr>
+
+																<tr>
+																	<th>입실시간</th>
+																	<td class="myStime_1"></td>
+																</tr>
+
+																<tr>
+																	<th>퇴실시간</th>
+																	<td class="myCtime_1"></td>
+																</tr>
+
+																<tr>
+																	<th>객실소개</th>
+																	<td class="rmIntro_1"></td>
+																</tr>
+
+																<tr>
+																	<th>평일요금</th>
+																	<td class="prSprice_1"></td>
+																</tr>
+
+																<tr>
+																	<th>주말요금</th>
+																	<td class="prPrice_1"></td>
+																</tr>
+
+
+
+
+																</tbody></table>
+														</div>
+													</div>
+
+
+												</div>
+											</div>
+										</div>
+									<div class="col-lg-6 mjmj">
+										<div class="card">
+											<div class="card-body card-body2">
+												<h5 class="card-title d-flex justify-content-between">
+													<span>&nbsp;&nbsp;&nbsp;객실정보3</span>
+													<div class="col-auto prsofile-btn"> <a href="/adminindex/roomphoto/" class="btn btn-primary roomphoto2">
+
+													객실사진
+													</a>
+													</div>
+												</h5>
+
+												<div class="card-body">
+													<div class="table-responsive">
+														<table class="table table-nowrap mb-0">
+															<thead>
+
+															<tr><th></th>
+																<th></th>
+
+
+															</tr></thead>
+															<tbody>	</tbody>
+															<tbody>
+
+															<tr>
+																<th>객실이름</th>
+																<td class="rmName_2">
+
+																</td>
+															</tr>
+
+															<tr>
+																<th>입실시간</th>
+																<td class="myStime_2"></td>
+															</tr>
+
+															<tr>
+																<th>퇴실시간</th>
+																<td class="myCtime_2"></td>
+															</tr>
+
+															<tr>
+																<th>객실소개</th>
+																<td class="rmIntro_2"></td>
+															</tr>
+
+															<tr>
+																<th>평일요금</th>
+																<td class="prSprice_2"></td>
+															</tr>
+
+															<tr>
+																<th>주말요금</th>
+																<td class="prPrice_2"></td>
+															</tr>
+
+
+
+
+															</tbody></table>
+													</div>
+												</div>
+
+
+											</div>
+										</div>
+									</div>
+									</div>
+									<!-- 객실정보 끝 -->
+
+
+
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+			</div>
+		</div>
+	</div>
+	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="/admin/js/jquery-3.5.1.min.js"></script>
+	<script src="/admin/js/popper.min.js"></script>
+	<script src="/admin/js/bootstrap.min.js"></script>
+	<script src="/admin/js/moment.min.js"></script>
+	<script src="/admin/js/select2.min.js"></script>
+	<script src="/admin/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/admin/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="/admin/js/script.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script>
+		$(function(){
+
+			const id = $('#id').val();
+			console.log('야놀자');
+			console.log(id);
+
+			axios.get('/api/host/' + id + '/hostroom/', {
+
+			}).then(function(response){
+				console.log(response);
+				console.log('-----');
+
+				let myCorporate = response.data.data.tbHostApiResponse.myCorporate;
+
+				$('.myCorporate').text(myCorporate);
+
+				for(let i in response.data.data.tbHostApiResponse.tbRoomApiResponseList){
+
+					let $id = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].id; // 룸아이디
+					let $rmName = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].rmName; // 객실이름
+					let $myStime = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].myStime; // 입실시간
+					let $myCtime = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].myCtime; // 퇴실시간
+					let $rmIntro = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].rmIntro; // 서비스
+					let $prSprice = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].prSprice; // 평일가격
+					let $prPrice = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].prPrice;   // 주말가격
+
+
+
+					let rmName = $rmName ;
+					$('.rmName_' + i).text(rmName);
+					let myStime = $myStime ;
+					$('.myStime_' + i).text(myStime + `시`);
+					let myCtime = $myCtime ;
+					$('.myCtime_' + i).text(myCtime + `시`);
+					let rmIntro = $rmIntro ;
+					$('.rmIntro_' + i).text($rmIntro);
+					let prSprice = $prSprice ;
+					$('.prSprice_' + i).text(prSprice + `원`);
+					let prPrice = $prPrice ;
+					$('.prPrice_' + i).text(prPrice + `원`);
+
+					$('.roomphoto' + i).attr('href', `/adminindex/roomphoto/` + $id + ``)
+
+					console.log(`이건가 룸아이디` + $id);
+
+					console.log('여기까지오니');
+
+				}
+			}).catch(function (response) {
+			})
+
+		});
+
+	</script>
+
+</body>
+
+</html>

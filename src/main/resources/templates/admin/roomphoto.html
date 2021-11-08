@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>여기어때 관리자 페이지</title>
+
+    <!--shortcut icon  -->
+    <link rel="shortcut icon" type="image/x-icon" href="/admin/img/favicon_170822.ico">
+    <!--shortcut icon 끝  -->
+
+    <link rel="stylesheet" href="/admin/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/admin/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/admin/plugins/fontawesome/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="/admin/css/feathericon.min.css">
+    <link rel="stylesheet" href="/admin/plugins/morris/morris.css">
+    <link rel="stylesheet" type="text/css" href="admin/css/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" href="/admin/css/style.css">
+    <link rel="stylesheet" href="../../../ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+
+    <!-- 헤더  -->
+    <div th:replace="adminthy/admin-header :: admin-header"></div>
+    <!-- 헤더 끝 -->
+
+    <!--안연주 ID값 넘어옴 룸 아이디-->
+    <input type="hidden" id="roomId" th:value="${id}">
+
+
+    <!-- 사이드바  -->
+    <div th:replace="adminthy/admin-sidebar :: admin-sidebar"></div>
+    <!-- 사이드바 끝  -->
+
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <section class="container mt-5">
+                <h1 class="my-4 mt-5 text-center text-lg-left image_title">숙소 사진</h1>
+                <b> 방 이미지</b>
+                <div class="row gallery">
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="#" class="ahn_img_href_0">
+                            <figure><img class="img-fluid img-thumbnail ahn_img_src_0" src="#"
+                                         alt="방 이미지_1"></figure>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="#" class="ahn_img_href_1">
+                            <figure><img class="img-fluid img-thumbnail ahn_img_src_1" src="#"
+                                         alt="방 이미지_2"></figure>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="#" class="ahn_img_href_2">
+                            <figure><img class="img-fluid img-thumbnail ahn_img_src_2" src="#"
+                                         alt="방 이미지_3"></figure>
+                        </a>
+                    </div>
+<!--                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
+<!--                        <a href="#" class="ahn_img_href_3">-->
+<!--                            <figure><img class="img-fluid img-thumbnail ahn_img_src_3" src="#"-->
+<!--                                         alt="방 이미지_4"></figure>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
+<!--                        <a href="#" class="ahn_img_href_4">-->
+<!--                            <figure><img class="img-fluid img-thumbnail ahn_img_src_4" src="#"-->
+<!--                                         alt="방 이미지_5"></figure>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
+<!--                        <a href="#">-->
+<!--                            <figure><img class="img-fluid img-thumbnail" src="#"-->
+<!--                                         alt="방 이미지_6"></figure>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
+<!--                        <a href="#">-->
+<!--                            <figure><img class="img-fluid img-thumbnail" src="#"-->
+<!--                                         alt="방 이미지_7"></figure>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">-->
+<!--                        <a href="#">-->
+<!--                            <figure><img class="img-fluid img-thumbnail" src="#"-->
+<!--                                         alt="방 이미지_8"></figure>-->
+<!--                        </a>-->
+<!--                    </div>-->
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="/admin/js/jquery-3.5.1.min.js"></script>
+
+<script src="/admin/js/popper.min.js"></script>
+<script src="/admin/js/bootstrap.min.js"></script>
+<script src="/admin/js/moment.min.js"></script>
+<script src="/admin/js/select2.min.js"></script>
+
+<script src="/admin/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/admin/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../../../ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/admin/js/script.js"></script>
+<script>
+    $(function () {
+        $('#datetimepicker3').datetimepicker({
+            format: 'LT'
+
+        });
+    });
+    $(document).ready(function () {
+        $(".gallery").magnificPopup({
+            delegate: "a",
+            type: "image",
+            tLoading: "Loading image #%curr%...",
+            mainClass: "mfp-img-mobile",
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+            }
+        });
+    });
+</script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    const roomid = $('#roomId').val();
+    console.log('roomId : '+ roomid);
+    axios.get('/room/imglist/'+roomid,{
+
+    }).then(function (response){
+        console.log(response)
+        for(let i in response.data){
+            let roomImg = response.data[i].safeFile.substr(56)
+            console.log("roomImg : "+ roomImg);
+            console.log("ahn_img_src_ : "+ i);
+
+            $(".ahn_img_href_"+ i).attr('href', roomImg);
+            $(".ahn_img_src_"+ i).attr('alt', "안연주 |" + i);
+            $(".ahn_img_src_"+ i).attr('src', roomImg);
+        }
+    })
+</script>
+</body>
+
+</html>
