@@ -33,6 +33,8 @@ public class TbHostApiRequest {
     private String myIntcom;
     private String myIntcomadd1;
     private String myIntcomadd2;
+    private Double latitude;    //위도
+    private Double longitude;   //경도
     private String myService;
     private String myIntro;
     private String myComeway;
@@ -46,12 +48,14 @@ public class TbHostApiRequest {
     private String myKakunin;
     //-------------------------------2
 
-    private String myRetime;
+    private Integer myRetime;
     private String pkSsdate;    //준 성수기 시간 시작일
     private String pkCcdate;    //준 성수기 시간 마감일
     private String pkSdate;     //성수기 시간 시작일
     private String pkCdate;     //성수기 시간 마감일
     private String pkAdmit;
+
+
     private Integer tbMemId;
 
 

@@ -39,6 +39,7 @@ public class TbQuestionApiService extends BaseService<TbQuestionApiRequest, TbQu
         TbQuestion newQuestion = baseRepository.save(tbQuestion);
         return Header.OK(response(newQuestion));
     }
+
     //문의 리스트
     public List<TbQuestionApiRequest> getqlist(){
         List<TbQuestion> tbQuestions = tbQuestionRepository.findAll();
@@ -65,8 +66,8 @@ public class TbQuestionApiService extends BaseService<TbQuestionApiRequest, TbQu
     }
 
     //문의 리스트
-    public List<TbQuestionApiRequest> getlistu(Integer id){
-        List<TbQuestion> tbQuestions = tbQuestionRepository.findAllById(id);
+    public List<TbQuestionApiRequest> getlistu(Integer tbMemId){
+        List<TbQuestion> tbQuestions = tbQuestionRepository.findAllByTbMemId(tbMemId);
         List<TbQuestionApiRequest> tbQuestionApiRequestList = new ArrayList<>();
 
         for (TbQuestion tbQuestion : tbQuestions){
@@ -95,7 +96,7 @@ public class TbQuestionApiService extends BaseService<TbQuestionApiRequest, TbQu
                 .map(tbQuestion -> response(tbQuestion))
                 .map(Header::OK)
                 .orElseGet(
-                        ()->Header.Error("없어임마")
+                        ()->Header.Error("ERROR")
                 );
     }
     //문의 삭제
@@ -104,7 +105,7 @@ public class TbQuestionApiService extends BaseService<TbQuestionApiRequest, TbQu
         return optional.map(tbQuestion -> {
             baseRepository.delete(tbQuestion);
             return Header.OK();
-        }).orElseGet(()-> Header.Error("없어임마"));
+        }).orElseGet(()-> Header.Error("ERROR"));
     }
 
     //문의 대답
@@ -119,7 +120,7 @@ public class TbQuestionApiService extends BaseService<TbQuestionApiRequest, TbQu
         }).map(tbQuestion -> baseRepository.save(tbQuestion))
                 .map(tbQuestion -> response(tbQuestion))
                 .map(Header::OK)
-                .orElseGet(()-> Header.Error("에러야임마"));
+                .orElseGet(()-> Header.Error("ERROR"));
     }
 
 

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+<!--전국민 도망지원 캠페인-->
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,6 @@
     <!-- CSS -->
     <title>전국민 도망지원 캠페인 - 이벤트 | 여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
-    <!-- <link rel="canonical" href="https://www.goodchoice.kr/more/eventView/1708"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
 
     <script>
@@ -21,7 +21,29 @@
         var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
         var _FACEBOOK_APP_ID = '607467975974643';
     </script>
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            border: 0;
+            vertical-align: top;
+            margin-bottom: -1px;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,7 +51,7 @@
     <!-- Wrap -->
     <div class="wrap">
 
-           <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
@@ -102,7 +124,7 @@
                         <ul>
                             <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
                                 <ul>
-                                   <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
+                                    <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
                                     <li><a href="/userindex/event">이벤트</a></li>
                                     <li><a href="/userindex/project">혁신 프로젝트</a></li>
                                     <li><a href="/userindex/faq">고객문의</a></li>
@@ -139,7 +161,7 @@
             <nav>
                 <ul>
                     <!-- <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class="active"  href="/userindex/event">이벤트</a></li>
+                    <li><a class="active" href="/userindex/event">이벤트</a></li>
                     <li><a class="" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
@@ -161,33 +183,24 @@
                         <link rel="stylesheet" href="/event/common/css/base-event.css">
                         <link rel="stylesheet" href="/frontend/admin/css/components/modules/dialog.css" />
 
-                        <script type="text/javascript"
-                            src="/event/common/js/library/jquery-1.12.3.min.js"></script>
-                        <script type="text/javascript"
-                            src="/event/common/js/library/jquery.lazyload.js"></script>
-                        <script type="text/javascript"
-                            src="/event/common/js/library/vue.min.js"></script>
-                        <script type="text/javascript"
-                            src="/event/common/js/service/button-scroll-top.js"></script>
+                        <script type="text/javascript" src="/event/common/js/library/jquery-1.12.3.min.js"></script>
+                        <script type="text/javascript" src="/event/common/js/library/jquery.lazyload.js"></script>
+                        <script type="text/javascript" src="/event/common/js/library/vue.min.js"></script>
+                        <script type="text/javascript" src="/event/common/js/service/button-scroll-top.js"></script>
 
                         <script type="text/javascript" src="/api3/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/underscore.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/userActionLog.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/common.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/userActionLog.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/common.js"></script>
                         <script src="/api3/js/service/evtBraze.js"></script>
 
-                        <script type="text/javascript"
-                            src="/event/common/js/library/moment.min.js"></script>
+                        <script type="text/javascript" src="/event/common/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/flipclock.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/library/swiper4.0/swiper.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/library/swiper4.0/swiper.min.js"></script>
                         <link rel="stylesheet" href="/api3/css/library/swiper.css">
 
                         <!-- keen vue list (기획전) -->
-                        <script type="text/javascript"
-                        src="/event/common/js/service/product-common.js"></script>
+                        <script type="text/javascript" src="/event/common/js/service/product-common.js"></script>
 
                         <!-- <script>
                             var eno = 1708;
@@ -201,16 +214,15 @@
                             });
                         </script> -->
                         <script>
-                            var eDefaultString = '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1708%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A06%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EC%A0%84%EA%B5%AD%EB%AF%BC%20%EB%8F%84%EB%A7%9D%EC%A7%80%EC%9B%90%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%22%2C%22label%22%3A%22%EC%9A%B0%EB%A6%AC%20%EB%8F%84%EB%A7%9D%EA%B0%88%EB%9E%98%EC%9A%94%EF%BC%9F%7C%EB%A7%88%EC%A7%80%EB%A7%89%2030%EB%A7%8C%EC%9B%90%20%EC%BF%A0%ED%8F%B0%ED%8C%A9%EB%B6%80%ED%84%B0%7C10%EF%BC%85%20%EC%B6%94%EA%B0%80%20%EC%BF%A0%ED%8F%B0%EA%B9%8C%EC%A7%80%7C%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%ED%99%95%EC%9D%B8%ED%95%98%EC%84%B8%EC%9A%94%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1708%5C%2F1708_kakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1708%5Cu0026title%3D%EC%A0%84%EA%B5%AD%EB%AF%BC%20%EB%8F%84%EB%A7%9D%EC%A7%80%EC%9B%90%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1708%5C%2F1708_kakao.jpg%5Cu0026label%3D%EC%9A%B0%EB%A6%AC%20%EB%8F%84%EB%A7%9D%EA%B0%88%EB%9E%98%EC%9A%94%EF%BC%9F%7C%EB%A7%88%EC%A7%80%EB%A7%89%2030%EB%A7%8C%EC%9B%90%20%EC%BF%A0%ED%8F%B0%ED%8C%A9%EB%B6%80%ED%84%B0%7C10%EF%BC%85%20%EC%B6%94%EA%B0%80%20%EC%BF%A0%ED%8F%B0%EA%B9%8C%EC%A7%80%7C%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%ED%99%95%EC%9D%B8%ED%95%98%EC%84%B8%EC%9A%94%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1708%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1708%22%7D%2C%22couponCodes%22%3A%7B%22coupon-pack%22%3A%7B%22name%22%3A%2230%EB%A7%8C%EC%9B%90%20%EC%BF%A0%ED%8F%B0%ED%8C%A9%22%2C%22issued%22%3Afalse%2C%22deviceIssued%22%3Afalse%2C%22code%22%3A%2210000013195%2C10000013174%2C10000013168%2C10000013167%2C10000013166%2C10000013165%2C10000013164%2C10000013163%2C10000013162%2C10000013161%2C10000013160%2C10000013159%2C10000013158%2C10000013157%22%7D%7D%2C%22responseHeader%22%3A%22%22%7D';
+                            var eDefaultString =
+                                '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1708%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A06%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EC%A0%84%EA%B5%AD%EB%AF%BC%20%EB%8F%84%EB%A7%9D%EC%A7%80%EC%9B%90%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%22%2C%22label%22%3A%22%EC%9A%B0%EB%A6%AC%20%EB%8F%84%EB%A7%9D%EA%B0%88%EB%9E%98%EC%9A%94%EF%BC%9F%7C%EB%A7%88%EC%A7%80%EB%A7%89%2030%EB%A7%8C%EC%9B%90%20%EC%BF%A0%ED%8F%B0%ED%8C%A9%EB%B6%80%ED%84%B0%7C10%EF%BC%85%20%EC%B6%94%EA%B0%80%20%EC%BF%A0%ED%8F%B0%EA%B9%8C%EC%A7%80%7C%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%ED%99%95%EC%9D%B8%ED%95%98%EC%84%B8%EC%9A%94%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1708%5C%2F1708_kakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1708%5Cu0026title%3D%EC%A0%84%EA%B5%AD%EB%AF%BC%20%EB%8F%84%EB%A7%9D%EC%A7%80%EC%9B%90%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1708%5C%2F1708_kakao.jpg%5Cu0026label%3D%EC%9A%B0%EB%A6%AC%20%EB%8F%84%EB%A7%9D%EA%B0%88%EB%9E%98%EC%9A%94%EF%BC%9F%7C%EB%A7%88%EC%A7%80%EB%A7%89%2030%EB%A7%8C%EC%9B%90%20%EC%BF%A0%ED%8F%B0%ED%8C%A9%EB%B6%80%ED%84%B0%7C10%EF%BC%85%20%EC%B6%94%EA%B0%80%20%EC%BF%A0%ED%8F%B0%EA%B9%8C%EC%A7%80%7C%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%ED%99%95%EC%9D%B8%ED%95%98%EC%84%B8%EC%9A%94%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1708%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1708%22%7D%2C%22couponCodes%22%3A%7B%22coupon-pack%22%3A%7B%22name%22%3A%2230%EB%A7%8C%EC%9B%90%20%EC%BF%A0%ED%8F%B0%ED%8C%A9%22%2C%22issued%22%3Afalse%2C%22deviceIssued%22%3Afalse%2C%22code%22%3A%2210000013195%2C10000013174%2C10000013168%2C10000013167%2C10000013166%2C10000013165%2C10000013164%2C10000013163%2C10000013162%2C10000013161%2C10000013160%2C10000013159%2C10000013158%2C10000013157%22%7D%7D%2C%22responseHeader%22%3A%22%22%7D';
                         </script>
 
                         <link rel="stylesheet" href="/api3/js/event_custom/event-default.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/event-custom.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/products-vue-custom.min.css">
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/event-custom.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/products-vue-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/event-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/products-vue-custom.min.js"></script>
 
                         <!-- <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> -->
                         <script>
@@ -322,8 +334,7 @@
                         <div class="content-type-W event-container " data-user-action="load" data-log-page="event/1708">
                             <div class="event-top">
                                 <p><img src="/img/event/view/event/1708/1708_run_1_01.gif" /></p>
-                                <p><img
-                                        src="/img/event/view/event/1708/1708_run_1_01_210813.png" />
+                                <p><img src="/img/event/view/event/1708/1708_run_1_01_210813.png" />
                                 </p>
                             </div>
 
@@ -335,40 +346,35 @@
                                         <ul>
                                             <li>
                                                 <a href="#category_1">
-                                                    <img class="on"
-                                                        src="/img/event/view/event/1708/1708_tab_1_on.png">
+                                                    <img class="on" src="/img/event/view/event/1708/1708_tab_1_on.png">
                                                     <img class="off"
                                                         src="/img/event/view/event/1708/1708_tab_1_off.png">
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#category_2">
-                                                    <img class="on"
-                                                        src="/img/event/view/event/1708/1708_tab_2_on.png">
+                                                    <img class="on" src="/img/event/view/event/1708/1708_tab_2_on.png">
                                                     <img class="off"
                                                         src="/img/event/view/event/1708/1708_tab_2_off.png">
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#category_3">
-                                                    <img class="on"
-                                                        src="/img/event/view/event/1708/1708_tab_3_on.png">
+                                                    <img class="on" src="/img/event/view/event/1708/1708_tab_3_on.png">
                                                     <img class="off"
                                                         src="/img/event/view/event/1708/1708_tab_3_off.png">
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#category_4">
-                                                    <img class="on"
-                                                        src="/img/event/view/event/1708/1708_tab_4_on.png">
+                                                    <img class="on" src="/img/event/view/event/1708/1708_tab_4_on.png">
                                                     <img class="off"
                                                         src="/img/event/view/event/1708/1708_tab_4_off.png">
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#category_5">
-                                                    <img class="on"
-                                                        src="/img/event/view/event/1708/1708_tab_5_on.png">
+                                                    <img class="on" src="/img/event/view/event/1708/1708_tab_5_on.png">
                                                     <img class="off"
                                                         src="/img/event/view/event/1708/1708_tab_5_off.png">
                                                 </a>
@@ -383,8 +389,7 @@
                                             </li>
                                             <li>
                                                 <a href="#category_7">
-                                                    <img class="on"
-                                                        src="/img/event/view/event/1708/1708_tab_7_on.png">
+                                                    <img class="on" src="/img/event/view/event/1708/1708_tab_7_on.png">
                                                     <img class="off"
                                                         src="/img/event/view/event/1708/1708_tab_7_off.png">
                                                 </a>
@@ -396,125 +401,102 @@
                                 <!-- contents 영역 -->
                                 <div class="navigation-items">
                                     <div id="category_1" class="navigation-item">
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_1_02.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_1_02.jpg" />
                                         </p>
                                         <div class="evt-coupon">
-                                            <img
-                                                src="/img/event/view/event/1708/1708_run_1_03.jpg" />
+                                            <img src="/img/event/view/event/1708/1708_run_1_03.jpg" />
                                             <a href="#" class="evt-coupon-btn" data-braze="couponClick">쿠폰받기</a>
                                         </div>
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_1_04.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_1_04.jpg" />
                                         </p>
                                     </div>
 
                                     <div id="category_2" class="navigation-item">
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_1_05_2.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_1_05_2.jpg" />
                                         </p>
                                         <div class="evt-coupon">
-                                            <img
-                                                src="/img/event/view/event/1708/1708_run_1_06.jpg" />
+                                            <img src="/img/event/view/event/1708/1708_run_1_06.jpg" />
                                             <a onclick="EC.href.detailEvent(1739, '랜덤여행 럭키백 4차')"></a>
                                         </div>
                                         <!--				<p><img src="-->
                                         <!--" /></p>-->
                                         <!--				<p><img src="-->
                                         <!--" /></p>-->
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_1_09.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_1_09.jpg" />
                                         </p>
                                     </div>
                                     <div id="category_3" class="navigation-item">
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_1_10.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_1_10.jpg" />
                                         </p>
                                         <div class="evt-link">
-                                            <img
-                                                src="/img/event/view/event/1708/1708_run_1_11.jpg" />
+                                            <img src="/img/event/view/event/1708/1708_run_1_11.jpg" />
                                             <a onclick="EC.href.detailEvent(1699, '8월 결제 프로모션 모음')"></a>
                                         </div>
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_1_12.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_1_12.jpg" />
                                         </p>
                                     </div>
 
                                     <div id="category_4" class="navigation-item">
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_1_13.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_1_13.jpg" />
                                         </p>
                                         <div class="evt-multi-link">
-                                            <img
-                                                src="/img/event/view/event/1708/1708_run_1_14.jpg" />
+                                            <img src="/img/event/view/event/1708/1708_run_1_14.jpg" />
                                             <a onclick="EC.href.promotionPlan('P20210709092426708')"></a>
                                             <a onclick="EC.href.promotionPlan('P20210728145121524')"></a>
                                             <a onclick="EC.href.promotionPlan('P20210729145930048')"></a>
 
                                         </div>
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_1_15.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_1_15.jpg" />
                                         </p>
                                         <div class="evt-multi-link">
-                                            <img
-                                                src="/img/event/view/event/1708/1708_run_1_16.jpg" />
+                                            <img src="/img/event/view/event/1708/1708_run_1_16.jpg" />
                                             <a onclick="EC.href.promotionPlan('P20210729145843600')"></a>
                                             <a onclick="EC.href.promotionPlan('P20210414150424057')"></a>
                                             <a onclick="EC.href.promotionPlan('P20210729150012434')"></a>
                                         </div>
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_1_17.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_1_17.jpg" />
                                         </p>
                                     </div>
 
                                     <div id="category_5" class="navigation-item">
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_2_01.jpg" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_2_01.jpg" />
                                         </p>
                                         <div class="evt-link">
-                                            <img
-                                                src="/img/event/view/event/1708/1708_run_2_04.jpg" />
+                                            <img src="/img/event/view/event/1708/1708_run_2_04.jpg" />
                                             <a onclick="EC.href.detailEvent(1721, '전국 맛집 할인 찬스');"></a>
                                         </div>
                                         <!--				<p><img src="-->
                                         <!--" /></p>-->
                                         <!--				<p><img src="-->
                                         <!--" /></p>-->
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_2_05.png" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_2_05.png" />
                                         </p>
                                     </div>
                                     <div id="category_6" class="navigation-item">
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_2_06_210813.png" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_2_06_210813.png" />
                                         </p>
                                         <div class="evt-link">
-                                            <img
-                                                src="/img/event/view/event/1708/1708_run_2_07.png" />
+                                            <img src="/img/event/view/event/1708/1708_run_2_07.png" />
                                             <a
                                                 href="yeogi://details?schemetype=webview&anim=2&title=지금동해&titletype=21&isInlinePlay=Y&url=https://api3.goodchoice.kr/event3/main/adEventView?aevno=1662"></a>
                                             <!--					<a onclick="EC.href.detailEvent(1567, '지금, 제주')"></a>-->
                                         </div>
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_2_08.png" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_2_08.png" />
                                         </p>
                                     </div>
 
                                     <div id="category_7" class="navigation-item">
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_2_09.png" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_2_09.png" />
                                         </p>
                                         <div class="evt-link">
-                                            <img
-                                                src="/img/event/view/event/1708/1708_run_2_10.png" />
+                                            <img src="/img/event/view/event/1708/1708_run_2_10.png" />
                                             <a onclick="EC.href.detailEvent(1717, '특급호텔 공동구매 사전신청');"></a>
                                         </div>
                                         <!--				<p><img src="-->
                                         <!--" /></p>-->
                                         <!--				<p><img src="-->
                                         <!--" /></p>-->
-                                        <p><img
-                                                src="/img/event/view/event/1708/1708_run_2_13.png" />
+                                        <p><img src="/img/event/view/event/1708/1708_run_2_13.png" />
                                         </p>
                                     </div>
                                 </div>
@@ -524,9 +506,6 @@
                             <div class="event-bottom">
                                 <!-- 유의사항 -->
                                 <div class="bottom-info">
-                                    <p><img class="lazy"
-                                            data-original="../../img/event/view/event/1708/1708_run_2_15.png"
-                                            alt="유의사항" /></p>
                                 </div>
                             </div>
                             <!-- /이벤트 하단 -->
@@ -541,7 +520,8 @@
                             // 타이틀바 공유버튼 활성화
                             EC.appShare.options.isAppShare = true;
                             EC.revCouponCnt = {
-                                total: ((typeof EC.couponCodes['coupon-pack'].code === 'string') ? EC.couponCodes['coupon-pack'].code.split(',').length : 0),
+                                total: ((typeof EC.couponCodes['coupon-pack'].code === 'string') ? EC.couponCodes[
+                                    'coupon-pack'].code.split(',').length : 0),
                                 success: 0,
                                 fail: 0,
                                 already: 0,
@@ -557,10 +537,31 @@
                                 messageCouponTimer: '쿠폰 지급 대상 확인 중입니다.<br>잠시만 기다려주세요.',
                             };
                             EC.message.buttons = {
-                                buttonLogin: [{ text: "닫기", onclick: "popup.close();" }, { text: "로그인", onclick: "go.login();" }],
-                                buttonClose: [{ text: "닫기", onclick: "popup.close();" }],
-                                buttonCouponList: [{ text: "닫기", onclick: "popup.close();" }, { text: "쿠폰함 가기", onclick: "go.couponList();" }],
-                                buttonTimeAttackList: [{ text: "닫기", onclick: "popup.close();" }, { text: "쿠폰확인하기", onclick: "go.couponList();" }]
+                                buttonLogin: [{
+                                    text: "닫기",
+                                    onclick: "popup.close();"
+                                }, {
+                                    text: "로그인",
+                                    onclick: "go.login();"
+                                }],
+                                buttonClose: [{
+                                    text: "닫기",
+                                    onclick: "popup.close();"
+                                }],
+                                buttonCouponList: [{
+                                    text: "닫기",
+                                    onclick: "popup.close();"
+                                }, {
+                                    text: "쿠폰함 가기",
+                                    onclick: "go.couponList();"
+                                }],
+                                buttonTimeAttackList: [{
+                                    text: "닫기",
+                                    onclick: "popup.close();"
+                                }, {
+                                    text: "쿠폰확인하기",
+                                    onclick: "go.couponList();"
+                                }]
                             };
                             EC.customMessages = {
                                 getEvtLayerMessage: function (messageType) {
@@ -570,25 +571,32 @@
                                     return EC.message.buttons[buttonType];
                                 },
                                 messageLogin: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton('buttonLogin'));
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton('buttonLogin'));
                                 },
                                 messageNotChoiceRun: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton());
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton());
                                 },
                                 messageCouponSuccess: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton('buttonCouponList'));
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton('buttonCouponList'));
                                 },
                                 messageCouponAlready: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton('buttonCouponList'));
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton('buttonCouponList'));
                                 },
                                 messageCouponAlreadyDevice: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton());
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton());
                                 },
                                 messageCouponFailed: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton());
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton());
                                 },
                                 messageCouponTimer: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton());
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton());
                                 }
                             };
                             EC.messages = Object.assign(EC.messages, EC.customMessages);
@@ -610,11 +618,14 @@
                                         data: ajaxData,
                                         timeout: EC.requestTime,
                                         success: function (data) {
-                                            console.log('%cEC.customApi.getEvtEntryCnt(params, options): 조회', EC.api.consoleStyle, ajaxData, data);
+                                            console.log(
+                                                '%cEC.customApi.getEvtEntryCnt(params, options): 조회',
+                                                EC.api.consoleStyle, ajaxData, data);
                                             deferred.resolve(data);
                                         },
                                         error: function (e) {
-                                            console.log(`%c!!ERROR!! EC.customApi.getEvtEntryCnt()`, EC.api.consoleStyleError);
+                                            console.log(`%c!!ERROR!! EC.customApi.getEvtEntryCnt()`, EC
+                                                .api.consoleStyleError);
                                             deferred.reject(e);
                                         }
                                     });
@@ -634,12 +645,15 @@
                                         data: ajaxData,
                                         timeout: EC.requestTime,
                                         success: function (data) {
-                                            console.log('%cEC.customApi.setEvtEntryCnt(params, options): 참여', EC.api.consoleStyle, data);
+                                            console.log(
+                                                '%cEC.customApi.setEvtEntryCnt(params, options): 참여',
+                                                EC.api.consoleStyle, data);
                                             deferred.resolve(data);
                                         },
                                         error: function (e) {
                                             console.log('x', e)
-                                            console.log(`%c!!ERROR!! EC.customApi.setEvtEntryCnt()`, EC.api.consoleStyleError);
+                                            console.log(`%c!!ERROR!! EC.customApi.setEvtEntryCnt()`, EC
+                                                .api.consoleStyleError);
                                             deferred.reject(e);
                                         }
                                     });
@@ -660,25 +674,29 @@
                                             for (var key in list) {
                                                 if (list[key].issuable == false) {
                                                     if (list[key].error == 'NOT_ISSUABLE_ALREADY_ISSUED') {
-                                                        EC.revCouponCnt['already'] = EC.revCouponCnt['already'] + 1;
-                                                    } else if (list[key].error == 'NOT_ISSUABLE_ALREADY_DEVICE_ISSUED') {
-                                                        EC.revCouponCnt['alreadyDevice'] = EC.revCouponCnt['alreadyDevice'] + 1;
+                                                        EC.revCouponCnt['already'] = EC.revCouponCnt[
+                                                            'already'] + 1;
+                                                    } else if (list[key].error ==
+                                                        'NOT_ISSUABLE_ALREADY_DEVICE_ISSUED') {
+                                                        EC.revCouponCnt['alreadyDevice'] = EC.revCouponCnt[
+                                                            'alreadyDevice'] + 1;
                                                     } else {
                                                         EC.revCouponCnt['fail'] = EC.revCouponCnt['fail'] + 1;
                                                     }
                                                 }
                                             }
                                             // 이미 받은 갯수와 원 갯수가 같으면...
-                                            if ((EC.revCouponCnt['already'] + EC.revCouponCnt['alreadyDevice']) == EC.revCouponCnt['total']) {
+                                            if ((EC.revCouponCnt['already'] + EC.revCouponCnt[
+                                                'alreadyDevice']) == EC.revCouponCnt['total']) {
                                                 EC.couponCodes['coupon-pack'].issued = true;
-                                                if (EC.revCouponCnt['alreadyDevice'] > EC.revCouponCnt['already']) {
+                                                if (EC.revCouponCnt['alreadyDevice'] > EC.revCouponCnt[
+                                                        'already']) {
                                                     EC.couponCodes['coupon-pack'].deviceIssued = true;
                                                 }
                                             }
                                             console.log('coupon-pack is', EC.couponCodes['coupon-pack'].issued)
                                         }
-                                    }).done(function () {
-                                    });
+                                    }).done(function () {});
                                 }
                             }
 
@@ -726,11 +744,16 @@
                                                 } else {
                                                     // 이미 받은 쿠폰은 정상 쿠폰으로 판단한다.
                                                     if (list[key].error == 'NOT_ISSUABLE_ALREADY_ISSUED') {
-                                                        EC.revCouponCnt['success'] = EC.revCouponCnt['success'] + 1;
-                                                        EC.revCouponCnt['already'] = EC.revCouponCnt['already'] + 1;
-                                                    } else if (list[key].error == 'NOT_ISSUABLE_ALREADY_DEVICE_ISSUED') {
-                                                        EC.revCouponCnt['success'] = EC.revCouponCnt['success'] + 1;
-                                                        EC.revCouponCnt['alreadyDevice'] = EC.revCouponCnt['alreadyDevice'] + 1;
+                                                        EC.revCouponCnt['success'] = EC.revCouponCnt[
+                                                            'success'] + 1;
+                                                        EC.revCouponCnt['already'] = EC.revCouponCnt[
+                                                            'already'] + 1;
+                                                    } else if (list[key].error ==
+                                                        'NOT_ISSUABLE_ALREADY_DEVICE_ISSUED') {
+                                                        EC.revCouponCnt['success'] = EC.revCouponCnt[
+                                                            'success'] + 1;
+                                                        EC.revCouponCnt['alreadyDevice'] = EC.revCouponCnt[
+                                                            'alreadyDevice'] + 1;
                                                     } else {
                                                         EC.revCouponCnt['fail'] = EC.revCouponCnt['fail'] + 1;
                                                     }
@@ -744,8 +767,10 @@
                                                 return false;
                                             } else {
                                                 // 이미 받은 수량이 총 갯수와 같으면 상황별 메시지 출력
-                                                if ((EC.revCouponCnt['already'] + EC.revCouponCnt['alreadyDevice']) == EC.revCouponCnt['total']) {
-                                                    if (EC.revCouponCnt['alreadyDevice'] > EC.revCouponCnt['already']) {
+                                                if ((EC.revCouponCnt['already'] + EC.revCouponCnt[
+                                                        'alreadyDevice']) == EC.revCouponCnt['total']) {
+                                                    if (EC.revCouponCnt['alreadyDevice'] > EC.revCouponCnt[
+                                                            'already']) {
                                                         EC.couponCodes['coupon-pack'].issued = true;
                                                         EC.messages.messageCouponAlreadyDevice();
                                                         return false;
@@ -761,8 +786,7 @@
                                                 }
                                             }
                                         }
-                                    }).done(function () {
-                                    });
+                                    }).done(function () {});
                                 } else {
                                     EC.messages.messageLogin();
                                     return false;
@@ -784,7 +808,7 @@
                 <!-- Page -->
                 <div class="page">
                     <p>
-                        <a href="/event19">
+                        <a href="/userindex/event19">
                             <span class="ico_arr_up">다음글</span>
                             <b>8월 금토일 대실 세 번 할인!</b>
                             <em>기간 : 2021.08.01 ~ 2021.08.31</em>
@@ -793,8 +817,8 @@
                 </div>
 
                 <div class="align_center">
-                    <button onclick="window.location.href='https://www.goodchoice.kr/more/event#0'"
-                        class="btn_red_fill">목록보기</button>
+                    <button class="btn_red_fill"><a href="/userindex/event"
+                            style="text-decoration:none; color : white;">목록보기</a></button>
                 </div>
 
             </div>

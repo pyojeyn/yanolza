@@ -23,272 +23,201 @@
     <script src="/host/js/jquery-ui.min.js"></script>
     <script src="/host/js/jquery.lazyload.min.js"></script>
 
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-                <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
 <body id="main">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNLLB5W" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNLLB5W" height="0" width="0"
+                  style="display:none;visibility:hidden"></iframe></noscript>
 
 
-    <!-- 헤더 -->
-    <div th:replace="hostthy/host-header :: host-header"></div>
-    <!--헤더 끝 -->
+<!-- 헤더 -->
+<div th:replace="hostthy/host-header :: host-header"></div>
+<!--헤더 끝 -->
 
 
-    <!-- CSS -->
-    <!-- <link href="../host/css/anowl.carousel.css" rel="stylesheet"> -->
-    <link href="/host/css/review.css" rel="stylesheet">
-    <!-- Js Plugin -->
-    <!-- <script src="../host/js/owl.carousel.min.js"></script> -->
+<!-- CSS -->
+<link href="/host/css/review.css" rel="stylesheet">
+<!-- Js Plugin -->
 
-    <section class="container review">
-        <!-- 탭메뉴 -->
-        <div class="guest-nav">
-            <!-- <ul class="nav nav-tabs room-tabs">
-                <li><a href="/hosthousemain/guestReview">미답변 리뷰</a></li>
-       
-                <li class='active'><a href="/hosthousemain/guestAllReview">전체 리뷰</a></li>
-     
-            </ul> -->
-        </div>
-        <!-- //탭메뉴 -->
+<section class="container review">
+    <!-- 탭메뉴 -->
+    <div class="guest-nav">
+    </div>
+    <!-- //탭메뉴 -->
 
-        <!-- 본문 -->
-        <!--	a태그 클릭시 넘어와야 하는 값-->
-        <!--안연주 ID값 넘어옴 리뷰 아이디-->
-        <input type="hidden" id="id" th:value="${id}">
-        <div class="list-layer review__content">
-            <!-- 검색 -->
-            <div class="row review__search">
-                <div class="col-md-6 guide_txt">
-                    <a href="#"
-                        onclick="window.open('http://docs.google.com/gview?url=https://image.goodchoice.kr/images/newad/review_170627.pdf&amp;embedded=true', 'manual')">[사장님
-                        답변 가이드(클릭)</a>]를 참고하여, 부정적인 리뷰에 적절하게 대응 해보세요.
-                </div>
+    <!-- 본문 -->
+    <!-- a태그 클릭시 넘어와야 하는 값-->
+    <!--ID값 넘어옴 리뷰 아이디-->
+    <input type="hidden" id="id" th:value="${id}">
+    <div class="list-layer review__content">
+        <!-- 검색 -->
+        <div class="row review__search">
+            <div class="col-md-6 guide_txt">
+                <a href="#"
+                   onclick="window.open('http://docs.google.com/gview?url=https://image.goodchoice.kr/images/newad/review_170627.pdf&amp;embedded=true', 'manual')">[사장님
+                    답변 가이드(클릭)</a>]를 참고하여, 부정적인 리뷰에 적절하게 대응 해보세요.
             </div>
+        </div>
 
-            <!-- 평균 평점 / 리뷰 수-->
-            <!-- <div class="review__info">
-                <ul class="row text-center center-block">
-                    <li class="col-md-3">리뷰 평균 평점</li>
-                    <li class="col-md-3"><span>0</span></li>
-                    <li class="col-md-3">리뷰 갯수</span></li>
-                    <li class="col-md-3"><span>0</span> 건</li>
-                </ul>
-            </div> -->
-            <!-- <link rel="stylesheet" href="/css/re.css"> -->
+        <article id="review" class="review on">
+            <ul>
+                <li>
 
 
-            
-            <article id="review" class="review on">
-                <ul>
-                    <li>
 
 
-                        
-
-                        <!-- 리뷰 댓글 -->
-                        <div class="guest">
-                            <p class="pic">
-                                <img src="//image.goodchoice.kr/profile/ico/ico_23.png" alt="김사과">
-                            </p>
-<!--                            <span class="best_review">베스트 리뷰</span>-->
-                            <strong class="reTitle">시설이 너무 깨끗하고 좋아요.</strong>
-                            <div class="score_wrap_sm">
-                                <div class="score_star star_50 reStart" id="reGrade"></div>
-                                <div class="num reGrade">5.0</div>
-                            </div>
-                            <div class="name">
-                                <b class="reNkname">박바나나</b>
-                            </div>
-                            <div class="txt reContent">
-                                야외수영장 물 너무너무 시원하고 벌래하나없이 깨끗했습니다 수영장이 객실바로 앞에 있어서 놀기편했고 놀다가 따뜻한 스파에 들어가니 너무
-                                좋더군요 다른펜션은 미리받아놓은 물을 사용하던데 이곳은 스파요구시 그때 물을 받아주니 안심이 되더군요 바베큐는 거실옆에 바로 있어서 우리만 사용하는
-                                개별바베큐라 마음편하게 즐길수 있었으며 바베큐실에 분리 수거함이 비치되어있어 따로따로 분리만 할수있게 고객을 위한배려가 느껴졌습니다 스파이용료 1만원.바베큐
-                                2만원 보증금 3만원 퇴실때 보증금3만원은 돌려받았습니다 짱짱</div>
-                            <div class="gallery_re"></div>
-                            <span class="reRegdate" style="margin-left:30px">7일 전</span>
+                    <!-- 리뷰 댓글 -->
+                    <div class="guest">
+                        <p class="pic">
+                            <img src="//image.goodchoice.kr/profile/ico/ico_23.png" alt="김사과">
+                        </p>
+                        <!--                            <span class="best_review">베스트 리뷰</span>-->
+                        <strong class="reTitle">시설이 너무 깨끗하고 좋아요.</strong>
+                        <div class="score_wrap_sm">
+                            <div class="score_star star_50 reStart" id="reGrade"></div>
+                            <div class="num reGrade">5.0</div>
                         </div>
-                        <!-- 리뷰 댓글 -->
-    
-                     
+                        <div class="name">
+                            <b class="reNkname">박바나나</b>
+                        </div>
+                        <div class="txt reContent">
+                            야외수영장 물 너무너무 시원하고 벌래하나없이 깨끗했습니다 수영장이 객실바로 앞에 있어서 놀기편했고 놀다가 따뜻한 스파에 들어가니 너무
+                            좋더군요 다른펜션은 미리받아놓은 물을 사용하던데 이곳은 스파요구시 그때 물을 받아주니 안심이 되더군요 바베큐는 거실옆에 바로 있어서 우리만 사용하는
+                            개별바베큐라 마음편하게 즐길수 있었으며 바베큐실에 분리 수거함이 비치되어있어 따로따로 분리만 할수있게 고객을 위한배려가 느껴졌습니다 스파이용료 1만원.바베큐
+                            2만원 보증금 3만원 퇴실때 보증금3만원은 돌려받았습니다 짱짱</div>
+                        <div class="gallery_re"></div>
+                        <span class="reRegdate" style="margin-left:30px">7일 전</span>
+                    </div>
+                    <!-- 리뷰 댓글 -->
 
 
-                            <div class="paging">
-                           
-                            </div>
-            <form method="post" name="">
-                            <div class="form-layer" style="position: relative; left: 100px;">
+
+
+                    <div class="paging">
+
+                    </div>
+                    <form method="post" name="">
+                        <div class="form-layer" style="position: relative; left: 100px;">
 
                                 <textarea class="form-control textarea-layer reReply" rows=" " name="introduction"
-                                    placeholder="댓글을 입력하세요."></textarea>
+                                          placeholder="댓글을 입력하세요."></textarea>
 
-                            </div>
+                        </div>
 
-                    
+
+                        <!-- 삭제 및 댓글달기  -->
+
+                        <div class="submit-layer" style="position: relative; right: 65px; margin-top: 50px;">
+                            <button class="btn btn-yeogi btn-submit btn-guest-room" style="position: relative;
+                          left: 20px;" type="button"
+                                    onclick = "replySendit()">댓글달기</button>
+                        </div>
+                    </form>
+
                     <!-- 삭제 및 댓글달기  -->
 
-                    <div class="submit-layer" style="position: relative; right: 65px; margin-top: 50px;">
-                        <!-- <button class="btn btn-default btn-submit btn-guest-room" type="button"
-                            >삭제하기</button>
-                        &nbsp;&nbsp;&nbsp; -->
-                        <!-- <button class="btn btn-yeogi btn-submit btn-guest-room" type="button"
-                          ><a href="./guestroomedit.html">수정하기</a></button> -->
-
-                          <button class="btn btn-yeogi btn-submit btn-guest-room" style="position: relative;
-                          left: 20px;" type="submit"
-                          onclick = "replySendit()">댓글달기</button>
-<!--        "location.href = '/hosthousemain/guestAllReview' "-->
-                          <!-- ><a href="./guestroomedit.html" style="color: aliceblue;"></a>수정하기</a></button> -->
-                    </div>
-            </form>
-                    
-                   <!-- 삭제 및 댓글달기  -->
-                        
-            </article>
-            </table>
-            <div class="row text-center padding-bottom pagination"
-                style="margin-left:auto; margin-right:auto; display: table;">
-            </div>
-        </div>
-        <!-- //본문 -->
-    </section>
-    <!-- 삭제 요청 팝업 -->
-    <div class="bg_opacity">&nbsp;</div>
-    <div class="pop_common pop_review_del">
-        <h3><b>리뷰 삭제 요청</b></h3>
-        <div class="inp_wrap">
-            <input type="hidden" id="request_aepno" name="aepno">
-            <article>
-                <h4>처리 사유</h4>
-                <ul class="reson_list">
-                    <li><label><input type="radio" name="reason" value="1">욕설, 비속어, 음란성</label></li>
-                    <li><label><input type="radio" name="reason" value="2">스팸, 광고, 도배</label></li>
-                    <li><label><input type="radio" name="reason" value="3">숙소와 전혀 관계없는 내용이 포함</label></li>
-                    <li><label><input type="radio" name="reason" value="4">리모델링, 사업주 변경</label></li>
-                    <li><label><input type="radio" name="reason" value="5">타업체를 거론한 게시물</label></li>
-                    <li><label><input type="radio" name="reason" value="6">예약 취소(자동 삭제)</label></li>
-                </ul>
-                <h4>내용</h4>
-                <div><textarea placeholder="" id="reason_txt" name="reason_txt"></textarea></div>
-            </article>
-            <div class="btn_center">
-                <button type="button" class="btn_def_b" onclick="layer_close();">취소</button>
-                <button class="btn_def_r" data-role="request_delete">요청</button>
-            </div>
+        </article>
+        </table>
+        <div class="row text-center padding-bottom pagination"
+             style="margin-left:auto; margin-right:auto; display: table;">
         </div>
     </div>
+    <!-- //본문 -->
+</section>
+<!-- 삭제 요청 팝업 -->
+<div class="bg_opacity">&nbsp;</div>
+<div class="pop_common pop_review_del">
+    <h3><b>리뷰 삭제 요청</b></h3>
+    <div class="inp_wrap">
+        <input type="hidden" id="request_aepno" name="aepno">
+        <article>
+            <h4>처리 사유</h4>
+            <ul class="reson_list">
+                <li><label><input type="radio" name="reason" value="1">욕설, 비속어, 음란성</label></li>
+                <li><label><input type="radio" name="reason" value="2">스팸, 광고, 도배</label></li>
+                <li><label><input type="radio" name="reason" value="3">숙소와 전혀 관계없는 내용이 포함</label></li>
+                <li><label><input type="radio" name="reason" value="4">리모델링, 사업주 변경</label></li>
+                <li><label><input type="radio" name="reason" value="5">타업체를 거론한 게시물</label></li>
+                <li><label><input type="radio" name="reason" value="6">예약 취소(자동 삭제)</label></li>
+            </ul>
+            <h4>내용</h4>
+            <div><textarea placeholder="" id="reason_txt" name="reason_txt"></textarea></div>
+        </article>
+        <div class="btn_center">
+            <button type="button" class="btn_def_b" onclick="layer_close();">취소</button>
+            <button class="btn_def_r" data-role="request_delete">요청</button>
+        </div>
+    </div>
+</div>
 
-    <script>
-        // 리뷰 삭제 요청
-        $(document).on('click', '*[data-role=request_view]', function () {
-            $("#request_aepno").val($(this).data('aepno'));
-            $("#reason_txt").val("");
-            pop_review_del();
-        });
-        // 리뷰 삭제 요청
-        $(document).on('click', '*[data-role=request_delete]', function () {
-            if ($("#reason_txt").val() == '') {
-                alert('리뷰 삭제 요청 내용을 입력해주세요.');
-                $("#reason_txt").focus();
-                return;
+<script>
+    // 리뷰 삭제 요청
+    $(document).on('click', '*[data-role=request_view]', function () {
+        $("#request_aepno").val($(this).data('aepno'));
+        $("#reason_txt").val("");
+        pop_review_del();
+    });
+    // 리뷰 삭제 요청
+    $(document).on('click', '*[data-role=request_delete]', function () {
+        if ($("#reason_txt").val() == '') {
+            alert('리뷰 삭제 요청 내용을 입력해주세요.');
+            $("#reason_txt").focus();
+            return;
+        }
+
+        if ($(":input:radio[name=reason]:checked").val() == '') {
+            alert('삭제 요청 사유를 선택해주세요.');
+            return;
+        }
+
+        var params = {
+            aepno: $("#request_aepno").val(),
+            reason: $(":input:radio[name=reason]:checked").val(),
+            reason_txt: $("#reason_txt").val()
+        };
+        $.post("/review/deleteReview", params, function (data) {
+            alert(data.message);
+            if (data.code == 200) {
+                location.reload();
             }
+        }, 'json');
+    });
 
-            if ($(":input:radio[name=reason]:checked").val() == '') {
-                alert('삭제 요청 사유를 선택해주세요.');
-                return;
-            }
-
-            var params = {
-                aepno: $("#request_aepno").val(),
-                reason: $(":input:radio[name=reason]:checked").val(),
-                reason_txt: $("#reason_txt").val()
-            };
-            $.post("/review/deleteReview", params, function (data) {
-                alert(data.message);
-                if (data.code == 200) {
-                    location.reload();
-                }
-            }, 'json');
-        });
-
-        /* 리뷰 textarea 자동 높이 */
-        $('.boss_reply').each(function () {
-            $(this).on('keyup', function (e) {
-                $(this).css('height', 'auto');
-                $(this).height(this.scrollHeight);
-            });
+    /* 리뷰 textarea 자동 높이 */
+    $('.boss_reply').each(function () {
+        $(this).on('keyup', function (e) {
             $(this).css('height', 'auto');
-            $(this).css('padding', '0');
             $(this).height(this.scrollHeight);
         });
-        /* //리뷰 textarea 자동 높이 */
+        $(this).css('height', 'auto');
+        $(this).css('padding', '0');
+        $(this).height(this.scrollHeight);
+    });
+    /* //리뷰 textarea 자동 높이 */
 
-        // 리뷰 수정 모드
-        $(document).on('click', '*[data-role=reply_modify_view]', function () {
-            replyObj = $(this).parent().parent().parent().parent().find('.boss_reply');
-            if (replyObj.hasClass("active")) {
-                replyObj.removeClass("active");
-                replyObj.attr('readonly', true);
-                replyObj.next().hide();
-            } else {
-                replyObj.addClass("active");
-                replyObj.attr('readonly', false);
-                replyObj.next().show();
-            }
-        });
-        // 댓글 삭제
-        $(document).on('click', '*[data-role=reply_delete]', function () {
-            if (confirm("댓글을 삭제하시겠습니까?")) {
-                var params = {
-                    action: 'delete',
-                    aep_cmno: $(this).data('aepcmno')
-                };
-                $.post("/review/reply", params, function (data) {
-                    alert(data.message);
-                    if (data.code == 200) {
-                        location.reload();
-                    }
-                }, 'json');
-            }
-        });
-        // 댓글 수정
-        $(document).on('click', '*[data-role=reply_modify]', function () {
-            if (confirm("댓글을 수정하시겠습니까?")) {
-                if ($(this).parent().prev().val() == '') {
-                    alert('답변 내용을 입력해주세요.');
-                    $(this).prev().focus();
-                    return;
-                }
-
-                var params = {
-                    action: 'modify',
-                    aep_cmno: $(this).data('aepcmno'),
-                    comment: $(this).parent().prev().val()
-                };
-                $.post("/review/reply", params, function (data) {
-                    alert(data.message);
-                    if (data.code == 200) {
-                        location.reload();
-                    }
-                }, 'json')
-            }
-        });
-        // 댓글 입력
-        $(document).on('click', '*[data-role=reply_create]', function () {
-            if ($(this).prev().val() == '') {
-                alert('답변 내용을 입력해주세요.');
-                $(this).prev().focus();
-                return;
-            }
+    // 리뷰 수정 모드
+    $(document).on('click', '*[data-role=reply_modify_view]', function () {
+        replyObj = $(this).parent().parent().parent().parent().find('.boss_reply');
+        if (replyObj.hasClass("active")) {
+            replyObj.removeClass("active");
+            replyObj.attr('readonly', true);
+            replyObj.next().hide();
+        } else {
+            replyObj.addClass("active");
+            replyObj.attr('readonly', false);
+            replyObj.next().show();
+        }
+    });
+    // 댓글 삭제
+    $(document).on('click', '*[data-role=reply_delete]', function () {
+        if (confirm("댓글을 삭제하시겠습니까?")) {
             var params = {
-                action: 'create',
-                aepno: $(this).data('aepno'),
-                comment: $(this).prev().val()
+                action: 'delete',
+                aep_cmno: $(this).data('aepcmno')
             };
             $.post("/review/reply", params, function (data) {
                 alert(data.message);
@@ -296,99 +225,112 @@
                     location.reload();
                 }
             }, 'json');
-        });
-    </script>
+        }
+    });
+    // 댓글 수정
+    $(document).on('click', '*[data-role=reply_modify]', function () {
+        if (confirm("댓글을 수정하시겠습니까?")) {
+            if ($(this).parent().prev().val() == '') {
+                alert('답변 내용을 입력해주세요.');
+                $(this).prev().focus();
+                return;
+            }
+
+            var params = {
+                action: 'modify',
+                aep_cmno: $(this).data('aepcmno'),
+                comment: $(this).parent().prev().val()
+            };
+            $.post("/review/reply", params, function (data) {
+                alert(data.message);
+                if (data.code == 200) {
+                    location.reload();
+                }
+            }, 'json')
+        }
+    });
+    // 댓글 입력
+    $(document).on('click', '*[data-role=reply_create]', function () {
+        if ($(this).prev().val() == '') {
+            alert('답변 내용을 입력해주세요.');
+            $(this).prev().focus();
+            return;
+        }
+        var params = {
+            action: 'create',
+            aepno: $(this).data('aepno'),
+            comment: $(this).prev().val()
+        };
+        $.post("/review/reply", params, function (data) {
+            alert(data.message);
+            if (data.code == 200) {
+                location.reload();
+            }
+        }, 'json');
+    });
+</script>
 
 
-    <!-- 푸터 -->
-    <div th:replace="hostthy/host-footer :: host-footer"></div>
-    <!--푸터 끝 -->
+<!-- 푸터 -->
+<div th:replace="hostthy/host-footer :: host-footer"></div>
+<!--푸터 끝 -->
 
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<!-- <script src="../host/js/ie10-viewport-bug-workaround.js"></script> -->
-<!-- <script src="../host/js/bootstrap.min.js"></script> -->
-<!-- <script src="../host/js/moment.min.js"></script> -->
-<!-- <script src="../host/js/daterangepicker.js"></script> -->
-<!-- <script src="../host/js/bootstrap-timepicker.js"></script> -->
 <script src="/host/js/common.host.js?nocache=1629294262.5256"></script> <!-- 있어야 함. -->
-<!-- <script src="../host/js/review.host.js?nocache=1629294262.5256"></script>  팝업관련이라 없어도 될듯. -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const reviewid = $('#id').val();
+    axios.get('/api/review/list/' + reviewid, {
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-        const reviewid = $('#id').val();
-            axios.get('/api/review/list/' + reviewid, {
-
-            }).then(function (response){
-                console.log(response);
-                const reNkname = response.data.data.reNkname; // 리뷰자이름
-                const reTitle = response.data.data.reTitle; // 제목
-                const reContent = response.data.data.reContent; // 내용
-                let reGrade = response.data.data.reGrade; // 등급
-                reGrade += ".0";
-                let reRegdate = response.data.data.reRegdate; // 리뷰자 등록일
+    }).then(function (response){
+        console.log(response);
+        const reNkname = response.data.data.reNkname; // 리뷰자이름
+        const reTitle = response.data.data.reTitle; // 제목
+        const reContent = response.data.data.reContent; // 내용
+        let reGrade = response.data.data.reGrade; // 등급
+        reGrade += ".0";
+        let reRegdate = response.data.data.reRegdate; // 리뷰자 등록일
 
 
-                $('.reNkname').text(reNkname);
-                $('.reTitle').text(reTitle);
-                $('.reContent').text(reContent);
-                $('.reGrade').text(reGrade);
+        $('.reNkname').text(reNkname);
+        $('.reTitle').text(reTitle);
+        $('.reContent').text(reContent);
+        $('.reGrade').text(reGrade);
 
 
-                //문자열 길이
-               if(reRegdate.length >= 10){
-                    return  $('.reRegdate').text(reRegdate.substr(0,10));
-                    ;
-                }
+        //문자열 길이
+        if(reRegdate.length >= 10){
+            return  $('.reRegdate').text(reRegdate.substr(0,10));
+            ;
+        }
 
-                <!-- 정훈 별점 스크립트-->
-
-                    // 여기에 1~5번까지 value값을 받아올 수 있으면?
-
-                    // if(value == '1') {
-                    // $(".score_star").attr("class", "score_star star_10");
-                    // }else if(value == '2'){
-                    //     $(".score_star").attr("class", "score_star star_20");
-                    // }else if(value == '3'){
-                    //     $(".score_star").attr("class", "score_star star_30");
-                    // }else if(value == '4'){
-                    //     $(".score_star").attr("class", "score_star star_40");
-                    // }else{
-                    //     $(".score_star").attr("class", "score_star star_50");
-                    // }
-
-                if(reGrade == '5'||'6'||'7'||'8'||'9'||'10'){
-                    $("#reGrade").attr("class", "score_star star_50");
-                }
-                if (reGrade == '4'){
-                    $("#reGrade").attr("class", "score_star star_40");
-                }
-                if (reGrade == '3'){
-                    $("#reGrade").attr("class", "score_star star_30");
-                }
-                if (reGrade == '2'){
-                    $("#reGrade").attr("class", "score_star star_20");
-                }
-                if (reGrade == '1'){
-                    $("#reGrade").attr("class", "score_star star_10");
-                }
-
-
-                <!-- 정훈 별점 스크립트-->
+        <!-- 별점 스크립트  -->
+        if(reGrade == '5'||'6'||'7'||'8'||'9'||'10'){
+            $("#reGrade").attr("class", "score_star star_50");
+        }
+        if (reGrade == '4'){
+            $("#reGrade").attr("class", "score_star star_40");
+        }
+        if (reGrade == '3'){
+            $("#reGrade").attr("class", "score_star star_30");
+        }
+        if (reGrade == '2'){
+            $("#reGrade").attr("class", "score_star star_20");
+        }
+        if (reGrade == '1'){
+            $("#reGrade").attr("class", "score_star star_10");
+        }
+        <!-- 별점 스크립트 끝 -->
 
 
 
-            }).catch(function (err){
-                console.log(' axios 호출중 에러');
-                console.log(err);
-            })
+    }).catch(function (err){
+        console.log(' axios 호출중 에러');
+        console.log(err);
+    })
 
-        //사장님 댓글 patch mapping
-        // axios.patch(`/api/review/re/`+reviewid, args)
-        //     .then(resp => resp.data)
-        function replySendit(){
-                const reReply = $('.reReply').val();
-                console.log(reReply);
+    function replySendit(){
+        const reReply = $('.reReply').val();
+        console.log(reReply);
         axios.request({
             method: 'PATCH',
             url: '/api/review/re/'+ reviewid,
@@ -407,9 +349,8 @@
 
 
         )
-            location.href="/hosthousemain"
-        }
-    </script>
+        location.href="/hosthousemain/"
+    }
+</script>
 </body>
-
 </html>

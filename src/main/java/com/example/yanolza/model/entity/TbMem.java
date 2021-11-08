@@ -35,20 +35,21 @@ public class TbMem {
     @Enumerated(EnumType.STRING)
     private TbMemRole role;
 
+    private String resetPasswordToken; // 비밀번호 재설정시 필요한 토큰
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tbMem")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tbMem", cascade = CascadeType.REMOVE)
     private List<TbHost> TbHostList;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tbMem")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tbMem", cascade = CascadeType.REMOVE )
     private List<TbReview> tbReviewList;
 
-    @OneToMany (fetch = FetchType.LAZY, mappedBy = "tbMem")
+    @OneToMany (fetch = FetchType.LAZY, mappedBy = "tbMem", cascade = CascadeType.REMOVE)
     private List<TbPay> tbPayList;
 
-    @OneToMany (fetch = FetchType.LAZY, mappedBy = "tbMem")
+    @OneToMany (fetch = FetchType.LAZY, mappedBy = "tbMem", cascade = CascadeType.REMOVE)
     private List<TbQuestion> tbQuestionList;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tbMem")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tbMem", cascade = CascadeType.REMOVE)
     private List<TbZzim> tbZzimList;
 
 

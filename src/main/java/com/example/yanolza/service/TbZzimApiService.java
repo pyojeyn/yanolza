@@ -25,7 +25,6 @@ public class TbZzimApiService extends BaseService<TbZzimApiRequest, TbZzimApiRes
     @Autowired
     private final TbZzimRepository tbZzimRepository;
 
-
     // 찜 등록
     public Header<TbZzimApiResponse> regz(Header<TbZzimApiRequest> request){
         TbZzimApiRequest tbZzimApiRequest = request.getData();
@@ -62,7 +61,7 @@ public class TbZzimApiService extends BaseService<TbZzimApiRequest, TbZzimApiRes
         return optional.map(tbZzim -> {
             baseRepository.delete(tbZzim);
             return Header.OK();
-        }).orElseGet(()->Header.Error("꺼져"));
+        }).orElseGet(()->Header.Error("ERROR"));
     }
 
     //
@@ -77,9 +76,6 @@ public class TbZzimApiService extends BaseService<TbZzimApiRequest, TbZzimApiRes
                 .build();
         return tbZzimapiResponse;
     }
-
-
-
 
     @Override
     public Header<TbZzimApiResponse> create(Header<TbZzimApiRequest> request) {

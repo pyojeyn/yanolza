@@ -1,704 +1,10 @@
-<!--<!doctype html>-->
-<!--<html lang="ko">-->
-
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport"-->
-<!--        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-<!--    <meta http-equiv="Content-Type">-->
-<!--    <meta name="csrf-name" content="yeogi_token">-->
-
-<!--    <meta name="description" content="여기어때 회원 가입 | 전국 호텔, 펜션, 모텔부터 워터파크, 놀이공원, 아쿠아리움까지 최저가 할인 예약">-->
-
-<!--    <link rel="shortcut icon" href="/img/images/web_v3/favicon_170822.ico" type="image/x-icon">-->
-
-<!--	&lt;!&ndash; CSS &ndash;&gt;-->
-<!--	<title>취향대로 머물다 여기어때</title>-->
-<!--	<link rel="stylesheet" href="/css/common.css" />-->
-<!--	<link rel="canonical" href="../../../../../../../../../s/lyju7/OneDrive/바탕%20화면">-->
-<!--    <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>-->
-
-<!--	<script>-->
-<!--		var _BASE_URL = '../';-->
-<!--		var _MOBILE = 'W';-->
-<!--		var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';-->
-<!--		var _FACEBOOK_APP_ID = '607467975974643';-->
-<!--	</script>-->
-<!--	<script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>-->
-<!--</head>-->
-
-<!--<body>-->
-
-<!--	&lt;!&ndash; Wrap &ndash;&gt;-->
-<!--	<div class="wrap">-->
-
-<!--     &lt;!&ndash; 헤더 &ndash;&gt;-->
-<!--        <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>-->
-<!--        &lt;!&ndash;헤더 끝 &ndash;&gt;-->
-
-<!--        &lt;!&ndash; Bg Dimm &ndash;&gt;-->
-<!--        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>-->
-<!--        <div class="bg_dimm_prevent">&nbsp;</div>-->
-
-<!--        &lt;!&ndash; 추천검색어 &ndash;&gt;-->
-<!--        <div class="recommend_srch">-->
-<!--            <div class="scroll_srch">-->
-<!--                <div class="scroller">-->
-<!--                    <div class="default" style="display:block">-->
-<!--                        <strong>추천 검색어</strong>-->
-<!--                        <ul></ul>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; 연관검색어 &ndash;&gt;-->
-<!--                    <div class="chain">-->
-<!--                        <ul></ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash; Mobile Menu &ndash;&gt;-->
-<!--        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>-->
-<!--        <div class="menu_wrap">-->
-
-<!--            <div class="menu">-->
-<!--                <div class="top">-->
-<!--                    &lt;!&ndash; 회원 &ndash;&gt;-->
-<!--                    <div class="member">-->
-<!--                        <div class="mem">-->
-<!--                            <span class="pic"-->
-<!--                                style="background:url('/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>-->
-<!--                            <p class="info">사과색깔</p>-->
-<!--                        </div>-->
-<!--                        <div class="bot">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; Iscroll &ndash;&gt;-->
-<!--                <div class="scroll_nav">-->
-<!--                    <div class="scroller">-->
-<!--                        <ul>-->
-<!--                            <li><a href="../userindex/">홈</a></li>-->
-<!--                            <li class="depth_2">-->
-<!--                                <button type="button" class="has_ul"><span>숙소유형</span></button>-->
-<!--                                <ul>-->
-<!--                                    <li><a href="/userindex/1">모텔</a></li>-->
-<!--                                    <li><a href="/userindex/2">호텔/리조트</a></li>-->
-<!--                                    <li><a href="/userindex/3">펜션</a></li>-->
-<!--                                    <li><a href="/userindex/4">리조트</a></li>-->
-<!--                                    <li><a href="/userindex/5">캠핑·글램핑</a></li>-->
-<!--                                    <li><a href="/userindex/6">게스트하우스</a></li>-->
-<!--                                    <li><a href="/userindex/7">한옥 </a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                            <li><a href="/userindex/8">내주변</a></li>-->
-<!--                        </ul>-->
-<!--                        <ul>-->
-<!--                            <li><a href="/userindex/reservations">예약 내역</a></li>-->
-<!--                            <li><a href="/userindex/mypage">내 정보 관리</a></li>-->
-<!--                        </ul>-->
-<!--                        <ul>-->
-<!--                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>-->
-<!--                                <ul>-->
-<!--                                    <li><a href="/userindex/notice">공지사항</a></li>-->
-<!--                                    <li><a href="/userindex/event">이벤트</a></li>-->
-<!--                                    <li><a href="/userindex/project">혁신 프로젝트</a></li>-->
-<!--                                    <li><a href="/userindex/faq">고객문의</a></li>-->
-<!--                                    <li><a href="/userindex/terms">약관 및 정책</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                        <div class="center">-->
-<!--                            <p>여기어때 고객행복센터</p>-->
-<!--                            <p><a href="tel:1670-6250">1670-6250</a></p>-->
-<!--                            <p>오전 9시 - 새벽 3시</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; //Mobile Menu &ndash;&gt;-->
-
-<!--		&lt;!&ndash; CSS &ndash;&gt;-->
-<!--		<link rel="stylesheet" href="/css/my.css" />-->
-<!--		<link rel="stylesheet" href="/css/withdraw.css" />-->
-<!--		<link rel="stylesheet" href="/css/font.css" />-->
-<!--		&lt;!&ndash; Sub Top &ndash;&gt;-->
-<!--		<div class="sub_top_wrap">-->
-<!--			<div class="sub_top bg_kong_2">-->
-<!--				<h2>내정보</h2>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--		&lt;!&ndash; //Sub Top &ndash;&gt;-->
-<!--		&lt;!&ndash; Content  &ndash;&gt;-->
-<!--		<div id="content" class="sub_wrap my_wrap">-->
-<!--			<p class="sub_title">내 정보 관리</p>-->
-
-<!--			&lt;!&ndash; Nav &ndash;&gt;-->
-<!--            <nav>-->
-<!--                <ul>-->
-<!--                    <li><a class="" href="/userindex/mypage">내 정보 관리</a></li>-->
-<!--                    <li><a class="active" href="../userindex/reservations">예약 내역</a></li>-->
-<!--                    <li><a class="" href="/userindex/zzim">찜 목록</a></li>-->
-<!--                </ul>-->
-<!--            </nav>-->
-<!--			-->
-
-<!--&lt;!&ndash; 여기부터 복사@@ &ndash;&gt;-->
-<!--        &lt;!&ndash; 안연주 리뷰작성 &ndash;&gt;-->
-<!--		<link rel="stylesheet" href="/css/star2.css">-->
-<!--        &lt;!&ndash; <link rel="stylesheet" href="/ahn_cssjs/css/product.css"> &ndash;&gt;-->
-<!--        <script src="/js/ahn_re.js"></script>-->
-<!--        <style>-->
-<!--            .ahn_review_content {-->
-
-<!--                padding-right: 10px;-->
-<!--                padding-left: 10px;-->
-<!--                display: block;-->
-<!--                /* background: rgb(207, 172, 172); */-->
-<!--                line-height: normal;-->
-
-<!--            }-->
-
-<!--            .ahn_re_tab {-->
-<!--                margin-bottom: 1em;-->
-<!--                /* border-bottom: 1px solid rgba(0,0,0,0.2); */-->
-<!--                font-size: 32px;-->
-<!--                font-weight: bold;-->
-<!--                color: rgb(230, 28, 81);-->
-<!--                clear: both;-->
-<!--            }-->
-
-<!--            .ahn_re_tab span {-->
-<!--                border-bottom: 1px solid rgb(230, 28, 81);-->
-<!--            }-->
-
-<!--            .ahn_reviewinfo {-->
-
-
-<!--                font-size: 20px;-->
-<!--                font-weight: normal;-->
-<!--                color: rgba(0, 0, 0, 0.56);-->
-<!--            }-->
-
-<!--            .ahn_tab_t {-->
-<!--                margin-top: 20px;-->
-<!--                margin-bottom: 20px;-->
-<!--                border-bottom: 1px solid rgba(75, 75, 75, 0.2);-->
-<!--                padding-bottom: 10px;-->
-<!--                font-weight: 300;-->
-<!--                color: rgba(0, 0, 0, 0.56);-->
-<!--                font-size: 26px;-->
-<!--            }-->
-
-
-<!--            .ahn_re_title_p {-->
-<!--                position: relative;-->
-<!--                border: 1px solid rgba(0, 0, 0, 0.08);-->
-<!--                height: 48px;-->
-<!--                padding: 8px 14px 8px 0px;-->
-<!--                border-radius: 4px;-->
-<!--                background-color: white;-->
-<!--            }-->
-
-<!--            .ahn_title_input {-->
-
-<!--                border: none;-->
-<!--                background: none;-->
-<!--                width: 100%;-->
-<!--                height: 20px;-->
-<!--                margin-top: 5px;-->
-<!--                font-size: 18px;-->
-<!--                color: rgba(0, 0, 0, 0.56);-->
-
-<!--            }-->
-
-<!--            .ahn_re_content_ta_p {-->
-<!--                text-indent: 0px;-->
-<!--            }-->
-
-<!--            .ahn_re_content_ta {-->
-<!--                position: relative;-->
-<!--                border: 1px solid rgba(0, 0, 0, 0.08);-->
-<!--                height: 400px;-->
-<!--                width: 100%;-->
-<!--                max-width: 100%;-->
-<!--                /* padding: 8px 14px 8px 16px; */-->
-<!--                border-radius: 4px;-->
-<!--                color: rgba(0, 0, 0, 0.56);-->
-<!--                background-color: white;-->
-<!--                padding: 0px;-->
-
-<!--                text-indent: 10px;-->
-<!--                /* padding: 14px 0px 14px 16px; */-->
-<!--                font-size: 18px;-->
-<!--                resize: none;-->
-<!--                overflow-x: hidden-->
-<!--            }-->
-
-<!--            .ahn_re_indent {-->
-<!--				color: rgba(0, 0, 0, 4);-->
-<!--                text-indent: 10px;-->
-<!--                margin-bottom: 50px;-->
-<!--            }-->
-
-<!--            .ahn_re_flex {-->
-<!--                display: flex;-->
-<!--                justify-content: center;-->
-
-<!--            }-->
-
-<!--            .ahn_re_btn1 {-->
-<!--                display: flex;-->
-<!--                justify-content: center;-->
-<!--            }-->
-
-<!--            .ahn_re_btn2 {-->
-
-<!--                width: 144px;-->
-<!--                height: 48px;-->
-<!--                display: inline-block;-->
-<!--                border: none;-->
-<!--                border-radius: 4px;-->
-<!--                font-size: 16px;-->
-<!--                color: #fff;-->
-<!--                text-align: center;-->
-<!--                box-sizing: border-box;-->
-<!--                vertical-align: top;-->
-<!--                background: linear-gradient(to bottom, #ff0055 0%, #e62243 100%);-->
-<!--            }-->
-<!--        </style>-->
-
-
-
-<!--        &lt;!&ndash; -->
-
-<!--        re_rmidx number(10), &#45;&#45;객실idx-->
-<!--        re_memidx number(10), &#45;&#45;구매회원idx-->
-
-<!--        &ndash;&gt;-->
-<!--        &lt;!&ndash; tb_room 기준 &ndash;&gt;-->
-<!--        <form action="리뷰리스트" method="get">-->
-<!--            <div class="align_rt">-->
-<!--                <input type="hidden" name="page" value="1">-->
-<!--                <div>-->
-<!--                    <div class="ahn_review_content">-->
-<!--                        <div class="ahn_re_tab"><span>리뷰 작성 </span></div>-->
-<!--                        <div class="ahn_reviewinfo">-->
-<!--                            &lt;!&ndash; 숙박업소 이름 &ndash;&gt;-->
-<!--                            <div class="ahn_rm_name">-->
-<!--                                <div class="ahn_tab_t">숙박업소</div>-->
-<!--                                <div class="ahn_re_indent">-->
-<!--                                    <span class="ahn_di_span">역삼 컬리넌</span>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash; 별점 &ndash;&gt;-->
-<!--                            <div class="ahn_score_star ahn_re_grade">-->
-<!--                                <div class="ahn_tab_t">별점</div>-->
-<!--                                <div class="ahn_re_indent">-->
-<!--                                    <span class="ahn_di_span">-->
-<!--                                        <div class="ahn_score_star2 ahn_re_flex">-->
-<!--                                            <div class="star-box">-->
-<!--        -->
-<!--												<span class="star" id="ahn_sta1"></span>  -->
-<!--										-->
-<!--												<span class="star "-->
-<!--												id="ahn_sta1"></span>-->
-<!--												-->
-<!--												<span class="star"-->
-<!--												id="ahn_sta1"></span>-->
-<!--										-->
-<!--												<span class="star"-->
-<!--												id="ahn_sta1"></span>-->
-<!--											  -->
-<!--												<span class="star"-->
-<!--												id="ahn_sta1"></span>-->
-<!--												&lt;!&ndash; 별점을 클릭시 value값이 12345 로 저장됨 &ndash;&gt;-->
-<!--										<input type="hidden" name="star_score">-->
-<!--											  </div>-->
-<!--											-->
-<!--											&lt;!&ndash; <div class="score_star star_40 "></div> &ndash;&gt;-->
-<!--                                    </span>-->
-<!--                                </div>-->
-<!--                                <div class="ahn_re_indent ahn_re_flex">클릭 하여 점수주기</div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; 제목 &ndash;&gt;-->
-<!--                        <div class="ahn_re_title">-->
-<!--                            <div class="ahn_tab_t">리뷰 제목</div>-->
-
-<!--                            <div class="ahn_re_indent">-->
-<!--                                <span class="ahn_di_span">-->
-<!--                                    <p class="ahn_re_title_p"><input class="ahn_title_input" type="text" maxlength="35"-->
-<!--                                            name="uphone" value="" placeholder="제목은 최대35자입니다."></p>-->
-<!--                                </span>-->
-<!--                            </div>-->
-
-<!--                        </div>-->
-<!--                        &lt;!&ndash; 후기작성란 &ndash;&gt;-->
-<!--                        <div class="ahn_re_content">-->
-<!--                            <div class="ahn_tab_t">후기작성란</div>-->
-
-<!--                            <div class="ahn_re_indent">-->
-<!--                                <span class="ahn_di_span">-->
-<!--                                    <p class="ahn_re_content_ta_p">-->
-<!--                                        <textarea name="ahn_re_content_ta" class="ahn_re_content_ta" id=""-->
-<!--                                            placeholder="개인 정보 보호를 위해 고객님의 개인 정보를 입력하지 마세요."></textarea>-->
-<!--                                    </p>-->
-<!--                                </span>-->
-<!--                            </div>-->
-
-<!--                        </div>-->
-<!--                        &lt;!&ndash; 이미지 추가 &ndash;&gt;-->
-<!--                        <div class="ahn_re_img">-->
-<!--                            <div class="ahn_tab_t">이미지 추가</div>-->
-
-<!--                            <div class="ahn_re_indent">-->
-<!--                                <span class="ahn_di_span">-->
-<!--                                    <input type="file" id="image" accept="image/*" onchange="setThumbnail(event);" />-->
-<!--                                    <div id="image_container"></div>-->
-<!--                                </span>-->
-<!--                            </div>-->
-
-<!--                        </div>-->
-<!--                        &lt;!&ndash; 등록일 &ndash;&gt;-->
-<!--                        &lt;!&ndash; <div class="ahn_re_regdate">-->
-<!--                                등록일-->
-<!--                            </div> &ndash;&gt;-->
-<!--                        &lt;!&ndash;//등록일  &ndash;&gt;-->
-
-<!--                        <div class="ahn_re_indent ahn_re_btn1">-->
-<!--                            <span class="ahn_di_span">-->
-<!--                                <button type="submit" class="ahn_re_btn2">-->
-<!--									등록하기</button>-->
-<!--                            </span>-->
-<!--                        </div>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--			&lt;!&ndash; ↓푸터꺼 &ndash;&gt;-->
-<!--            </div>-->
-<!--        </form>-->
-<!--              &lt;!&ndash; //안연주 리뷰작성 끝 &ndash;&gt;-->
-<!--			  &lt;!&ndash; 여기부터 복사@@ 끝&ndash;&gt;-->
-<!--		</div>-->
-<!--		&lt;!&ndash; //Content  &ndash;&gt;-->
-
-<!--		&lt;!&ndash; 팝업 : 회원탈퇴 pop_layer_w('pop_withdraw') &ndash;&gt;-->
-<!--		<div class="layer_w pop_withdraw">-->
-<!--			<section>-->
-<!--				<div class="fix_title">-->
-<!--					<strong>회원탈퇴</strong>-->
-<!--					<button onclick="layer_w_close();">닫기</button>-->
-<!--				</div>-->
-<!--				<div class="cont">-->
-<!--					<b>주의사항</b>-->
-<!--					<strong>회원탈퇴 전 반드시 확인해주세요.</strong>-->
-<!--					<ul class="dot_txt">-->
-<!--						<li>회원탈퇴 시 계정 정보는 복구가 불가하며 1일 이후 재가입 가능합니다.</li>-->
-<!--						<li>현재 보유 중인 포인트, 마일리지는 모두 소멸되며 복구할 수 없습니다.</li>-->
-<!--						&lt;!&ndash; <li>탈퇴 후, 기존 가입 휴대기기로 재가입 시 첫 혜택을 받을 수 없습니다. (신규 회원 쿠폰, 첫 리뷰 작성 1000포인트 등)</li> &ndash;&gt;-->
-<!--					</ul>-->
-<!--					<div class="fix_wrap">-->
-<!--						<p><input type="checkbox" class="inp_chk_03" id="residue_night">-->
-<!--							<label for="residue_night">주의사항 모두 동의합니다.</label>-->
-<!--						</p>-->
-<!--						<button class="btn_submit disabled" onclick="userout();">회원탈퇴</button>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</section>-->
-<!--		</div>-->
-
-<!--		&lt;!&ndash; 회원탈퇴 .new_pop_withdraw &ndash;&gt;-->
-<!--		<div class="layer_w new_pop_withdraw">-->
-<!--			<section class="section_fix_title">-->
-<!--				<div class="fix_title">-->
-<!--					<strong>회원탈퇴</strong>-->
-<!--					<button onclick="layer_w_close();">닫기</button>-->
-<!--				</div>-->
-<!--			</section>-->
-<!--			<section class="cont cont_section">-->
-<!--				&lt;!&ndash; step1 &ndash;&gt;-->
-<!--				<div class="cont-step cont-step_01" id="contStep01">-->
-<!--					<div class="cont-step_preface">-->
-<!--						<h1>떠나시기 전 <span class="point-text">잠깐!</span> <span class="break-tag">해결해야할 게 있어요</span></h1>-->
-<!--						<p>숙박이나 티켓 이용을 완료해 주시거나<span class="break-tag">잔액을 모두 환불하셔야 탈퇴가 가능해요</span></p>-->
-<!--					</div>-->
-<!--					&lt;!&ndash; 보유목록 :: 내역 없으면 아이템 미노출 &ndash;&gt;-->
-<!--					<ul class="retention-list">-->
-<!--					</ul>-->
-<!--					<div class="guide-text">-->
-<!--						<ul>-->
-<!--							<li>현금성(유상)포인트는 여기어때에서 현금처럼 사용하실 수 있는 결제수단으로 숙박 및 모바일 티켓 구매 시 사용 가능해요.</li>-->
-<!--							<li><em>현금성(유상)포인트 보유 시 ‘환불 신청 접수하기’</em> 버튼을 통해 환불 신청 부탁드 리며, <em>환불받을 은행, 계좌번호, 예금주 정보가-->
-<!--									정확히 등록된 경우에만 처리가 가능해요.</em></li>-->
-<!--							<li class="point-text">환불 처리를 위한 모든 정보가 확인되면 현금성(유상)포인트가 먼저 회수되며, 계좌 환불까지는 <em>영업일 기준 7일~10일-->
-<!--									소요돼요.</em></li>-->
-<!--							<li><em>환불 신청 및 답변 내역은 ‘더보기 &gt; 고객문의 &gt; 1:1문의’에서 확인가능</em>해요.</li>-->
-<!--							<li>즉시 회원 탈퇴를 원하시면 고객행복센터 <a href="tel:+821670-6250">1670-6250</a>로 문의 부탁드려요.</li>-->
-<!--						</ul>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				&lt;!&ndash;// step1 &ndash;&gt;-->
-<!--				&lt;!&ndash; step2 &ndash;&gt;-->
-<!--				<div class="cont-step cont-step_02" id="contStep02">-->
-<!--					<div class="cont-step_preface">-->
-<!--						<h1>왜 떠나시는지 <span class="break-tag"><span class="point-text">이유</span>가 있을까요?</span></h1>-->
-<!--					</div>-->
-<!--					&lt;!&ndash; 탈퇴이유 &ndash;&gt;-->
-<!--					<ul class="reason-list">-->
-<!--						<li>-->
-<!--							<input id="reasonRdo0" type="radio" name="radios" value="UN_USE_FREQUENTLY">-->
-<!--							<label for="reasonRdo0">사용을 잘 안하게 돼요</label>-->
-<!--							<div class="reason-innder-box reason-innder-box0">-->
-<!--								<textarea class="inner-textarea" id="reasonTextarea0" name="innerTextarea"-->
-<!--									maxlength="80"-->
-<!--									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>-->
-<!--								&lt;!&ndash; 사용을 잘 안하게 돼요 &ndash;&gt;-->
-<!--								<div class="inner">-->
-<!--									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>-->
-<!--									<p>여기어때는 숙박 상품 외에도, 숙소 주변 맛집 정보와 모바일티켓 구매가 가능해요!</p>-->
-<!--									<p>볼거리와 놀거리가 풍성해진 여기어때를 더 이용해보시겠어요?</p>-->
-<!--									<a href="#none" class="toast-show" onclick="toastShow(event,this)">맛집 보러가기</a><br />-->
-<!--									<a href="#none" class="toast-show" onclick="toastShow(event,this)">액티비티 • 모바일 티켓-->
-<!--										보러가기</a>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</li>-->
-<!--						<li>-->
-<!--							<input id="reasonRdo1" type="radio" name="radios" value="HAVE_NO_LIKED_HOTEL">-->
-<!--							<label for="reasonRdo1">예약하고 싶은 숙소가 없어요</label>-->
-<!--							<div class="reason-innder-box reason-innder-box1">-->
-<!--								<textarea class="inner-textarea" id="reasonTextarea1" name="innerTextarea"-->
-<!--									maxlength="80"-->
-<!--									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>-->
-<!--								&lt;!&ndash; 예약하고 싶은 숙소가 없어요 &ndash;&gt;-->
-<!--								<div class="inner">-->
-<!--									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>-->
-<!--									<p>전국 2만 여개의 숙소와 모바일 티켓을 최저가로 예약할 수 있어요.</p>-->
-<!--									<p>원하는 여행지나 상품을 다시한번 찾아보세요!</p>-->
-<!--									<a href="../../../../../../../../../s/lyju7/OneDrive/바탕%20화면">검색하기</a>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</li>-->
-<!--						<li>-->
-<!--							<input id="reasonRdo2" type="radio" name="radios" value="DIFFICULT_TO_USE">-->
-<!--							<label for="reasonRdo2">예약, 취소, 혜택받기 등 사용이 어려워요</label>-->
-<!--							<div class="reason-innder-box reason-innder-box2">-->
-<!--								<textarea class="inner-textarea" id="reasonTextarea2" name="innerTextarea"-->
-<!--									maxlength="80"-->
-<!--									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>-->
-<!--								&lt;!&ndash; 예약, 취소, 혜택받기 등 사용이 어려워요 &ndash;&gt;-->
-<!--								<div class="inner">-->
-<!--									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>-->
-<!--									<p>예약, 취소, 사용이 어려우신가요?</p>-->
-<!--									<p>회원님들이 궁금해 하시는 내용을 위주로 도움말과 혜택꿀팁을 정리해 보았는데 이용해보시는건 어떠세요?</p>-->
-<!--									<a href="../more/faq">자주 묻는 질문 보러가기</a><br />-->
-<!--									<a href="#none" onclick="toastShow(event, this)">혜택꿀팁 보러가기</a>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</li>-->
-<!--						<li>-->
-<!--							<input id="reasonRdo3" type="radio" name="radios" value="POINT_COUPON_TOO_LITTLE">-->
-<!--							<label for="reasonRdo3">혜택(포인트)이 너무 적어요</label>-->
-<!--							<div class="reason-innder-box reason-innder-box3">-->
-<!--								<textarea class="inner-textarea" id="reasonTextarea3" name="innerTextarea"-->
-<!--									maxlength="80"-->
-<!--									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>-->
-<!--								&lt;!&ndash; 혜택 (쿠폰, 포인트)이 적어요 &ndash;&gt;-->
-<!--								<div class="inner">-->
-<!--									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>-->
-<!--									<p>혹시 놓치고 있던 이벤트가 있지는 않을까요?</p>-->
-<!--									<p>다양한 이벤트를 둘러보고 혜택을 받아보시는건 어떠세요?</p>-->
-<!--									<a href="../more/event">이벤트 보러가기</a>-->
-<!--									<p>여기어때가 준비한 다양한 혜택들, 알고 계셨나요?</p>-->
-<!--									<p>여기어때를 100% 활용하는 꿀팁을 구경해보시는건 어떠세요?</p>-->
-<!--									<a href="#none" onclick="toastShow(event, this)">혜택꿀팁 보러가기</a>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</li>-->
-<!--						<li>-->
-<!--							<input id="reasonRdo4" type="radio" name="radios" value="INFO_TO_DELETE">-->
-<!--							<label for="reasonRdo4">개인정보 보호를 위해 삭제할 정보가 있어요</label>-->
-<!--							<div class="reason-innder-box reason-innder-box4">-->
-<!--								<textarea class="inner-textarea" id="reasonTextarea4" name="innerTextarea"-->
-<!--									maxlength="80"-->
-<!--									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>-->
-<!--								&lt;!&ndash; 개인정보 보호를 위해 삭제할 정보가 있어요 &ndash;&gt;-->
-<!--								<div class="inner">-->
-<!--									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>-->
-<!--									<p>고객님의 사용내역은 ‘App > 더보기>사용내역 관리’ 에서 변경, 삭제할 수 있어요. </p>-->
-<!--									<p>회원탈퇴 없이 사용내역을 삭제해 보는 건 어떠세요?</p>-->
-<!--									<p>- 삭제 가능 내용 : 예약내역, 찜한상품, 1:1문의</p>-->
-<!--									<a href="#none" onclick="toastShow(event,this)">사용내역 관리</a>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</li>-->
-<!--						<li>-->
-<!--							<input id="reasonRdo5" type="radio" name="radios" value="EXISTING_ID">-->
-<!--							<label for="reasonRdo5">다른 계정이 있어요</label>-->
-<!--							<div class="reason-innder-box reason-innder-box5">-->
-<!--								<textarea class="inner-textarea" id="reasonTextarea5" name="innerTextarea"-->
-<!--									maxlength="80"-->
-<!--									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>-->
-<!--							</div>-->
-<!--						</li>-->
-<!--						<li>-->
-<!--							<input id="reasonRdo6" type="radio" name="radios" value="OTHER">-->
-<!--							<label for="reasonRdo6">기타</label>-->
-<!--							<div class="reason-innder-box reason-innder-box6">-->
-<!--								<textarea class="inner-textarea" id="reasonTextarea6" name="innerTextarea"-->
-<!--									maxlength="80"-->
-<!--									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>-->
-<!--							</div>-->
-<!--						</li>-->
-<!--					</ul>-->
-<!--					<div class="password-wrap">-->
-<!--						<label for="passwordUser">비밀번호 입력</label>-->
-<!--						<input id="passwordUser" type="password" name="pwWithdraw" placeholder="비밀번호를 입력하세요." />-->
-
-<!--						<div class="button-wrap"><button class="btn_submit disabled" onclick="userPasswordCheck(1)"-->
-<!--								id="passwordCheckBtn">다음 단계로</button></div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				&lt;!&ndash;// step2 &ndash;&gt;-->
-<!--				&lt;!&ndash; step3 &ndash;&gt;-->
-<!--				<div class="cont-step cont-step_03" id="contStep03">-->
-<!--					<input type="hidden" id="reason" name="reason" value="" />-->
-<!--					<input type="hidden" id="reasonMsg" name="reasonMsg" value="" />-->
-<!--					<input type="hidden" id="uno" name="uno" value="14996134" />-->
-
-<!--					<div class="cont-step_preface">-->
-<!--						<h1>이제 더 가시면..<span class="break-tag"><span class="point-text">혜택이 영영 사라져요</span></span></h1>-->
-<!--						<p>탈퇴하시면 지금껏 모으신 무료(무상) 포인트와<span class="break-tag">쿠폰들이 사라져 복구가 불가해요</span></p>-->
-<!--					</div>-->
-
-<!--					<ul class="retention-list destroyed">-->
-<!--						<li>-->
-<!--							<p>잔여 무료(무상)포인트 <em>0P</em></p>-->
-<!--							<a href="#">즉시 소멸</a>-->
-<!--						</li>-->
-<!--						<li>-->
-<!--							<p>잔여 쿠폰 <em>1</em></p>-->
-<!--							<a href="#">즉시 소멸</a>-->
-<!--						</li>-->
-<!--					</ul>-->
-<!--					<div class="guide-text">-->
-<!--						<ul>-->
-<!--							<li>무료(무상) 포인트는 숙박 및 모바일 티켓 구매시 사용 가능해요.</li>-->
-<!--							<li><em>등록된 리뷰는 자동으로 삭제되지 않아요.</em> 탈퇴 전 개별적으로 삭제해 주세요.</li>-->
-<!--							<li><em>계정 정보 및 찜 목록 등 서비스 이용정보는 복구가 불가</em>하며, 동일한 아이디로 24시간 이후 재가입이 가능해요.</li>-->
-<!--						</ul>-->
-<!--					</div>-->
-<!--					<div class="password-wrap">-->
-<!--						<p>-->
-<!--							<input type="checkbox" class="inp_chk_03" name="withdrawAgreeChk"-->
-<!--								id="withdrawAgreeCheck"><label for="withdrawAgreeCheck">위 주의사항을 모두 숙지했고, 탈퇴에-->
-<!--								동의합니다</label>-->
-<!--						</p>-->
-<!--						<div class="button-wrap">-->
-<!--							<button class="btn_submit disabled" id="agreeBtn" onclick="lastAgree(this)">진짜 안녕</button>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				&lt;!&ndash;// step3 &ndash;&gt;-->
-<!--				&lt;!&ndash; step4 로그아웃 이슈로 현재 미사용중(삭제 금지) &ndash;&gt;-->
-<!--				<div class="cont-step cont-step_04" id="contStep04">-->
-<!--					<div class="cont-step_preface">-->
-<!--						<h1>다음에 <span class="point-text">꼭 다시 만나요!</span> <span class="break-tag">더 나은 모습으로 기다릴게요</span>-->
-<!--						</h1>-->
-<!--					</div>-->
-<!--					<div class="bg-img">-->
-<!--						<img src="/img/images/web_v3/img-withdraw.png" alt="see you again next time" />-->
-<!--					</div>-->
-<!--					<div class="password-wrap">-->
-<!--						<div class="button-wrap">-->
-<!--							<button class="btn_submit home-btn" onclick="layer_w_close()">홈으로 돌아가기</button>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				&lt;!&ndash;// step4 &ndash;&gt;-->
-<!--			</section>-->
-<!--			&lt;!&ndash; <div class="test-button">-->
-<!--		<p>view test page</p>-->
-<!--		<button onclick="moveStep(0)"> step 1</button>-->
-<!--		<button onclick="moveStep(1)"> step 2</button>-->
-<!--		<button onclick="moveStep(2)"> step 3</button>-->
-<!--		<button onclick="moveStep(3)"> step 4</button>-->
-<!--	</div> &ndash;&gt;-->
-<!--		</div>-->
-<!--		&lt;!&ndash;// 회원탈퇴 .new_pop_withdraw &ndash;&gt;-->
-<!--		<script>-->
-<!--			$(document).ready(function () {-->
-<!--				var uTypeNum = 1;-->
-<!--				pwRdoValid(uTypeNum);-->
-<!--				agreeChk();-->
-<!--				// 회원탈퇴 팝업 스크롤-->
-<!--				$('.cont_section').scroll(function () {-->
-<!--					var cst = $('.cont_section').scrollTop();-->
-<!--					if (cst != 0) {-->
-<!--						$('.new_pop_withdraw .section_fix_title').addClass('scrolling');-->
-<!--					} else {-->
-<!--						$('.new_pop_withdraw .section_fix_title').removeClass('scrolling');-->
-<!--					}-->
-<!--				});-->
-<!--			})-->
-<!--		</script>-->
-
-
-<!--        &lt;!&ndash; 푸터 &ndash;&gt;-->
-<!--        <div th:replace="userthy/user-footer :: user-footer"></div>-->
-<!--        &lt;!&ndash;푸터 끝 &ndash;&gt;-->
-
-
-<!--	</div>-->
-
-<!--	&lt;!&ndash; 상단으로 &ndash;&gt;-->
-<!--	<button class="btn_go_top" onclick="moveTop();">상단으로</button>-->
-
-<!--	&lt;!&ndash; //Wrap &ndash;&gt;-->
-
-<!--	&lt;!&ndash; Script &ndash;&gt;-->
-<!--	&lt;!&ndash; Library &ndash;&gt;-->
-<!--    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>-->
-<!--    <script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>-->
-<!--    <script type="text/javascript" src="/js/library/iscroll.js"></script>-->
-
-<!--    &lt;!&ndash; Service &ndash;&gt;-->
-<!--    <script type="text/javascript" src="/js/service/common.js"></script>-->
-<!--    <script type="text/javascript" src="/js/service/geolocation.js"></script>-->
-
-<!--    &lt;!&ndash; Module &ndash;&gt;-->
-<!--    <script type="text/javascript" src="/js/modules/dialogPopup.js"></script>-->
-
-<!--	&lt;!&ndash; Page Script &ndash;&gt;-->
-<!--	<script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>-->
-<!--	<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>-->
-<!--	<script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>-->
-<!--	<script type="text/javascript" src="/js/service/validate.js"></script>-->
-<!--	<script type="text/javascript" src="/js/service/my.js"></script>-->
-<!--	<script type="text/javascript" src="/js/service/mypage.js"></script>-->
-<!--	<script type="text/javascript"-->
-<!--		src="/js/service/phone-verification.js"></script>-->
-<!--		<script src="/js/star3.js"></script>-->
-
-<!--	&lt;!&ndash; Body Spinner &ndash;&gt;-->
-<!--	<div class="spinner show"><span></span></div>-->
-
-<!--</body>-->
-
-<!--</html>-->
-
 <!doctype html>
 <html lang="ko">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport"
-		  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Content-Type">
 	<meta name="csrf-name" content="yeogi_token">
@@ -719,819 +25,770 @@
 		var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
 		var _FACEBOOK_APP_ID = '607467975974643';
 	</script>
-	<script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+	<script>
+		(function (a, b, c) {
+			if (c in b && b[c]) {
+				var d, e = a.location,
+					f = /^(a|html)$/i;
+				a.addEventListener("click", function (a) {
+					d = a.target;
+					while (!f.test(d.nodeName)) d = d.parentNode;
+					"href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e
+						.href = d.href)
+				}, !1)
+			}
+		})(document, window.navigator, "standalone")
+	</script>
 </head>
 
 <body>
 
-<!-- Wrap -->
-<div class="wrap">
+	<!-- Wrap -->
+	<div class="wrap">
 
-	<!-- 헤더 -->
-	<div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
-	<!--헤더 끝 -->
+		<!-- 헤더 -->
+		<div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
+		<!--헤더 끝 -->
 
 
-	<!--	a태그 클릭시 넘어와야 하는 값-->
-	<!--안연주 room ID값 넘어옴-->
-	<input type="hidden" id="tbRoomId" th:value="${tbRoomId}">
-	<!--	hostid-->
-	<input type="hidden" id="id" th:value="${id}">
-	<input type="hidden" class="memid" id="memid" >
+		<!--	a태그 클릭시 넘어와야 하는 값-->
+		<!--room ID값 넘어옴-->
+		<input type="hidden" id="tbRoomId" th:value="${tbRoomId}">
+		<!--	hostid-->
+		<input type="hidden" id="id" th:value="${id}">
+		<input type="hidden" class="memid" id="memid">
+		<!-- 리뷰 닉네임 용-->
+		<input type="hidden" class="reNkname" id="reNkname">
 
-	<!-- Bg Dimm -->
-	<div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-	<div class="bg_dimm_prevent">&nbsp;</div>
 
-	<!-- 추천검색어 -->
-	<div class="recommend_srch">
-		<div class="scroll_srch">
-			<div class="scroller">
-				<div class="default" style="display:block">
-					<strong>추천 검색어</strong>
-					<ul></ul>
-				</div>
-				<!-- 연관검색어 -->
-				<div class="chain">
-					<ul></ul>
-				</div>
-			</div>
-		</div>
-	</div>
+		<!-- Bg Dimm -->
+		<div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+		<div class="bg_dimm_prevent">&nbsp;</div>
 
-	<!-- Mobile Menu -->
-	<div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-	<div class="menu_wrap">
-
-		<div class="menu">
-			<div class="top">
-				<!-- 회원 -->
-				<div class="member">
-					<div class="mem">
-                            <span class="pic"
-								  style="background:url('/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
-						<p class="info">사과색깔</p>
-					</div>
-					<div class="bot">
-					</div>
-				</div>
-			</div>
-			<!-- Iscroll -->
-			<div class="scroll_nav">
+		<!-- 추천검색어 -->
+		<div class="recommend_srch">
+			<div class="scroll_srch">
 				<div class="scroller">
-					<ul>
-						<li><a href="/index.html">홈</a></li>
-						<li class="depth_2">
-							<button type="button" class="has_ul"><span>숙소유형</span></button>
-							<ul>
-								<li><a href="/userindex/1">모텔</a></li>
-								<li><a href="/userindex/2">호텔/리조트</a></li>
-								<li><a href="/userindex/3">펜션</a></li>
-								<li><a href="/userindex/4">리조트</a></li>
-								<li><a href="/userindex/5">캠핑·글램핑</a></li>
-								<li><a href="/userindex/6">게스트하우스</a></li>
-								<li><a href="/userindex/7">한옥 </a></li>
-							</ul>
-						</li>
-						<li><a href="/userindex/8">내주변</a></li>
-					</ul>
-					<ul>
-						<li><a href="/userindex/reservations">예약 내역</a></li>
-						<li><a href="/userindex/mypage">내 정보 관리</a></li>
-					</ul>
-					<ul>
-						<li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
-							<ul>
-								<li><a href="/userindex/notice">공지사항</a></li>
-								<li><a href="/userindex/event">이벤트</a></li>
-								<li><a href="/userindex/project">혁신 프로젝트</a></li>
-								<li><a href="/userindex/faq">고객문의</a></li>
-								<li><a href="/userindex/terms">약관 및 정책</a></li>
-							</ul>
-						</li>
-					</ul>
-					<div class="center">
-						<p>여기어때 고객행복센터</p>
-						<p><a href="tel:1670-6250">1670-6250</a></p>
-						<p>오전 9시 - 새벽 3시</p>
+					<div class="default" style="display:block">
+						<strong>추천 검색어</strong>
+						<ul></ul>
+					</div>
+					<!-- 연관검색어 -->
+					<div class="chain">
+						<ul></ul>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- //Mobile Menu -->
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="/css/my.css" />
-	<link rel="stylesheet" href="/css/withdraw.css" />
-	<link rel="stylesheet" href="/css/font.css" />
-	<!-- Sub Top -->
-	<div class="sub_top_wrap">
-		<div class="sub_top bg_kong_2">
-			<h2>내정보</h2>
+		<!-- Mobile Menu -->
+		<div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+		<div class="menu_wrap">
+
+			<div class="menu">
+				<div class="top">
+					<!-- 회원 -->
+					<div class="member">
+						<div class="mem">
+							<span class="pic"
+								style="background:url('/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
+							<p class="info">사과색깔</p>
+						</div>
+						<div class="bot">
+						</div>
+					</div>
+				</div>
+				<!-- Iscroll -->
+				<div class="scroll_nav">
+					<div class="scroller">
+						<ul>
+							<li><a href="/index.html">홈</a></li>
+							<li class="depth_2">
+								<button type="button" class="has_ul"><span>숙소유형</span></button>
+								<ul>
+									<li><a href="/userindex/1">모텔</a></li>
+									<li><a href="/userindex/2">호텔/리조트</a></li>
+									<li><a href="/userindex/3">펜션</a></li>
+									<li><a href="/userindex/4">리조트</a></li>
+									<li><a href="/userindex/5">캠핑·글램핑</a></li>
+									<li><a href="/userindex/6">게스트하우스</a></li>
+									<li><a href="/userindex/7">한옥 </a></li>
+								</ul>
+							</li>
+							<li><a href="/userindex/8">내주변</a></li>
+						</ul>
+						<ul>
+							<li><a href="/userindex/reservations">예약 내역</a></li>
+							<li><a href="/userindex/mypage">내 정보 관리</a></li>
+						</ul>
+						<ul>
+							<li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+								<ul>
+									<li><a href="/userindex/notice">공지사항</a></li>
+									<li><a href="/userindex/event">이벤트</a></li>
+									<li><a href="/userindex/project">혁신 프로젝트</a></li>
+									<li><a href="/userindex/faq">고객문의</a></li>
+									<li><a href="/userindex/terms">약관 및 정책</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="center">
+							<p>여기어때 고객행복센터</p>
+							<p><a href="tel:1670-6250">1670-6250</a></p>
+							<p>오전 9시 - 새벽 3시</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<!-- //Sub Top -->
-	<!-- Content  -->
-	<div id="content" class="sub_wrap my_wrap">
-		<p class="sub_title">내 정보 관리</p>
+		<!-- //Mobile Menu -->
 
-		<!-- Nav -->
-		<nav>
-			<ul>
-				<li><a class="" href="/userindex/mypage">내 정보 관리</a></li>
-				<li><a class="active" href="/reservation/reservations.html">예약 내역</a></li>
-				<li><a class="" href="/userindex/zzim">찜 목록</a></li>
-			</ul>
-		</nav>
-
-
-		<!-- 여기부터 복사@@ -->
-		<!-- 안연주 리뷰작성 -->
-		<link rel="stylesheet" href="/css/star2.css">
-		<!-- <link rel="stylesheet" href="/ahn_cssjs/css/product.css"> -->
-		<script src="/js/ahn_re.js"></script>
-		<style>
-			.ahn_review_content {
-
-				padding-right: 10px;
-				padding-left: 10px;
-				display: block;
-				/* background: rgb(207, 172, 172); */
-				line-height: normal;
-
-			}
-
-			.ahn_re_tab {
-				margin-bottom: 1em;
-				/* border-bottom: 1px solid rgba(0,0,0,0.2); */
-				font-size: 32px;
-				font-weight: bold;
-				color: rgb(230, 28, 81);
-				clear: both;
-			}
-
-			.ahn_re_tab span {
-				border-bottom: 1px solid rgb(230, 28, 81);
-			}
-
-			.ahn_reviewinfo {
-
-
-				font-size: 20px;
-				font-weight: normal;
-				color: rgba(0, 0, 0, 0.56);
-			}
-
-			.ahn_tab_t {
-				margin-top: 20px;
-				margin-bottom: 20px;
-				border-bottom: 1px solid rgba(75, 75, 75, 0.2);
-				padding-bottom: 10px;
-				font-weight: 300;
-				color: rgba(0, 0, 0, 0.56);
-				font-size: 26px;
-			}
-
-
-			.ahn_re_title_p {
-				position: relative;
-				border: 1px solid rgba(0, 0, 0, 0.08);
-				height: 48px;
-				padding: 8px 14px 8px 0px;
-				border-radius: 4px;
-				background-color: white;
-			}
-
-			.ahn_title_input {
-
-				border: none;
-				background: none;
-				width: 100%;
-				height: 20px;
-				margin-top: 5px;
-				font-size: 18px;
-				color: rgba(0, 0, 0, 0.56);
-
-			}
-
-			.ahn_re_content_ta_p {
-				text-indent: 0px;
-			}
-
-			.ahn_re_content_ta {
-				position: relative;
-				border: 1px solid rgba(0, 0, 0, 0.08);
-				height: 400px;
-				width: 100%;
-				max-width: 100%;
-				/* padding: 8px 14px 8px 16px; */
-				border-radius: 4px;
-				color: rgba(0, 0, 0, 0.56);
-				background-color: white;
-				padding: 0px;
-
-				text-indent: 10px;
-				/* padding: 14px 0px 14px 16px; */
-				font-size: 18px;
-				resize: none;
-				overflow-x: hidden
-			}
-
-			.ahn_re_indent {
-				color: rgba(0, 0, 0, 4);
-				text-indent: 10px;
-				margin-bottom: 50px;
-			}
-
-			.ahn_re_flex {
-				display: flex;
-				justify-content: center;
-
-			}
-
-			.ahn_re_btn1 {
-				display: flex;
-				justify-content: center;
-			}
-
-			.ahn_re_btn2 {
-
-				width: 144px;
-				height: 48px;
-				display: inline-block;
-				border: none;
-				border-radius: 4px;
-				font-size: 16px;
-				color: #fff;
-				text-align: center;
-				box-sizing: border-box;
-				vertical-align: top;
-				background: linear-gradient(to bottom, #ff0055 0%, #e62243 100%);
-			}
-		</style>
-
-
-
-		<!--
-
-        re_rmidx number(10), --객실idx
-        re_memidx number(10), --구매회원idx
-
-        -->
-		<!-- tb_room 기준 -->
-		<form  method="post" enctype="multipart/form-data">
-			<div class="align_rt">
-				<input type="hidden" name="page" value="1">
-				<div>
-					<div class="ahn_review_content">
-						<div class="ahn_re_tab"><span>리뷰 작성 </span></div>
-						<div class="ahn_reviewinfo">
-							<!-- 숙박업소 이름 -->
-							<div class="ahn_rm_name">
-								<div class="ahn_tab_t">숙박업소</div>
-								<div class="ahn_re_indent">
-									<div class="ahn_di_span myCorporate" id="myCorporate">역삼 컬리넌</div>
-									<input type="hidden" class="myCorporate2">
-								</div>
-							</div>
-
-
-							<!-- 별점 -->
-							<div class="ahn_score_star ahn_re_grade">
-								<div class="ahn_tab_t">별점</div>
-								<div class="ahn_re_indent">
-                                    <span class="ahn_di_span">
-                                        <div class="ahn_score_star2 ahn_re_flex">
-                                            <div class="star-box">
-
-												<span class="star"></span>
-
-												<span class="star "
-												></span>
-
-												<span class="star"
-												></span>
-
-												<span class="star"
-												></span>
-
-												<span class="star"
-												></span>
-												<!-- 별점을 클릭시 value값이 12345 로 저장됨 -->
-										<input type="hidden" name="star_score" class="star_score">
-											  </div>
-										</div>
-										<!-- <div class="score_star star_40 "></div> -->
-                                    </span>
-								</div>
-								<div class="ahn_re_indent ahn_re_flex">클릭 하여 점수주기</div>
-							</div>
-						</div>
-						<!-- 제목 -->
-						<div class="ahn_re_title">
-							<div class="ahn_tab_t">리뷰 제목</div>
-
-							<div class="ahn_re_indent">
-                                <span class="ahn_di_span">
-                                    <p class="ahn_re_title_p"><input class="ahn_title_input reTitle" type="text" maxlength="35"
-																	 name="reTitle" value="" placeholder="제목은 최대35자입니다."></p>
-                                </span>
-							</div>
-
-						</div>
-						<!-- 후기작성란 -->
-						<div class="ahn_re_content">
-							<div class="ahn_tab_t">후기작성란</div>
-
-							<div class="ahn_re_indent">
-                                <span class="ahn_di_span">
-                                    <p class="ahn_re_content_ta_p">
-                                        <textarea name="reContent" class=" reContent ahn_re_content_ta" id=""
-												  placeholder="개인 정보 보호를 위해 고객님의 개인 정보를 입력하지 마세요."></textarea>
-                                    </p>
-                                </span>
-							</div>
-
-						</div>
-						<!-- 이미지 추가 -->
-						<div class="ahn_re_img">
-							<div class="ahn_tab_t">이미지 추가</div>
-							<!--dropfile-->
-							<div class="ahn_re_indent">
-                                <span class="ahn_di_span">
-                                    <input type="file" id="photo" class="reImg file" accept="image/*"
-									onchange="setThumbnail(event);"
-									multiple="multiple"
-									name="photo" />
-                                    <div id="image_container"></div>
-                                </span>
-							</div>
-						<!--dropfile끝-->
-
-						</div>
-						<!-- 등록일 -->
-						<!-- <div class="ahn_re_regdate">
-                                등록일
-                            </div> -->
-						<!--//등록일  -->
-
-						<div class="ahn_re_indent ahn_re_btn1">
-                            <span class="ahn_di_span">
-                                <button type="button" class="ahn_re_btn2" onclick="sendit()">
-									등록하기</button>
-                            </span>
-						</div>
-
-					</div>
-				</div>
+		<!-- CSS -->
+		<link rel="stylesheet" href="/css/my.css" />
+		<link rel="stylesheet" href="/css/withdraw.css" />
+		<link rel="stylesheet" href="/css/font.css" />
+		<!-- Sub Top -->
+		<div class="sub_top_wrap">
+			<div class="sub_top bg_kong_2">
+				<h2>내정보</h2>
 			</div>
-			<!-- ↓푸터꺼 -->
+		</div>
+		<!-- //Sub Top -->
+		<!-- Content  -->
+		<div id="content" class="sub_wrap my_wrap">
+			<p class="sub_title">내 정보 관리</p>
 
-		</form>
-		<!-- //안연주 리뷰작성 끝 -->
-		<!-- 여기부터 복사@@ 끝-->
-	</div>
-	<!-- //Content  -->
-
-	<!-- 팝업 : 회원탈퇴 pop_layer_w('pop_withdraw') -->
-	<div class="layer_w pop_withdraw">
-		<section>
-			<div class="fix_title">
-				<strong>회원탈퇴</strong>
-				<button onclick="layer_w_close();">닫기</button>
-			</div>
-			<div class="cont">
-				<b>주의사항</b>
-				<strong>회원탈퇴 전 반드시 확인해주세요.</strong>
-				<ul class="dot_txt">
-					<li>회원탈퇴 시 계정 정보는 복구가 불가하며 1일 이후 재가입 가능합니다.</li>
-					<li>현재 보유 중인 포인트, 마일리지는 모두 소멸되며 복구할 수 없습니다.</li>
-					<!-- <li>탈퇴 후, 기존 가입 휴대기기로 재가입 시 첫 혜택을 받을 수 없습니다. (신규 회원 쿠폰, 첫 리뷰 작성 1000포인트 등)</li> -->
+			<!-- Nav -->
+			<nav>
+				<ul>
+					<li><a class="" href="/userindex/mypage">내 정보 관리</a></li>
+					<li><a class="active" href="/userindex/reservations">예약 내역</a></li>
+					<li><a class="" href="/userindex/zzim">찜 목록</a></li>
 				</ul>
-				<div class="fix_wrap">
-					<p><input type="checkbox" class="inp_chk_03" id="residue_night">
-						<label for="residue_night">주의사항 모두 동의합니다.</label>
-					</p>
-					<button class="btn_submit disabled" onclick="userout();">회원탈퇴</button>
-				</div>
-			</div>
-		</section>
-	</div>
+			</nav>
 
-	<!-- 회원탈퇴 .new_pop_withdraw -->
-	<div class="layer_w new_pop_withdraw">
-		<section class="section_fix_title">
-			<div class="fix_title">
-				<strong>회원탈퇴</strong>
-				<button onclick="layer_w_close();">닫기</button>
-			</div>
-		</section>
-		<section class="cont cont_section">
-			<!-- step1 -->
-			<div class="cont-step cont-step_01" id="contStep01">
-				<div class="cont-step_preface">
-					<h1>떠나시기 전 <span class="point-text">잠깐!</span> <span class="break-tag">해결해야할 게 있어요</span></h1>
-					<p>숙박이나 티켓 이용을 완료해 주시거나<span class="break-tag">잔액을 모두 환불하셔야 탈퇴가 가능해요</span></p>
-				</div>
-				<!-- 보유목록 :: 내역 없으면 아이템 미노출 -->
-				<ul class="retention-list">
-				</ul>
-				<div class="guide-text">
-					<ul>
-						<li>현금성(유상)포인트는 여기어때에서 현금처럼 사용하실 수 있는 결제수단으로 숙박 및 모바일 티켓 구매 시 사용 가능해요.</li>
-						<li><em>현금성(유상)포인트 보유 시 ‘환불 신청 접수하기’</em> 버튼을 통해 환불 신청 부탁드 리며, <em>환불받을 은행, 계좌번호, 예금주 정보가
-							정확히 등록된 경우에만 처리가 가능해요.</em></li>
-						<li class="point-text">환불 처리를 위한 모든 정보가 확인되면 현금성(유상)포인트가 먼저 회수되며, 계좌 환불까지는 <em>영업일 기준 7일~10일
-							소요돼요.</em></li>
-						<li><em>환불 신청 및 답변 내역은 ‘더보기 &gt; 고객문의 &gt; 1:1문의’에서 확인가능</em>해요.</li>
-						<li>즉시 회원 탈퇴를 원하시면 고객행복센터 <a href="tel:+821670-6250">1670-6250</a>로 문의 부탁드려요.</li>
-					</ul>
-				</div>
-			</div>
-			<!--// step1 -->
-			<!-- step2 -->
-			<div class="cont-step cont-step_02" id="contStep02">
-				<div class="cont-step_preface">
-					<h1>왜 떠나시는지 <span class="break-tag"><span class="point-text">이유</span>가 있을까요?</span></h1>
-				</div>
-				<!-- 탈퇴이유 -->
-				<ul class="reason-list">
-					<li>
-						<input id="reasonRdo0" type="radio" name="radios" value="UN_USE_FREQUENTLY">
-						<label for="reasonRdo0">사용을 잘 안하게 돼요</label>
-						<div class="reason-innder-box reason-innder-box0">
-								<textarea class="inner-textarea" id="reasonTextarea0" name="innerTextarea"
-										  maxlength="80"
-										  placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-							<!-- 사용을 잘 안하게 돼요 -->
-							<div class="inner">
-								<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-								<p>여기어때는 숙박 상품 외에도, 숙소 주변 맛집 정보와 모바일티켓 구매가 가능해요!</p>
-								<p>볼거리와 놀거리가 풍성해진 여기어때를 더 이용해보시겠어요?</p>
-								<a href="#none" class="toast-show" onclick="toastShow(event,this)">맛집 보러가기</a><br />
-								<a href="#none" class="toast-show" onclick="toastShow(event,this)">액티비티 • 모바일 티켓
-									보러가기</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<input id="reasonRdo1" type="radio" name="radios" value="HAVE_NO_LIKED_HOTEL">
-						<label for="reasonRdo1">예약하고 싶은 숙소가 없어요</label>
-						<div class="reason-innder-box reason-innder-box1">
-								<textarea class="inner-textarea" id="reasonTextarea1" name="innerTextarea"
-										  maxlength="80"
-										  placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-							<!-- 예약하고 싶은 숙소가 없어요 -->
-							<div class="inner">
-								<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-								<p>전국 2만 여개의 숙소와 모바일 티켓을 최저가로 예약할 수 있어요.</p>
-								<p>원하는 여행지나 상품을 다시한번 찾아보세요!</p>
-								<a href="../../../../../../../../../s/lyju7/OneDrive/바탕%20화면">검색하기</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<input id="reasonRdo2" type="radio" name="radios" value="DIFFICULT_TO_USE">
-						<label for="reasonRdo2">예약, 취소, 혜택받기 등 사용이 어려워요</label>
-						<div class="reason-innder-box reason-innder-box2">
-								<textarea class="inner-textarea" id="reasonTextarea2" name="innerTextarea"
-										  maxlength="80"
-										  placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-							<!-- 예약, 취소, 혜택받기 등 사용이 어려워요 -->
-							<div class="inner">
-								<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-								<p>예약, 취소, 사용이 어려우신가요?</p>
-								<p>회원님들이 궁금해 하시는 내용을 위주로 도움말과 혜택꿀팁을 정리해 보았는데 이용해보시는건 어떠세요?</p>
-								<a href="/more/faq">자주 묻는 질문 보러가기</a><br />
-								<a href="#none" onclick="toastShow(event, this)">혜택꿀팁 보러가기</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<input id="reasonRdo3" type="radio" name="radios" value="POINT_COUPON_TOO_LITTLE">
-						<label for="reasonRdo3">혜택(포인트)이 너무 적어요</label>
-						<div class="reason-innder-box reason-innder-box3">
-								<textarea class="inner-textarea" id="reasonTextarea3" name="innerTextarea"
-										  maxlength="80"
-										  placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-							<!-- 혜택 (쿠폰, 포인트)이 적어요 -->
-							<div class="inner">
-								<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-								<p>혹시 놓치고 있던 이벤트가 있지는 않을까요?</p>
-								<p>다양한 이벤트를 둘러보고 혜택을 받아보시는건 어떠세요?</p>
-								<a href="/more/event">이벤트 보러가기</a>
-								<p>여기어때가 준비한 다양한 혜택들, 알고 계셨나요?</p>
-								<p>여기어때를 100% 활용하는 꿀팁을 구경해보시는건 어떠세요?</p>
-								<a href="#none" onclick="toastShow(event, this)">혜택꿀팁 보러가기</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<input id="reasonRdo4" type="radio" name="radios" value="INFO_TO_DELETE">
-						<label for="reasonRdo4">개인정보 보호를 위해 삭제할 정보가 있어요</label>
-						<div class="reason-innder-box reason-innder-box4">
-								<textarea class="inner-textarea" id="reasonTextarea4" name="innerTextarea"
-										  maxlength="80"
-										  placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-							<!-- 개인정보 보호를 위해 삭제할 정보가 있어요 -->
-							<div class="inner">
-								<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-								<p>고객님의 사용내역은 ‘App > 더보기>사용내역 관리’ 에서 변경, 삭제할 수 있어요. </p>
-								<p>회원탈퇴 없이 사용내역을 삭제해 보는 건 어떠세요?</p>
-								<p>- 삭제 가능 내용 : 예약내역, 찜한상품, 1:1문의</p>
-								<a href="#none" onclick="toastShow(event,this)">사용내역 관리</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<input id="reasonRdo5" type="radio" name="radios" value="EXISTING_ID">
-						<label for="reasonRdo5">다른 계정이 있어요</label>
-						<div class="reason-innder-box reason-innder-box5">
-								<textarea class="inner-textarea" id="reasonTextarea5" name="innerTextarea"
-										  maxlength="80"
-										  placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-						</div>
-					</li>
-					<li>
-						<input id="reasonRdo6" type="radio" name="radios" value="OTHER">
-						<label for="reasonRdo6">기타</label>
-						<div class="reason-innder-box reason-innder-box6">
-								<textarea class="inner-textarea" id="reasonTextarea6" name="innerTextarea"
-										  maxlength="80"
-										  placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-						</div>
-					</li>
-				</ul>
-				<div class="password-wrap">
-					<label for="passwordUser">비밀번호 입력</label>
-					<input id="passwordUser" type="password" name="pwWithdraw" placeholder="비밀번호를 입력하세요." />
 
-					<div class="button-wrap"><button class="btn_submit disabled" onclick="userPasswordCheck(1)"
-													 id="passwordCheckBtn">다음 단계로</button></div>
-				</div>
-			</div>
-			<!--// step2 -->
-			<!-- step3 -->
-			<div class="cont-step cont-step_03" id="contStep03">
-				<input type="hidden" id="reason" name="reason" value="" />
-				<input type="hidden" id="reasonMsg" name="reasonMsg" value="" />
-				<input type="hidden" id="uno" name="uno" value="14996134" />
+			<!-- 리뷰작성 -->
+			<link rel="stylesheet" href="/css/star2.css">
 
-				<div class="cont-step_preface">
-					<h1>이제 더 가시면..<span class="break-tag"><span class="point-text">혜택이 영영 사라져요</span></span></h1>
-					<p>탈퇴하시면 지금껏 모으신 무료(무상) 포인트와<span class="break-tag">쿠폰들이 사라져 복구가 불가해요</span></p>
-				</div>
+			<style>
+				.ahn_review_content {
 
-				<ul class="retention-list destroyed">
-					<li>
-						<p>잔여 무료(무상)포인트 <em>0P</em></p>
-						<a href="#">즉시 소멸</a>
-					</li>
-					<li>
-						<p>잔여 쿠폰 <em>1</em></p>
-						<a href="#">즉시 소멸</a>
-					</li>
-				</ul>
-				<div class="guide-text">
-					<ul>
-						<li>무료(무상) 포인트는 숙박 및 모바일 티켓 구매시 사용 가능해요.</li>
-						<li><em>등록된 리뷰는 자동으로 삭제되지 않아요.</em> 탈퇴 전 개별적으로 삭제해 주세요.</li>
-						<li><em>계정 정보 및 찜 목록 등 서비스 이용정보는 복구가 불가</em>하며, 동일한 아이디로 24시간 이후 재가입이 가능해요.</li>
-					</ul>
-				</div>
-				<div class="password-wrap">
-					<p>
-						<input type="checkbox" class="inp_chk_03" name="withdrawAgreeChk"
-							   id="withdrawAgreeCheck"><label for="withdrawAgreeCheck">위 주의사항을 모두 숙지했고, 탈퇴에
-						동의합니다</label>
-					</p>
-					<div class="button-wrap">
-						<button class="btn_submit disabled" id="agreeBtn" onclick="lastAgree(this)">진짜 안녕</button>
-					</div>
-				</div>
-			</div>
-			<!--// step3 -->
-			<!-- step4 로그아웃 이슈로 현재 미사용중(삭제 금지) -->
-			<div class="cont-step cont-step_04" id="contStep04">
-				<div class="cont-step_preface">
-					<h1>다음에 <span class="point-text">꼭 다시 만나요!</span> <span class="break-tag">더 나은 모습으로 기다릴게요</span>
-					</h1>
-				</div>
-				<div class="bg-img">
-					<img src="/img/images/web_v3/img-withdraw.png" alt="see you again next time" />
-				</div>
-				<div class="password-wrap">
-					<div class="button-wrap">
-						<button class="btn_submit home-btn" onclick="layer_w_close()">홈으로 돌아가기</button>
-					</div>
-				</div>
-			</div>
-			<!--// step4 -->
-		</section>
-		<!-- <div class="test-button">
-    <p>view test page</p>
-    <button onclick="moveStep(0)"> step 1</button>
-    <button onclick="moveStep(1)"> step 2</button>
-    <button onclick="moveStep(2)"> step 3</button>
-    <button onclick="moveStep(3)"> step 4</button>
-    </div> -->
-	</div>
-	<!--// 회원탈퇴 .new_pop_withdraw -->
+					padding-right: 10px;
+					padding-left: 10px;
+					display: block;
+					line-height: normal;
 
-	<script>
-		$(document).ready(function () {
-			var uTypeNum = 1;
-			pwRdoValid(uTypeNum);
-			agreeChk();
-			// 회원탈퇴 팝업 스크롤
-			$('.cont_section').scroll(function () {
-				var cst = $('.cont_section').scrollTop();
-				if (cst != 0) {
-					$('.new_pop_withdraw .section_fix_title').addClass('scrolling');
-				} else {
-					$('.new_pop_withdraw .section_fix_title').removeClass('scrolling');
 				}
-			});
-		})
-	</script>
+
+				.ahn_re_tab {
+					margin-bottom: 1em;
+					font-size: 32px;
+					font-weight: bold;
+					color: rgb(230, 28, 81);
+					clear: both;
+				}
+
+				.ahn_re_tab span {
+					border-bottom: 1px solid rgb(230, 28, 81);
+				}
+
+				.ahn_reviewinfo {
 
 
-	<!-- 푸터 -->
-	<div th:replace="userthy/user-footer :: user-footer"></div>
-	<!--푸터 끝 -->
+					font-size: 20px;
+					font-weight: normal;
+					color: rgba(0, 0, 0, 0.56);
+				}
+
+				.ahn_tab_t {
+					margin-top: 20px;
+					margin-bottom: 20px;
+					border-bottom: 1px solid rgba(75, 75, 75, 0.2);
+					padding-bottom: 10px;
+					font-weight: 300;
+					color: rgba(0, 0, 0, 0.56);
+					font-size: 26px;
+				}
 
 
-</div>
+				.ahn_re_title_p {
+					position: relative;
+					border: 1px solid rgba(0, 0, 0, 0.08);
+					height: 48px;
+					padding: 8px 14px 8px 0px;
+					border-radius: 4px;
+					background-color: white;
+				}
 
-<!-- 상단으로 -->
-<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+				.ahn_title_input {
 
-<!-- //Wrap -->
+					border: none;
+					background: none;
+					width: 100%;
+					height: 20px;
+					margin-top: 5px;
+					font-size: 18px;
+					color: rgba(0, 0, 0, 0.56);
 
-<!-- Script -->
-<!-- Library -->
-<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
-<script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
-<script type="text/javascript" src="/js/library/iscroll.js"></script>
+				}
 
-<!-- Service -->
-<script type="text/javascript" src="/js/service/common.js"></script>
-<script type="text/javascript" src="/js/service/geolocation.js"></script>
+				.ahn_re_content_ta_p {
+					text-indent: 0px;
+				}
 
-<!-- Module -->
-<script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
+				.ahn_re_content_ta {
+					position: relative;
+					border: 1px solid rgba(0, 0, 0, 0.08);
+					height: 400px;
+					width: 100%;
+					max-width: 100%;
+					border-radius: 4px;
+					color: rgba(0, 0, 0, 0.56);
+					background-color: white;
+					padding: 0px;
 
-<!-- Page Script -->
-<script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
-<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
-<script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
-<script type="text/javascript" src="/js/service/validate.js"></script>
-<script type="text/javascript" src="/js/service/my.js"></script>
-<script type="text/javascript" src="/js/service/mypage.js"></script>
-<script type="text/javascript"
-		src="/js/service/phone-verification.js"></script>
-<script src="/js/star3.js"></script>
+					text-indent: 10px;
+					font-size: 18px;
+					resize: none;
+					overflow-x: hidden
+				}
 
-<!-- Body Spinner -->
-<div class="spinner show"><span></span></div>
+				.ahn_re_indent {
+					color: rgba(0, 0, 0, 4);
+					text-indent: 10px;
+					margin-bottom: 50px;
+				}
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-	var dropFile = function(event) {
-		event.preventDefault();
-	}
+				.ahn_re_flex {
+					display: flex;
+					justify-content: center;
+
+				}
+
+				.ahn_re_btn1 {
+					display: flex;
+					justify-content: center;
+				}
+
+				.ahn_re_btn2 {
+
+					width: 144px;
+					height: 48px;
+					display: inline-block;
+					border: none;
+					border-radius: 4px;
+					font-size: 16px;
+					color: #fff;
+					text-align: center;
+					box-sizing: border-box;
+					vertical-align: top;
+					background: linear-gradient(to bottom, #ff0055 0%, #e62243 100%);
+				}
+			</style>
+
+			<!-- tb_room 기준 -->
+			<form method="post" enctype="multipart/form-data">
+				<div class="align_rt">
+					<input type="hidden" name="page" value="1">
+					<div>
+						<div class="ahn_review_content">
+							<div class="ahn_re_tab"><span>리뷰 작성 </span></div>
+							<div class="ahn_reviewinfo">
+								<!-- 숙박업소 이름 -->
+								<div class="ahn_rm_name">
+									<div class="ahn_tab_t">숙박업소</div>
+									<div class="ahn_re_indent">
+										<div class="ahn_di_span myCorporate" id="myCorporate">역삼 컬리넌</div>
+										<input type="hidden" class="myCorporate2">
+									</div>
+								</div>
 
 
+								<!-- 별점 -->
+								<div class="ahn_score_star ahn_re_grade">
+									<div class="ahn_tab_t">별점</div>
+									<div class="ahn_re_indent">
+										<span class="ahn_di_span">
+											<div class="ahn_score_star2 ahn_re_flex">
+												<div class="star-box">
 
-	const roomid = $('#tbRoomId').val()
-	const hostid = $('#id').val()
-	// /api/room/rrlist/42
-	axios.get('/api/host/hlist/' + hostid,{
+													<span class="star"></span>
 
-	}).then(function (response){
-		console.log(response);
-		let myCorporate = response.data.data.myCorporate; // 숙박업소명 상호명
-		$('.myCorporate').attr('value', myCorporate);
-		$('.myCorporate2').attr('value', myCorporate);
-		$('.myCorporate').text(myCorporate);
-		// let memid = response.data.data.tbMemId; // memid
-		let memid = sessionId; // memid
-		$('#memid').attr('value', memid);
+													<span class="star "></span>
 
-	}).catch(function (err){
-		console.log(err);
-	});
+													<span class="star"></span>
+
+													<span class="star"></span>
+
+													<span class="star"></span>
+													<!-- 별점을 클릭시 value값이 12345 로 저장됨 -->
+													<input type="hidden" name="star_score" class="star_score">
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="ahn_re_indent ahn_re_flex">클릭 하여 점수주기</div>
+								</div>
+							</div>
+							<!-- 제목 -->
+							<div class="ahn_re_title">
+								<div class="ahn_tab_t">리뷰 제목</div>
+
+								<div class="ahn_re_indent">
+									<span class="ahn_di_span">
+										<p class="ahn_re_title_p"><input class="ahn_title_input reTitle" type="text"
+												maxlength="35" name="reTitle" value="" placeholder="제목은 최대35자입니다."></p>
+									</span>
+								</div>
+
+							</div>
+							<!-- 후기작성란 -->
+							<div class="ahn_re_content">
+								<div class="ahn_tab_t">후기작성란</div>
+
+								<div class="ahn_re_indent">
+									<span class="ahn_di_span">
+										<p class="ahn_re_content_ta_p">
+											<textarea name="reContent" class=" reContent ahn_re_content_ta" id=""
+												placeholder="개인 정보 보호를 위해 고객님의 개인 정보를 입력하지 마세요."></textarea>
+										</p>
+									</span>
+								</div>
+
+							</div>
+							<!-- 이미지 추가 -->
+							<div class="ahn_re_img">
+								<div class="ahn_tab_t">이미지 추가</div>
+								<!--dropfile-->
+								<div class="ahn_re_indent">
+									<span class="ahn_di_span">
+										<input type="file" id="imgFile" name="imgFile" multiple
+											onchange="setThumbnail(event);" />
+										<div id="image_container"></div>
+									</span>
+								</div>
+								<!--dropfile끝-->
+
+							</div>
+
+							<div class="ahn_re_indent ahn_re_btn1">
+								<span class="ahn_di_span">
+									<button type="button" class="ahn_re_btn2" onclick="sendit()">
+										등록하기</button>
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- ↓푸터꺼 -->
+
+			</form>
+			<!-- 리뷰작성 끝 -->
+			<!-- 복사@@ 끝-->
+		</div>
+		<!-- //Content  -->
+
+		<div class="layer_w pop_withdraw">
+			<section>
+				<div class="fix_title">
+					<strong>회원탈퇴</strong>
+					<button onclick="layer_w_close();">닫기</button>
+				</div>
+				<div class="cont">
+					<b>주의사항</b>
+					<strong>회원탈퇴 전 반드시 확인해주세요.</strong>
+					<ul class="dot_txt">
+						<li>회원탈퇴 시 계정 정보는 복구가 불가하며 1일 이후 재가입 가능합니다.</li>
+						<li>현재 보유 중인 포인트, 마일리지는 모두 소멸되며 복구할 수 없습니다.</li>
+					</ul>
+					<div class="fix_wrap">
+						<p><input type="checkbox" class="inp_chk_03" id="residue_night">
+							<label for="residue_night">주의사항 모두 동의합니다.</label>
+						</p>
+						<button class="btn_submit disabled" onclick="userout();">회원탈퇴</button>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- 회원탈퇴 .new_pop_withdraw -->
+		<div class="layer_w new_pop_withdraw">
+			<section class="section_fix_title">
+				<div class="fix_title">
+					<strong>회원탈퇴</strong>
+					<button onclick="layer_w_close();">닫기</button>
+				</div>
+			</section>
+			<section class="cont cont_section">
+				<!-- step1 -->
+				<div class="cont-step cont-step_01" id="contStep01">
+					<div class="cont-step_preface">
+						<h1>떠나시기 전 <span class="point-text">잠깐!</span> <span class="break-tag">해결해야할 게 있어요</span></h1>
+						<p>숙박이나 티켓 이용을 완료해 주시거나<span class="break-tag">잔액을 모두 환불하셔야 탈퇴가 가능해요</span></p>
+					</div>
+					<!-- 보유목록 :: 내역 없으면 아이템 미노출 -->
+					<ul class="retention-list">
+					</ul>
+					<div class="guide-text">
+						<ul>
+							<li>현금성(유상)포인트는 여기어때에서 현금처럼 사용하실 수 있는 결제수단으로 숙박 및 모바일 티켓 구매 시 사용 가능해요.</li>
+							<li><em>현금성(유상)포인트 보유 시 ‘환불 신청 접수하기’</em> 버튼을 통해 환불 신청 부탁드 리며, <em>환불받을 은행, 계좌번호, 예금주 정보가
+									정확히 등록된 경우에만 처리가 가능해요.</em></li>
+							<li class="point-text">환불 처리를 위한 모든 정보가 확인되면 현금성(유상)포인트가 먼저 회수되며, 계좌 환불까지는 <em>영업일 기준 7일~10일
+									소요돼요.</em></li>
+							<li><em>환불 신청 및 답변 내역은 ‘더보기 &gt; 고객문의 &gt; 1:1문의’에서 확인가능</em>해요.</li>
+							<li>즉시 회원 탈퇴를 원하시면 고객행복센터 <a href="tel:+821670-6250">1670-6250</a>로 문의 부탁드려요.</li>
+						</ul>
+					</div>
+				</div>
+				<!--// step1 -->
+				<!-- step2 -->
+				<div class="cont-step cont-step_02" id="contStep02">
+					<div class="cont-step_preface">
+						<h1>왜 떠나시는지 <span class="break-tag"><span class="point-text">이유</span>가 있을까요?</span></h1>
+					</div>
+					<!-- 탈퇴이유 -->
+					<ul class="reason-list">
+						<li>
+							<input id="reasonRdo0" type="radio" name="radios" value="UN_USE_FREQUENTLY">
+							<label for="reasonRdo0">사용을 잘 안하게 돼요</label>
+							<div class="reason-innder-box reason-innder-box0">
+								<textarea class="inner-textarea" id="reasonTextarea0" name="innerTextarea"
+									maxlength="80"
+									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
+								<!-- 사용을 잘 안하게 돼요 -->
+								<div class="inner">
+									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
+									<p>여기어때는 숙박 상품 외에도, 숙소 주변 맛집 정보와 모바일티켓 구매가 가능해요!</p>
+									<p>볼거리와 놀거리가 풍성해진 여기어때를 더 이용해보시겠어요?</p>
+									<a href="#none" class="toast-show" onclick="toastShow(event,this)">맛집 보러가기</a><br />
+									<a href="#none" class="toast-show" onclick="toastShow(event,this)">액티비티 • 모바일 티켓
+										보러가기</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<input id="reasonRdo1" type="radio" name="radios" value="HAVE_NO_LIKED_HOTEL">
+							<label for="reasonRdo1">예약하고 싶은 숙소가 없어요</label>
+							<div class="reason-innder-box reason-innder-box1">
+								<textarea class="inner-textarea" id="reasonTextarea1" name="innerTextarea"
+									maxlength="80"
+									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
+								<!-- 예약하고 싶은 숙소가 없어요 -->
+								<div class="inner">
+									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
+									<p>전국 2만 여개의 숙소와 모바일 티켓을 최저가로 예약할 수 있어요.</p>
+									<p>원하는 여행지나 상품을 다시한번 찾아보세요!</p>
+									<a href="../../../../../../../../../s/lyju7/OneDrive/바탕%20화면">검색하기</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<input id="reasonRdo2" type="radio" name="radios" value="DIFFICULT_TO_USE">
+							<label for="reasonRdo2">예약, 취소, 혜택받기 등 사용이 어려워요</label>
+							<div class="reason-innder-box reason-innder-box2">
+								<textarea class="inner-textarea" id="reasonTextarea2" name="innerTextarea"
+									maxlength="80"
+									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
+								<!-- 예약, 취소, 혜택받기 등 사용이 어려워요 -->
+								<div class="inner">
+									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
+									<p>예약, 취소, 사용이 어려우신가요?</p>
+									<p>회원님들이 궁금해 하시는 내용을 위주로 도움말과 혜택꿀팁을 정리해 보았는데 이용해보시는건 어떠세요?</p>
+									<a href="/more/faq">자주 묻는 질문 보러가기</a><br />
+									<a href="#none" onclick="toastShow(event, this)">혜택꿀팁 보러가기</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<input id="reasonRdo3" type="radio" name="radios" value="POINT_COUPON_TOO_LITTLE">
+							<label for="reasonRdo3">혜택(포인트)이 너무 적어요</label>
+							<div class="reason-innder-box reason-innder-box3">
+								<textarea class="inner-textarea" id="reasonTextarea3" name="innerTextarea"
+									maxlength="80"
+									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
+								<!-- 혜택 (쿠폰, 포인트)이 적어요 -->
+								<div class="inner">
+									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
+									<p>혹시 놓치고 있던 이벤트가 있지는 않을까요?</p>
+									<p>다양한 이벤트를 둘러보고 혜택을 받아보시는건 어떠세요?</p>
+									<a href="/more/event">이벤트 보러가기</a>
+									<p>여기어때가 준비한 다양한 혜택들, 알고 계셨나요?</p>
+									<p>여기어때를 100% 활용하는 꿀팁을 구경해보시는건 어떠세요?</p>
+									<a href="#none" onclick="toastShow(event, this)">혜택꿀팁 보러가기</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<input id="reasonRdo4" type="radio" name="radios" value="INFO_TO_DELETE">
+							<label for="reasonRdo4">개인정보 보호를 위해 삭제할 정보가 있어요</label>
+							<div class="reason-innder-box reason-innder-box4">
+								<textarea class="inner-textarea" id="reasonTextarea4" name="innerTextarea"
+									maxlength="80"
+									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
+								<!-- 개인정보 보호를 위해 삭제할 정보가 있어요 -->
+								<div class="inner">
+									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
+									<p>고객님의 사용내역은 ‘App > 더보기>사용내역 관리’ 에서 변경, 삭제할 수 있어요. </p>
+									<p>회원탈퇴 없이 사용내역을 삭제해 보는 건 어떠세요?</p>
+									<p>- 삭제 가능 내용 : 예약내역, 찜한상품, 1:1문의</p>
+									<a href="#none" onclick="toastShow(event,this)">사용내역 관리</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<input id="reasonRdo5" type="radio" name="radios" value="EXISTING_ID">
+							<label for="reasonRdo5">다른 계정이 있어요</label>
+							<div class="reason-innder-box reason-innder-box5">
+								<textarea class="inner-textarea" id="reasonTextarea5" name="innerTextarea"
+									maxlength="80"
+									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
+							</div>
+						</li>
+						<li>
+							<input id="reasonRdo6" type="radio" name="radios" value="OTHER">
+							<label for="reasonRdo6">기타</label>
+							<div class="reason-innder-box reason-innder-box6">
+								<textarea class="inner-textarea" id="reasonTextarea6" name="innerTextarea"
+									maxlength="80"
+									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
+							</div>
+						</li>
+					</ul>
+					<div class="password-wrap">
+						<label for="passwordUser">비밀번호 입력</label>
+						<input id="passwordUser" type="password" name="pwWithdraw" placeholder="비밀번호를 입력하세요." />
+
+						<div class="button-wrap"><button class="btn_submit disabled" onclick="userPasswordCheck(1)"
+								id="passwordCheckBtn">다음 단계로</button></div>
+					</div>
+				</div>
+				<!--// step2 -->
+				<!-- step3 -->
+				<div class="cont-step cont-step_03" id="contStep03">
+					<input type="hidden" id="reason" name="reason" value="" />
+					<input type="hidden" id="reasonMsg" name="reasonMsg" value="" />
+					<input type="hidden" id="uno" name="uno" value="14996134" />
+
+					<div class="cont-step_preface">
+						<h1>이제 더 가시면..<span class="break-tag"><span class="point-text">혜택이 영영 사라져요</span></span></h1>
+						<p>탈퇴하시면 지금껏 모으신 무료(무상) 포인트와<span class="break-tag">쿠폰들이 사라져 복구가 불가해요</span></p>
+					</div>
+
+					<ul class="retention-list destroyed">
+						<li>
+							<p>잔여 무료(무상)포인트 <em>0P</em></p>
+							<a href="#">즉시 소멸</a>
+						</li>
+						<li>
+							<p>잔여 쿠폰 <em>1</em></p>
+							<a href="#">즉시 소멸</a>
+						</li>
+					</ul>
+					<div class="guide-text">
+						<ul>
+							<li>무료(무상) 포인트는 숙박 및 모바일 티켓 구매시 사용 가능해요.</li>
+							<li><em>등록된 리뷰는 자동으로 삭제되지 않아요.</em> 탈퇴 전 개별적으로 삭제해 주세요.</li>
+							<li><em>계정 정보 및 찜 목록 등 서비스 이용정보는 복구가 불가</em>하며, 동일한 아이디로 24시간 이후 재가입이 가능해요.</li>
+						</ul>
+					</div>
+					<div class="password-wrap">
+						<p>
+							<input type="checkbox" class="inp_chk_03" name="withdrawAgreeChk"
+								id="withdrawAgreeCheck"><label for="withdrawAgreeCheck">위 주의사항을 모두 숙지했고, 탈퇴에
+								동의합니다</label>
+						</p>
+						<div class="button-wrap">
+							<button class="btn_submit disabled" id="agreeBtn" onclick="lastAgree(this)">진짜 안녕</button>
+						</div>
+					</div>
+				</div>
+				<!--// step3 -->
+				<!-- step4 로그아웃 이슈로 현재 미사용중(삭제 금지) -->
+				<div class="cont-step cont-step_04" id="contStep04">
+					<div class="cont-step_preface">
+						<h1>다음에 <span class="point-text">꼭 다시 만나요!</span> <span class="break-tag">더 나은 모습으로 기다릴게요</span>
+						</h1>
+					</div>
+					<div class="bg-img">
+						<img src="/img/images/web_v3/img-withdraw.png" alt="see you again next time" />
+					</div>
+					<div class="password-wrap">
+						<div class="button-wrap">
+							<button class="btn_submit home-btn" onclick="layer_w_close()">홈으로 돌아가기</button>
+						</div>
+					</div>
+				</div>
+				<!--// step4 -->
+			</section>
+
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				var uTypeNum = 1;
+				pwRdoValid(uTypeNum);
+				agreeChk();
+				// 회원탈퇴 팝업 스크롤
+				$('.cont_section').scroll(function () {
+					var cst = $('.cont_section').scrollTop();
+					if (cst != 0) {
+						$('.new_pop_withdraw .section_fix_title').addClass('scrolling');
+					} else {
+						$('.new_pop_withdraw .section_fix_title').removeClass('scrolling');
+					}
+				});
+			})
+		</script>
 
 
+		<!-- 푸터 -->
+		<div th:replace="userthy/user-footer :: user-footer"></div>
+		<!--푸터 끝 -->
 
-	function sendit(){
 
-		let myCorporate = $('.myCorporate2').val() // 숙박업소명 상호명
-		console.log("숙박업소명(상호명)myCorporate :" + myCorporate);
-		//룸아이디
+	</div>
+
+	<!-- 상단으로 -->
+	<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+
+	<!-- //Wrap -->
+
+	<!-- Script -->
+	<!-- Library -->
+	<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
+	<script type="text/javascript" src="/js/library/iscroll.js"></script>
+
+	<!-- Service -->
+	<script type="text/javascript" src="/js/service/common.js"></script>
+	<script type="text/javascript" src="/js/service/geolocation.js"></script>
+
+	<!-- Module -->
+	<script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
+
+	<!-- Page Script -->
+	<script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
+	<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
+	<script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
+	<script type="text/javascript" src="/js/service/validate.js"></script>
+	<script type="text/javascript" src="/js/service/my.js"></script>
+	<script type="text/javascript" src="/js/service/mypage.js"></script>
+	<script type="text/javascript" src="/js/service/phone-verification.js"></script>
+	<script src="/js/star3.js"></script>
+	<script src="/js/ahn_re.js"></script>
+	<!-- Body Spinner -->
+	<div class="spinner show"><span></span></div>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script>
 		const roomid = $('#tbRoomId').val()
-		console.log("roomid :" + roomid);
-		//호스트아이디
 		const hostid = $('#id').val()
-		console.log("hostid :" + hostid);
-		//멤버 아이디
-		const memid = sessionId;
-		console.log("memid :" + memid);
+		// /api/room/rrlist/42
+		axios.get('/api/host/hlist/' + hostid, {
+
+		}).then(function (response) {
+			console.log(response);
+			let myCorporate = response.data.data.myCorporate; // 숙박업소명 상호명
+			$('.myCorporate').attr('value', myCorporate);
+			$('.myCorporate2').attr('value', myCorporate);
+			$('.myCorporate').text(myCorporate);
+			// let memid = response.data.data.tbMemId; // memid
+			let memid = sessionId; // memid
+			$('#memid').attr('value', memid);
+
+		}).catch(function (err) {
+			console.log(err);
+		});
+
+		axios.get('/api/tbmem/mlist/' + sessionId, {
+
+		}).then(function (response) {
+			console.log(response);
+			let reNkname = response.data.data.memNkname
+			$('.reNkname').attr('value', reNkname);
+		}).catch(function (err) {
+			console.log(err);
+		})
+
+		function sendit() {
+
+			let myCorporate = $('.myCorporate2').val() // 숙박업소명 상호명
+			console.log("숙박업소명(상호명)myCorporate :" + myCorporate);
+			//룸아이디
+			const roomid = $('#tbRoomId').val()
+			console.log("roomid :" + roomid);
+			//호스트아이디
+			const hostid = $('#id').val()
+			console.log("hostid :" + hostid);
+			//멤버 아이디
+			const memid = sessionId;
+			console.log("memid :" + memid);
+
+
+			//닉네임
+			const reNkname = $('.reNkname').val();
+			console.log("닉네임 :" + reNkname);
+			//별점
+			const reGrade = $("input[name=star_score]").val(); //별점
+			console.log("별점 :" + reGrade);
+			//리뷰제목
+			const reTitle = $("input[name=reTitle]").val(); //별점
+			console.log("리뷰제목 :" + reTitle);
+			//후기작성란
+			const reContent = $("textarea[name=reContent]").val(); //별점
+			console.log("리뷰내용 :" + reContent);
+
+			//이미지추가
+			//------이미지 관련
+			const FileElement = document.querySelector('#imgFile');
+			const formData = new FormData();
+
+			const request = {
+				tbRoomId: roomid,
+				tbMemId: memid,
+				tbHostId: hostid,
+				tbHostname: myCorporate,
+				reNkname: reNkname,
+				reGrade: reGrade,
+				reTitle: reTitle,
+				reContent: reContent,
+			}
+			console.log([JSON.stringify(request)]);
+
+
+			formData.append("request", new Blob([JSON.stringify(request)], {
+				type: "application/json"
+			}));
+
+			for (let i = 0; i < FileElement.files.length; i++) { // 길이만큼 반복
+				formData.append("files", FileElement.files[i]); // append(키,값)
+			}
+			console.log(formData.getAll('request')); //(키)의 값을 전부 보여줌
+			console.log(formData.getAll('files')); //(키)의 값을 전부 보여줌
 
 
 
-		//별점
-		const reGrade = $("input[name=star_score]").val();//별점
-		console.log("별점 :" + reGrade);
-		//리뷰제목
-		const reTitle = $("input[name=reTitle]").val();//별점
-		console.log("리뷰제목 :" + reTitle);
-		//후기작성란
-		const reContent = $("textarea[name=reContent]").val();//별점
-		console.log("리뷰내용 :" + reContent);
-		//이미지추가
-		// const reImg = $("input[class=reImg]").val();//별점
-
-		// let formData = new FormData();
-		// formData.append('file', this.file);
-		// console.log('>> formData >> ', formData);
-		// let reImg = [];
-		// let reImg = new Array();
-		// reImg = document.getElementById('image').value
-		// console.log(reImg);
-		// console.log(imagefile);
-
-		var frm = new FormData();
-		var photoFile = document.getElementById("photo");
-		//FormData에 key, value 추가하기
-		frm.append("photo", photoFile.files[0]);
-		console.log(frm);
+			axios.post('/api/review/write', formData, {
+				headers: {
+					'Content-type': 'multipart/form-data'
+				}
+			}).then(function (response) {
+				console.log(response);
+				alert('저장되었습니다.');
+				location.href = '/userindex/reservations'
 
 
-			axios.post('/api/review/write', frm)
-					.then(function(response){
-						console.log('successfully uploaded', photoFile);
-					});
+			}).catch(function (err) {
+				console.log(err);
+			});
 
 
 
-
-
-
-		// axios.post('/api/review/write', {
-		// 	headers: {
-		// 		'Content-Type': 'multipart/form-data'
-		// 	},
-		// 	transaction_time:"2019-10-01",
-		// 	resultCode:"OK",
-		// 	description:"OK",
-		// 		data:{
-		// 				tbRoomId: roomid,
-		// 				tbMemId: memid
-		//
-		// 			}
-		//
-		// })
-		// 		.then((response) => {
-		// 			// 응답 처리
-		// 			console.log(response)
-		// 		})
-		// 		.catch((error) => {
-		// 			// 예외 처리
-		// 			console.log(error)
-		// 		})
-		alert('멈춰');
-
-		// axios.request({
-		// 	method: 'POST',
-		// 	url: '/api/review/write',
-		// 	// headers: {'Content-type':'application/json'},
-		// 	headers: {'Content-type':'multipart/form-data'},
-		// 	data: {
-		// 		transaction_time:"2019-10-01",
-		// 		resultCode:"OK",
-		// 		description:"OK",
-		// 		data:{
-		// 			tbRoomId: roomid,
-		// 			tbMemId: memid,
-		// 			tbHostname: myCorporate,
-		// 			// reNkname: 못가져옴
-		// 			reGrade: reGrade,
-		// 			reTitle: reTitle,
-		// 			reContent: reContent,
-		// 			reImg: reImg
-		// 		}
-		// 	}
-		// }).then(
-		// 		alert('리뷰가 등록되었습니다'),
-		//
-		// )
-		// location.href='/userindex/'
-
-	}
-
-</script>
+		}
+	</script>
 
 </body>
 

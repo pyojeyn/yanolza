@@ -1,470 +1,943 @@
 <!doctype html>
 <html lang="ko">
 
-<!-- Mirrored from www.goodchoice.kr/product/search/4 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Aug 2021 13:18:43 GMT -->
-<!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="여기어때 회원 가입 | 전국 호텔, 펜션, 모텔부터 워터파크, 놀이공원, 아쿠아리움까지 최저가 할인 예약">
     <link rel="shortcut icon" href="/img/images/web_v3/favicon_170822.ico" type="image/x-icon">
 
     <!-- CSS -->
-    <title>리조트 > 경기권 전체 | 여기어때</title>
-    <link rel="stylesheet" href="/css/common.css"/>
-    <!-- <link rel="canonical" href="/home/4001.html"> -->
-    <!-- 안연주 추가 -->
+    <title>모텔 전체 | 여기어때</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <!-- 추가 -->
 
     <link rel="stylesheet" href="/css/owl.carousel.css" />
 
     <link rel="stylesheet" href="/css/jquery-ui.css" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet"  href="/css/daterangepicker-bs3.css"/>
-    <link rel="stylesheet" href="/css/ahn_product.css"/>
-    <link rel="stylesheet" href="/css/ahn_datepicker.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="/css/ahn_product.css" />
+    <link rel="stylesheet" href="/css/ahn_datepicker.css" />
     <link rel="stylesheet" href="/css/search.css" />
-    <!--    <script src="/js/script/filter.js"></script>-->
     <script type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-    <!-- <script  type="text/javascript" src="/ahn_date0914/js/jquery-2.1.3.min.js"></script> -->
 
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
+
+    <!-- 10-19 카카오 APP KEY 부활 -->
+    <script>
+        var _BASE_URL = 'http://127.0.0.1:9090/userindex/';
+        var _MOBILE = 'W';
+        var _KAKAOTALK_APP_KEY = 'ec24a1240f6819adf5a64797e8132073';
+    </script>
+    <!-- 10-19 카카오 APP KEY 부활 -->
+
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
 
-<!-- Wrap -->
-<div class="wrap">
+    <!-- Wrap -->
+    <div class="wrap">
 
-    <!-- 헤더 -->
-    <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
-    <!--헤더 끝 -->
+        <!-- 헤더 -->
+        <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
+        <!--헤더 끝 -->
 
-    <!-- Bg Dimm -->
-    <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-    <div class="bg_dimm_prevent">&nbsp;</div>
 
-    <!-- 추천검색어 -->
-    <div class="recommend_srch">
-        <div class="scroll_srch">
-            <div class="scroller">
-                <div class="default" style="display:block">
-                    <strong>추천 검색어</strong>
-                    <ul></ul>
-                </div>
-                <!-- 연관검색어 -->
-                <div class="chain">
-                    <ul></ul>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- Bg Dimm -->
+        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+        <div class="bg_dimm_prevent">&nbsp;</div>
 
-    <!-- Mobile Menu -->
-    <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-    <div class="menu_wrap">
-
-        <div class="menu">
-            <div class="top">
-                <!-- 회원 -->
-                <div class="member">
-                    <div class="mem">
-                            <span class="pic"
-                                  style="background:url('./img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
-                        <p class="info">사과색깔</p>
-                    </div>
-                    <div class="bot">
-                        <a href="/userindex/point">
-                            <p>0P<br /><span>포인트</span></p>
-                        </a>
-                        <a href="/userindex/coupon">
-                            <p>1장<br /><span>쿠폰함</span></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Iscroll -->
-            <div class="scroll_nav">
+        <!-- 추천검색어 -->
+        <div class="recommend_srch">
+            <div class="scroll_srch">
                 <div class="scroller">
-                    <ul>
-                        <li><a href="/userindex/">홈</a></li>
-                        <li class="depth_2">
-                            <button type="button" class="has_ul"><span>숙소유형</span></button>
-                            <ul>
-                                <li><a href="/userindex/1">모텔</a></li>
-                                <li><a href="/userindex/2">호텔/리조트</a></li>
-                                <li><a href="/userindex/3">펜션</a></li>
-                                <li><a href="/userindex/4">리조트</a></li>
-                                <li><a href="/userindex/5">캠핑·글램핑</a></li>
-                                <li><a href="//userindex/6">게스트하우스</a></li>
-                                <li><a href="/userindex/7">한옥 </a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/userindex/8">내주변</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="/userindex/reservations">예약 내역</a></li>
-                        <li><a href="/userindex/mypage">내 정보 관리</a></li>
-                    </ul>
-                    <ul>
-                        <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
-                            <ul>
-                                <li><a href="/userindex/notice">공지사항</a></li>
-                                <li><a href="/userindex/event">이벤트</a></li>
-                                <li><a href="/userindex/project">혁신 프로젝트</a></li>
-                                <li><a href="/userindex/faq">고객문의</a></li>
-                                <li><a href="/userindex/terms">약관 및 정책</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="center">
-                        <p>여기어때 고객행복센터</p>
-                        <p><a href="tel:1670-6250">1670-6250</a></p>
-                        <p>오전 9시 - 새벽 3시</p>
+                    <div class="default" style="display:block">
+                        <strong>추천 검색어</strong>
+                        <ul></ul>
+                    </div>
+                    <!-- 연관검색어 -->
+                    <div class="chain">
+                        <ul></ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- //Mobile Menu -->
 
+        <!-- Mobile Menu -->
+        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+        <div class="menu_wrap">
 
-    <form id="product_filter_form" method="get" action="https://www.goodchoice.kr/product/search/4/4001"
-    >
-        <input type="hidden" name="sort" id="sort" value="HIT">
-        <input type="hidden" name="sel_date" id="sel_date" >
-        <input type="hidden" name="sel_date2" id="sel_date2" >
-        <div class="listpage">
-
-            <!-- Result Top -->
-            <div class="fix_srch">
-                <div class="srch_bar">
-                    <div class="wrap_inp">
-                        <input type="text" placeholder="지역, 숙소명">
+            <div class="menu">
+                <div class="top">
+                    <!-- 회원 -->
+                    <div class="member">
+                        <div class="mem">
+                            <span class="pic"
+                                style="background:url('./img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
+                            <p class="info">사과색깔</p>
+                        </div>
+                        <div class="bot">
+                            <a href="/userindex/point">
+                                <p>0P<br /><span>포인트</span></p>
+                            </a>
+                            <a href="/userindex/coupon">
+                                <p>1장<br /><span>쿠폰함</span></p>
+                            </a>
+                        </div>
                     </div>
-                    <button class="btn_cancel" onclick="srch_close()">취소</button>
+                </div>
+                <!-- Iscroll -->
+                <div class="scroll_nav">
+                    <div class="scroller">
+                        <ul>
+                            <li><a href="/userindex/">홈</a></li>
+                            <li class="depth_2">
+                                <button type="button" class="has_ul"><span>숙소유형</span></button>
+                                <ul>
+                                    <li><a href="/userindex/1">모텔</a></li>
+                                    <li><a href="/userindex/2">호텔/리조트</a></li>
+                                    <li><a href="/userindex/3">펜션</a></li>
+                                    <li><a href="/userindex/4">리조트</a></li>
+                                    <li><a href="/userindex/5">캠핑·글램핑</a></li>
+                                    <li><a href="//userindex/6">게스트하우스</a></li>
+                                    <li><a href="/userindex/7">한옥 </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/userindex/8">내주변</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/userindex/reservations">예약 내역</a></li>
+                            <li><a href="/userindex/mypage">내 정보 관리</a></li>
+                        </ul>
+                        <ul>
+                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+                                <ul>
+                                    <li><a href="/userindex/notice">공지사항</a></li>
+                                    <li><a href="/userindex/event">이벤트</a></li>
+                                    <li><a href="/userindex/project">혁신 프로젝트</a></li>
+                                    <li><a href="/userindex/faq">고객문의</a></li>
+                                    <li><a href="/userindex/terms">약관 및 정책</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="center">
+                            <p>여기어때 고객행복센터</p>
+                            <p><a href="tel:1670-6250">1670-6250</a></p>
+                            <p>오전 9시 - 새벽 3시</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- //Result Top -->
+        </div>
+        <!-- //Mobile Menu -->
 
-            <!-- Sub Top -->
-            <div class="sub_top_wrap">
-                <!-- 페이백일때 클래스 추가 early_top -->
-                <div class="sub_top bg_kong_1">
-                    <h2>모텔</h2>
-                    <div class="area">
-                        <!-- <div class="btn_date"><span class="date_view"><b></b><em>&nbsp;·&nbsp;1박</em></span></div> -->
+
+        <form id="product_filter_form" method="get" action="https://www.goodchoice.kr/product/search/4/4001">
+            <input type="hidden" name="sort" id="sort" value="HIT">
+            <input type="hidden" name="sel_date" id="sel_date">
+            <input type="hidden" name="sel_date2" id="sel_date2">
+            <div class="listpage">
+
+                <!-- Result Top -->
+                <div class="fix_srch">
+                    <div class="srch_bar">
+                        <div class="wrap_inp">
+                            <input type="text" placeholder="지역, 숙소명">
+                        </div>
+                        <button class="btn_cancel" onclick="srch_close()">취소</button>
                     </div>
-                    <span class="keyword"></span>
                 </div>
-            </div>
-            <!-- //Sub Top -->
+                <!-- //Result Top -->
 
+                <!-- Sub Top -->
+                <div class="sub_top_wrap">
+                    <!-- 페이백일때 클래스 추가 early_top -->
+                    <div class="sub_top bg_kong_1">
+                        <h2>모텔</h2>
 
-
-            <!-- Content  -->
-            <div id="content" class="sub_wrap">
-
-
-                <!-- ❤숙박 리스트 이동용  -->
-                <div class="top_menu">
-                    <!-- Swipe menu -->
-                    <div class="swipe_menu owl-carousel owl-loaded owl-drag" data-adcno="1" style="display: block;">
-
-                        <!--  enable 이 빨간색 -->
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage"
-                                 style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;  text-align: center;">
-                                <div class="owl-item active" style="width: auto; margin-right: 2px;">
-                                    <!-- <a href="/www.goodchoice.kr/product/search/1/7038.html"></a> -->
-                                    <button type="button"
-                                            onclick="location.href = '/userindex/1'"
-                                            class="item enable" style="width:55px;">모텔</button>
+                        <div class="area" style=" visibility: hidden;">
+                            <div class="btn_around" onclick="pop_relocation();">
+                                <div><span>내주변</span>
+                                    <p>서초구 방배동</p>
                                 </div>
-
-                                <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
-                                        type="button"
-                                        onclick="location.href = '/userindex/2'"
-                                        class="item "
-                                        style="width:100px;">호텔</button></div>
-
-                                <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
-                                        type="button"
-                                        onclick="location.href = '/userindex/3'"
-                                        class="item "
-                                        style="width:55px;">펜션</button></div>
-
-                                <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
-                                        type="button"
-                                        onclick="location.href = '/userindex/4'"
-                                        class="item " style="width:100px;">리조트</button></div>
-
-                                <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
-                                        type="button"
-                                        onclick="location.href = '/userindex/6'"
-                                        class="item " style="width:105px;">게스트하우스</button></div>
-
-                                <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
-                                        type="button"
-                                        onclick="location.href = '/userindex/5'"
-                                        class="item "
-                                        style="width:55px;">캠핑</button></div>
-
-                                <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
-                                        type="button"
-                                        onclick="location.href = '/userindex/7'"
-                                        class="item " style="width:105px;">한옥</button></div>
+                            </div>
+                            <button type="button" class="btn_reload" onclick="pop_relocation();">내 위치 재설정</button>
+                            <div class="btn_date"><span class="date_view"><b>10.19 ~
+                                        10.20</b><em>&nbsp;·&nbsp;1박</em></span></div>
+                        </div>
+                        <span class="keyword"></span>
+                    </div>
+                </div>
+                <!-- //Sub Top -->
 
 
-                                <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
-                                        type="button"
-                                        onclick="location.href = '/userindex/8'"
-                                        class="item "
-                                        style="width:55px;">내주변</button></div>
+
+                <!-- Content  -->
+                <div id="content" class="sub_wrap">
+
+                    <div id="map" style="width:10px;height:10px;  visibility: hidden;"></div>
+
+                    <script type="text/javascript"
+                        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec24a1240f6819adf5a64797e8132073"></script>
+                    <script>
+                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                            mapOption = {
+                                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                level: 10 // 지도의 확대 레벨
+                            };
+
+                        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                        // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
+                        if (navigator.geolocation) {
+
+                            // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+                            navigator.geolocation.getCurrentPosition(function (position) {
+
+                                var lat = position.coords.latitude, // 위도
+                                    lon = position.coords.longitude; // 경도
+
+                                var locPosition = new kakao.maps.LatLng(lat,
+                                    lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+                                    message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+
+                                // 마커와 인포윈도우를 표시합니다
+                                displayMarker(locPosition, message);
+
+                            });
+
+                        } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+
+                            var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
+                                message = 'geolocation을 사용할수 없어요..'
+
+                            displayMarker(locPosition, message);
+                        }
+
+                        // 지도에 마커와 인포윈도우를 표시하는 함수입니다
+                        function displayMarker(locPosition, message) {
+
+                            // 마커를 생성합니다
+                            var marker = new kakao.maps.Marker({
+                                map: map,
+                                position: locPosition
+                            });
+
+                            var iwContent = message, // 인포윈도우에 표시할 내용
+                                iwRemoveable = true;
+
+                            // 인포윈도우를 생성합니다
+                            var infowindow = new kakao.maps.InfoWindow({
+                                content: iwContent,
+                                removable: iwRemoveable
+                            });
+
+                            // 인포윈도우를 마커위에 표시합니다
+                            infowindow.open(map, marker);
+
+                            // 지도 중심좌표를 접속위치로 변경합니다
+                            map.setCenter(locPosition);
+                        }
+                    </script>
 
 
+                    <!-- ❤숙박 리스트 이동용  -->
+                    <div class="top_menu">
+                        <!-- Swipe menu -->
+                        <div class="swipe_menu owl-carousel owl-loaded owl-drag" data-adcno="1" style="display: block;">
+
+                            <!--  enable 이 빨간색 -->
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage"
+                                    style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;  text-align: center;">
+                                    <div class="owl-item active" style="width: auto; margin-right: 2px;">
+                                        <!-- <a href="/www.goodchoice.kr/product/search/1/7038.html"></a> -->
+                                        <button type="button" onclick="location.href = '/userindex/1'"
+                                            class="item enable" style="width:55px;">모텔</button>
+                                    </div>
+
+                                    <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
+                                            type="button" onclick="location.href = '/userindex/2'" class="item "
+                                            style="width:100px;">호텔</button></div>
+
+                                    <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
+                                            type="button" onclick="location.href = '/userindex/3'" class="item "
+                                            style="width:55px;">펜션</button></div>
+
+                                    <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
+                                            type="button" onclick="location.href = '/userindex/4'" class="item "
+                                            style="width:100px;">리조트</button></div>
+
+                                    <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
+                                            type="button" onclick="location.href = '/userindex/6'" class="item "
+                                            style="width:105px;">게스트하우스</button></div>
+
+                                    <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
+                                            type="button" onclick="location.href = '/userindex/5'" class="item "
+                                            style="width:55px;">캠핑</button></div>
+
+                                    <div class="owl-item active" style="width: auto; margin-right: 2px;"><button
+                                            type="button" onclick="location.href = '/userindex/7'" class="item "
+                                            style="width:105px;">한옥</button></div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="owl-nav disabled">
+                                <div class="owl-prev">prev</div>
+                                <div class="owl-next">next</div>
+                            </div>
+
+                            <div class="owl-dots disabled">
+                                <div class="owl-dot active"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //숙박 리스트 이동용  -->
+
+
+                    <!-- 사이드바 -->
+                    <div th:replace="userthy/user-sidebar :: user-sidebar"></div>
+                    <!--사이드바 끝 -->
+
+                    <!-- List -->
+                    <div class="list_wrap">
+                        <div class="search-min">
+                            <div class="search-wrapper">
+                                <div class="input-holder">
+                                    <input onkeyup="filter()" type="text" class="search-input" placeholder="검색어를 입력하세요"
+                                        id="value" />
+                                    <button class="search-icon"
+                                        onclick="searchToggle(this, event);"><span></span></button>
+                                </div>
+                                <span class="close" onclick="searchToggle(this, event);"></span>
                             </div>
                         </div>
 
-                        <div class="owl-nav disabled">
-                            <div class="owl-prev">prev</div>
-                            <div class="owl-next">next</div>
-                        </div>
+                        <div class="top_sort">
 
-                        <div class="owl-dots disabled">
-                            <div class="owl-dot active"><span></span></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //숙박 리스트 이동용  -->
+                            <!-- Mobile-->
+                            <div class="mobile">
+                                <button type="button" class="" onclick="filter_open();">상세조건</button>
+                                <button type="button" onclick="sort_open();" class="mob_sort">추천 순</button>
+                                <button type="button" onclick="pop_map_m();">지도</button>
 
-
-                <!-- 사이드바 -->
-                <div th:replace="userthy/user-sidebar :: user-sidebar"></div>
-                <!--사이드바 끝 -->
-
-                <!-- List -->
-                <div class="list_wrap">
-                    <div class ="search-min">
-                        <div class="search-wrapper">
-                            <div class="input-holder">
-                                <input onkeyup="filter()" type="text" class="search-input" placeholder="검색어를 입력하세요" id="value" />
-                                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
                             </div>
-                            <span class="close" onclick="searchToggle(this, event);"></span>
-                        </div>
-                    </div>
-
-                    <div class="top_sort">
-
-                        <!-- Mobile-->
-                        <div class="mobile">
-                            <button type="button" class="" onclick="filter_open();">상세조건</button>
-                            <button type="button" onclick="sort_open();" class="mob_sort">추천 순</button>
-                            <button type="button" onclick="pop_map_m();">지도</button>
 
                         </div>
-                        <!-- PC-->
-                        <!--                            <div class="pc">-->
-                        <!--                                <div class="btn_wrap">-->
-                        <!--                                    <button type="button" data-sort="HIT" class="on"><span>추천 순</span></button><button-->
-                        <!--                                        type="button" data-sort="DISTANCE" class=""><span>거리 순</span></button><button-->
-                        <!--                                        type="button" data-sort="LOWPRICE" class=""><span>낮은 가격 순</span></button><button-->
-                        <!--                                        type="button" data-sort="HIGHPRICE" class=""><span>높은 가격 순</span></button>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
+                        <!-- 여백 -->
+                        <div style="margin-bottom: 3em;"></div>
+                        <!-- 여백 끝-->
+                        <div id="poduct_list_area">
+
+
+
+                        </div>
 
                     </div>
-                    <!-- 안연주 여백 -->
-                    <div style="margin-bottom: 3em;"></div>
-                    <!-- #안연주 여백 끝-->
-                    <div id="poduct_list_area">
-
-
-
-                    </div>
+                    <!-- //List -->
 
                 </div>
-                <!-- //List -->
 
             </div>
+            <!-- //Content  -->
+        </form>
 
-        </div>
-        <!-- //Content  -->
-    </form>
-
-    <!-- #1 내 위치 재설정-->
-    <div class="layer pop_relocation">
-        <div class="title">내 위치 재설정<button type="button" onclick="close_layer()">닫기</button></div>
-        <div class="vertical_align" asdadawf>
-            <div>
-                <b>현재 위치 재검색 또는<span>지도로 위치설정이 가능합니다.</span></b>
-                <p onclick="geoFindMe(true,true,false); return false;"><span class="bg_01">현재 위치 재검색</span></p>
-                <br />
-                <p onclick="select_map(); return false;"><span class="bg_02">지도로 위치 설정</span></p>
+        <!-- #1 내 위치 재설정-->
+        <div class="layer pop_relocation">
+            <div class="title">내 위치 재설정<button type="button" onclick="close_layer()">닫기</button></div>
+            <div class="vertical_align">
+                <div>
+                    <b>현재 위치 재검색 또는<span>지도로 위치설정이 가능합니다.</span></b>
+                    <p onclick="geoFindMe(true,true,true); return false;"><span class="bg_01">현재 위치 재검색</span></p><br />
+                    <p onclick="select_map(); return false;"><span class="bg_02">지도・주소로 위치 설정</span></p>
+                </div>
             </div>
         </div>
+
+        <!-- #2 지도 -->
+        <div class="layer pop_map">
+            <button class="pc_btn_close" type="button" onclick="close_layer()">닫기</button>
+            <div class="title"><span>위치설정</span><button type="button" onclick="close_layer()">닫기</button></div>
+            <div class="address">서울특별시 중구 세종대로</div>
+            <div class="inner_map">지도</div>
+
+            <div class="srch_bar srp_srch_bar">
+                <div class="wrap_inp">
+                    <input type="text" id="srp_keyword" placeholder="읍, 면, 동 리 입력" autocomplete="off">
+                    <button type="button" class="btn_srch btn_srp_srch" style="right: 797px;">검색</button>
+                </div>
+                <button type="button" class="btn_cancel">취소</button>
+            </div>
+
+            <div class="recommend_srch srp_recommend_srch">
+                <div class="scroll_srch">
+                    <div class="scroller">
+                        <div class="default srp_default">
+                            <strong>정확하게 입력해주세요.</strong>
+                            예: 가평군, 평창군, 강남구, 교동
+                        </div>
+                        <!-- 연관검색어 -->
+                        <div class="chain srp_chain">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn_set">
+                <button class="gra_left_right_red">설정 완료</button>
+            </div>
+        </div>
+
+        <!-- #3 거리순/추천순 팝업 -->
+        <div class="layer pop_sort box_shadow">
+            <ul>
+                <li><button type="button" data-sort="DISTANCE" class="active">거리 순</button></li>
+                <li><button type="button" data-sort="LOWPRICE" class="">낮은 가격 순</button></li>
+                <li><button type="button" data-sort="HIGHPRICE" class="">높은 가격 순</button></li>
+            </ul>
+            <button type="button" onclick="close_layer();">취소</button>
+        </div>
+
+        <!-- #4 지도 - 모바일 숙소 소개 -->
+        <div class="layer pop_m_room">
+            <ul class="owl-carousel"></ul>
+        </div>
+
+
+
+
     </div>
 
-    <!-- #2 지도 -->
-    <div class="layer pop_map">
-        <button class="pc_btn_close" type="button" onclick="close_layer()">닫기</button>
-        <div class="title"><span>위치설정</span><button type="button" onclick="close_layer()">닫기</button></div>
-        <div class="address">서울특별시 중구 세종대로</div>
-        <div class="inner_map">지도</div>
-        <div class="btn_set">
-            <button class="gra_left_right_red">설정 완료</button>
+    <!-- 푸터 -->
+    <div th:replace="userthy/user-footer :: user-footer"></div>
+    <!--푸터 끝 -->
+
+    </div>
+
+    <!-- 상단으로 -->
+    <button class="btn_go_top" onclick="moveTop();">상단으로</button>
+
+    <!-- //Wrap -->
+
+    <!-- Script -->
+    <!-- Library -->
+    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="/js/library/iscroll.js"></script>
+
+    <!-- Service -->
+    <script type="text/javascript" src="/js/service/common.js"></script>
+    <script type="text/javascript" src="/js/service/geolocation.js"></script>
+
+    <!-- Module -->
+    <script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
+
+    <!-- Page Script -->
+    <script type="text/javascript" src="/js/library/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.ui.touch-punch.min.js"></script>
+
+    <script type="text/javascript" src="/js/library/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/library/owl.carousel.min.js"></script>
+
+    <script type="text/javascript" src="/js/library/vue.min.js"></script>
+    <script type="text/javascript" src="/js/service/product.js"></script>F
+
+    <script type="text/javascript" src="/js/library/jquery.comiseo.daterangepicker.min.js"></script>
+    <script type="text/javascript" src="https://www.goodchoice.kr/js/service/datepick.js?rand=1633664296"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec24a1240f6819adf5a64797e8132073">
+    </script>
+    <script type="text/javascript" src="https://www.goodchoice.kr/js/service/product.js?rand=1633664296"></script>
+    <script type="text/javascript" src="https://www.goodchoice.kr/js/service/product.search.js?rand=1633664296">
+    </script>
+    <script type="text/javascript" src="https://www.goodchoice.kr/js/service/product.srp.js?rand=1633664296"></script>
+
+
+    <!--product 이유->적용 product_date 버튼이벤트가 겹쳐 작동하지 않아 파일 따로 만듬 -->
+
+    <script type="text/javascript" src="/js/service/product.list.js"></script>
+    <script type="text/javascript" src="/js/ahn_product.search.js"></script>
+    <script type="text/javascript" src="/js/moment.min.js"></script>
+    <script type="text/javascript" src="/js/datepick.js"></script>
+    <script type="text/javascript" src="/js/daterangepicker.js"></script>
+
+
+    <script>
+        //스토어 랜딩 분기
+        function goAppStore(dialogCheck) {
+            const cookie_kcode = getCookie('k_code') //2.0: mkt_code^msid^device_type , 1.0: mkt_code only
+            const isBtmPop = !!dialogCheck
+            const DAUM_SHOP_TOP = 'du_dush_2', //(채널링)카카오쇼핑 - 상단
+                NAVER_SHOP_TOP = 'nj_njma_1', //(채널링)네이버지식쇼핑 - 상단
+                CHAN_ETC_TOP = 'CH_CHPU_1', //채널링 그외 - 상단
+                DAUM_DA_TOP = 'mo_DAUM_1', //다음DA - 상단
+                DAUM_DA_BTM = 'mo_DAUM_2', //다음DA - 하단
+                ETC_ALL_TOP = 'na_bsrh_1', //그외 - 상단
+                ETC_ALL_BTM = 'na_bsrh_3' //그외 - 하단
+            const sp = cookie_kcode.split('^')
+            let mktcode = ''
+            if (sp.length > 1) { //2.0의 광고로 판단
+                const _mktcode = sp[0].trim()
+                const _msid = Number(sp[1].trim())
+                if (_msid === 3) { // 다음DA:상/하단 분기
+                    mktcode = isBtmPop ? DAUM_DA_BTM : DAUM_DA_TOP
+                } else if (_msid === 4 && _mktcode === 'ns_qu_0603_1') {
+                    mktcode = 'qu_cw01_2' //RUN-5249(퍼마팀요청)
+                } else if (_msid === 4 && _mktcode.startsWith('ns_ne_') && !isBtmPop) { //네이버지식쇼핑:상단
+                    mktcode = NAVER_SHOP_TOP
+                } else if (_msid === 4 && _mktcode.startsWith('ns_ke_') && !isBtmPop) { //카카오쇼핑:상단
+                    mktcode = DAUM_SHOP_TOP
+                } else if (_msid === 4 && !isBtmPop) { //그외채널링 하위 그룹:상단
+                    mktcode = CHAN_ETC_TOP
+                }
+            }
+            if (!mktcode) mktcode = isBtmPop ? ETC_ALL_BTM : ETC_ALL_TOP
+            let _domain = document.domain === 'www.goodchoice.kr' ? 'm.goodchoice.kr' :
+                'dev-landing-mktpm.goodchoice.kr'
+            location.href = location.protocol + '//' + _domain + '/main/adKeywordLanding/' + encodeMkt(mktcode)
+        }
+        /**
+         * 마케팅 랜딩 URL 구성시 필요한 코드해싱함수
+         * @param mktcode : 원본 마케팅코드
+         * @returns {string} 해싱 결과물
+         */
+        function encodeMkt(mktcode) {
+            //마케팅코드용 해시함수
+            function hashMkt(orig, reverse) {
+                if (typeof orig !== 'string') orig = String(orig)
+                let orgKey = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+                    encKey = 'sozmfnctkurqgviypexdawhjlbEBRALMUHTPCWVZXINFYQGJKODS8491357620'
+                orig = reverse ? orig.replace(/\*/gi, '+').replace(/\@/gi, '/').replace(/\-/gi, '=') : orig.replace(
+                    /\+/gi, '*').replace(/\//gi, '@').replace(/\=/gi, '-')
+                let source = reverse ? encKey : orgKey
+                let target = reverse ? orgKey : encKey
+                let result = ''
+                for (let i = 0; i < orig.length; i++) {
+                    let c = orig.charAt(i)
+                    result += source.includes(c) ? target.charAt(source.indexOf(c)) : c
+                }
+                return result
+            }
+            return hashMkt(btoa(mktcode)) // mktcode -> base64 -> hash
+        }
+        // 쿠키 생성
+        function setCookie(cName, cValue, cDay) {
+            var expire = new Date();
+            expire.setDate(expire.getDate() + cDay);
+            cookies = cName + '=' + escape(cValue) + '; path=/ ';
+            if (typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+            document.cookie = cookies;
+        }
+
+        // 쿠키 가져오기
+        function getCookie(cName) {
+            cName = cName + '=';
+            var cookieData = document.cookie;
+            var start = cookieData.indexOf(cName);
+            var cValue = '';
+            if (start != -1) {
+                start += cName.length;
+                var end = cookieData.indexOf(';', start);
+                if (end == -1) end = cookieData.length;
+                cValue = cookieData.substring(start, end);
+            }
+            return unescape(cValue);
+        }
+
+        if (getCookie('marketing_type') != '') {
+            if (getCookie('marketing_type') == 'pay') {
+                var _nasa = {};
+                _nasa["cnv"] = wcs.cnv("1", getCookie('marketing_price')); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
+            } else {
+                var _nasa = {};
+                _nasa["cnv"] = wcs.cnv("2", "1"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
+            }
+
+            //쿠키 삭제
+            setCookie('marketing_price', '', -1);
+            setCookie('marketing_type', '', -1);
+        }
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-77719807-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!--    Google Code for &#50668;&#44592;&#50612;&#46412;_&#50937; Conversion Page-->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 964418007;
+        var google_conversion_language = "en";
+        var google_conversion_format = "3";
+        var google_conversion_color = "ffffff";
+        var google_conversion_label = "6YMHCM_i81wQ17PvywM";
+        var google_remarketing_only = false;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt=""
+                src="//www.googleadservices.com/pagead/conversion/964418007/?label=6YMHCM_i81wQ17PvywM&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "s_4540c185467c";
+        if (!_nasa) var _nasa = {};
+        wcs.inflow("goodchoice.kr");
+        wcs_do(_nasa);
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google AdWords: 802163829 -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-802163829"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-802163829');
+
+        // Event snippet for WEB_다운로드_버튼 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button.
+
+        $(function () {
+            $('.appdown_link').on('click', function () {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-802163829/jxc6CN22x4MBEPWYwP4C'
+                });
+            });
+        });
+    </script>
+
+    <!-- 채널제출 -->
+    <span itemscope="" itemtype="http://schema.org/Organization">
+        <link itemprop="url" href="https://www.goodchoice.kr">
+        <a itemprop="sameAs" href="https://www.facebook.com/goodchoiceofficial"></a>
+        <a itemprop="sameAs" href="https://play.google.com/store/apps/details?id=kr.goodchoice.abouthere"></a>
+        <a itemprop="sameAs" href="https://itunes.apple.com/kr/app/id884043462"></a>
+        <a itemprop="sameAs" href="https://post.naver.com/withinnovation"></a>
+        <a itemprop="sameAs" href="https://www.youtube.com/channel/UCLI1HOVJdhWdVl9pT__g2Zw"></a>
+    </span>
+    </div>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+    </div>
+    <div class="ui-front comiseo-daterangepicker-mask" style="display: none;"></div>
+    <div class="comiseo-daterangepicker comiseo-daterangepicker-right ui-widget ui-widget-content ui-corner-all ui-front"
+        style="display: none; left: 50px; top: 359px;">
+        <div class="comiseo-daterangepicker-main ui-widget-content">
+            <div class="comiseo-daterangepicker-presets">
+                <ul id="ui-id-1" role="menu" tabindex="0" class="ui-menu ui-widget ui-widget-content">
+                    <li class="ui-menu-item">
+                        <div id="ui-id-2" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Today</div>
+                    </li>
+                    <li class="ui-menu-item">
+                        <div id="ui-id-3" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Yesterday</div>
+                    </li>
+                    <li class="ui-menu-item">
+                        <div id="ui-id-4" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Last 7 Days</div>
+                    </li>
+                    <li class="ui-menu-item">
+                        <div id="ui-id-5" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Last Week (Mo-Su)
+                        </div>
+                    </li>
+                    <li class="ui-menu-item">
+                        <div id="ui-id-6" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Month to Date</div>
+                    </li>
+                    <li class="ui-menu-item">
+                        <div id="ui-id-7" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Previous Month
+                        </div>
+                    </li>
+                    <li class="ui-menu-item">
+                        <div id="ui-id-8" tabindex="-1" role="menuitem" class="ui-menu-item-wrapper">Year to Date</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="comiseo-daterangepicker-calendar ui-widget-content hasDatepicker" id="dp1634625497586">
+                <div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
+                    style="display: block;">
+                    <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a
+                            class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span
+                                class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a
+                            class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click"
+                            title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a>
+                        <div class="ui-datepicker-title">&nbsp;<span class="ui-datepicker-year">2021년&nbsp;</span><span
+                                class="ui-datepicker-month">10월</span></div>
+                    </div>
+                    <table class="ui-datepicker-calendar">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="ui-datepicker-week-end"><span title="일">일</span></th>
+                                <th scope="col"><span title="월">월</span></th>
+                                <th scope="col"><span title="화">화</span></th>
+                                <th scope="col"><span title="수">수</span></th>
+                                <th scope="col"><span title="목">목</span></th>
+                                <th scope="col"><span title="금">금</span></th>
+                                <th scope="col" class="ui-datepicker-week-end"><span title="토">토</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td
+                                    class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">1</span></td>
+                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">2</span></td>
+                            </tr>
+                            <tr>
+                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">3</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">4</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">5</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">6</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">7</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">8</span></td>
+                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">9</span></td>
+                            </tr>
+                            <tr>
+                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">10</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">11</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">12</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">13</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">14</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">15</span></td>
+                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">16</span></td>
+                            </tr>
+                            <tr>
+                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">17</span></td>
+                                <td class=" ui-datepicker-unselectable ui-state-disabled  "><span
+                                        class="ui-state-default">18</span></td>
+                                <td class=" ui-datepicker-days-cell-over ui-state-highlight  ui-datepicker-current-day ui-datepicker-today"
+                                    data-handler="selectDay" data-event="click" data-month="9" data-year="2021"><a
+                                        class="ui-state-default ui-state-highlight ui-state-active ui-state-hover"
+                                        href="#">19</a></td>
+                                <td class=" ui-state-highlight " data-handler="selectDay" data-event="click"
+                                    data-month="9" data-year="2021"><a class="ui-state-default" href="#">20</a></td>
+                                <td class="  " data-handler="selectDay" data-event="click" data-month="9"
+                                    data-year="2021"><a class="ui-state-default" href="#">21</a></td>
+                                <td class="  " data-handler="selectDay" data-event="click" data-month="9"
+                                    data-year="2021"><a class="ui-state-default" href="#">22</a></td>
+                                <td class=" ui-datepicker-week-end  " data-handler="selectDay" data-event="click"
+                                    data-month="9" data-year="2021"><a class="ui-state-default" href="#">23</a></td>
+                            </tr>
+                            <tr>
+                                <td class=" ui-datepicker-week-end  " data-handler="selectDay" data-event="click"
+                                    data-month="9" data-year="2021"><a class="ui-state-default" href="#">24</a></td>
+                                <td class="  " data-handler="selectDay" data-event="click" data-month="9"
+                                    data-year="2021"><a class="ui-state-default" href="#">25</a></td>
+                                <td class="  " data-handler="selectDay" data-event="click" data-month="9"
+                                    data-year="2021"><a class="ui-state-default" href="#">26</a></td>
+                                <td class="  " data-handler="selectDay" data-event="click" data-month="9"
+                                    data-year="2021"><a class="ui-state-default" href="#">27</a></td>
+                                <td class="  " data-handler="selectDay" data-event="click" data-month="9"
+                                    data-year="2021"><a class="ui-state-default" href="#">28</a></td>
+                                <td class="  " data-handler="selectDay" data-event="click" data-month="9"
+                                    data-year="2021"><a class="ui-state-default" href="#">29</a></td>
+                                <td class=" ui-datepicker-week-end  " data-handler="selectDay" data-event="click"
+                                    data-month="9" data-year="2021"><a class="ui-state-default" href="#">30</a></td>
+                            </tr>
+                            <tr>
+                                <td class=" ui-datepicker-week-end  " data-handler="selectDay" data-event="click"
+                                    data-month="9" data-year="2021"><a class="ui-state-default" href="#">31</a></td>
+                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                                <td
+                                    class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">
+                                    &nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="ui-helper-clearfix">
+            <div class="comiseo-daterangepicker-buttonpanel"><button type="button"
+                    class="ui-priority-primary ui-button ui-corner-all ui-widget">선택 완료</button><button type="button"
+                    class="ui-priority-secondary ui-button ui-corner-all ui-widget">Clear</button><button type="button"
+                    class="ui-priority-secondary ui-button ui-corner-all ui-widget">Cancel</button></div>
         </div>
     </div>
-
-    <!-- #3 거리순/추천순 팝업 -->
-    <div class="layer pop_sort box_shadow">
-        <ul>
-            <li><button type="button" data-sort="HIT" class="active">추천 순</button></li>
-            <li><button type="button" data-sort="DISTANCE" class="">거리 순</button></li>
-            <li><button type="button" data-sort="LOWPRICE" class="">낮은 가격 순</button></li>
-            <li><button type="button" data-sort="HIGHPRICE" class="">높은 가격 순</button></li>
-        </ul>
-        <button type="button" onclick="close_layer();">취소</button>
+    <div class="layer popup_cont pop_twobtn ell" style="display: none; margin-top: -67.5px;">
+        <div class="text">위치 정보를 기반으로 새로고침 하시겠습니까?</div>
+        <div class="btn_wrap"><button onclick="close_layer()">취소</button><button
+                onclick="location.replace(window.location.origin + window.location.pathname)"
+                class="col_mint">확인</button></div>
     </div>
-
-    <!-- #4 지도 - 모바일 숙소 소개 -->
-    <div class="layer pop_m_room">
-        <ul class="owl-carousel"></ul>
-    </div>
-
-</div>
-
-<!-- Footer -->
-<!-- 푸터 -->
-<div th:replace="userthy/user-footer :: user-footer"></div>
-<!--푸터 끝 -->
-
-</div>
-
-<!-- 상단으로 -->
-<button class="btn_go_top" onclick="moveTop();">상단으로</button>
-
-<!-- //Wrap -->
-
-<!-- Script -->
-<!-- Library -->
-<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
-<script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
-<script type="text/javascript" src="/js/library/iscroll.js"></script>
-
-<!-- Service -->
-<script type="text/javascript" src="/js/service/common.js"></script>
-<script type="text/javascript" src="/js/service/geolocation.js"></script>
-
-<!-- Module -->
-<script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
-
-<!-- Page Script -->
-<script type="text/javascript" src="/js/library/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/js/library/jquery.ui.touch-punch.min.js"></script>
-
-<script type="text/javascript" src="/js/library/swiper.min.js"></script>
-<script type="text/javascript" src="/js/library/owl.carousel.min.js"></script>
->
-<script type="text/javascript" src="/js/library/vue.min.js"></script>
-<script type="text/javascript" src="/js/service/product.js"></script>
+    <!-- Body Spinner -->
 
 
 
-<!-- 안연주 product 이유->적용 product_date 버튼이벤트가 겹쳐 작동하지 않아 파일 따로 만듬 -->
 
-<script type="text/javascript" src="/js/service/product.list.js"></script>
-
-<script type="text/javascript" src="/js/ahn_product.search.js"></script>
-<script type="text/javascript" src="/js/moment.min.js"></script>
-<script type="text/javascript" src="/js/datepick.js"></script>
-<script type="text/javascript" src="/js/daterangepicker.js"></script>
-<!-- Body Spinner -->
-<!-- <div class="spinner show"><span></span></div> -->
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
 
-<script>
-    $(function (){
-        axios.get('/api/host/motellist', {
-        }).then(function (response){
-            console.log(response);
+    <script>
+        $(function () {
+            axios.get('/api/host/motellist', {}).then(function (response) {
+                console.log(response);
 
-            let tb = $('');
-
-
-            for(let i in response.data){
-                let $id = response.data[i].id;
-                let $tbMemId = response.data[i].tbMemId;
-                console.log($id);
+                let tb = $('');
 
 
-                let $myCorporate = response.data[i].myCorporate;
-                let $mySidein1 = response.data[i].mySidein1;
-                let $myRetime = response.data[i].myRetime;
-                let $myService = response.data[i].myService;
-
-                console.log("res: " + response.data[i].myRetime);
-                console.log("bian: " + $myRetime);
+                for (let i in response.data) {
+                    let $id = response.data[i].id;
+                    let $tbMemId = response.data[i].tbMemId;
+                    console.log($id);
 
 
-                let userli = $(`<li class="list_2 adcno2 items">`).append(
-                    `<a href="/userindex/1_005/` + $id + `/` + $tbMemId + `">`+
-                    `<p class="pic">`+
-                    `<img className="lazy align"
-                     data-original="../../img/resize_1000X500x0/affiliate/2019/09/11/5d7880814191d.jpg"
-                     src=""
-                     alt="` + $myCorporate + `"/>`+
-                    `</p>`+
-                    `<div class="stage gra_black_vertical">`+
-                    `<div class="name">`+
-                    `<strong class="shname">` + $myCorporate + `</strong>`+
-                    `<p>`+
-                    $mySidein1 +
-                    `</p>`+
-                    `</div>`+
-                    `<span class="service" style="display: none">` + $myService + `</span>` +
-                    `<div>`+
-                    `<div>`+
-                    `<div class="price">`+
-                    `<div class="map_html">`+
-                    `<p><b>` + $myRetime + `원</b></p>`+
-                    `</div>`+
-                    ` <p><b class="prices">` + $myRetime + `</b><b>` + `원 </b></p>`+
-                    `</div>`+
-                    `</div>`+
-                    `</a>`+
-                    `</li>`
+                    let $myCorporate = response.data[i].myCorporate;
+                    let $mySidein1 = response.data[i].mySidein1;
+                    let $myRetime = response.data[i].myRetime;
+                    let $myService = response.data[i].myService;
+
+                    console.log("res: " + response.data[i].myRetime);
+                    console.log("bian: " + $myRetime);
+
+                    let userli = $(`<li class="list_2 adcno2 items" style="margin-bottom: 20px">`)
+                        .append(
+                            `<a href="/userindex/1_005/` + $id + `/` + $tbMemId + `">` +
+                            `<p class="pic">` +
+                            `<img id="hlistImg_` + $id + `" class="lazy align hlistImg" alt="` +
+                            $myCorporate + `"/>` +
+                            `</p>` +
+                            `<div class="stage gra_black_vertical">` +
+                            `<div class="name">` +
+                            `<strong class="shname">` + $myCorporate + `</strong>` +
+                            `<p>` +
+                            $mySidein1 +
+                            `</p>` +
+                            `</div>` +
+                            `<span class="service" style="display: none">` + $myService + `</span>` +
+                            `<div>` +
+                            `<div>` +
+                            `<div class="price">` +
+                            `<div class="map_html">` +
+                            `<p><b>` + $myRetime + `원</b></p>` +
+                            `</div>` +
+                            ` <p><b class="prices">` + $myRetime + `</b><b>` + `원 </b></p>` +
+                            `</div>` +
+                            `</div>` +
+                            `</a>` +
+                            `</li>`
 
 
-                );
+                        );
 
-                $('#poduct_list_area').append(userli);
-                // tb.append(userli);
-            } // for문 끝
-            tb.append('');
-            // $('#poduct_list_area').append(userli);
-            console.log('했니?');
+                    $('#poduct_list_area').append(userli);
+                    // tb.append(userli);
+                    //이미지 추가----------------------------------------
+                    console.log('/host/himglist/' + $id);
+                    axios.get('/host/himglist/' + $id, {
+
+                    }).then(function (response) {
+                        console.log('이미지 리스트');
+                        console.log(response);
+                        let hlistImg = response.data[0].safeFile.substr(56); //이미지
+                        console.log(hlistImg);
+                        $('#hlistImg_' + $id).attr('src', hlistImg);
+                        $('#hlistImg_' + $id).attr('data-original', hlistImg);
+
+                    }).catch(function (err) {
+                        console.log(err);
+                    });
+                    //이미지 추가--끝--------------------------------------
 
 
-        }).catch(function(err){
-            console.log('all-staff axios list 호출중 에러');
-            console.log(err);
-        }) // axios끝
-        //    $(function)끝
-    });
 
 
-</script>
+
+                } // for문 끝
+                tb.append('');
+                // $('#poduct_list_area').append(userli);
+                console.log('했니?');
+
+
+            }).catch(function (err) {
+                console.log('all-staff axios list 호출중 에러');
+                console.log(err);
+            }) // axios끝
+            //    $(function)끝
+        });
+    </script>
 
 </body>
 
-<!-- Mirrored from www.goodchoice.kr/product/search/4 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Aug 2021 13:20:39 GMT -->
+<script
+    src="https://www.googleadservices.com/pagead/conversion/964418007/?random=1634625497654&amp;cv=9&amp;fst=1634625497654&amp;num=1&amp;label=6YMHCM_i81wQ17PvywM&amp;bg=ffffff&amp;hl=en&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;eid=375603260&amp;u_h=864&amp;u_w=1536&amp;u_ah=824&amp;u_aw=1536&amp;u_cd=24&amp;u_his=7&amp;u_tz=540&amp;u_java=false&amp;u_nplug=5&amp;u_nmime=2&amp;sendb=1&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fwww.goodchoice.kr%2Fproduct%2Fsrp&amp;ref=https%3A%2F%2Fwww.goodchoice.kr%2F&amp;tiba=%EB%82%B4%EC%A3%BC%EB%B3%80%20-%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EB%B0%A9%EB%B0%B0%EB%8F%99%20%EB%AA%A8%ED%85%94%20%7C%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C&amp;hn=www.googleadservices.com&amp;rfmt=3&amp;fmt=4">
+</script>
+<script
+    src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/802163829/?random=1634625497825&amp;cv=9&amp;fst=1634625497825&amp;num=1&amp;bg=ffffff&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=864&amp;u_w=1536&amp;u_ah=824&amp;u_aw=1536&amp;u_cd=24&amp;u_his=7&amp;u_tz=540&amp;u_java=false&amp;u_nplug=5&amp;u_nmime=2&amp;gtm=2oaad0&amp;sendb=1&amp;ig=1&amp;data=event%3Dgtag.config&amp;frm=0&amp;url=https%3A%2F%2Fwww.goodchoice.kr%2Fproduct%2Fsrp&amp;ref=https%3A%2F%2Fwww.goodchoice.kr%2F&amp;tiba=%EB%82%B4%EC%A3%BC%EB%B3%80%20-%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EB%B0%A9%EB%B0%B0%EB%8F%99%20%EB%AA%A8%ED%85%94%20%7C%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4">
+</script>
 
 </html>

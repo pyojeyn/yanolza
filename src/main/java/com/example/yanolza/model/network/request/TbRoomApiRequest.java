@@ -24,9 +24,9 @@ public class TbRoomApiRequest {
     private String rmIntro;
     private String rmService;
     private String prSdate;   // 요일
-    private String prSprice; // 금액
-    private String prDate;   // 요일
-    private String prPrice; // 금액
+    private String prSprice;  // 금액
+    private String prDate;    // 요일
+    private String prPrice;   // 금액
 
     private Integer tbHostId; // 숙박번호
 

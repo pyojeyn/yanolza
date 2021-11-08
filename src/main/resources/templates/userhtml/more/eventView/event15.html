@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+<!---제 8회 액티비티 공동구매 사전 신청-->
 
 <head>
     <meta charset="UTF-8">
@@ -12,16 +13,36 @@
     <!-- CSS -->
     <title>제 8회 액티비티 공동구매 사전 신청 - 이벤트 | 여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
-    <!-- <link rel="canonical" href="https://www.goodchoice.kr/more/eventView/1750"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            border: 0;
+            vertical-align: top;
+            margin-bottom: -1px;
+        }
+    </style>
     <script>
         var _BASE_URL = 'https://www.goodchoice.kr/';
         var _MOBILE = 'W';
         var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
         var _FACEBOOK_APP_ID = '607467975974643';
     </script>
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
@@ -30,7 +51,7 @@
     <div class="wrap">
 
         <!-- Header -->
-           <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
@@ -103,7 +124,7 @@
                         <ul>
                             <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
                                 <ul>
-                                   <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
+                                    <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
                                     <li><a href="/userindex/event">이벤트</a></li>
                                     <li><a href="/userindex/project">혁신 프로젝트</a></li>
                                     <li><a href="/userindex/faq">고객문의</a></li>
@@ -140,7 +161,7 @@
             <nav>
                 <ul>
                     <!-- <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class="active"  href="/userindex/event">이벤트</a></li>
+                    <li><a class="active" href="/userindex/event">이벤트</a></li>
                     <li><a class="" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
@@ -162,33 +183,27 @@
                         <link rel="stylesheet" href="/static/event/common/css/base-event.css">
                         <link rel="stylesheet" href="/frontend/admin/css/components/modules/dialog.css" />
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery-1.12.3.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery.lazyload.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/vue.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/service/button-scroll-top.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery-1.12.3.min.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery.lazyload.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/vue.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/button-scroll-top.js">
+                        </script>
 
                         <script type="text/javascript" src="/api3/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/underscore.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/userActionLog.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/common.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/userActionLog.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/common.js"></script>
                         <script src="/api3/js/service/evtBraze.js"></script>
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/moment.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/flipclock.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/library/swiper4.0/swiper.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/library/swiper4.0/swiper.min.js"></script>
                         <link rel="stylesheet" href="/api3/css/library/swiper.css">
 
                         <!-- keen vue list (기획전) -->
-                        <script type="text/javascript"
-                        src="/static/event/common/js/service/product-common.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/product-common.js"></script>
 
                         <script>
                             var eno = 1750;
@@ -202,16 +217,15 @@
                             });
                         </script>
                         <script>
-                            var eDefaultString = '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1750%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A05%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EC%A0%9C%208%ED%9A%8C%20%EC%95%A1%ED%8B%B0%EB%B9%84%ED%8B%B0%20%EA%B3%B5%EB%8F%99%EA%B5%AC%EB%A7%A4%20%EC%82%AC%EC%A0%84%20%EC%8B%A0%EC%B2%AD%22%2C%22label%22%3A%22%EC%95%A1%ED%8B%B0%EB%B9%84%ED%8B%B0%20%EA%B3%B5%EB%8F%99%EA%B5%AC%EB%A7%A4%20%EC%82%AC%EC%A0%84%EC%8B%A0%EC%B2%AD%7C%ED%95%9C%EA%B5%AD%EB%AF%BC%EC%86%8D%EC%B4%8C%20%EC%B5%9C%EB%8C%80%ED%95%A0%EC%9D%B8%EF%BC%81%7C17%2C000%EC%9B%90%EB%B6%80%ED%84%B0%20%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1750%5C%2F1750_kakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1750%5Cu0026title%3D%EC%A0%9C%208%ED%9A%8C%20%EC%95%A1%ED%8B%B0%EB%B9%84%ED%8B%B0%20%EA%B3%B5%EB%8F%99%EA%B5%AC%EB%A7%A4%20%EC%82%AC%EC%A0%84%20%EC%8B%A0%EC%B2%AD%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1750%5C%2F1750_kakao.jpg%5Cu0026label%3D%EC%95%A1%ED%8B%B0%EB%B9%84%ED%8B%B0%20%EA%B3%B5%EB%8F%99%EA%B5%AC%EB%A7%A4%20%EC%82%AC%EC%A0%84%EC%8B%A0%EC%B2%AD%7C%ED%95%9C%EA%B5%AD%EB%AF%BC%EC%86%8D%EC%B4%8C%20%EC%B5%9C%EB%8C%80%ED%95%A0%EC%9D%B8%EF%BC%81%7C17%2C000%EC%9B%90%EB%B6%80%ED%84%B0%20%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1750%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1750%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
+                            var eDefaultString =
+                                '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1750%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A05%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EC%A0%9C%208%ED%9A%8C%20%EC%95%A1%ED%8B%B0%EB%B9%84%ED%8B%B0%20%EA%B3%B5%EB%8F%99%EA%B5%AC%EB%A7%A4%20%EC%82%AC%EC%A0%84%20%EC%8B%A0%EC%B2%AD%22%2C%22label%22%3A%22%EC%95%A1%ED%8B%B0%EB%B9%84%ED%8B%B0%20%EA%B3%B5%EB%8F%99%EA%B5%AC%EB%A7%A4%20%EC%82%AC%EC%A0%84%EC%8B%A0%EC%B2%AD%7C%ED%95%9C%EA%B5%AD%EB%AF%BC%EC%86%8D%EC%B4%8C%20%EC%B5%9C%EB%8C%80%ED%95%A0%EC%9D%B8%EF%BC%81%7C17%2C000%EC%9B%90%EB%B6%80%ED%84%B0%20%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1750%5C%2F1750_kakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1750%5Cu0026title%3D%EC%A0%9C%208%ED%9A%8C%20%EC%95%A1%ED%8B%B0%EB%B9%84%ED%8B%B0%20%EA%B3%B5%EB%8F%99%EA%B5%AC%EB%A7%A4%20%EC%82%AC%EC%A0%84%20%EC%8B%A0%EC%B2%AD%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1750%5C%2F1750_kakao.jpg%5Cu0026label%3D%EC%95%A1%ED%8B%B0%EB%B9%84%ED%8B%B0%20%EA%B3%B5%EB%8F%99%EA%B5%AC%EB%A7%A4%20%EC%82%AC%EC%A0%84%EC%8B%A0%EC%B2%AD%7C%ED%95%9C%EA%B5%AD%EB%AF%BC%EC%86%8D%EC%B4%8C%20%EC%B5%9C%EB%8C%80%ED%95%A0%EC%9D%B8%EF%BC%81%7C17%2C000%EC%9B%90%EB%B6%80%ED%84%B0%20%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1750%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1750%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
                         </script>
 
                         <link rel="stylesheet" href="/api3/js/event_custom/event-default.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/event-custom.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/products-vue-custom.min.css">
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/event-custom.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/products-vue-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/event-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/products-vue-custom.min.js"></script>
 
                         <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
                         <script>
@@ -340,7 +354,9 @@
 
                         <script>
                             EC.appShare.options.isAppShare = true;
-                            EC.entry = { 1750: false };
+                            EC.entry = {
+                                1750: false
+                            };
 
                             /**
                              * 제휴점 판매 수량 체크 및 dom select 증가 카운팅
@@ -348,7 +364,7 @@
                             var EvtSaleCnt = function (params) {
                                 var C = {
                                     data: {
-                                        el: undefined,      // 카운트가 들어갈 selector
+                                        el: undefined, // 카운트가 들어갈 selector
                                         eventNo: undefined, // 조회할 이벤트 번호
                                     },
                                     init(params) {
@@ -360,10 +376,13 @@
                                         for (k in this.data) {
                                             if (!this.data[k]) {
                                                 errCnt++;
-                                                console.log('!!! error !!! ' + k + ' is undefined in evtSaleCnt()');
+                                                console.log('!!! error !!! ' + k +
+                                                    ' is undefined in evtSaleCnt()');
                                             }
                                         }
-                                        if (!!errCnt) { return false; }
+                                        if (!!errCnt) {
+                                            return false;
+                                        }
                                         this.loadEvtSaleCnt();
                                     },
                                     loadEvtSaleCnt() {
@@ -383,13 +402,19 @@
                                     numberWithAnimation(num) {
                                         var duration = 800;
                                         var elCount = $(this.data.el);
-                                        $({ val: 0 }).animate({ val: num }, {
+                                        $({
+                                            val: 0
+                                        }).animate({
+                                            val: num
+                                        }, {
                                             duration: duration,
                                             step: function () {
-                                                elCount.text(EC.filter.numberToComma(Math.floor(this.val)));
+                                                elCount.text(EC.filter.numberToComma(Math.floor(this
+                                                    .val)));
                                             },
                                             complete: function () {
-                                                elCount.text(EC.filter.numberToComma(Math.floor(this.val)));
+                                                elCount.text(EC.filter.numberToComma(Math.floor(this
+                                                    .val)));
                                             }
                                         });
                                     },
@@ -432,9 +457,9 @@
                                 var L = {
                                     data: {
                                         params: undefined,
-                                        eventNo: undefined,     // 이벤트 No
-                                        el: undefined,          // el
-                                        cntObj: undefined,      // 카운팅 오브젝트
+                                        eventNo: undefined, // 이벤트 No
+                                        el: undefined, // el
+                                        cntObj: undefined, // 카운팅 오브젝트
                                     },
                                     init(params) {
                                         params = params || {};
@@ -495,24 +520,41 @@
                                     },
                                     message: {
                                         login() {
-                                            popup.show('로그인 후 참여해주세요!', [
-                                                { text: "닫기", onclick: "popup.close();" }, { text: "로그인", onclick: "go.login();" }
-                                            ]);
+                                            popup.show('로그인 후 참여해주세요!', [{
+                                                text: "닫기",
+                                                onclick: "popup.close();"
+                                            }, {
+                                                text: "로그인",
+                                                onclick: "go.login();"
+                                            }]);
                                         },
                                         success() {
-                                            popup.show('<b>공동구매 좋아요 완료</b><br>판매 시작 5분 전에<br>미리 알려드릴게요!', [
-                                                { text: "닫기", onclick: "popup.close();" },
-                                                { text: "카톡 공유하기", onclick: "window.afterShare();" },
+                                            popup.show('<b>공동구매 좋아요 완료</b><br>판매 시작 5분 전에<br>미리 알려드릴게요!', [{
+                                                    text: "닫기",
+                                                    onclick: "popup.close();"
+                                                },
+                                                {
+                                                    text: "카톡 공유하기",
+                                                    onclick: "window.afterShare();"
+                                                },
                                             ]);
                                         },
                                         overlap() {
-                                            popup.show('<b>이미 좋아요 완료!</b><br>함께 공동구매 하고픈<br>친구에게 알려주세요!', [
-                                                { text: "닫기", onclick: "popup.close();" },
-                                                { text: "카톡 공유하기", onclick: "window.afterShare();" },
+                                            popup.show('<b>이미 좋아요 완료!</b><br>함께 공동구매 하고픈<br>친구에게 알려주세요!', [{
+                                                    text: "닫기",
+                                                    onclick: "popup.close();"
+                                                },
+                                                {
+                                                    text: "카톡 공유하기",
+                                                    onclick: "window.afterShare();"
+                                                },
                                             ]);
                                         },
                                         overtime() {
-                                            popup.show('응모 기간이 종료 되었습니다.', [{ text: "닫기", onclick: "popup.close();" }]);
+                                            popup.show('응모 기간이 종료 되었습니다.', [{
+                                                text: "닫기",
+                                                onclick: "popup.close();"
+                                            }]);
                                         }
                                     }
                                 }
@@ -548,24 +590,24 @@
                 <!-- Page -->
                 <div class="page">
                     <p>
-                        <a href="/event16">
+                        <a href="/userindex/event20">
                             <span class="ico_arr_up">다음글</span>
-                            <b>랜덤여행 럭키백 4탄</b>
-                            <em>기간 : 2021.08.20 ~ 2021.08.26</em>
+                            <b>전국민 도망지원 캠페인</b>
+                            <em>기간: 2021.08.10 ~ 2021.08.31</em>
                         </a>
                     </p>
                     <p>
-                        <a href="/event14">
+                        <a href="/userindex/event14">
                             <span class="ico_arr_down">이전글</span>
-                            <b>함께해요 여기어때 리서치</b>
-                            <em>기간 : 2021.07.19 ~ 끝날 때까지!</em>
+                            <b>랜덤여행 럭키백 4탄</b>
+                            <em>2021.08.11 ~ 끝날 때 까지!</em>
                         </a>
                     </p>
                 </div>
 
                 <div class="align_center">
-                    <button onclick="window.location.href='https://www.goodchoice.kr/more/event#0'"
-                        class="btn_red_fill">목록보기</button>
+                    <button class="btn_red_fill"><a href="/userindex/event"
+                            style="text-decoration:none; color : white;">목록보기</a></button>
                 </div>
 
             </div>

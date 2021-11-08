@@ -173,7 +173,7 @@ function logoutHome() {
 
 // 비밀번호 확인
 function userPasswordCheck(uType) {
-	var password = $('#passwordUser').val();
+	//var password = $('#passwordUser').val();
 	var reason = $('input[name="radios"]:checked').val();
 	var reasonMsg = $('input[name="radios"]:checked').siblings('.reason-innder-box').children('textarea').val();
 	/*
@@ -205,82 +205,78 @@ function userPasswordCheck(uType) {
 }
 
 //탈퇴 처리
-function userWithdrawal() {
-	var uno = $('#uno').val();
-	var reason = $('#reason').val();
-	var reasonMsg = $('#reasonMsg').val();
+	function userWithdrawal() {
+		var uno = $('#uno').val();
+		var reason = $('#reason').val();
+		var reasonMsg = $('#reasonMsg').val();
 
-	$.ajax({
-		type: 'GET',
-		url: '/my/userWithdrawal?uno=' + uno + '&reason=' + reason + '&reasonMsg=' + reasonMsg,
-		dataType: 'json',
-		success: function (result) {
-			if (typeof result.data.uno == "undefined" || result.data.uno === null) {
-				alert(result.meta.message);
-				return false;
-			} else {
-				window.location.href = '/userindex/';
+		$.ajax({
+			type: 'GET',
+			url: '/my/userWithdrawal?uno=' + uno + '&reason=' + reason + '&reasonMsg=' + reasonMsg,
+			dataType: 'json',
+			success: function (result) {
+				if (typeof result.data.uno == "undefined" || result.data.uno === null) {
+					alert(result.meta.message);
+					return false;
+				} else {
+					window.location.href = '/userindex/';
+				}
 			}
-		}
-	});
-}
+		});
+	}
+
 // 회원탈퇴 레이어 팝업 OPEN
-function withdrawPopOpen(stepNum) {
-	var step = stepNum ? stepNum : 0;
-	var conts = $('.cont-step');
-	$(conts).hide();
-	$(conts).eq(step).show();
-	pop_layer_w('new_pop_withdraw');
-};
+	function withdrawPopOpen(stepNum) {
+		var step = stepNum ? stepNum : 0;
+		var conts = $('.cont-step');
+		$(conts).hide();
+		$(conts).eq(step).show();
+		pop_layer_w('new_pop_withdraw');
+	};
 
 // 회원탈퇴 초기화
-function withdrawInit(el) {
-	var el = el ? el : $('.cont-step');
-	el.find('.cont_section').scrollTop(0);
-	el.find('input').prop('checked', false);
-	el.find('input[type=password]').val('');
-	el.find('input[type=text]').val('');
-	el.find('.inner-textarea').val('');
-	$('#passwordCheckBtn').addClass('disabled');
-	$('#passwordCheckBtn').prop('disabled', true);
-	$('#agreeBtn').addClass('disabled');
-}
+	function withdrawInit(el) {
+		var el = el ? el : $('.cont-step');
+		el.find('.cont_section').scrollTop(0);
+		el.find('input').prop('checked', false);
+		el.find('input[type=password]').val('');
+		el.find('input[type=text]').val('');
+		el.find('.inner-textarea').val('');
+		$('#passwordCheckBtn').addClass('disabled');
+		$('#passwordCheckBtn').prop('disabled', true);
+		$('#agreeBtn').addClass('disabled');
+	}
+
 // 탈퇴팝업 app전용 toast
-function toastShow(e, elItem, msg) {
-	e.preventDefault();
-	var el = elItem;
-	var msg = msg ? msg : '&lsquo;여기어때 APP&rsquo;에서만 확인 가능합니다.';
-	toastPop(msg);
-}
+	function toastShow(e, elItem, msg) {
+		e.preventDefault();
+		var el = elItem;
+		var msg = msg ? msg : '&lsquo;여기어때 APP&rsquo;에서만 확인 가능합니다.';
+		toastPop(msg);
+	}
+
 // 탈퇴팝업 OPEN Next Page
-function nextStep(isBtn) {
-	$('.cont-step').hide();
-	$(isBtn).parents('.cont-step').next().show();
-}
+	function nextStep(isBtn) {
+		$('.cont-step').hide();
+		$(isBtn).parents('.cont-step').next().show();
+	}
+
 // 탈퇴팝업 OPEN Select Page
-function moveStep(pageNum) {
-	withdrawInit();
-	$('.cont-step').hide();
-	$('.cont-step').eq(pageNum).show();
-}
-// 탈퇴 step2 선택, 비번입력 버튼 활성화
+	function moveStep(pageNum) {
+		withdrawInit();
+		$('.cont-step').hide();
+		$('.cont-step').eq(pageNum).show();
+	}
+
+// step2 체크박스시 버튼 활성화
 function pwRdoValid(utype) {
 	if (utype >= 2) {
 		$('input:radio[name=radios]').change(function () {
 			validSubmitBtn($(this).is(':checked'));
 		})
 	} else {
-		var pwInputText = $('#passwordUser');
-		$(pwInputText).keyup(function () {
-			var radioStatus = $('input:radio[name=radios]').is(':checked');
-			if ($(pwInputText).val().length >= 4 && radioStatus) {
-				validSubmitBtn(true);
-			} else {
-				validSubmitBtn(false);
-			}
-		});
 		$('input:radio[name=radios]').change(function () {
-			if ($(this).is(':checked') && $(pwInputText).val().length >= 4) {
+			if ($(this).is(':checked')) {
 				validSubmitBtn(true);
 			} else {
 				validSubmitBtn(false);
@@ -301,7 +297,10 @@ function validSubmitBtn(validNext) {
 	}
 }
 
-// 탈퇴 step3 버튼 클릭
+
+
+
+//탈퇴 step3 버튼 클릭
 function lastAgree() {
 	var agree = $('#withdrawAgreeCheck');
 	if (!agree.is(':checked')) {
@@ -319,7 +318,7 @@ function lastAgree() {
 		);
 	}
 }
-// 탈퇴 step3 주의사항 체크 버튼 활성화
+//탈퇴 step3 주의사항 체크 버튼 활성화
 function agreeChk() {
 	var agree = $('#withdrawAgreeCheck');
 	$(agree).change(function () {
@@ -329,11 +328,11 @@ function agreeChk() {
 			$('#agreeBtn').addClass('disabled');
 		}
 	});
-	// $('input:radio[name=radios]').change(function(){
-	// 	if($(this).is(':checked') && $(pwInputText).val().length >= 4) {
-	// 		validSubmitBtn(true)
-	// 	} else {
-	// 		validSubmitBtn(false)
-	// 	}
-	// })
+	$('input:radio[name=radios]').change(function(){
+		if($(this).is(':checked') && $(pwInputText).val().length >= 4) {
+			validSubmitBtn(true)
+		} else {
+			validSubmitBtn(false)
+		}
+	})
 }

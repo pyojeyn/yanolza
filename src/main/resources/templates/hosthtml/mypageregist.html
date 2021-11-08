@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="ko-KR" class="no-js">
-<!--<![endif]-->
 
 <head>
     <meta charset="UTF-8">
@@ -23,9 +22,8 @@
     <script src="/host/js/jquery-ui.min.js"></script>
     <script src="/host/js/jquery.lazyload.min.js"></script> <!-- 담당자 추가, 로그아웃-->
 
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
 
 </head>
@@ -39,11 +37,11 @@
     <!--헤더 끝 -->
 
 
-    <!--  안연주 hidden 값 끝  mem 아이디임-->
+    <!--  hidden 값 끝  mem 아이디임-->
     <input type="hidden" name="id" id="id" th:value="${id}">
-<!--    host id-->
+    <!--    host id-->
     <input type="hidden" name="hostid" id="hostid">
-    <!--   안연주 hidden 값 끝 -->
+    <!--   hidden 값 끝 -->
     <section class="container">
         <div class="menu-step3">
             <div class="todo-layer">
@@ -103,9 +101,8 @@
             </div>
         </div>
         <div class="list-layer">
-<!--            폼 전송 -->
-            <form class="form-horizontal" id="my-form" method="post"  name="my"
-                enctype="multipart/form-data">
+            <!--  폼 전송 -->
+            <form class="form-horizontal" id="my-form" method="post" name="my" enctype="multipart/form-data">
                 <input type="hidden" name="uno" value="15273241" />
                 <input type="hidden" name="memEmail" />
                 <input type="hidden" name="ano" value="" />
@@ -130,8 +127,8 @@
                                     <span class="form-body">
 
 
-                                        <input class="form-control small-size myHp memEmail2" type="text" name="memEmail2"
-                                               placeholder="-없이적어주세요" style="width: 200px;">
+                                        <input class="form-control small-size myHp memEmail2" type="text"
+                                            name="memEmail2" placeholder="-없이적어주세요" style="width: 200px;">
                                     </span>
                                 </div>
 
@@ -156,8 +153,9 @@
                                                 </select>
                                             </div>
                                             <!--문자 almHp-->
-                                            <input class="form-control normal-size almHp" type="text" style="width:298px"
-                                                data-name="notification_number" placeholder="정보를 입력하세요. (띄어쓰기 제외)" />
+                                            <input class="form-control normal-size almHp" type="text"
+                                                style="width:298px" data-name="notification_number"
+                                                placeholder="정보를 입력하세요. (띄어쓰기 제외)" />
                                         </span>
                                     </div>
                                     <div class="form-layer mb_24">
@@ -165,19 +163,26 @@
                                         <div class="form-layer form-body ">
                                             <div class="chk_date">
                                                 <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                        data-name="notification_mon" checked="checked" name="week" value="월">월</label>
+                                                        data-name="notification_mon" checked="checked" name="week"
+                                                        value="월">월</label>
                                                 <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                        data-name="notification_tue" checked="checked" name="week" value="화">화</label>
+                                                        data-name="notification_tue" checked="checked" name="week"
+                                                        value="화">화</label>
                                                 <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                        data-name="notification_wed" checked="checked" name="week" value="수">수</label>
+                                                        data-name="notification_wed" checked="checked" name="week"
+                                                        value="수">수</label>
                                                 <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                        data-name="notification_thr" checked="checked" name="week" value="목">목</label>
+                                                        data-name="notification_thr" checked="checked" name="week"
+                                                        value="목">목</label>
                                                 <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                        data-name="notification_fri" checked="checked" name="week" value="금">금</label>
+                                                        data-name="notification_fri" checked="checked" name="week"
+                                                        value="금">금</label>
                                                 <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                        data-name="notification_sat" checked="checked" name="week" value="토">토</label>
+                                                        data-name="notification_sat" checked="checked" name="week"
+                                                        value="토">토</label>
                                                 <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                        data-name="notification_sun" checked="checked" name="week" value="일">일</label>
+                                                        data-name="notification_sun" checked="checked" name="week"
+                                                        value="일">일</label>
                                             </div>
                                             <div class="select-style small-size" style="width:100px;">
                                                 <select data-name="notification_from" name="almStime">
@@ -259,25 +264,33 @@
                                                         placeholder="정보를 입력하세요. (띄어쓰기 제외)" />
                                                 </span>
                                             </div>
-                                            <!-- 이거 왜 두개지? -->
+
+
                                             <div class="form-layer mb_24">
                                                 <span class="form-title">요일 / <br />시간 선택</span>
                                                 <div class="form-layer form-body ">
                                                     <div class="chk_date">
                                                         <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                                data-name="notification_mon" checked="checked" name="" value="mon">월</label>
+                                                                data-name="notification_mon" checked="checked"
+                                                                name="dayoftheweek" value="mon">월</label>
                                                         <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                                data-name="notification_tue" checked="checked" name="" value="tue">화</label>
+                                                                data-name="notification_tue" checked="checked"
+                                                                name="dayoftheweek" value="tue">화</label>
                                                         <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                                data-name="notification_wed" checked="checked" name="" value="wed">수</label>
+                                                                data-name="notification_wed" checked="checked"
+                                                                name="dayoftheweek" value="wed">수</label>
                                                         <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                                data-name="notification_thr" checked="checked" name="" value="thr">목</label>
+                                                                data-name="notification_thr" checked="checked"
+                                                                name="dayoftheweek" value="thr">목</label>
                                                         <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                                data-name="notification_fri" checked="checked" name="" value="fri">금</label>
+                                                                data-name="notification_fri" checked="checked"
+                                                                name="dayoftheweek" value="fri">금</label>
                                                         <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                                data-name="notification_sat" checked="checked" name="" value="sat">토</label>
+                                                                data-name="notification_sat" checked="checked"
+                                                                name="dayoftheweek" value="sat">토</label>
                                                         <label class="checkbox-inline icon-label"><input type="checkbox"
-                                                                data-name="notification_sun" checked="checked" name="" value="sun">일</label>
+                                                                data-name="notification_sun" checked="checked"
+                                                                name="dayoftheweek" value="sun">일</label>
                                                     </div>
                                                     <div class="select-style small-size" style="width:100px;">
                                                         <select data-name="notification_from">
@@ -343,7 +356,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- 이거 왜 두개지? 끝-->
                                     <div class="form-layer-text">
 
                                     </div>
@@ -367,8 +379,8 @@
                                 <div class="form-layer mb_08">
                                     <span class="form-title">상호명<br />(법인명)</span>
                                     <span class="form-body">
-                                        <input class="form-control normal-size myCorporate" type="text" name="myCorporate"
-                                            placeholder="사업자 등록증상 상호명" value="" />
+                                        <input class="form-control normal-size myCorporate" type="text"
+                                            name="myCorporate" placeholder="사업자 등록증상 상호명" value="" />
                                     </span>
                                 </div>
                                 <div class="form-layer-text mb_24">
@@ -384,25 +396,38 @@
 
                                 <div class="form-layer mb_24 chk_date2">
                                     <span class="form-title">업태</span>
-                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox" name="myCondition" value="숙박">숙박</label>
-                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox" name="myCondition" value="기타">기타</label>
-                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox" name="myCondition" value="음식 및 숙박">음식 및 숙박</label>
-                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox" name="myCondition" value="부동산">부동산</label>
-                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox" name="myCondition" value="음식">음식</label>
-                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox" name="myCondition" value="서비스">서비스</label>
+                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox"
+                                            name="myCondition" value="숙박">숙박</label>
+                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox"
+                                            name="myCondition" value="기타">기타</label>
+                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox"
+                                            name="myCondition" value="음식 및 숙박">음식 및 숙박</label>
+                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox"
+                                            name="myCondition" value="부동산">부동산</label>
+                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox"
+                                            name="myCondition" value="음식">음식</label>
+                                    <label class="checkbox-inline icon-label myCondition"><input type="checkbox"
+                                            name="myCondition" value="서비스">서비스</label>
 
                                 </div>
-                                        <!--업종-->
+                                <!--업종-->
                                 <div class="form-layer mb_24 chk_date3">
                                     <span class="form-title">업종</span>
-                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType" value="모텔" onclick="doOpenCheck(this);">모텔</label>
-                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType" value="호텔" onclick="doOpenCheck(this);">호텔</label>
-                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType" value="펜션" onclick="doOpenCheck(this);">펜션</label>
-                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType" value="리조트" onclick="doOpenCheck(this);">리조트</label>
-                                            <!-- 게스트 하우스 와 캠핑은 6 5 번으로 되있음-->
-                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType" value="게스트하우스" onclick="doOpenCheck(this);">게스트하우스</label>
-                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType" value="캠핑" onclick="doOpenCheck(this);">캠핑</label>
-                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType" value="한옥" onclick="doOpenCheck(this);">한옥</label>
+                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType"
+                                            value="모텔" onclick="doOpenCheck(this);">모텔</label>
+                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType"
+                                            value="호텔" onclick="doOpenCheck(this);">호텔</label>
+                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType"
+                                            value="펜션" onclick="doOpenCheck(this);">펜션</label>
+                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType"
+                                            value="리조트" onclick="doOpenCheck(this);">리조트</label>
+                                    <!-- 게스트 하우스 와 캠핑은 6 5 번으로 되있음-->
+                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType"
+                                            value="게스트하우스" onclick="doOpenCheck(this);">게스트하우스</label>
+                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType"
+                                            value="캠핑" onclick="doOpenCheck(this);">캠핑</label>
+                                    <label class="checkbox-inline icon-label"><input type="checkbox" name="myType"
+                                            value="한옥" onclick="doOpenCheck(this);">한옥</label>
                                 </div>
                                 <div class="form-layer mb_24">
                                     <span class="form-title">사업자<br />등록번호</span>
@@ -415,28 +440,30 @@
                                     <span class="form-title">업체 주소</span>
                                     <span class="form-body">
                                         <!-- 업체 주소 -->
-                                        <input class="form-control normal-size myAddr1" id="input_roadAddress" type="text"
-                                            name="address1" readonly placeholder="사업자 등록증상 업체 주소를 입력하세요." value="" />
+                                        <input class="form-control normal-size myAddr1" id="input_roadAddress"
+                                            type="text" name="address1" readonly placeholder="사업자 등록증상 업체 주소를 입력하세요."
+                                            value="" />
                                         <!--저장되는 주소값 myAddr1_2 기준으로 DB저장-->
-                                           <input type="hidden" name="input_roadAddress2" id="input_roadAddress2" class="myAddr1 myAddr1_2">
-
+                                        <input type="hidden" name="input_roadAddress2" id="input_roadAddress2"
+                                            class="myAddr1 myAddr1_2">
                                         <button type="button" class="btn btn-yeogi btn-normal-layer" id="postCode"
                                             onclick="daumPostCode()">주소 검색</button>
 
                                     </span>
+
                                 </div>
                                 <div class="form-layer newline">
                                     <span class="form-body">
                                         <input class="form-control normal-size myAddr2" type="text" name="address2"
-                                            placeholder="나머지 주소를 입력하세요."id="dong_code"/>
+                                            placeholder="나머지 주소를 입력하세요." id="dong_code" />
 
                                     </span>
                                 </div>
                                 <div class="form-layer mb_24">
                                     <span class="form-title">세금계산서<br />이메일</span>
                                     <span class="form-body">
-                                        <input class="form-control normal-size myEmail" type="text" name="settlement_email"
-                                            placeholder="이메일을 입력하세요." value="" />
+                                        <input class="form-control normal-size myEmail" type="text"
+                                            name="settlement_email" placeholder="이메일을 입력하세요." value="" />
                                     </span>
                                 </div>
                             </td>
@@ -445,7 +472,6 @@
                     </tbody>
                 </table>
                 <!-- 신규 비밀번호 변경 -->
-                <!-- <span class="change-pw">비밀번호 변경</span> -->
 
                 <div class="pw-new hide">
                     <strong>비밀번호 설정 시, 꼭 알아주세요!</strong>
@@ -482,8 +508,10 @@
                 <!-- //신규 비밀번호 변경 -->
 
                 <div class="submit-layer">
-                    <button class="btn btn-yeogi btn-submit" type="button" id="postbutton" onclick="sendit()">저장 후 다음 단계</button>
-                    <button class="btn btn-yeogi btn-submit" type="button" id="patchbutton" onclick="patchit()" >수정 후 다음 단계</button>
+                    <button class="btn btn-yeogi btn-submit" type="button" id="postbutton" onclick="sendit()">저장 후 다음
+                        단계</button>
+                    <button class="btn btn-yeogi btn-submit" type="button" id="patchbutton" onclick="patchit()">수정 후 다음
+                        단계</button>
                 </div>
             </form>
         </div>
@@ -495,77 +523,62 @@
     <div th:replace="hostthy/host-footer :: host-footer"></div>
     <!--푸터 끝 -->
 
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<!-- <script src="../host/js/ie10-viewport-bug-workaround.js"></script>
-<script src="../host/js/bootstrap.min.js"></script>
-<script src="../host/js/moment.min.js"></script>
-<script src="../host/js/daterangepicker.js"></script>
-<script src="../host/js/bootstrap-timepicker.js"></script> -->
-<script src="/host/js/common.host.js?nocache=1629280053.1844"></script>
-<script src="/host/js/my.host.js?nocache=1629280053.1844"></script>
-
+    <script src="/host/js/common.host.js?nocache=1629280053.1844"></script>
+    <script src="/host/js/my.host.js?nocache=1629280053.1844"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script>
-
-
-
-
-
-        // //체크박스 하나씩
-        function doOpenCheck(chk){
+        //체크박스 하나씩
+        function doOpenCheck(chk) {
             var obj = document.getElementsByName("myType");
-            for(var i=0; i<obj.length; i++){
-                if(obj[i] != chk){
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i] != chk) {
                     obj[i].checked = false;
                 }
             }
         }
-        $(function (){
+        $(function () {
+
+
+            //멤버 아이디
+            const memid = sessionId;
+            console.log("멤버아이디" + memid)
+
+            //axios get 해서 뿌리기=================================================
+            axios.get('/api/tbmem/tbhost/' + memid, {
+
+            }).then(function (response) {
+                console.log(response);
+                const memEmail = response.data.data.tbMemApiResponse.memEmail;
+                $('.memEmail').text(memEmail);
+                console.log("memEmail" + memEmail)
+                //길이를 체크해서 존재시 수정/ 존재하지 않을시 저장
+                let displayCheck = Object.keys(response.data.data.tbMemApiResponse
+                    .tbHostApiResponseList).length
+                console.log(displayCheck);
+
+                if (displayCheck > 0) {
+                    $('#postbutton').css("display", "none");
+                    $('#patchbutton').css("display", "");
+                } else {
+                    $('#postbutton').css("display", "");
+                    $('#patchbutton').css("display", "none");
+                }
+                const hostid = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].id;
+                $("input[name='hostid']").attr("value", hostid);
 
 
 
-        //멤버 아이디
-        const memid = sessionId;
-        console.log("멤버아이디"+memid)
-        // $('.memid').attr('value',myEmail);
-
-
-
-        //axios get 해서 뿌리기=================================================
-        axios.get('/api/tbmem/tbhost/' + memid , {
-
-        }).then(function (response) {
-            console.log(response);
-            const memEmail = response.data.data.tbMemApiResponse.memEmail;
-            $('.memEmail').text(memEmail);
-            console.log("memEmail" +memEmail)
-            //길이를 체크해서 존재시 수정/ 존재하지 않을시 저장
-           let displayCheck = Object.keys(response.data.data.tbMemApiResponse.tbHostApiResponseList).length
-            console.log(displayCheck);
-
-            if(displayCheck > 0){
-                $('#postbutton').css("display", "none");
-                $('#patchbutton').css("display", "");
-            }else {
-                $('#postbutton').css("display", "");
-                $('#patchbutton').css("display", "none");
-            }
-            //길이..
-
-            // if(displayCheck == 0){
-            //
-            // }
-            const hostid = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].id;
-            $("input[name='hostid']").attr("value", hostid);
-
-
-
-                const myHp = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myHp //host휴대폰 번호
-                const almName = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].almName //host  알리미 이름
-                const almHp = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].almHp // host 알리미 휴대폰 번호
-                const almWeek = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].almWeek //host 요일
-                console.log("almWeek : "+ almWeek)
-                let db = almWeek  //저장된 DB
+                const myHp = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .myHp //host휴대폰 번호
+                const almName = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .almName //host  알리미 이름
+                const almHp = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .almHp // host 알리미 휴대폰 번호
+                const almWeek = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .almWeek //host 요일
+                console.log("almWeek : " + almWeek)
+                let db = almWeek //저장된 DB
                 console.log(db);
                 let days = db.split(",");
                 let week = ["월", "화", "수", "목", "금", "토", "일"];
@@ -580,65 +593,53 @@
                 }
 
 
-                const almStime = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].almStime //host 시작시간
-                const almCtime = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].almCtime //host 마침시간
-                const myCorporate = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myCorporate //host 상호명(법인명)
-                const myConame = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myConame //host  등록증상 대표명
-                const myCondition = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myCondition //host 업태
-                const myType = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myType //host 업종
-                const myConum = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myConum //host 사업자 등록번호
-                const myAddr1 = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myAddr1 //host  업체 주소1
-                const myAddr2 = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myAddr2 //host 업체 주소2
-                const myEmail = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myEmail //host 세금 계산서 이메일
+                const almStime = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .almStime //host 시작시간
+                const almCtime = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .almCtime //host 마침시간
+                const myCorporate = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .myCorporate //host 상호명(법인명)
+                const myConame = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .myConame //host  등록증상 대표명
+                const myCondition = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .myCondition //host 업태
+                const myType = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .myType //host 업종
+                const myConum = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .myConum //host 사업자 등록번호
+                const myAddr1 = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .myAddr1 //host  업체 주소1
+                const myAddr2 = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .myAddr2 //host 업체 주소2
+                const myEmail = response.data.data.tbMemApiResponse.tbHostApiResponseList[0]
+                    .myEmail //host 세금 계산서 이메일
 
+                $('').attr('value', memEmail);
+                $('.myHp').attr('value', myHp);
+                $('.almName').attr('value', almName);
+                $('.almHp').attr('value', almHp);
 
+                $("select[name=almStime]").val(almStime).prop("selected", true);
+                $("select[name=almCtime]").val(almCtime).prop("selected", true);
 
+                $('.myCorporate').attr('value', myCorporate);
+                $('.myConame').attr('value', myConame);
+                $('.myCondition').attr('value', myCondition);
+                $('.myType').attr('value', myType);
+                $('.myConum').attr('value', myConum);
+                $('.myAddr1').attr('value', myAddr1);
+                $('.myAddr2').attr('value', myAddr2);
+                $('.myEmail').attr('value', myEmail);
 
+            }).catch(function (error) {
 
+            });
 
-            // $('#hname').attr(value, hname);
-            $('').attr('value',memEmail);
-            $('.myHp').attr('value', myHp);
-            $('.almName').attr('value',almName);
-            $('.almHp').attr('value',almHp);
-
-            // $('.almWeek').attr('value',almWeek);
-            //스플릿해서 나눈걸 돌린후 id(아님다른거)가 같은지 확인하면?하면?
-            // $('input:checkbox[id="checkbox_id"]').attr("checked", true); // week
-            // 출처: https://openlife.tistory.com/381 [물고기 많은 바다]
-
-            // $("select[name=almStime]").val("0300").prop("selected", true); //0300시 가 선택됨
-            // $("select[name=almCtime]").val("0700").prop("selected", true); //0700시 가 선택됨
-            $("select[name=almStime]").val(almStime).prop("selected", true);
-            $("select[name=almCtime]").val(almCtime).prop("selected", true);
-
-            $('.myCorporate').attr('value',myCorporate);
-            $('.myConame').attr('value',myConame);
-            $('.myCondition').attr('value',myCondition);
-            $('.myType').attr('value',myType);
-            $('.myConum').attr('value',myConum);
-            $('.myAddr1').attr('value',myAddr1);
-            $('.myAddr2').attr('value',myAddr2);
-            $('.myEmail').attr('value',myEmail);
-
-            // const memEmail2 = response.data.data.tbPay2tList; //undifined
-            // console.log(memEmail2); //undifined
-            // $('input[name=memEmail2]').attr('value',memEmail2);//undifined
-
-
-
-
-
-
-        }).catch(function (error) {
-
-        });
-
-        })//onready펑션끝
+        }) //onready펑션끝
         //axios get 해서 뿌리기 끝 ===============================================
 
         //오늘의 날짜
-        function getToday(){
+        function getToday() {
             var date = new Date();
             var year = date.getFullYear();
             var month = ("0" + (1 + date.getMonth())).slice(-2);
@@ -648,8 +649,55 @@
         }
 
 
-        function sendit(){
+        function sendit() {
 
+            if ($(".myHp").val() == "") {
+                alert("휴대폰번호를 입력해주세요");
+                $(".myHp").focus();
+                return false;
+            }
+            if ($(".almName ").val() == "") {
+                alert("알람이름을 입력해주세요");
+                $(".almName ").focus();
+                return false;
+            }
+            if ($(".almHp ").val() == "") {
+                alert("알람연락처간을 입력해주세요");
+                $(".almHp").focus();
+                return false;
+            }
+            if ($("input[name='dayoftheweek']:checked").length < 1) {
+                alert("업태를 하나이상 선택해주세요");
+                return false;
+            }
+            if ($(".myCorporate").val() == "") {
+                alert("상호명을 입력해주세요");
+                $(".myCorporate").focus();
+                return false;
+            }
+            if ($(".myConame").val() == "") {
+                alert("등록증상대표명을 입력해주세요");
+                $(".myConame").focus();
+                return false;
+            }
+            if ($("input[name='myCondition']:checked").length < 1) {
+                alert("업태를 하나이상 선택해주세요");
+                return false;
+            }
+            if ($("input[name='myType']:checked").length < 1) {
+                alert("업종을 하나이상 선택해주세요");
+                return false;
+            }
+            if ($(".myConum").val() == "") {
+                alert("사업자등록번호을 입력해주세요");
+                $(".myConum").focus();
+                return false;
+            }
+            if ($(".myAddr1_2").val() == "") {
+                alert("업체주소를 입력해주세요");
+                $(".myAddr1_2").focus();
+                return false;
+            }
 
 
             //멤버 아이디
@@ -684,7 +732,7 @@
             let week = ["월,", "화,", "수,", "목,", "금,", "토,", "일,"];
 
             for (let i = 0; i < forweek.length; i++) {
-                if($(".chk_date input:checkbox").eq(i).prop("checked")) {
+                if ($(".chk_date input:checkbox").eq(i).prop("checked")) {
                     days += week[i];
                 }
             }
@@ -694,14 +742,12 @@
 
 
 
-
-
             //상호명 (법인명) 숙소이름
             const myCorporate = $(".myCorporate").val();
             console.log('상호명 :' + myCorporate);
             // 등록증상 대표명
             const myConame = $(".myConame").val();
-            console.log('등록증상대표명 :' +myConame);
+            console.log('등록증상대표명 :' + myConame);
 
             //업태 myCondition
             //요일
@@ -710,7 +756,7 @@
             let week2 = ["숙박,", "기타,", "음식 및 숙박,", "부동산,", "음식,", "서비스,"];
 
             for (let i = 0; i < forweek2.length; i++) {
-                if($(".chk_date2 input:checkbox").eq(i).prop("checked")) {
+                if ($(".chk_date2 input:checkbox").eq(i).prop("checked")) {
                     days2 += week2[i];
                 }
             }
@@ -721,7 +767,7 @@
 
             //업종
             const myType = $("input[name='myType']:checked").val();
-            console.log('업종 :' +myType);
+            console.log('업종 :' + myType);
 
 
             //사업자등록번호
@@ -729,21 +775,23 @@
             console.log("사업자등록번호 :" + myConum);
             //업체 주소
             const myAddr1 = $(".myAddr1_2").val(); //myAddr1 은 두 태그가 사용중이라
-            console.log('업체 주소 : '+ myAddr1)
+            console.log('업체 주소 : ' + myAddr1)
             const myAddr2 = $(".myAddr2").val();
-            console.log('업체 주소2 : '+ myAddr2)
+            console.log('업체 주소2 : ' + myAddr2)
             //세금 계산서 이메일
             const myEmail = $(".myEmail").val();
-            console.log('세금 이메일 : '+ myEmail)
+            console.log('세금 이메일 : ' + myEmail)
             axios.request({
                 method: 'POST',
                 url: '/api/host/hregist',
-                headers: {'Content-type':'application/json'},
+                headers: {
+                    'Content-type': 'application/json'
+                },
                 data: {
-                    transaction_time:today,
-                    resultCode:"OK",
-                    description:"OK",
-                    data:{
+                    transaction_time: today,
+                    resultCode: "OK",
+                    description: "OK",
+                    data: {
                         myHp: myHp,
                         almName: almName,
                         almHp: almHp,
@@ -768,15 +816,66 @@
             }).then(
                 //이거지금안됨
                 alert('저장되었습니다'),
-                location.href='/hosthousemain/introwrite/'+sessionId
+                location.href = '/hosthousemain/introwrite/' + sessionId
             )
             return false;
 
         }
         //수정 후 다음으로
-        function patchit(){
+        function patchit() {
+
+            // 공백유효성
+            if ($(".myHp").val() == "") {
+                alert("휴대폰번호를 입력해주세요");
+                $(".myHp").focus();
+                return false;
+            }
+            if ($(".almName ").val() == "") {
+                alert("알람이름을 입력해주세요");
+                $(".almName ").focus();
+                return false;
+            }
+            if ($(".almHp ").val() == "") {
+                alert("알람연락처간을 입력해주세요");
+                $(".almHp").focus();
+                return false;
+            }
+            if ($("input[name='dayoftheweek']:checked").length < 1) {
+                alert("업태를 하나이상 선택해주세요");
+                return false;
+            }
+            if ($(".myCorporate").val() == "") {
+                alert("상호명을 입력해주세요");
+                $(".myCorporate").focus();
+                return false;
+            }
+            if ($(".myConame").val() == "") {
+                alert("등록증상대표명을 입력해주세요");
+                $(".myConame").focus();
+                return false;
+            }
+            if ($("input[name='myCondition']:checked").length < 1) {
+                alert("업태를 하나이상 선택해주세요");
+                return false;
+            }
+            if ($("input[name='myType']:checked").length < 1) {
+                alert("업종을 하나이상 선택해주세요");
+                return false;
+            }
+            if ($(".myConum").val() == "") {
+                alert("사업자등록번호을 입력해주세요");
+                $(".myConum").focus();
+                return false;
+            }
+            if ($(".myAddr1_2").val() == "") {
+                alert("업체주소를 입력해주세요");
+                $(".myAddr1_2").focus();
+                return false;
+            }
+
+
             const hostid = $('#hostid').val();
-            console.log('hostid:'+hostid);
+            console.log('hostid:' + hostid);
 
             const myHp = $(".myHp").val();
             console.log('휴대폰 번호:' + myHp);
@@ -792,8 +891,6 @@
             //마침 시간
             const almCtime = $("select[name=almCtime]").val();
             console.log('마침시간 :' + almCtime);
-            // 출처: https://oingbong.tistory.com/175 [Oing]
-
 
             //요일
             let days = "";
@@ -801,7 +898,7 @@
             let week = ["월,", "화,", "수,", "목,", "금,", "토,", "일,"];
 
             for (let i = 0; i < forweek.length; i++) {
-                if($(".chk_date input:checkbox").eq(i).prop("checked")) {
+                if ($(".chk_date input:checkbox").eq(i).prop("checked")) {
                     days += week[i];
                 }
             }
@@ -810,16 +907,12 @@
             console.log(days);
 
 
-
-
-
-
             //상호명 (법인명) 숙소이름
             const myCorporate = $(".myCorporate").val();
             console.log('상호명 :' + myCorporate);
             // 등록증상 대표명
             const myConame = $(".myConame").val();
-            console.log('등록증상대표명 :' +myConame);
+            console.log('등록증상대표명 :' + myConame);
 
 
 
@@ -829,7 +922,7 @@
             let week2 = ["숙박,", "기타,", "음식 및 숙박,", "부동산,", "음식,", "서비스,"];
 
             for (let i = 0; i < forweek2.length; i++) {
-                if($(".chk_date2 input:checkbox").eq(i).prop("checked")) {
+                if ($(".chk_date2 input:checkbox").eq(i).prop("checked")) {
                     days2 += week2[i];
                 }
             }
@@ -837,22 +930,16 @@
             days2 = days2.substring(0, days2.lastIndexOf(","))
             console.log(days2);
 
-
-            //업종
-            // const myType = $("input[name='myType']:checked").val();
-            // console.log('업종 :' +myType);
-            //업종 myType
             let days3 = "";
             let forweek3 = $(".chk_date3 input:checkbox");
             let week3 = ["모텔", "호텔", "펜션", "리조트", "게스트하우스", "캠핑"];
 
             for (let i = 0; i < forweek3.length; i++) {
-                if($(".chk_date3 input:checkbox").eq(i).prop("checked")) {
+                if ($(".chk_date3 input:checkbox").eq(i).prop("checked")) {
                     days3 += week3[i];
                 }
             }
 
-            // days3 = days3.substring(0, days3.lastIndexOf(","))
             console.log(days3);
 
 
@@ -861,23 +948,25 @@
             console.log("사업자등록번호 :" + myConum);
             //업체 주소
             const myAddr1 = $(".myAddr1_2").val(); //myAddr1 은 두 태그가 사용중이라
-            console.log('업체 주소 : '+ myAddr1)
+            console.log('업체 주소 : ' + myAddr1)
             const myAddr2 = $(".myAddr2").val();
-            console.log('업체 주소2 : '+ myAddr2)
+            console.log('업체 주소2 : ' + myAddr2)
             //세금 계산서 이메일
             const myEmail = $(".myEmail").val();
-            console.log('세금 이메일 : '+ myEmail)
+            console.log('세금 이메일 : ' + myEmail)
 
 
             axios.request({
                 method: 'PATCH',
-                url: '/api/host/host1/'+ hostid,
-                headers: {'Content-type':'application/json'},
+                url: '/api/host/host1/' + hostid,
+                headers: {
+                    'Content-type': 'application/json'
+                },
                 data: {
-                    transaction_time:"2021-09-27",
-                    resultCode:"OK",
-                    description:"OK",
-                    data:{
+                    transaction_time: "2021-09-27",
+                    resultCode: "OK",
+                    description: "OK",
+                    data: {
                         id: hostid,
                         myHp: myHp,
                         almName: almName,
@@ -900,21 +989,11 @@
                 }
             }).then(
                 alert('수정되었습니다'),
-                location.href='/hosthousemain/introwrite/'+sessionId
+                location.href = '/hosthousemain/introwrite/' + sessionId
             )
             return false;
         }
-
-
-
-
-
     </script>
-
-
-
-
-
 </body>
 
 </html>

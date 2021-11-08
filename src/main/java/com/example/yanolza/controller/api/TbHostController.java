@@ -4,10 +4,9 @@ import com.example.yanolza.controller.CrudController;
 import com.example.yanolza.model.entity.TbHost;
 import com.example.yanolza.model.network.Header;
 import com.example.yanolza.model.network.request.TbHostApiRequest;
-import com.example.yanolza.model.network.response.TbHostImgUserApiResponse;
-import com.example.yanolza.model.network.response.TbHostTbRoomApiResponse;
-import com.example.yanolza.model.network.response.TbHostApiResponse;
+import com.example.yanolza.model.network.response.*;
 import com.example.yanolza.service.TbHostApiService;
+import com.example.yanolza.service.TbHostServiceTest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TbHostController extends CrudController<TbHostApiRequest, TbHostApiResponse, TbHost> {
     private final TbHostApiService tbHostApiService;
+    private final TbHostServiceTest tbHostServiceTest;
 
     //호스트 등록(host)
     @PostMapping("/hregist")
@@ -28,10 +28,15 @@ public class TbHostController extends CrudController<TbHostApiRequest, TbHostApi
 
 
     //호스트 디테일(admin)  Y 인애들 승인받은 애들
-    @GetMapping("/hlist/{id}")    //@PathVariable(name = "pkAdmit") String pkAdmit,
+    @GetMapping("/hlist/{id}")
     public Header<TbHostApiResponse> gethost( @PathVariable(name = "id") Integer id){
         return tbHostApiService.gethostdetail(id);
 
+    }
+    // 결제창 호스트 비밀번호 받아오기
+    @GetMapping("/hostHp/{id}")
+    public String getAlm(@PathVariable(name = "id")Integer id){
+        return tbHostApiService.getHP(id);
     }
 
     // ok
@@ -77,7 +82,7 @@ public class TbHostController extends CrudController<TbHostApiRequest, TbHostApi
         return tbHostApiService.rhostdel(id);
     }
 
-    // 호스트 리스트(admin) (user 내 주변 할 때쓰면됨)
+    // 호스트 리스트(admin) (user 내 주변)
     @GetMapping("/hlist")
     public List<TbHostApiRequest> hlist(){
         return tbHostApiService.gethlist();
@@ -97,6 +102,12 @@ public class TbHostController extends CrudController<TbHostApiRequest, TbHostApi
     @GetMapping("/{id}/hostroom")  // 호스트가 가지고있는 룸 가져오는거 가능
     public Header<TbHostTbRoomApiResponse> roomHost(@PathVariable Integer id){
         return tbHostApiService.hostRoom(id);
+    }
+
+    //호스트가 가지고 있는 예약내역(scheduleManagement)
+    @GetMapping("/{id}/paylist")
+    public Header<TbHostPayResponse> hostpay(@PathVariable(name = "id") Integer id){
+        return tbHostServiceTest.hostPay(id);
     }
 
     //호스트 이미지 test

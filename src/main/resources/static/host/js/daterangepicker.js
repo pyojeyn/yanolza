@@ -1084,7 +1084,7 @@
                 html += '<th></th>';
 
             if (!minDate || minDate.isBefore(calendar.firstDay)) {
-                html += '<th class="prev available"><i class="fa fa-arrow-left icon icon-arrow-left glyphicon glyphicon-arrow-left"></i></th>';
+                html += '<th class="prev available"><img src="/img/images/web_v3/ico_arr_gt_2.png" alt="" style="max-width: 16px; height: auto; display: block; transform: scaleX(-1);"></th>';
             } else {
                 html += '<th></th>';
             }
@@ -1097,7 +1097,7 @@
 
             html += '<th colspan="5" class="month">' + dateHtml + '</th>';
             if (!maxDate || maxDate.isAfter(calendar.lastDay)) {
-                html += '<th class="next available"><i class="fa fa-arrow-right icon icon-arrow-right glyphicon glyphicon-arrow-right"></i></th>';
+                html += '<th class="next available"><img src="/img/images/web_v3/ico_arr_gt_2.png" alt="" style="max-width: 16px; height: auto; display: block;"></th>';
             } else {
                 html += '<th></th>';
             }

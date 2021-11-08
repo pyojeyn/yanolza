@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface TbRoomImgRepository extends JpaRepository<TbRoomImg, Integer> {
-    List<TbRoomImg> findAllByTbRoomId(Integer tbRoomId);    //와이게되네 개꿀 Entity
-
+    List<TbRoomImg> findAllByTbRoomId(Integer tbRoomId);
 }

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+<!--랜덤여행 럭키백 4탄-->
 
 <head>
     <meta charset="UTF-8">
@@ -12,16 +13,36 @@
     <!-- CSS -->
     <title>랜덤여행 럭키백 4탄 - 이벤트 | 여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
-    <!-- <link rel="canonical" href="https://www.goodchoice.kr/more/eventView/1739"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            border: 0;
+            vertical-align: top;
+            margin-bottom: -1px;
+        }
+    </style>
     <script>
         var _BASE_URL = 'https://www.goodchoice.kr/';
         var _MOBILE = 'W';
         var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
         var _FACEBOOK_APP_ID = '607467975974643';
     </script>
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
@@ -30,7 +51,7 @@
     <div class="wrap">
 
         <!-- Header -->
-           <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
@@ -103,7 +124,7 @@
                         <ul>
                             <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
                                 <ul>
-                                   <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
+                                    <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
                                     <li><a href="/userindex/event">이벤트</a></li>
                                     <li><a href="/userindex/project">혁신 프로젝트</a></li>
                                     <li><a href="/userindex/faq">고객문의</a></li>
@@ -140,7 +161,7 @@
             <nav>
                 <ul>
                     <!-- <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class="active"  href="/userindex/event">이벤트</a></li>
+                    <li><a class="active" href="/userindex/event">이벤트</a></li>
                     <li><a class="" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
@@ -162,33 +183,27 @@
                         <link rel="stylesheet" href="/static/event/common/css/base-event.css">
                         <link rel="stylesheet" href="/frontend/admin/css/components/modules/dialog.css" />
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery-1.12.3.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery.lazyload.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/vue.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/service/button-scroll-top.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery-1.12.3.min.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery.lazyload.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/vue.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/button-scroll-top.js">
+                        </script>
 
                         <script type="text/javascript" src="/api3/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/underscore.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/userActionLog.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/common.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/userActionLog.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/common.js"></script>
                         <script src="/api3/js/service/evtBraze.js"></script>
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/moment.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/flipclock.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/library/swiper4.0/swiper.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/library/swiper4.0/swiper.min.js"></script>
                         <link rel="stylesheet" href="/api3/css/library/swiper.css">
 
                         <!-- keen vue list (기획전) -->
-                        <script type="text/javascript"
-                        src="/static/event/common/js/service/product-common.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/product-common.js"></script>
 
                         <script>
                             var eno = 1739;
@@ -202,16 +217,15 @@
                             });
                         </script>
                         <script>
-                            var eDefaultString = '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1739%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A04%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EB%9E%9C%EB%8D%A4%EC%97%AC%ED%96%89%20%EB%9F%AD%ED%82%A4%EB%B0%B1%204%ED%83%84%22%2C%22label%22%3A%22%EC%9A%B4%EB%AA%85%EC%97%90%20%EB%82%98%EB%A5%BC%20%EB%A7%A1%EA%B8%B4%EB%8B%A4%EF%BC%81%7C%EB%8B%A8%EB%8F%88%209%2C900%EC%9B%90%EC%9C%BC%EB%A1%9C%7C%ED%8A%B9%EA%B8%89%ED%98%B8%ED%85%94%20%ED%95%9C%20%EB%8B%AC%20%EC%82%B4%EA%B8%B0%20%EB%8B%B9%EC%B2%A8%20%EA%B8%B0%ED%9A%8C%EA%B9%8C%EC%A7%80%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1739%5C%2Fkakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1739%5Cu0026title%3D%EB%9E%9C%EB%8D%A4%EC%97%AC%ED%96%89%20%EB%9F%AD%ED%82%A4%EB%B0%B1%204%ED%83%84%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1739%5C%2Fkakao.jpg%5Cu0026label%3D%EC%9A%B4%EB%AA%85%EC%97%90%20%EB%82%98%EB%A5%BC%20%EB%A7%A1%EA%B8%B4%EB%8B%A4%EF%BC%81%7C%EB%8B%A8%EB%8F%88%209%2C900%EC%9B%90%EC%9C%BC%EB%A1%9C%7C%ED%8A%B9%EA%B8%89%ED%98%B8%ED%85%94%20%ED%95%9C%20%EB%8B%AC%20%EC%82%B4%EA%B8%B0%20%EB%8B%B9%EC%B2%A8%20%EA%B8%B0%ED%9A%8C%EA%B9%8C%EC%A7%80%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1739%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1739%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
+                            var eDefaultString =
+                                '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1739%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A04%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EB%9E%9C%EB%8D%A4%EC%97%AC%ED%96%89%20%EB%9F%AD%ED%82%A4%EB%B0%B1%204%ED%83%84%22%2C%22label%22%3A%22%EC%9A%B4%EB%AA%85%EC%97%90%20%EB%82%98%EB%A5%BC%20%EB%A7%A1%EA%B8%B4%EB%8B%A4%EF%BC%81%7C%EB%8B%A8%EB%8F%88%209%2C900%EC%9B%90%EC%9C%BC%EB%A1%9C%7C%ED%8A%B9%EA%B8%89%ED%98%B8%ED%85%94%20%ED%95%9C%20%EB%8B%AC%20%EC%82%B4%EA%B8%B0%20%EB%8B%B9%EC%B2%A8%20%EA%B8%B0%ED%9A%8C%EA%B9%8C%EC%A7%80%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1739%5C%2Fkakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1739%5Cu0026title%3D%EB%9E%9C%EB%8D%A4%EC%97%AC%ED%96%89%20%EB%9F%AD%ED%82%A4%EB%B0%B1%204%ED%83%84%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1739%5C%2Fkakao.jpg%5Cu0026label%3D%EC%9A%B4%EB%AA%85%EC%97%90%20%EB%82%98%EB%A5%BC%20%EB%A7%A1%EA%B8%B4%EB%8B%A4%EF%BC%81%7C%EB%8B%A8%EB%8F%88%209%2C900%EC%9B%90%EC%9C%BC%EB%A1%9C%7C%ED%8A%B9%EA%B8%89%ED%98%B8%ED%85%94%20%ED%95%9C%20%EB%8B%AC%20%EC%82%B4%EA%B8%B0%20%EB%8B%B9%EC%B2%A8%20%EA%B8%B0%ED%9A%8C%EA%B9%8C%EC%A7%80%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1739%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1739%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
                         </script>
 
                         <link rel="stylesheet" href="/api3/js/event_custom/event-default.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/event-custom.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/products-vue-custom.min.css">
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/event-custom.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/products-vue-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/event-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/products-vue-custom.min.js"></script>
 
                         <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
                         <script>
@@ -375,12 +389,12 @@
                                 1739: false
                             };
                             /**
-                                * 제휴점 판매 수량 체크 및 dom select 증가 카운팅
-                                */
+                             * 제휴점 판매 수량 체크 및 dom select 증가 카운팅
+                             */
                             var EvtSaleCnt = function (params) {
                                 var C = {
                                     data: {
-                                        el: undefined,      // 카운트가 들어갈 selector
+                                        el: undefined, // 카운트가 들어갈 selector
                                         eventNo: undefined, // 조회할 이벤트 번호
                                     },
                                     init(params) {
@@ -392,10 +406,13 @@
                                         for (k in this.data) {
                                             if (!this.data[k]) {
                                                 errCnt++;
-                                                console.log('!!! error !!! ' + k + ' is undefined in evtSaleCnt()');
+                                                console.log('!!! error !!! ' + k +
+                                                    ' is undefined in evtSaleCnt()');
                                             }
                                         }
-                                        if (!!errCnt) { return false; }
+                                        if (!!errCnt) {
+                                            return false;
+                                        }
                                         this.loadEvtSaleCnt();
                                     },
                                     loadEvtSaleCnt() {
@@ -416,13 +433,19 @@
                                     numberWithAnimation(num) {
                                         var duration = 800;
                                         var elCount = $(this.data.el);
-                                        $({ val: 0 }).animate({ val: num }, {
+                                        $({
+                                            val: 0
+                                        }).animate({
+                                            val: num
+                                        }, {
                                             duration: duration,
                                             step: function () {
-                                                elCount.text(EC.filter.numberToComma(Math.floor(this.val)));
+                                                elCount.text(EC.filter.numberToComma(Math.floor(this
+                                                    .val)));
                                             },
                                             complete: function () {
-                                                elCount.text(EC.filter.numberToComma(Math.floor(this.val)));
+                                                elCount.text(EC.filter.numberToComma(Math.floor(this
+                                                    .val)));
                                             }
                                         });
                                     },
@@ -432,15 +455,81 @@
                             };
 
 
-                            EC.deny = [5447326, 7009709, 7262001, 7262092, 7286002, 8408408, 8412350, 8514427, 8514439, 8514440, 8616433, 8616435, 8616436, 8616440, 8616444, 8616446, 8616449, 8616453, 8616454, 8616459, 8616463, 8616477, 8616483, 9270569, 9340658, 9340662, 3969964, 4060301, 6444019, 6627271, 7092992, 7272204, 7281274, 7291298, 8160530, 8186537, 9077704, 9159737, 9400877, 5750716, 5953103, 6779349, 6873400, 7120547, 7135607, 7256686, 7262800, 7284816, 8197109, 8622238, 8859297, 9155399, 4052699, 4186744, 4194780, 5677402, 5890684, 7009327, 7009330, 7276627, 8617033, 8808055, 8993073, 9393232, 9607262, 9410598, 9640678, 9744697, 10194858, 10590915, 10598945, 11078043, 11127013, 11169073, 11169075, 11888310, 11953345, 11961299, 9595905, 9601908, 9613917, 9879938, 10112016, 10625149, 10722136, 10921231, 11090280, 11837556, 11953551, 11958511, 12352618, 12441611, 12627601, 12636625, 12686610, 12697614, 12697616, 12697683, 12700634, 12761634, 12878707, 12878718, 12878733, 12916703, 9155403, 10088590, 10111583, 10531702, 10747708, 10755784, 11630960, 12349240, 12497208, 12554266, 12698220, 12699219, 12699241, 12349365, 12699470, 12715462, 12719488, 12868538, 13099523, 13194547, 13354585, 13401597, 13451537, 13460597, 13465542, 13557629, 9653284, 9754289, 10253475, 10935652, 11537762, 12339979, 12352983, 12564056, 12698043, 12699003, 12699004, 12703011, 12708078, 13162744, 13270723, 13369731, 13380799, 13448744, 13451805, 13476766, 13639816, 13639838, 13951755, 13993755, 14811776, 14817860, 12721075, 12721097, 12784082, 12870044, 12870086, 12870104, 12885116, 13280116, 13354142, 13447145, 13447156, 14042223, 14043252, 14993797, 15118874, 4186562, 4186564, 4186565, 4186567, 4186568, 4186583, 4186585, 4186589, 4186592, 4186594, 4186603, 14048160, 14131184, 14463161, 14617234, 14641243, 14683257, 14734175, 14992172, 15086256, 4184655, 4186644, 4186645, 4186647, 4186648, 4186649, 4186651, 4186652, 4186653, 4186655, 4186657, 4186659, 4186660, 4186664, 4186665, 4186666, 4186668, 4186669, 4186670, 4186671, 4186673, 4186674, 4186675, 4186676, 4186678, 4186680, 4186681, 4186684, 4186685, 4186686, 4186687, 4186688, 4186689, 4186693, 4186697, 4186698, 4186702, 4186703, 4186708, 4186709, 4186710, 4186714, 4186715, 12710282, 13048303, 13048311, 13449340, 13453341, 13465412, 14044442, 14456364, 14457423, 14759367, 15005421, 15112431, 5677535, 13602626, 13862600, 14047565, 14048565, 14083627, 14444579, 4108228, 6880652, 6912685, 7285159, 7285171, 7726375, 8082455, 4186604, 4186605, 4186611, 4186615, 4186619, 4186625, 5204243, 6967125, 7262393, 7262484, 7263396, 7769684, 7809657, 8408512, 8475464, 8475477, 8475537, 8475546, 8514539, 8616518, 8616522, 8616526, 9077607, 9077614, 9077631, 9434756, 6658786, 7009350, 7256578, 7256600, 7256621, 7281707, 7284736, 7284741, 7284779, 7284788, 7285772, 8101035, 8192077, 8196713, 8196718, 8196726, 8196730, 8196755, 8197740, 8616828, 8702838, 8818856, 8818920, 8907842, 8907847, 8907852, 4186719, 4186720, 4186723, 4186725, 5447818, 5447829, 5861568, 6496457, 6967192, 7262499, 7262554, 7263507, 7285592, 9468785, 9642816, 9681828, 10281942, 10559986, 10908097, 10913100, 11091114, 11802327, 11879388, 11929400, 12072475, 12353475, 12489555, 12605487, 12697518, 12697527, 12697529, 12697537, 12697541, 12697562, 12697563, 12697567, 12697586, 12697598, 12719583, 8907860, 9078895, 9105970, 9333978, 9908141, 9965172, 10525322, 10625333, 10797370, 11399555, 11798600, 11933695, 11933772, 8192082, 8251037, 8491114, 8508148, 8582114, 9205261, 9613405, 9740470, 10559633, 11520821, 11558873, 11782849, 11803879, 11848057, 11880019, 12001998, 12002005, 12354075, 12699142, 12710135, 12721119, 12867180, 12867188, 12867192, 12867193, 12879158, 8366883, 8745982, 8818961, 9086001, 9759253, 10079294, 10097317, 10519377, 10820443, 11834665, 11933844, 12219837, 12283937, 12272821, 12486816, 12636879, 12718847, 12761842, 12767814, 12878908, 12878917, 13039966, 13134954, 13596946, 13602984, 14157964, 12537951, 12636902, 12697918, 12697933, 12698917, 12699995, 12707943, 12868940, 12868984, 12868987, 12870028, 12916992, 13169036, 14285990, 14429974, 14612015, 14614001, 14796011, 14992054, 15160046, 12911208, 13079258, 13194254, 13449305, 13450292, 13783289, 14043256, 14043260, 14043322, 14047319, 14128324, 14202330, 14612294, 13212093, 13446053, 13447080, 13616107, 13810142, 14047140, 14202151, 14243146, 14456094, 14561117, 15058111, 12719585, 12737565, 12868601, 13078584, 13078586, 13078625, 13112655, 13123643, 13232603, 13232637, 13449691, 14041732, 15199716, 14817326, 14819301, 5865005, 6438671, 6438705, 7017577, 7082681, 7261962, 7261983, 7284925, 7284958, 8196289, 9022429, 5204150, 5204158, 6966942, 7262348, 7262389, 8154601, 8160624, 8186606, 8408677, 8610697, 8901741, 10913288, 10986355, 11150360, 11562438, 11729438, 11879618, 11933682, 12067652, 12123621, 12439689, 12498715, 12501696, 12537718, 12605704, 12697716, 9155419, 9410508, 9719609, 10169687, 10257755, 11930233, 12038216, 12343286, 13089438, 13116409, 13116469, 13202462, 13278446, 12697740, 12770766, 12878788, 12878797, 13049845, 13099878, 13462828, 13923858, 14044896, 14644926, 14715879, 14812916, 15111939, 15113918, 13350462, 13445473, 13446460, 13447446, 13447474, 13451509, 13739476, 13863520, 14047506, 14130526, 14203479, 14365510];
+                            EC.deny = [5447326, 7009709, 7262001, 7262092, 7286002, 8408408, 8412350, 8514427, 8514439,
+                                8514440, 8616433, 8616435, 8616436, 8616440, 8616444, 8616446, 8616449, 8616453,
+                                8616454, 8616459, 8616463, 8616477, 8616483, 9270569, 9340658, 9340662, 3969964,
+                                4060301, 6444019, 6627271, 7092992, 7272204, 7281274, 7291298, 8160530, 8186537,
+                                9077704, 9159737, 9400877, 5750716, 5953103, 6779349, 6873400, 7120547, 7135607,
+                                7256686, 7262800, 7284816, 8197109, 8622238, 8859297, 9155399, 4052699, 4186744,
+                                4194780, 5677402, 5890684, 7009327, 7009330, 7276627, 8617033, 8808055, 8993073,
+                                9393232, 9607262, 9410598, 9640678, 9744697, 10194858, 10590915, 10598945, 11078043,
+                                11127013, 11169073, 11169075, 11888310, 11953345, 11961299, 9595905, 9601908,
+                                9613917, 9879938, 10112016, 10625149, 10722136, 10921231, 11090280, 11837556,
+                                11953551, 11958511, 12352618, 12441611, 12627601, 12636625, 12686610, 12697614,
+                                12697616, 12697683, 12700634, 12761634, 12878707, 12878718, 12878733, 12916703,
+                                9155403, 10088590, 10111583, 10531702, 10747708, 10755784, 11630960, 12349240,
+                                12497208, 12554266, 12698220, 12699219, 12699241, 12349365, 12699470, 12715462,
+                                12719488, 12868538, 13099523, 13194547, 13354585, 13401597, 13451537, 13460597,
+                                13465542, 13557629, 9653284, 9754289, 10253475, 10935652, 11537762, 12339979,
+                                12352983, 12564056, 12698043, 12699003, 12699004, 12703011, 12708078, 13162744,
+                                13270723, 13369731, 13380799, 13448744, 13451805, 13476766, 13639816, 13639838,
+                                13951755, 13993755, 14811776, 14817860, 12721075, 12721097, 12784082, 12870044,
+                                12870086, 12870104, 12885116, 13280116, 13354142, 13447145, 13447156, 14042223,
+                                14043252, 14993797, 15118874, 4186562, 4186564, 4186565, 4186567, 4186568, 4186583,
+                                4186585, 4186589, 4186592, 4186594, 4186603, 14048160, 14131184, 14463161, 14617234,
+                                14641243, 14683257, 14734175, 14992172, 15086256, 4184655, 4186644, 4186645,
+                                4186647, 4186648, 4186649, 4186651, 4186652, 4186653, 4186655, 4186657, 4186659,
+                                4186660, 4186664, 4186665, 4186666, 4186668, 4186669, 4186670, 4186671, 4186673,
+                                4186674, 4186675, 4186676, 4186678, 4186680, 4186681, 4186684, 4186685, 4186686,
+                                4186687, 4186688, 4186689, 4186693, 4186697, 4186698, 4186702, 4186703, 4186708,
+                                4186709, 4186710, 4186714, 4186715, 12710282, 13048303, 13048311, 13449340,
+                                13453341, 13465412, 14044442, 14456364, 14457423, 14759367, 15005421, 15112431,
+                                5677535, 13602626, 13862600, 14047565, 14048565, 14083627, 14444579, 4108228,
+                                6880652, 6912685, 7285159, 7285171, 7726375, 8082455, 4186604, 4186605, 4186611,
+                                4186615, 4186619, 4186625, 5204243, 6967125, 7262393, 7262484, 7263396, 7769684,
+                                7809657, 8408512, 8475464, 8475477, 8475537, 8475546, 8514539, 8616518, 8616522,
+                                8616526, 9077607, 9077614, 9077631, 9434756, 6658786, 7009350, 7256578, 7256600,
+                                7256621, 7281707, 7284736, 7284741, 7284779, 7284788, 7285772, 8101035, 8192077,
+                                8196713, 8196718, 8196726, 8196730, 8196755, 8197740, 8616828, 8702838, 8818856,
+                                8818920, 8907842, 8907847, 8907852, 4186719, 4186720, 4186723, 4186725, 5447818,
+                                5447829, 5861568, 6496457, 6967192, 7262499, 7262554, 7263507, 7285592, 9468785,
+                                9642816, 9681828, 10281942, 10559986, 10908097, 10913100, 11091114, 11802327,
+                                11879388, 11929400, 12072475, 12353475, 12489555, 12605487, 12697518, 12697527,
+                                12697529, 12697537, 12697541, 12697562, 12697563, 12697567, 12697586, 12697598,
+                                12719583, 8907860, 9078895, 9105970, 9333978, 9908141, 9965172, 10525322, 10625333,
+                                10797370, 11399555, 11798600, 11933695, 11933772, 8192082, 8251037, 8491114,
+                                8508148, 8582114, 9205261, 9613405, 9740470, 10559633, 11520821, 11558873, 11782849,
+                                11803879, 11848057, 11880019, 12001998, 12002005, 12354075, 12699142, 12710135,
+                                12721119, 12867180, 12867188, 12867192, 12867193, 12879158, 8366883, 8745982,
+                                8818961, 9086001, 9759253, 10079294, 10097317, 10519377, 10820443, 11834665,
+                                11933844, 12219837, 12283937, 12272821, 12486816, 12636879, 12718847, 12761842,
+                                12767814, 12878908, 12878917, 13039966, 13134954, 13596946, 13602984, 14157964,
+                                12537951, 12636902, 12697918, 12697933, 12698917, 12699995, 12707943, 12868940,
+                                12868984, 12868987, 12870028, 12916992, 13169036, 14285990, 14429974, 14612015,
+                                14614001, 14796011, 14992054, 15160046, 12911208, 13079258, 13194254, 13449305,
+                                13450292, 13783289, 14043256, 14043260, 14043322, 14047319, 14128324, 14202330,
+                                14612294, 13212093, 13446053, 13447080, 13616107, 13810142, 14047140, 14202151,
+                                14243146, 14456094, 14561117, 15058111, 12719585, 12737565, 12868601, 13078584,
+                                13078586, 13078625, 13112655, 13123643, 13232603, 13232637, 13449691, 14041732,
+                                15199716, 14817326, 14819301, 5865005, 6438671, 6438705, 7017577, 7082681, 7261962,
+                                7261983, 7284925, 7284958, 8196289, 9022429, 5204150, 5204158, 6966942, 7262348,
+                                7262389, 8154601, 8160624, 8186606, 8408677, 8610697, 8901741, 10913288, 10986355,
+                                11150360, 11562438, 11729438, 11879618, 11933682, 12067652, 12123621, 12439689,
+                                12498715, 12501696, 12537718, 12605704, 12697716, 9155419, 9410508, 9719609,
+                                10169687, 10257755, 11930233, 12038216, 12343286, 13089438, 13116409, 13116469,
+                                13202462, 13278446, 12697740, 12770766, 12878788, 12878797, 13049845, 13099878,
+                                13462828, 13923858, 14044896, 14644926, 14715879, 14812916, 15111939, 15113918,
+                                13350462, 13445473, 13446460, 13447446, 13447474, 13451509, 13739476, 13863520,
+                                14047506, 14130526, 14203479, 14365510
+                            ];
 
                             var LikeEpilogueEvt = function (params) {
                                 var L = {
                                     data: {
                                         params: undefined,
-                                        eventNo: undefined,     // 이벤트 No
-                                        el: undefined,          // el
-                                        cntObj: undefined,      // 카운팅 오브젝트
+                                        eventNo: undefined, // 이벤트 No
+                                        el: undefined, // el
+                                        cntObj: undefined, // 카운팅 오브젝트
                                     },
                                     init(params) {
                                         params = params || {};
@@ -494,18 +583,34 @@
                                     },
                                     message: {
                                         login() {
-                                            popup.show('로그인 후 참여해주세요!', [{ text: "닫기", onclick: "popup.close();" }, { text: "로그인", onclick: "go.login();" }]);
+                                            popup.show('로그인 후 참여해주세요!', [{
+                                                text: "닫기",
+                                                onclick: "popup.close();"
+                                            }, {
+                                                text: "로그인",
+                                                onclick: "go.login();"
+                                            }]);
                                         },
                                         success() {
-                                            popup.show('알림 신청이 완료되었습니다.<br><b>이용정보와 및 푸시 알림 ON 필수!</b>', [
-                                                { text: "닫기", onclick: "popup.close();" },
-                                                { text: "알림 ON하기", onclick: "window.afterPushOn();" },
+                                            popup.show('알림 신청이 완료되었습니다.<br><b>이용정보와 및 푸시 알림 ON 필수!</b>', [{
+                                                    text: "닫기",
+                                                    onclick: "popup.close();"
+                                                },
+                                                {
+                                                    text: "알림 ON하기",
+                                                    onclick: "window.afterPushOn();"
+                                                },
                                             ]);
                                         },
                                         overlap() {
-                                            popup.show('이미 알림 신청을 하셨어요.<br><b>이용정보와 및 푸시 알림 ON 필수!</b>', [
-                                                { text: "닫기", onclick: "popup.close();" },
-                                                { text: "알림 ON하기", onclick: "window.afterPushOn();" },
+                                            popup.show('이미 알림 신청을 하셨어요.<br><b>이용정보와 및 푸시 알림 ON 필수!</b>', [{
+                                                    text: "닫기",
+                                                    onclick: "popup.close();"
+                                                },
+                                                {
+                                                    text: "알림 ON하기",
+                                                    onclick: "window.afterPushOn();"
+                                                },
                                             ]);
                                         },
                                     }
@@ -534,14 +639,20 @@
                             // 액티비티 상품으로 이동
                             function gotoLuckBagGoods() {
                                 popup.close();
-                                window.location.href = 'yeogi://details?schemetype=act_product&anim=2&productUid=297209';
+                                window.location.href =
+                                'yeogi://details?schemetype=act_product&anim=2&productUid=297209';
                             }
 
                             function closeLuckyBag(e) {
                                 e.preventDefault();
-                                popup.show('<b>아쉽지만 준비된 럭키백이<br>모두 소진되었습니다.</b><br>다음 이벤트를 기대해주세요!', [
-                                    { text: "닫기", onclick: "popup.close();" },
-                                    { text: "상품보기", onclick: "window.location.href = 'yeogi://details?schemetype=act_product&anim=2&productUid=297209'" },
+                                popup.show('<b>아쉽지만 준비된 럭키백이<br>모두 소진되었습니다.</b><br>다음 이벤트를 기대해주세요!', [{
+                                        text: "닫기",
+                                        onclick: "popup.close();"
+                                    },
+                                    {
+                                        text: "상품보기",
+                                        onclick: "window.location.href = 'yeogi://details?schemetype=act_product&anim=2&productUid=297209'"
+                                    },
                                 ]);
                                 return false;
                             }
@@ -553,19 +664,34 @@
                                 // 로그인한 사람만 구매 가능
                                 if (EC.isLogin()) {
                                     if (EC.deny.indexOf(EC.uno) >= 0) {
-                                        popup.show('여기어때 임직원은 럭키백 구매가 불가합니다.', [{ text: "닫기", onclick: "popup.close();" }]);
+                                        popup.show('여기어때 임직원은 럭키백 구매가 불가합니다.', [{
+                                            text: "닫기",
+                                            onclick: "popup.close();"
+                                        }]);
                                         return false;
                                     } else {
-                                        popup.show('랜덤여행 럭키백 상품은 사전 계획된 상품으로<br><b>구매 후 취소가 불가합니다.</b><br>신중하게 구매해주시기 바랍니다!', [
-                                            { text: "닫기", onclick: "popup.close();" },
-                                            { text: "상품 구매하기", onclick: "javascript:gotoLuckBagGoods();" },
-                                        ]);
+                                        popup.show(
+                                            '랜덤여행 럭키백 상품은 사전 계획된 상품으로<br><b>구매 후 취소가 불가합니다.</b><br>신중하게 구매해주시기 바랍니다!',
+                                            [{
+                                                    text: "닫기",
+                                                    onclick: "popup.close();"
+                                                },
+                                                {
+                                                    text: "상품 구매하기",
+                                                    onclick: "javascript:gotoLuckBagGoods();"
+                                                },
+                                            ]);
                                         return false;
                                     }
                                 } else {
-                                    popup.show('로그인 후 참여해주세요!', [
-                                        { text: "닫기", onclick: "popup.close();" },
-                                        { text: "로그인", onclick: "go.login();" }
+                                    popup.show('로그인 후 참여해주세요!', [{
+                                            text: "닫기",
+                                            onclick: "popup.close();"
+                                        },
+                                        {
+                                            text: "로그인",
+                                            onclick: "go.login();"
+                                        }
                                     ]);
                                     return false;
                                 }
@@ -601,14 +727,14 @@
                 <!-- Page -->
                 <div class="page">
                     <p>
-                        <a href="/event15">
+                        <a href="/userindex/event15">
                             <span class="ico_arr_up">다음글</span>
                             <b>강원 여행 한방에 끝내기</b>
                             <em>기간 : 2021.08.11 ~ 끝날 때 까지!</em>
                         </a>
                     </p>
                     <p>
-                        <a href="/event13">
+                        <a href="/userindex/event13">
                             <span class="ico_arr_down">이전글</span>
                             <b>제 8회 액티비티 공동구매 사전 신청</b>
                             <em>기간 : 2021.08.23 ~ 2021.08.25</em>
@@ -617,8 +743,8 @@
                 </div>
 
                 <div class="align_center">
-                    <button onclick="window.location.href='https://www.goodchoice.kr/more/event#0'"
-                        class="btn_red_fill">목록보기</button>
+                    <button class="btn_red_fill"><a href="/userindex/event"
+                            style="text-decoration:none; color : white;">목록보기</a></button>
                 </div>
 
             </div>

@@ -16,19 +16,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="/host/img/asset/favicon_170822.ico" />
     <link href="/host/css/bootstrap.min.css" rel="stylesheet">
     <link href="/host/css/common.host.css" rel="stylesheet">
-
+    <link href="/css/ahn_googlemap.css" rel="stylesheet">
     <script src="/host/js/jquery-2.1.3.min.js"></script>
     <script src="/host/js/jquery-ui.min.js"></script>
     <script src="/host/js/jquery.lazyload.min.js"></script>
 
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-                <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 
 </head>
 
 <body id="main">
+<style>
+
+</style>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNLLB5W" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
@@ -41,11 +44,12 @@
     <!-- Style -->
 
 
-    <!--  안연주 hidden 값 끝  mem 아이디임-->
+    <!--  hidden 값 끝  mem 아이디임-->
     <input type="hidden" name="id" id="id" th:value="${id}">
     <!--    host id-->
     <input type="hidden" name="hostid" id="hostid">
-    <!--   안연주 hidden 값 끝 -->
+    <!--   hidden 값 끝 -->
+<!--    <div id="map"></div>-->
 
     <section class="container">
         <div class="menu-step3">
@@ -126,12 +130,20 @@
                         <tr>
                             <th>게스트 하우스<br /> 기본 정보</th>
                             <td class="bd_r_none">
+
                                 <div class="form-layer mb_24">
                                     <span class="form-title">업체명</span>
+
                                     <span class="form-body">
                                         <input class="form-control normal-size myIntcom"  type="text" name="aname"
                                             placeholder="업체명을 입력하세요." value="" />
                                     </span>
+                                </div>
+                                <div class="form-layer mb_24">
+                                    <span class="form-title"></span>
+                                    <ul>
+                                        <li>●  주소검색을 클릭하고 정보를 기입하시면 지도에 표시됩니다.</li>
+                                    </ul>
                                 </div>
                                 <div class="form-layer mb_24">
                                     <span class="form-title">업체 주소</span>
@@ -141,8 +153,10 @@
                                         <input class="form-control normal-size myIntcomadd1" id="input_roadAddress" type="text"
                                             name="address1" readonly placeholder="업체 주소를 입력하세요." value="" />
                                         <!--저장되는 주소값 myIntcomadd1_2을 기준으로 DB저장-->
-                                              <input type="hidden" name="input_roadAddress2" id="input_roadAddress2" class="myIntcomadd1 myIntcomadd1_2">
-
+                                            <input type="hidden" name="input_roadAddress2" id="input_roadAddress2" class="myIntcomadd1 myIntcomadd1_2">
+                                            <input type="hidden" name="ahn_admin_division" class="ahn_admin_division" alt="행정구역">
+                                            <input type="hidden" name="latitude" class="latitude" alt="위도">
+                                            <input type="hidden" name="longitude" class="longitude" alt="경도">
                                         <button type="button" class="btn btn-yeogi btn-normal-layer"
                                             onclick="daumPostCode()">주소 검색</button>
                                     </span>
@@ -153,29 +167,25 @@
                                             placeholder="나머지 주소를 입력하세요." value="" />
                                     </span>
                                 </div>
-
+                                <!--googlemap-->
+                                <div class="ahn_map_div">
+                                    <div id="map"></div>
+                                </div>
                             </td>
                             <td class="help-tooltip popover-container">
-                                <a href="javascript:void(0)" data-toggle="popover"><img
-                                        src="/host/img/asset/icn_tooltip.png" /></a>
-                                <div class="hide">
-                                    <span><img src="/host/img/tooltips/intro/img_tooltip01.png" /></span>
-                                </div>
+
                             </td>
                         </tr>
                         <!--// 기본정보 -->
 
                         <!-- 업체 이미지 -->
-                        <tr  style="display: none">
+                        <tr  style="">
                             <th>업체 이미지<br />(최대 20장)</th>
                             <td class="bd_r_none">
                                 <div class="form-layer mb_15">
                                     <p class="description text-normal">* 객실 및 업체 전경, 로비, 주차장 등 업체의 전반적인 이미지를 업로드해주시기
                                         바랍니다.</p>
-                                    <p class="description text-normal">* 이미지 교체를 원하시면 "변경"을 선택하시고 삭제를 원하시면 우측 "삭제"를
-                                        선택하시기 바랍니다.</p>
-                                    <p class="description text-normal">* 이미지 장소는 짧게 기입해주시기 바랍니다. 예시) 전경, 로비, 주차장 등</p>
-                                    <p class="description text-normal">* 첫 이미지가 메인 이미지이며 드래그를 통해 순서 변경이 가능합니다.</p>
+                                    <p class="description text-normal">* 첫 이미지가 메인 이미지입니다.</p>
                                 </div>
 
                                 <div class="form-layer mb_15">
@@ -184,19 +194,38 @@
                                 </div>
 
                                 <div class="form-layer-text">
-                                    <button type="button" class="btn btn-default btn_add" data-role="img-uploader"
-                                        data-ano="2918" data-armno="0" data-type="8">+ 이미지 추가</button>
+                                    <input type="file" id="imgFile" name="imgFile" multiple onchange="setThumbnail(event);"/>
+                                    <button type="button" class="btn btn-default" id="Button"  onclick="sendit();">이미지 추가</button>
                                 </div>
                             </td>
                             <td class="help-tooltip popover-container">
-                                <a href="javascript:void(0)" data-toggle="popover"><img
-                                        src="/host/img/asset/icn_tooltip.png" /></a>
-                                <div class="hide">
-                                    <span><img src="/host/img/tooltips/intro/img_tooltip02.png" /></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="">
+                            <th>업로드 이미지 미리보기</th>
+                            <td>
+                                <div >
+                                <div id="image_container" style="display: flex; justify-content: flex-start;"></div>
                                 </div>
                             </td>
                         </tr>
                         <!--// 업체 이미지 -->
+                        <!--업체 이미지 수정 삭제-->
+                        <tr style="">
+                            <th>저장된 이미지</th>
+                            <td>
+                                <div >
+                                    <input id="ahn_edit_hostimg_1" class="ahn_edit_hostimg_1" type="file" style="visibility: hidden">
+                                    <div id="ahn_edit_hostimg" style="display: flex; flex-wrap: wrap;justify-content: flex-start; word-break:break-all;word-wrap:break-word;">
+
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--//업체 이미지 수정 삭제-->
+
 
                         <!-- 편의시설/서비스 안내 -->
                         <tr id="target_host">
@@ -226,11 +255,7 @@
                                 </div>
                             </td>
                             <td class="help-tooltip popover-container">
-                                <a href="javascript:void(0)" data-toggle="popover"><img
-                                        src="/host/img/asset/icn_tooltip.png" /></a>
-                                <div class="hide">
-                                    <span><img src="/host/img/tooltips/intro/img_tooltip03.png" /></span>
-                                </div>
+
                             </td>
                         </tr>
                         <tr class="host-intro">
@@ -266,7 +291,6 @@
                                     <!-- show if 호스트 사진이미지가 없을 때 -->
                                     <div class="form-body">
                                         <div class="add-image">
-                                            <!-- <button type="button" class="btn btn-default btn_add" data-toggle="modal" data-host="image" data-target="#hostImageUpload">+ 이미지 추가</button> -->
                                             <div>
                                                 <!-- input file -->
                                                 <div class="box">
@@ -290,8 +314,6 @@
                                 <div class="form-layer">
                                     <textarea class="form-control textarea-layer myIntro" rows="6" name="r_comment"
                                         placeholder="사장님의 특이 경력 혹은 사장님만의 재밌는 이야기가 있다면 게스트들에 소개해주세요.&#13;&#10;게스트는 숙소의 시설과 위치, 서비스는 물론, 사장님이 어떤 분인지도 관심이 있답니다."></textarea>
-<!--                                    <span id="remain-r_comment" class="remain-cnt float-right">(<span-->
-<!--                                            id="count">0</span>/<span id="max">1000</span>)</span>-->
                                 </div>
                                 <span class="exam-button"> <i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                 <div class="exam-layer-guide1">
@@ -423,10 +445,6 @@
         </div>
         </td>
         <td class="help-tooltip popover-container">
-            <a href="javascript:void(0)" data-toggle="popover"><img src="/host/img/asset/icn_tooltip.png" /></a>
-            <div class="hide">
-                <span><img src="/host/img/tooltips/intro/img_tooltip04.png" /></span>
-            </div>
         </td>
         </tr>
         <tr style="display: none">
@@ -605,36 +623,10 @@
             </div>
         </div>
     </div>
-    <!--// 노출 삭제 -->
 
-    <!-- //테스트 모달 -->
-
-
-    <!--이거는 무서우니까 일단 냅두기로-->
-    <script src="/host/js/upload.js?nocache=2021-08-18 19:17:31"></script>
-    <script src="/host/js/dmuploader.js"></script>
     <script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
-
-
     <script>
-        /*var test = (function() {
-        var hostBlock = document.querySelector('.host-intro');
-        var confirmBtn = document.querySelector('[data-confirm=true]');
-        var deleteBtn = document.querySelector('[data-confirm=false]');
-        var modalOpenBtn = this.hostBlock.querySelector('.checkbox-wrap__fake-block');
-        var hostName = this.hostBlock.querySelector('[data-host=name]');
-        var imageUploader = this.hostBlock.querySelector('#ad_manager_profile')
-        var dataPrivacy = this.hostBlock.querySelector('.data-privacy');
 
-        function init() {
-            hostName.disabled = !this.dataPrivacy.checked;
-            imageUploader.disabled = !this.dataPrivacy.checked;
-            bindEvents();
-        }
-
-        //
-        init();
-    })*/
         var hostPrivacy = {
             initialize: function () {
                 this.hostBlock = document.querySelector('.host-intro');
@@ -836,34 +828,127 @@
     <div th:replace="hostthy/host-footer :: host-footer"></div>
     <!--푸터 끝 -->
 
-
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<!-- <script src="../host/js/ie10-viewport-bug-workaround.js"></script> -->
 <script src="/host/js/bootstrap.min.js"></script>
-<!--이미지추가버튼-->
-<!-- <script src="../host/js/moment.min.js"></script> -->
-<!-- <script src="../host/js/daterangepicker.js"></script> -->
-<!-- <script src="../host/js/bootstrap-timepicker.js"></script> -->
 <script src="/host/js/common.host.js?nocache=1629281851.7014"></script>
 <script src="/host/js/guest.host.js?nocache=1629281851.7014"></script>
-
+    <script src="/js/ahn_re.js"></script>
+    <!--    google map api-->
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB86lXOM5_phtfMCatkpGpcwTsNR82ine8&callback=initMap&v=weekly"
+            async
+    ></script>
 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        let map;
+        let marker;
+        let geocoder;
+        let responseDiv;
+        let response;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 8,
+                center: { lat: -34.397, lng: 150.644 },
+                mapTypeControl: false,
+                streetViewControl: false, //페그맨삭제
+                // disableDefaultUI: true, // 확대축소아이콘
+            });
+            geocoder = new google.maps.Geocoder();
+
+            const inputText = document.createElement("input");
+
+            inputText.type = "text";
+            inputText.placeholder = "Enter a location";
+            inputText.classList.add("ahn_map_input");
+            inputText.setAttribute("id","input_roadAddress3");
+            const submitButton = document.createElement("input");
+
+            submitButton.type = "button";
+            submitButton.value = "Geocode";
+            submitButton.classList.add("button", "button-primary", "ahn_map_btn");
+            submitButton.setAttribute("id","ahn_map_btn");
+            const clearButton = document.createElement("input");
+
+            clearButton.type = "button";
+            clearButton.value = "Clear";
+            clearButton.classList.add("button", "button-secondary", "ahn_map_clear");
+            response = document.createElement("pre");
+            response.id = "response";
+            response.innerText = "";
+            responseDiv = document.createElement("div");
+            responseDiv.id = "response-container";
+            responseDiv.appendChild(response);
+
+            const instructionsElement = document.createElement("p");
+
+            instructionsElement.id = "instructions";
+            instructionsElement.innerHTML =
+                "<strong>Instructions</strong>: Enter an address in the textbox to geocode or click on the map to reverse geocode.";
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
+            marker = new google.maps.Marker({
+                map,
+            });
+
+            submitButton.addEventListener("click", () =>
+                geocode({ address: inputText.value })
+            );
+            clearButton.addEventListener("click", () => {
+                clear();
+            });
+            clear();
+        }
+
+
+        function clear() {
+            marker.setMap(null);
+            responseDiv.style.display = "none";
+        }
+
+        function geocode(request) {
+            clear();
+            geocoder
+                .geocode(request)
+                .then((result) => {
+                    const { results } = result;
+
+                    map.setCenter(results[0].geometry.location);
+                    marker.setPosition(results[0].geometry.location);
+                    marker.setMap(map);
+                    responseDiv.style.display = "block";
+                    response.innerText = JSON.stringify(result, null, 2);
+                    console.log(results)
+                    console.log(results[0].formatted_address);
+                    //ex 대한민국 전라북도 고창군 고수면 가협길 21 에서 띄어쓰기로 배열화후 [1]번째 (2번째 데이터를뽑음
+                    //administrative division 행정구역
+                    var str = results[0].formatted_address;
+                    var res = str.split(" ");
+                    console.log(res);
+                    var res2 = res[1];
+
+                    console.log(res2);
+                    console.log(results[0].geometry.location.lat());
+                    console.log(results[0].geometry.location.lng());
+                    $('.ahn_admin_division').attr('value',res2);
+                    $('.latitude').attr('value',results[0].geometry.location.lat());
+                    $('.longitude').attr('value',results[0].geometry.location.lng());
+                    return results;
+
+                })
+                .catch((e) => {
+                    alert("Geocode was not successful for the following reason: " + e);
+                });
+        }
+
+    </script>
+
     <script>
 
         $(function (){
-
-
-            //멤버 아이디
-        // const memid = $('#id').val();
-        // console.log("멤버아이디"+memid)
-
-            // const sessionId  = sessionStorage.getItem('userid');
-            // console.log("userid :" + sessionId);
-
-
 
             //axios get 해서 뿌리기 memid=================================================
         axios.get('/api/tbmem/tbhost/' + sessionId , {
@@ -893,6 +978,11 @@
             const myParking = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myParking//주차장 정보
             const myKakunin = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].myKakunin//확인 사항 및 기타
 
+
+            // const ahn_admin_division = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].ahn_admin_division//행정구역
+            const latitude = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].latitude//위도
+            const longitude = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].longitude//경도
+
             console.log("업체명"+myIntcom);
             console.log("업체 주소"+myIntcomadd1);
             console.log("업체 주소 2"+myIntcomadd2);
@@ -906,10 +996,45 @@
             console.log("현장 요금 추가정보"+myPcash);
             console.log("주차장 정보"+myParking);
             console.log("확인 사항 및 기타"+myKakunin);
-            // const memEmail2 = response.data.data.tbPay2tList; //undifined
-            // console.log(memEmail2); //undifined
-            // $('input[name=memEmail2]').attr('value',memEmail2);//undifined
+            console.log("위도"+latitude);
+            console.log("경도"+longitude);
+            console.log('위도경도')
 
+            axios.get('/host/himglist/'+hostid, {
+            }).then(function (response){
+                console.log(response);
+                for(let i in response.data){
+                    let imgid = response.data[i].id;
+                    let hostid = response.data[i].tbHostId;
+                    let safeFile = response.data[i].safeFile.substr(56);
+
+                    console.log("imgid----");
+                    console.log(imgid);
+                    console.log(hostid);
+                    console.log(safeFile);
+
+                    let hostImgList = $(`<div>`).append(
+                        `<div style="position: absolute;">`+
+                        `<div class="hos_`+hostid+`" value="img_`+imgid+`" onclick="ahn_del_Img(this);" style="position: relative; top: 0.2rem; left: 200px; ">`+
+                        `<img src="/img/mainimages/cancel32.png">`+
+                        `</div>`+
+                        `</div>`+
+                        `<div style="position: absolute;">`+
+                        `<div class="hos_`+hostid+`" value="img_`+imgid+`" onclick="ahn_edit_Img(this);" style="position: relative; top: 0.2rem; left: 150px; ">`+
+                        `<img src="/img/mainimages/pencil32.png">`+
+                        `</div>`+
+                        `</div>`+
+                        `<img style="width:240px; height:240px" src="`+safeFile+`" alt="이미지경로/클릭시아이디값들">`+
+                        `</div>`
+
+                    );
+                    $('#ahn_edit_hostimg').append(hostImgList);
+
+                }//get get 안의 for끝
+
+            }).catch(function (err){
+                console.log(err)
+            });
 
             $('.myIntcom').attr('value',myIntcom); // 업체명
             $('.myIntcomadd1').attr('value',myIntcomadd1); //host 업체 주소1
@@ -935,6 +1060,9 @@
             $('.myKakunin').attr('value',myKakunin);//확인 사항 및 기타
             $('.myKakunin').text(myKakunin);
 
+            $('.ahn_admin_division').attr('value',ahn_admin_division);//행정구역
+            $('.latitude').attr('value',latitude);//위도
+            $('.longitude').attr('value',longitude);//경도
 
         }).catch(function (error) {
 
@@ -943,8 +1071,167 @@
         })//onready펑션끝
         //axios get 해서 뿌리기 끝 ===============================================
 
+        function ahn_edit_Img(e){
+            let hostid = $(e).attr('class');
+            let imgid = $(e).attr('value');
+            hostid = hostid.substr(4);
+            imgid = imgid.substr(4);
+            console.log(hostid);
+            console.log(imgid);
+            if (!confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
+                alert("취소(아니오)를 누르셨습니다.");
+
+            } else {
+
+                $('.ahn_edit_hostimg_1').click();
+                $("#ahn_edit_hostimg_1").change(function(e){
+
+                const FileElement = document.querySelector('#ahn_edit_hostimg_1');
+                const formData = new FormData(); //formdata생성
+
+                const data = {tbHostId : hostid}
+                console.log([JSON.stringify(data)]);
+                formData.append("data", new Blob([JSON.stringify(data)], {type: "application/json"}));
+
+                for(let i = 0; i < FileElement.files.length; i++){ // 길이만큼 반복
+                    formData.append("files", FileElement.files[i]); // append(키,값)
+                }
+                console.log(formData.getAll('data')); //(키)의 값을 전부 보여줌
+                console.log(formData.getAll('files')); //(키)의 값을 전부 보여줌
+                // alert("확인(예)을 누르셨습니다.");
+
+                axios.put('/host/img/'+imgid ,formData, {
+                    headers: {'Content-type': 'multipart/form-data'}
+
+
+                }).then(function (response){
+                    console.log(response);
+                }).catch(function(err){
+                    console.log(err);
+                })
+                alert('이미지 저장');
+                return false;
+                });
+            }//if문
+
+        }
+
+
+        function ahn_del_Img(e){
+            let hostid = $(e).attr('class');
+            let imgid = $(e).attr('value');
+            hostid = hostid.substr(4);
+            imgid = imgid.substr(4);
+            console.log(hostid);
+            console.log(imgid);
+            if (!confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
+                alert("취소(아니오)를 누르셨습니다.");
+
+            } else {
+
+                    axios.delete('/host/img/'+imgid , {
+                        headers: {'Content-type': 'application/json'}
+
+                    }).then(function (response){
+                        console.log(response);
+                    }).catch(function(err){
+                        console.log(err);
+                    })
+                    alert('이미지 삭제');
+                    return false;
+            }//if문
+        }
+
+
         //수정 후 다음으로
         function patchit(){
+
+
+            //공백유효성
+            if ($(".myIntcom").val() == "") {
+                alert("업체명을 입력해주세요");
+                $(".myIntcom").focus();
+                return false;
+            }
+            if ($(".myIntcomadd1_2").val() == "") {
+                alert("게스트업체주소를 입력해주세요");
+                $(".myIntcomadd1_2").focus();
+                return false;
+            }
+            if ($(".myIntcomadd2").val() == "") {
+                alert("게스트업체 세부주소를 입력해주세요");
+                $(".myIntcomadd2").focus();
+                return false;
+            }
+            if($("input[name='ad_theme[]']:checked").length < 1) {
+                if ($("input[name='ad_theme']:checked").length < 1) {
+                    alert("편의시설 서비스안내를 하나이상 선택해주세요");
+                    return false;
+                }
+            }
+            if ($(".myIntro").val() == "") {
+                alert("주인장소개글을 입력해주세요");
+                $(".myIntro").focus();
+                return false;
+            }
+            if ($(".myComeway").val()  == "") {
+                alert("오시는길 정보를 입력해주세요");
+                $(".myComeway").focus();
+                return false;
+            }
+
+            if ($(".mySidein1").val()  == "") {
+                alert("주변정보를 모두 입력해주세요");
+                $(".mySidein1").focus();
+                return false;
+            }
+            if ($(".mySidein2").val() == "") {
+                alert("주변정보를 모두 입력해주세요");
+                $(".mySidein2").focus();
+                return false;
+            }
+            if ($(".mySidein3").val() == "") {
+                alert("주변정보를 모두 입력해주세요");
+                $(".mySidein3").focus();
+                return false;
+            }
+            if ($(".myAddr1_2").val() == "") {
+                alert("업체주소를 입력해주세요");
+                $(".myAddr1_2").focus();
+                return false;
+            }
+            if ($(".myConum").val() == "") {
+                alert("사업자등록번호을 입력해주세요");
+                $(".myConum").focus();
+                return false;
+            }
+            if ($(".myRmrule").val() == "") {
+                alert("숙소이용규칙을 입력해주세요");
+                $(".myRmrule").focus();
+                return false;
+            }
+            if ($(".myOneline").val() == "") {
+                alert("한줄평을 입력해주세요");
+                $(".myOneline").focus();
+                return false;
+            }
+            if ($(".myPcash").val() == "") {
+                alert("현장 요금 추가정보를 입력해주세요");
+                $(".myPcash").focus();
+                return false;
+            }
+            if ($(".myParking").val()  == "") {
+                alert("주차장 정보를 입력해주세요");
+                $(".myParking").focus();
+                return false;
+            }
+            if ($(".myKakunin").val() == "") {
+                alert("확인 사항 및 기타를 입력해주세요");
+                $(".myKakunin").focus();
+                return false;
+            }
+            // 공백유효성 끝
+
 
             const hostid = $('#hostid').val();
             console.log('hostid:'+hostid);
@@ -997,7 +1284,10 @@
             const myKakunin = $(".myKakunin").val();
             console.log('확인 사항 및 기타 : '+ myKakunin)
 
-
+            const latitude = $(".latitude").val();
+            console.log('위도 : '+ latitude)
+            const longitude = $(".longitude").val();
+            console.log('경도 : '+ longitude)
 
 
             axios.request({
@@ -1023,10 +1313,9 @@
                         myOneline: myOneline,
                         myPcash: myPcash,
                         myParking: myParking,
-                        myKakunin: myKakunin
-
-                        // tbMemId: memid
-
+                        myKakunin: myKakunin,
+                        latitude:latitude,
+                        longitude:longitude
 
                     }
                 }
@@ -1038,11 +1327,49 @@
             return false;
         }
 
+
+
+
+        function sendit(){
+
+
+            let hostId = $('#hostid').val();
+
+            const FileElement = document.querySelector('#imgFile');
+
+            const formData = new FormData(); //formdata생성
+
+            // const data = {tbHostId : $("#tbHostId").val() }
+            const data = {tbHostId : hostId}
+            console.log('호스트아이디');
+            console.log(data);
+            console.log('호스트아이디2');
+            console.log([JSON.stringify(data)]);
+
+            formData.append("data", new Blob([JSON.stringify(data)], {type: "application/json"}));
+            for(let i = 0; i < FileElement.files.length; i++){ // 길이만큼 반복
+                formData.append("files", FileElement.files[i]); // append(키,값)
+            }
+            console.log(formData.getAll('data')); //(키)의 값을 전부 보여줌
+            console.log(formData.getAll('files')); //(키)의 값을 전부 보여줌
+
+
+
+            // alert('멈춤');
+            axios.post('/host/img',formData, {
+                headers: {'Content-type': 'multipart/form-data'}
+
+
+            }).then(function (response){
+                console.log(response);
+            }).catch(function(err){
+                console.log(err);
+            })
+            alert('이미지 저장');
+            return false;
+
+        }
     </script>
 
-
-
-
 </body>
-
 </html>

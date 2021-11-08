@@ -8,13 +8,19 @@ import com.example.yanolza.repository.TbHostRepository;
 import com.example.yanolza.repository.TbMemRepository;
 import com.example.yanolza.repository.TbReviewRepository;
 import com.example.yanolza.repository.TbRoomRepository;
+import com.example.yanolza.service.img.TbReviewImgService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -23,69 +29,149 @@ public class TbReviewApiService extends BaseService<TbReviewApiRequest, TbReview
     private final TbRoomRepository tbRoomRepository;
     private final TbMemRepository tbMemRepository;
     private final TbReviewRepository tbReviewRepository;
+    private final TbReviewImgService tbReviewImgService;
 
-    //리뷰 작성 memid, roomid, nkname
-    public Header<TbReviewApiResponse> writer(Header<TbReviewApiRequest> request){
-        TbReviewApiRequest tbReviewApiRequest = request.getData();
+    // 리뷰 작성 memid, roomid, nkname
+    public Header<TbReviewApiResponse> writer(TbReviewApiRequest request, MultipartHttpServletRequest multipartHttpServletRequest){
         TbReview tbReview = TbReview.builder()
-                .tbHostname(tbReviewApiRequest.getTbHostname()) // 숙소이름
-                .reGrade(tbReviewApiRequest.getReGrade())
-                .reTitle(tbReviewApiRequest.getReTitle())
-                .reContent(tbReviewApiRequest.getReContent())
-                .reReply(tbReviewApiRequest.getReReply())
+                .tbHostname(request.getTbHostname())
+                .reNkname(request.getReNkname())
+                .reGrade(request.getReGrade())
+                .reTitle(request.getReTitle())
+                .reContent(request.getReContent())
+                .reReply(request.getReReply())
+                .tbHostId(request.getTbHostId())
                 .ische("n")
-                .tbMem(tbMemRepository.getById(tbReviewApiRequest.getTbMemId()))
-                .tbRoom(tbRoomRepository.getById(tbReviewApiRequest.getTbRoomId()))
+                .tbMem(tbMemRepository.getById(request.getTbMemId()))
+                .tbRoom(tbRoomRepository.getById(request.getTbRoomId()))
                 .build();
         TbReview newReview = baseRepository.save(tbReview);
+
+        List<MultipartFile> files = multipartHttpServletRequest.getFiles("files");
+        String path = "C://jennyboo/Spring/yanolzafinal/src/main/resources/static/img/reviewImg//";
+
+        for(MultipartFile multi : files){
+            if(multi.getSize()>0){
+                String originName = multi.getOriginalFilename();
+                long fileSize = multi.getSize();
+                UUID uuid = UUID.randomUUID();
+                originName = uuid.toString() + "_" + originName;
+                String safeFile = path + originName;
+                try {
+                    multi.transferTo(new File(safeFile));
+                    tbReviewImgService.review(originName, fileSize, safeFile, newReview.getId());
+                }catch (IllegalStateException e){
+                    e.printStackTrace();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
         return Header.OK(response(newReview));
     }
 
     // 리뷰 리스트
+    public List<TbReviewApiRequest> getRreList(){
+        List<TbReview> tbReviews = tbReviewRepository.findAll();
+        List<TbReviewApiRequest> tbReviewApiRequestList = new ArrayList<>();
+
+        for (TbReview tbReview : tbReviews){
+            TbReviewApiRequest tbReviewApiRequest = TbReviewApiRequest.builder()
+                    .id(tbReview.getId())
+                    .tbHostname(tbReview.getTbHostname())
+                    .reNkname(tbReview.getReNkname())
+                    .reGrade(tbReview.getReGrade())
+                    .reTitle(tbReview.getReTitle())
+                    .reContent(tbReview.getReContent())
+                    .ische(tbReview.getIsche())
+                    .reRegdate(tbReview.getReRegdate())
+                    .reRpdate(tbReview.getReRpdate())
+                    .reReply(tbReview.getReReply())
+                    .tbMemId(tbReview.getTbMem().getId())
+                    .tbRoomId(tbReview.getTbRoom().getId())
+                    .tbHostId(tbReview.getTbHostId())
+                    .build();
+            tbReviewApiRequestList.add(tbReviewApiRequest);
+        }
+        return tbReviewApiRequestList;
+    }
+
+    // 리뷰 리스트 (답변)
     public List<TbReviewApiRequest> getReList(){
-    List<TbReview> tbReviews = tbReviewRepository.findAllByIsche("y");
-    List<TbReviewApiRequest> tbReviewApiRequestList = new ArrayList<>();
+        List<TbReview> tbReviews = tbReviewRepository.findAllByIsche("y");
+        List<TbReviewApiRequest> tbReviewApiRequestList = new ArrayList<>();
 
-    for (TbReview tbReview : tbReviews){
-        TbReviewApiRequest tbReviewApiRequest = TbReviewApiRequest.builder()
-                .id(tbReview.getId())
-                .tbHostname(tbReview.getTbHostname())
-                .reGrade(tbReview.getReGrade())
-                .reTitle(tbReview.getReTitle())
-                .reContent(tbReview.getReContent())
-                .ische(tbReview.getIsche())
-                .reRegdate(tbReview.getReRegdate())
-                .reRpdate(tbReview.getReRpdate())
-                .reReply(tbReview.getReReply())
-                .tbMemId(tbReview.getTbMem().getId())
-                .tbRoomId(tbReview.getTbRoom().getId())
-                .build();
-        tbReviewApiRequestList.add(tbReviewApiRequest);
+        for (TbReview tbReview : tbReviews){
+            TbReviewApiRequest tbReviewApiRequest = TbReviewApiRequest.builder()
+                    .id(tbReview.getId())
+                    .tbHostname(tbReview.getTbHostname())
+                    .reNkname(tbReview.getReNkname())
+                    .reGrade(tbReview.getReGrade())
+                    .reTitle(tbReview.getReTitle())
+                    .reContent(tbReview.getReContent())
+                    .ische(tbReview.getIsche())
+                    .reRegdate(tbReview.getReRegdate())
+                    .reRpdate(tbReview.getReRpdate())
+                    .reReply(tbReview.getReReply())
+                    .tbMemId(tbReview.getTbMem().getId())
+                    .tbRoomId(tbReview.getTbRoom().getId())
+                    .tbHostId(tbReview.getTbHostId())
+                    .build();
+            tbReviewApiRequestList.add(tbReviewApiRequest);
+        }
+        return tbReviewApiRequestList;
     }
-    return tbReviewApiRequestList;
+
+    // 리뷰 리스트 (답변) (host)
+    public List<TbReviewApiRequest> getHlist(Integer tbHostId){
+        List<TbReview> tbReviews = tbReviewRepository.findAllByTbHostIdAndIsche(tbHostId,"y");
+        List<TbReviewApiRequest> tbReviewApiRequestList = new ArrayList<>();
+
+        for (TbReview tbReview : tbReviews){
+            TbReviewApiRequest tbReviewApiRequest = TbReviewApiRequest.builder()
+                    .id(tbReview.getId())
+                    .tbHostname(tbReview.getTbHostname())
+                    .reNkname(tbReview.getReNkname())
+                    .reGrade(tbReview.getReGrade())
+                    .reTitle(tbReview.getReTitle())
+                    .reContent(tbReview.getReContent())
+                    .ische(tbReview.getIsche())
+                    .reRegdate(tbReview.getReRegdate())
+                    .reRpdate(tbReview.getReRpdate())
+                    .reReply(tbReview.getReReply())
+                    .tbMemId(tbReview.getTbMem().getId())
+                    .tbRoomId(tbReview.getTbRoom().getId())
+                    .tbHostId(tbReview.getTbHostId())
+                    .build();
+            tbReviewApiRequestList.add(tbReviewApiRequest);
+        }
+        return tbReviewApiRequestList;
     }
+
     // 리뷰 리스트 (미답변)
-    public List<TbReviewApiRequest> getmiReList(){
-    List<TbReview> tbReviews = tbReviewRepository.findAllByIsche("n");
-    List<TbReviewApiRequest> tbReviewApiRequestList = new ArrayList<>();
+    public List<TbReviewApiRequest> getmiReList(Integer tbHostId){
+        List<TbReview> tbReviews = tbReviewRepository.findAllByTbHostIdAndIsche(tbHostId,"n");
+        List<TbReviewApiRequest> tbReviewApiRequestList = new ArrayList<>();
 
-    for (TbReview tbReview : tbReviews){
-        TbReviewApiRequest tbReviewApiRequest = TbReviewApiRequest.builder()
-                .id(tbReview.getId())
-                .tbHostname(tbReview.getTbHostname())
-                .reGrade(tbReview.getReGrade())
-                .reTitle(tbReview.getReTitle())
-                .reContent(tbReview.getReContent())
-                .ische(tbReview.getIsche())
-                .reRegdate(tbReview.getReRegdate())
-                .reRpdate(tbReview.getReRpdate())
-                .reReply(tbReview.getReReply())
-                .tbMemId(tbReview.getTbMem().getId())
-                .tbRoomId(tbReview.getTbRoom().getId())
-                .build();
-        tbReviewApiRequestList.add(tbReviewApiRequest);
-    }
-    return tbReviewApiRequestList;
+        for (TbReview tbReview : tbReviews){
+            TbReviewApiRequest tbReviewApiRequest = TbReviewApiRequest.builder()
+                    .id(tbReview.getId())
+                    .tbHostname(tbReview.getTbHostname())
+                    .reNkname(tbReview.getReNkname())
+                    .reGrade(tbReview.getReGrade())
+                    .reTitle(tbReview.getReTitle())
+                    .reContent(tbReview.getReContent())
+                    .ische(tbReview.getIsche())
+                    .reRegdate(tbReview.getReRegdate())
+                    .reRpdate(tbReview.getReRpdate())
+                    .reReply(tbReview.getReReply())
+                    .tbMemId(tbReview.getTbMem().getId())
+                    .tbRoomId(tbReview.getTbRoom().getId())
+                    .tbHostId(tbReview.getTbHostId())
+                    .build();
+            tbReviewApiRequestList.add(tbReviewApiRequest);
+        }
+        return tbReviewApiRequestList;
     }
 
     // 리뷰 디테일 ok
@@ -104,7 +190,7 @@ public class TbReviewApiService extends BaseService<TbReviewApiRequest, TbReview
         return optional.map(tbReview -> {
             baseRepository.delete(tbReview);
             return Header.OK();
-        }).orElseGet(()->Header.Error("없다꺼져"));
+        }).orElseGet(()->Header.Error("ERROR"));
     }
 
 
@@ -113,14 +199,14 @@ public class TbReviewApiService extends BaseService<TbReviewApiRequest, TbReview
         TbReviewApiRequest tbReviewApiRequest = request.getData();
         Optional<TbReview> optional = baseRepository.findById(tbReviewApiRequest.getId());
         return optional.map(tbReview -> {
-            tbReview.setIsche("y");
-            tbReview.setReReply(tbReviewApiRequest.getReReply());
-            tbReview.setReRpdate(LocalDateTime.now());
-            return tbReview;
-        }).map(tbReview -> baseRepository.save(tbReview))
+                    tbReview.setIsche("y");
+                    tbReview.setReReply(tbReviewApiRequest.getReReply());
+                    tbReview.setReRpdate(LocalDateTime.now());
+                    return tbReview;
+                }).map(tbReview -> baseRepository.save(tbReview))
                 .map(tbReview -> response(tbReview))
                 .map(Header::OK)
-                .orElseGet(()->Header.Error("에러다이색기야"));
+                .orElseGet(()->Header.Error("ERROR"));
     }
 
     public Header<TbReviewApiResponse> rereupdate(Header<TbReviewApiRequest>request){
@@ -132,15 +218,16 @@ public class TbReviewApiService extends BaseService<TbReviewApiRequest, TbReview
                 }).map(tbReview -> baseRepository.save(tbReview))
                 .map(tbReview -> response(tbReview))
                 .map(Header::OK)
-                .orElseGet(()->Header.Error("에러다이색기야"));
+                .orElseGet(()->Header.Error("ERROR"));
     }
-    //response
+
     TbReviewApiResponse response(TbReview tbReview){
         TbReviewApiResponse tbReviewApiResponse = TbReviewApiResponse.builder()
                 .id(tbReview.getId())
                 .reGrade(tbReview.getReGrade())
                 .reTitle(tbReview.getReTitle())
                 .tbHostname(tbReview.getTbHostname())
+                .reNkname(tbReview.getReNkname())
                 .reGrade(tbReview.getReGrade())
                 .reTitle(tbReview.getReTitle())
                 .reContent(tbReview.getReContent())
@@ -148,6 +235,7 @@ public class TbReviewApiService extends BaseService<TbReviewApiRequest, TbReview
                 .ische(tbReview.getIsche())
                 .reRegdate(tbReview.getReRegdate())
                 .reRpdate(tbReview.getReRpdate())
+                .tbHostId(tbReview.getTbHostId())
                 .tbRoomId(tbReview.getTbRoom().getId())
                 .tbMemId(tbReview.getTbMem().getId())
                 .build();

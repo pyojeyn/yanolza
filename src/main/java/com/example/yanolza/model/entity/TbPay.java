@@ -3,8 +3,10 @@ package com.example.yanolza.model.entity;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -33,12 +35,9 @@ public class TbPay {
     private String payCheckIn;
     private String payCheckOut;
     private String payCancel;
+    private LocalDate payDate;
     @CreatedDate
-    private LocalDateTime payDate;
-    @CreatedDate
-    private LocalDateTime payCdate;
-
-
+    private LocalDate payCdate;
 
     @ManyToOne
     private TbHost tbHost;

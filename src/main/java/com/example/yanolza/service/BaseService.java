@@ -18,5 +18,4 @@ import java.util.stream.Collectors;
 public abstract class BaseService<Req, Res, Entity> implements CrudInterface<Req, Res> {
     @Autowired(required = false)
     protected JpaRepository<Entity, Integer> baseRepository;
-
 }

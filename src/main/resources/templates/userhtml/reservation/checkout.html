@@ -1,6 +1,6 @@
-
 <!doctype html>
-<html data-n-head-ssr lang="ko" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22ko%22%7D%7D">
+<html data-n-head-ssr lang="ko" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22ko%22%7D%7D"
+    xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -36,8 +36,7 @@
     <meta name="apple-mobile-web-app-title" content="취향대로 머물다 여기어때">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="preload" href="/common.css" as="style">
-    <link rel="stylesheet" href="/common.css">
+
     <link rel="shortcut icon" href="https://image.goodchoice.kr/images/web_v3/favicon_170822.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://image.goodchoice.kr/images/web_v3/h1_logo_mo.png">
     <link rel="apple-touch-icon" sizes="76x76" href="https://image.goodchoice.kr/images/web_v3/icon_76.png">
@@ -48,33 +47,26 @@
     <title>취향대로 머물다 여기어때</title>
     <!-- <link rel="canonical" href="<?php echo $url; ?>" /> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+
+
 
     <title>취향대로 머물다 여기어때</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
     <link data-n-head="ssr" rel="stylesheet" href="/css/owl.carousel.css">
     <link data-n-head="ssr" rel="stylesheet" href="/css/reservation.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="/css/ahn_product.css" />
+    <link rel="stylesheet" href="/css/ahn_datepicker.css" />
 
-    <!-- 정훈 css 추가-->
-    <link data-n-head="ssr" rel="stylesheet" href="/css/common.css">
-    <!-- 정훈 css 추가-->
 
-    <script data-n-head="ssr" rel="text/javascript" src="/js/library/iscroll.js" defer></script>
-    <script data-n-head="ssr" rel="text/javascript" src="/js/service/common.js" defer></script>
-    <script data-n-head="ssr" src="/js/library/owl.carousel.min.js"></script>
-    <script data-n-head="ssr" src="/js/service/reservation.js"></script>
+
     <script data-n-head="ssr" src="https://web.nicepay.co.kr/flex/js/nicepay_tr_utf.js"></script>
-    <link rel="preload" href="js/_nuxt/b07d509.js" as="script">
-    <link rel="preload" href="js/_nuxt/8b819a2.js" as="script">
-    <link rel="preload" href="js/_nuxt/f1a9d07.js" as="script">
-    <link rel="preload" href="js/_nuxt/481c88d.js" as="script">
-    <link rel="preload" href="js/_nuxt/a29dab7.js" as="script">
-    <link rel="preload" href="js/_nuxt/99fab4c.js" as="script">
+
     <style
-            data-vue-ssr-id="7e56e4e3:0 1e488b44:0 059532c1:0 12dcfb8a:0 0c672120:0 5e6bdf1a:0 3280032a:0 2f838c7d:0 f11a1f38:0 14e366ac:0 83f13466:0 613bd04f:0">
-
-
+        data-vue-ssr-id="7e56e4e3:0 1e488b44:0 059532c1:0 12dcfb8a:0 0c672120:0 5e6bdf1a:0 3280032a:0 2f838c7d:0 f11a1f38:0 14e366ac:0 83f13466:0 613bd04f:0">
         @media(min-width:1024px) {
             .pay_select select[data-v-3ab88292] {
                 width: 288px
@@ -212,281 +204,299 @@
             left: 0;
             margin-top: -12px
         }
-
-
     </style>
 </head>
 
 <body>
-<script>
-    var deviceWidth = window.innerWidth;
-    document.body.className = deviceWidth > 1023 ? "pc" : "mobile"
-</script>
-<div data-server-rendered="true" id="__nuxt">
-    <!---->
-    <div id="__layout">
-        <div >
-            <div class="wrap show" >
+    <script>
+        var deviceWidth = window.innerWidth;
+        document.body.className = deviceWidth > 1023 ? "pc" : "mobile"
+    </script>
+    <div data-server-rendered="true" id="__nuxt">
+        <!---->
+        <div id="__layout">
+            <div>
+                <div class="wrap show">
 
 
 
-                <!-- 헤더 -->
-                <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
-                <!--헤더 끝 -->
+                    <!-- 헤더 -->
+                    <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
+                    <!--헤더 끝 -->
 
 
-                <!-- Bg Dimm -->
-                <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-                <div class="bg_dimm_prevent">&nbsp;</div>
+                    <!-- Bg Dimm -->
+                    <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+                    <div class="bg_dimm_prevent">&nbsp;</div>
 
-                <!-- 추천검색어 -->
-                <div class="recommend_srch">
-                    <div class="scroll_srch">
-                        <div class="scroller">
-                            <div class="default" style="display:block">
-                                <strong>추천 검색어</strong>
-                                <ul></ul>
-                            </div>
-                            <!-- 연관검색어 -->
-                            <div class="chain">
-                                <ul></ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mobile Menu -->
-                <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-                <div class="menu_wrap">
-
-                    <div class="menu">
-                        <div class="top">
-                            <!-- 회원 -->
-                            <div class="member">
-                                <div class="mem">
-                                        <span class="pic"
-                                              style="background:url('/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
-                                    <p class="info">사과색깔</p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- Iscroll -->
-                        <div class="scroll_nav">
+                    <!-- 추천검색어 -->
+                    <div class="recommend_srch">
+                        <div class="scroll_srch">
                             <div class="scroller">
-                                <ul>
-                                    <li><a href="/userindex/">홈</a></li>
-                                    <li class="depth_2">
-                                        <button type="button" class="has_ul"><span>숙소유형</span></button>
-                                        <ul>
-                                            <li><a href="/userindex/1">모텔</a></li>
-                                            <li><a href="/userindex/2">호텔/리조트</a></li>
-                                            <li><a href="/userindex/3">펜션</a></li>
-                                            <li><a href="/userindex/4">리조트</a></li>
-                                            <li><a href="/userindex/5">캠핑·글램핑</a></li>
-                                            <li><a href="/userindex/6">게스트하우스</a></li>
-                                            <li><a href="/userindex/7">한옥 </a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/userindex/8">내주변</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="/userindex/reservations">예약 내역</a></li>
-                                    <li><a href="/userindex/mypage">내 정보 관리</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="depth_2"><button type="button"
-                                                                class="has_ul"><span>더보기</span></button>
-                                        <ul>
-                                            <li><a href="/userindex/notice">공지사항</a></li>
-                                            <li><a href="/userindex/event">이벤트</a></li>
-                                            <li><a href="/userindex/project">혁신 프로젝트</a></li>
-                                            <li><a href="/userindex/faq">고객문의</a></li>
-                                            <li><a href="/userindex/terms">약관 및 정책</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <div class="center">
-                                    <p>여기어때 고객행복센터</p>
-                                    <p><a href="tel:1670-6250">1670-6250</a></p>
-                                    <p>오전 9시 - 새벽 3시</p>
+                                <div class="default" style="display:block">
+                                    <strong>추천 검색어</strong>
+                                    <ul></ul>
+                                </div>
+                                <!-- 연관검색어 -->
+                                <div class="chain">
+                                    <ul></ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- //Mobile Menu -->
-                <div>
-                    <div id="content">
-                        <div class="reserve">
-                            <form method="post" id="reservation_form" onsubmit="return sendit()">
-                                <input type="hidden" name="tbMemId" id="tbMemId" th:value="${tbMemId}">
-                                <!--host 아이디임-->
-                                <input type="hidden" name="id" id="id" th:value="${id}">
-                                <input type="hidden" name="tbRoomId" id="tbRoomId" th:value="${tbRoomId}">
-                                <!-- 도보 방법-->
-                                <input type="hidden" id="ahn_remove" name="payIscar">
-                                <div class="right">
-                                    <span class="ahn_di_span">
-                                        <section class="info">
-                                            <span class="ahn_di_span">
-                                                <p class="name"><strong >숙소이름</strong>
-                                                    <span class="hname">강서 넘버25호텔</span>
-                                                </p>
-                                            </span>
-                                            <span class="ahn_di_span">
-                                                <p ><strong >객실타입/기간</strong><span class="rmType">일반</span> /
-                                                    1박
-                                                </p>
-                                            </span>
-                                            <span class="ahn_di_span">
-                                                <p data-v-2d73460d><strong data-v-2d73460d>체크인</strong> <span class="myStime">2021-09-14</span>
-                                                </p>
-                                            </span>
-                                            <span class="ahn_di_span">
-                                                <p data-v-2d73460d><strong data-v-2d73460d>체크아웃</strong><span class="myCtime">2021-09-15</span>
-                                                </p>
-                                            </span>
-                                        </section>
-                                    </span>
-                                    <span class="ahn_di_span">
-                                        <section class="total_price_pc" data-v-2d73460d>
-                                            <p ><strong ><b >총 결제
-                                                        금액</b>(VAT포함)</strong>
+
+                    <!-- Mobile Menu -->
+                    <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+                    <div class="menu_wrap">
+
+                        <div class="menu">
+                            <div class="top">
+                                <!-- 회원 -->
+                                <div class="member">
+                                    <div class="mem">
+                                        <span class="pic"
+                                            style="background:url('/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
+                                        <p class="info">사과색깔</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Iscroll -->
+                            <div class="scroll_nav">
+                                <div class="scroller">
+                                    <ul>
+                                        <li><a href="/userindex/">홈</a></li>
+                                        <li class="depth_2">
+                                            <button type="button" class="has_ul"><span>숙소유형</span></button>
+                                            <ul>
+                                                <li><a href="/userindex/1">모텔</a></li>
+                                                <li><a href="/userindex/2">호텔/리조트</a></li>
+                                                <li><a href="/userindex/3">펜션</a></li>
+                                                <li><a href="/userindex/4">리조트</a></li>
+                                                <li><a href="/userindex/5">캠핑·글램핑</a></li>
+                                                <li><a href="/userindex/6">게스트하우스</a></li>
+                                                <li><a href="/userindex/7">한옥 </a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="/userindex/8">내주변</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="/userindex/reservations">예약 내역</a></li>
+                                        <li><a href="/userindex/mypage">내 정보 관리</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li class="depth_2"><button type="button"
+                                                class="has_ul"><span>더보기</span></button>
+                                            <ul>
+                                                <li><a href="/userindex/notice">공지사항</a></li>
+                                                <li><a href="/userindex/event">이벤트</a></li>
+                                                <li><a href="/userindex/project">혁신 프로젝트</a></li>
+                                                <li><a href="/userindex/faq">고객문의</a></li>
+                                                <li><a href="/userindex/terms">약관 및 정책</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <div class="center">
+                                        <p>여기어때 고객행복센터</p>
+                                        <p><a href="tel:1670-6250">1670-6250</a></p>
+                                        <p>오전 9시 - 새벽 3시</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //Mobile Menu -->
+                    <div>
+                        <div id="content">
+                            <div class="reserve">
+
+                                <form method="post" id="reservation_form" onsubmit="return sendit()">
+                                    <input type="hidden" name="tbMemId" id="tbMemId" th:value="${tbMemId}">
+                                    <!--host 아이디임-->
+                                    <input type="hidden" name="id" id="id" th:value="${id}">
+                                    <input type="hidden" name="tbRoomId" id="tbRoomId" th:value="${tbRoomId}">
+                                    <!-- 도보 방법-->
+                                    <input type="hidden" id="ahn_remove" name="payIscar">
+                                    <div class="right">
+                                        <span class="ahn_di_span">
+                                            <section class="info">
                                                 <span class="ahn_di_span">
-                                                    <span class="in_price prSprice" id="prSprice">45,000</span>원
+                                                    <p class="name"><strong>숙소이름</strong>
+                                                        <span class="hname">강서 넘버25호텔</span>
+                                                    </p>
                                                 </span>
-                                            </p>
-                                            <ul data-v-2d73460d>
-                                                <li data-v-2d73460d>해당 객실가는 세금, 봉사료가 포함된 금액입니다</li>
-                                                <li data-v-2d73460d>
-                                                    결제완료 후 <span data-v-2d73460d>예약자 이름</span>으로 바로
-                                                    <span data-v-2d73460d>체크인</span> 하시면 됩니다
+                                                <span class="ahn_di_span">
+                                                    <p><strong>객실타입/기간</strong><span class="rmType">일반</span> /
+                                                        1박
+                                                    </p>
+                                                </span>
+                                                <span class="ahn_di_span">
+                                                    <p data-v-2d73460d><strong data-v-2d73460d>체크인</strong> <span
+                                                            class="myStime">2021-09-14</span><span>:00 시</span>
+                                                    </p>
+                                                </span>
+                                                <span class="ahn_di_span">
+                                                    <p data-v-2d73460d><strong data-v-2d73460d>체크아웃</strong><span
+                                                            class="myCtime">2021-09-15</span><span>:00 시</span>
+                                                    </p>
+                                                </span>
+                                            </section>
+                                        </span>
+                                        <span class="ahn_di_span">
+                                            <section class="total_price_pc" data-v-2d73460d>
+                                                <p><strong><b>총 결제
+                                                            금액</b>(VAT포함)</strong>
+                                                    <span class="ahn_di_span"></br>
+                                                        <span class="in_price prSprice" id="prSprice"
+                                                            style="font-size: 30px;">45,000</span>원
+                                                    </span></br>
+                                                </p>
+                                                <ul data-v-2d73460d>
+                                                    <li data-v-2d73460d>해당 객실가는 세금, 봉사료가 포함된 금액입니다</li>
+                                                    <li data-v-2d73460d>
+                                                        결제완료 후 <span data-v-2d73460d>예약자 이름</span>으로 바로
+                                                        <span data-v-2d73460d>체크인</span> 하시면 됩니다
+                                                    </li>
+                                                </ul>
+                                            </section>
+                                        </span>
+                                        <!----> <button type="button" id="btnSend" class="btn_pay gra_left_right_red">
+                                            결제하기
+                                        </button>
+                                    </div>
+                                    <div class="left">
+                                        <!---->
+                                        <div>
+                                            <section class="info_chkin">
+                                                <h3 style="margin-top:0;">
+                                                    예약자 정보
+                                                </h3>
+                                                <!-- 추가 -->
+                                                <section class="date_wrap">
+                                                    <!--        안연주 datepicker-->
+                                                    <input type="hidden" name="ahn_sel_date" id="ahn_sel_date" value="">
+                                                    <input type="hidden" name="ahn_sel_date2" id="ahn_sel_date2"
+                                                        value="">
+                                                    <!--            <article class="wheredate on" style="height: 50px;">-->
+                                                    <div class="ahn_btn_date"
+                                                        style="position: relative; height: 37px; margin-bottom: 75px;">
+                                                        <span class="date_view1">
+                                                            <!-- Datepicker-->
+                                                            <input type="text" class="ahn_product_date"
+                                                                id="ahn_product_date" autocomplete="off">
+                                                        </span>
+                                                    </div>
+                                                </section>
+
+                                                <!-- 추가 끝 -->
+                                                <strong>예약자 이름</strong>
+                                                <span class="ahn_di_span">
+                                                    <p class="inp_wrap remove">
+                                                        <span class="ahn_di_span">
+                                                            <input type="text" name="userName" id="userName"
+                                                                placeholder="체크인시 필요한 정보입니다." maxlength="20">
+                                                        </span>
+                                                    </p>
+                                                </span>
+                                                <span data-show="name" class="alert_txt error-message"
+                                                    id="name_error1">예약자명을 입력하세요.</span>
+                                                <div><strong class="mt_09">휴대폰 번호</strong>
+                                                    <span class="ahn_di_span">
+                                                        <div class="phone_confirm">
+                                                            <span class="ahn_di_span">
+                                                                <p class="inp_wrap"><input id="phoneNumber" type="tel"
+                                                                        name="userPhone" placeholder="체크인시 필요한 정보입니다."
+                                                                        maxlength="13" value=""></p>
+                                                            </span>
+                                                            <!---->
+                                                            <span data-show="tel" class="alert_txt error-message"
+                                                                id="phone_error1">휴대폰 번호를 확인해 주세요.</span>
+                                                            <div id="verificationCode"
+                                                                style="display: none; height: 48px"><b>인증 번호</b>
+                                                                <section>
+                                                                    <div class="inp_wrap remove"><input id="digit"
+                                                                            type="tel" minlength="4" maxlength="4"
+                                                                            value=""> <span class="timer"> </span></div>
+                                                                    <button type="button"
+                                                                        class="btn_ok btn_confirm">확인</button>
+                                                                </section>
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                                <div class="visit"><strong>방문 방법</strong>
+                                                    <div class="going">
+                                                        <button type="button" data-method="WALK"
+                                                            class="walk mj_go payIscar" value="0"
+                                                            name="payIscar"><span>도보</span></button>
+                                                        <button type="button" data-method="CAR"
+                                                            class="car mj_go payIscar" value="1"
+                                                            name="payIscar"><span>차량</span></button>
+                                                        <input type="hidden" class="iscar">
+                                                    </div>
+                                                    <div id="parking_comment" class="txt" style="visibility:hidden;">
+                                                        <span>주차장 만차 시 주차가 어려울 수 있어요</span>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                        </div>
+                                        <section class="price_wrap total_price" data-v-3ab88292>
+                                            <p data-v-3ab88292><strong data-v-3ab88292><b data-v-3ab88292>총 결제
+                                                        금액</b>(VAT포함)</strong><span class="in_price_app"
+                                                    data-v-3ab88292>45,000원</span></p>
+
+                                            <ul data-v-3ab88292>
+                                                <li>
+                                                    해당 객실가는 세금, 봉사료가 포함된 금액입니다
+                                                </li>
+                                                <li>
+                                                    결제완료 후 <span data-v-3ab88292>예약자 이름</span>으로 바로
+                                                    <span data-v-3ab88292>체크인</span> 하시면 됩니다
                                                 </li>
                                             </ul>
                                         </section>
-                                    </span>
-                                    <!----> <button type="button"  id="btnSend" class="btn_pay gra_left_right_red" >
-                                    결제하기
-                                </button>
-                                </div>
-                            <div class="left" >
-                                <!---->
-                                <div  >
-                                    <section class="info_chkin" >
-                                        <h3 style="margin-top:0;" >
-                                            예약자 정보
-                                        </h3> <strong >예약자 이름</strong>
-                                        <span class="ahn_di_span">
-                                                <p class="inp_wrap remove" >
-                                                    <span class="ahn_di_span">
-                                                        <input type="text" name="userName" id="userName"placeholder="체크인시 필요한 정보입니다."
-                                                               maxlength="20">
-                                                    </span>
-                                                </p>
-                                            </span>
-                                        <span data-show="name" class="alert_txt error-message" id="name_error1"
-                                        >예약자명을 입력하세요.</span>
-                                        <div ><strong class="mt_09"
-                                        >휴대폰 번호</strong>
-                                            <span class="ahn_di_span">
-                                                    <div class="phone_confirm" >
-                                                        <span class="ahn_di_span">
-                                                            <p class="inp_wrap" ><input id="phoneNumber"
-                                                                                        type="tel" name="userPhone"
-                                                                                        placeholder="체크인시 필요한 정보입니다." maxlength="13"
-                                                                                        value="" ></p>
-                                                        </span>
-                                                        <!---->
-                                                        <span data-show="tel" class="alert_txt error-message" id="phone_error1"
-                                                        >휴대폰 번호를 확인해 주세요.</span>
-                                                        <div id="verificationCode" style="display: none; height: 48px"
-                                                        ><b >인증 번호</b>
-                                                            <section >
-                                                                <div class="inp_wrap remove"><input
-                                                                        id="digit" type="tel" minlength="4"
-                                                                        maxlength="4" value="" > <span
-                                                                        class="timer"> </span></div>
-                                                                <button type="button" class="btn_ok btn_confirm"
-                                                                >
-                                                                    확인
-                                                                </button>
-                                                            </section>
-                                                        </div>
-                                                    </div>
-                                                </span>
-                                        </div>
-                                        <div class="visit" ><strong >방문 방법</strong>
-                                            <div class="going">
-                                                <button data-method="WALK" class="walk mj_go" name="gogo">
-                                                    <span>도보</span>
-                                                </button>
-                                                <button data-method="CAR" class="car mj_go" name="gogo">
-                                                    <span>차량</span>
-                                                </button>
-                                            </div>
-                                            <div id="parking_comment" class="txt" style="visibility:hidden;">
-                                                <span >주차장 만차 시 주차가 어려울 수 있어요</span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <!---->
-                                    <!---->
-                                </div>
-                                <section class="price_wrap total_price" data-v-3ab88292>
-                                    <p data-v-3ab88292><strong data-v-3ab88292><b data-v-3ab88292>총 결제
-                                        금액</b>(VAT포함)</strong><span class="in_price_app"
-                                                                    data-v-3ab88292>45,000원</span></p>
-                                    <!---->
-                                    <ul data-v-3ab88292>
-                                        <!---->
-                                        <li >
-                                            해당 객실가는 세금, 봉사료가 포함된 금액입니다
-                                        </li>
-                                        <li>
-                                            결제완료 후 <span data-v-3ab88292>예약자 이름</span>으로 바로
-                                            <span data-v-3ab88292>체크인</span> 하시면 됩니다
-                                        </li>
-                                    </ul>
-                                </section>
-                                <section class="pay_select" >
-                                    <h3 >결제수단 선택</h3> <select id="payment-select"
-                                                              class="select_type_1">
-                                    <option data-minprice="0" selected="selected" value="KAKAO">
-                                        카카오페이
-                                    </option>
+                                        <section class="pay_select">
+                                            <h3>결제수단 선택</h3> <select id="payment-select" class="select_type_1"
+                                                name="payHowpay">
+                                                <option data-minprice="0" selected="selected" value="KAKAO">
+                                                    카카오페이
+                                                </option>
 
-                                    <option data-minprice="0" value="CARD" >
-                                        신용/체크카드
-                                    </option>
+                                                <option data-minprice="0" value="CARD">
+                                                    신용/체크카드
+                                                </option>
 
-                                </select>
-                                    <!---->
-                                </section>
+                                            </select>
+                                        </section>
                                 </form>
+
                                 <section class="agree">
-                                    <p class="all_check" data-v-22a3f566><label data-v-22a3f566><input
-                                            type="checkbox" name="checkAll" class="inp_chk_02" data-v-22a3f566>
-                                        <span data-v-22a3f566>전체 동의</span></label></p>
+                                    <p class="all_check" data-v-22a3f566><label data-v-22a3f566><input type="checkbox"
+                                                name="checkAll" class="inp_chk_02" data-v-22a3f566>
+                                            <span data-v-22a3f566>전체 동의</span></label></p>
                                     <p data-v-22a3f566><input type="checkbox" name="checkOne" class="inp_chk_02"
-                                                              data-v-22a3f566 id="check001"> <span onclick="pop_agree_01();" data-v-22a3f566><i
-                                            data-v-22a3f566>숙소이용규칙 및 취소/환불규정 동의</i><b data-v-22a3f566>
-                                                    (필수)</b></span></p>
+                                            data-v-22a3f566 id="check001"> <span onclick="pop_agree_01();"
+                                            data-v-22a3f566><i data-v-22a3f566>숙소이용규칙 및 취소/환불규정 동의</i><b
+                                                data-v-22a3f566>
+                                                (필수)</b></span></p>
                                     <p data-v-22a3f566><input type="checkbox" name="checkOne" class="inp_chk_02"
-                                                              data-v-22a3f566  id="check002"> <span onclick="pop_agree_02();" data-v-22a3f566><i
-                                            data-v-22a3f566>개인정보 수집 및 이용 동의</i><b data-v-22a3f566>
-                                                    (필수)</b></span></p>
+                                            data-v-22a3f566 id="check002"> <span onclick="pop_agree_02();"
+                                            data-v-22a3f566><i data-v-22a3f566>개인정보 수집 및 이용 동의</i><b data-v-22a3f566>
+                                                (필수)</b></span></p>
                                     <p data-v-22a3f566><input type="checkbox" name="checkOne" class="inp_chk_02"
-                                                              data-v-22a3f566  id="check003"> <span onclick="pop_agree_03();" data-v-22a3f566><i
-                                            data-v-22a3f566>개인정보 제 3자 제공 동의</i><b data-v-22a3f566>
-                                                    (필수)</b></span></p>
+                                            data-v-22a3f566 id="check003"> <span onclick="pop_agree_03();"
+                                            data-v-22a3f566><i data-v-22a3f566>개인정보 제 3자 제공 동의</i><b data-v-22a3f566>
+                                                (필수)</b></span></p>
                                     <!---->
                                 </section> <button type="button" class="btn_pay gra_left_right_red" data-v-3ab88292>
-                                결제하기
-                            </button>
+                                    결제하기
+                                </button>
                             </div>
                         </div>
                     </div>
+
+                    <span class="myCorporate" style="visibility: hidden;"></span>
 
                     <!-- 푸터 -->
                     <div th:replace="userthy/user-footer :: user-footer"></div>
@@ -497,70 +507,122 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
+    <!-- Script -->
+    <!-- Library -->
+    <script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="/js/library/iscroll.js"></script>
 
-    <!--민정 수정-->
+    <!-- Service -->
+    <script type="text/javascript" src="/js/service/common.js"></script>
+
+    <!-- Page Script -->
+    <script type="text/javascript" src="/js/library/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="/js/service/product.js"></script>
+    <script type="text/javascript" src="/js/ahn_product.search.js"></script>
+    <script type="text/javascript" src="/js/moment.min.js"></script>
+    <script type="text/javascript" src="/js/datepick.js"></script>
+    <script type="text/javascript" src="/js/daterangepicker.js"></script>
     <script>
-        $(function(){
+        // 약관 동의 전체 체크
+        function allCheckFunc(obj) {
+            $("[name=checkOne]").prop("checked", $(obj).prop("checked"));
+        }
+
+        // 체크박스 체크시 전체선택 체크 여부
+        function oneCheckFunc(obj) {
+
+            var allObj = $("[name=checkAll]");
+            var objName = $(obj).attr("name");
+
+            if ($(obj).prop("checked")) {
+                checkBoxLength = $("[name=" + objName + "]").length;
+                checkedLength = $("[name=" + objName + "]:checked").length;
+
+                if (checkBoxLength == checkedLength) {
+                    allObj.prop("checked", true);
+                } else {
+                    allObj.prop("checked", false);
+                }
+            } else {
+                allObj.prop("checked", false);
+            }
+        }
+
+        $(function () {
+            $("[name=checkAll]").click(function () {
+                allCheckFunc(this);
+            });
+            $("[name=checkOne]").each(function () {
+                $(this).click(function () {
+                    oneCheckFunc($(this));
+                });
+            });
+        });
+
+        function reserveVerify() {
+            clearTimecount();
+            cencelSend();
+        }
+
+        $(function () {
             //에러메세지는 입력하지 않으면 나와야함. 처음에 화면에 보이지않음
             //show() <-> hide()
             $('#phone_error1').hide();
             $('#name_error1').hide();
-            $('#btnSend').click(function(){ //전송버튼 눌렀을때
+            $('#btnSend').click(function () { //전송버튼 눌렀을때
                 var userName = $('#userName').val(); // input값 가져와서 변수로 저장
-                if(userName.length<1){//입력하지 않았다면
+                if (userName.length < 1) { //입력하지 않았다면
                     $('#name_error1').show();
                     return false; //전송 불가능하게 함
-                }else{ //한글자라도 입력한 경우
+                } else { //한글자라도 입력한 경우
                     $('#name_error1').hide();
                 }
                 var phoneNumber = $('#phoneNumber').val(); //휴대폰 번호
-                if(phoneNumber.length<1){
+                if (phoneNumber.length < 1) {
                     $('#phone_error1').show();
                     return false;
-                }else{
+                } else {
                     $('#phone_error1').hide();
                 }
 
                 // 도보,차량 하나라도 선택시 통과
 
 
-
-
-
                 // 체크박스 전부 선택할때 통과
                 //inp_chk_002
-                if($('#check001').is(":checked")){
+                if ($('#check001').is(":checked")) {
 
-                }else{ //체크되어있지 않다면
+                } else { //체크되어있지 않다면
                     alert("필수 동의를 모두 체크해주세요")
                     return false;
                 }
 
-                if($('#check002').is(":checked")){
+                if ($('#check002').is(":checked")) {
 
-                }else{ //체크되어있지 않다면
+                } else { //체크되어있지 않다면
                     alert("필수 동의를 모두 체크해주세요")
                     return false;
                 }
 
-                if($('#check003').is(":checked")){
+                if ($('#check003').is(":checked")) {
 
-                }else{ //체크되어있지 않다면
+                } else { //체크되어있지 않다면
                     alert("필수 동의를 모두 체크해주세요")
                     return false;
                 }
 
                 // 다 입력했다면 전송
-                $('#reservation_form').attr('action','reservations.jsp').submit();
+                $('#reservation_form').attr('action', 'reservations.jsp').submit();
                 // alert("예약되었습니다.");
                 return true;
             });
 
             // 도보, 차량 색상버튼
 
-            $('button').click(function(){
+            $('button').click(function () {
 
                 $('button').removeClass("on");
 
@@ -569,11 +631,15 @@
 
             // 클릭시 주차문구
 
-            $('.car').click(function(){
-                $('#parking_comment').css({visibility:'visible'});
+            $('.car').click(function () {
+                $('#parking_comment').css({
+                    visibility: 'visible'
+                });
             });
-            $('.walk').click(function(){
-                $('#parking_comment').css({visibility:'hidden'});
+            $('.walk').click(function () {
+                $('#parking_comment').css({
+                    visibility: 'hidden'
+                });
             });
         });
     </script>
@@ -581,247 +647,213 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<!--<script>-->
-
-
-
-
-<!--    console.log("userid :" + sessionId);-->
-<!--    console.log("get멤버아이디 : "+sessionId);-->
-
-<!--    const tbRoomId2 = $("#tbRoomId").val();-->
-<!--    console.log("get룸아이디"+tbRoomId2);-->
-<!--    // const tbMemId2 = $("#tbMemId").val();-->
-
-
-
-<!--    //room get-->
-<!--    axios.get('/api/room/rrlist/'+ tbRoomId2, {-->
-
-<!--    }).then(function (response) {-->
-<!--        console.log(response);-->
-<!--        const hname = response.data.data.rmName; //룸이름-->
-<!--        const rmType = response.data.data.rmType; // 방타입-->
-<!--        const myStime =  response.data.data.myStime; // 체크인-->
-<!--        const myCtime =  response.data.data.myCtime; //체크아웃-->
-<!--        const prSprice =  response.data.data.prSprice; //총 결제 가격-->
-
-<!--        $('.hname').text(hname);-->
-<!--        $('.rmType').text(rmType);-->
-<!--        $('.myStime').text(myStime);-->
-<!--        $('.myCtime').text(myCtime);-->
-<!--        $('.prSprice').text(prSprice);-->
-
-<!--        // $('#hname').attr(value, hname);-->
-<!--        $('input[name=hname]').attr('value',hname);-->
-<!--        $('input[name=rmType]').attr('value',rmType);-->
-<!--        $('input[name=myStime]').attr('value',myStime);-->
-<!--        $('input[name=myCtime]').attr('value',myCtime);-->
-<!--        $('.prSprice').attr('value',prSprice);-->
-<!--    }).catch(function (error) {-->
-
-<!--    });-->
-
-
-<!--    function sendit(){-->
-
-
-<!--        const tbRoomId3 = $("#tbRoomId").val();-->
-<!--        console.log(tbRoomId3);-->
-<!--        $('input[name=tbRoomId]').attr('value',tbRoomId3);-->
-
-
-
-
-
-<!--        console.log("userid :" + sessionId);-->
-<!--        console.log("get멤버아이디 : "+sessionId);-->
-<!--        // const sessionId = $("#tbMemId").val();-->
-<!--        // $('input[name=tbMemId]').attr('value',sessionId);-->
-<!--        // console.log(sessionId);-->
-
-<!--        const tbHostId3 = $("#id").val();-->
-<!--        $('input[name=id]').attr('value',tbHostId3);-->
-<!--        console.log(tbHostId3);-->
-
-
-<!--        // const payName = $('input[name=userName]').val();-->
-<!--        const payName = $("#userName").val();-->
-<!--        const payHp = $("#phoneNumber").val();-->
-<!--        // const payIscar = $("input[name=payIscar]").val();-->
-<!--        const prSprice = $("#prSprice").attr('value');-->
-
-<!--        const payRoomName = $('.hname').val();-->
-
-<!--        axios.request({-->
-<!--            method: 'POST',-->
-<!--            url: '/api/pay/res',-->
-<!--            headers: {'Content-type':'application/json'},-->
-<!--            data: {-->
-<!--                transaction_time:"2021-09-20",-->
-<!--                resultCode:"OK",-->
-<!--                description:"OK",-->
-<!--                data:{-->
-<!--                    tbRoomId: tbRoomId3,-->
-<!--                    tbHostId: tbHostId3,-->
-<!--                    tbMemId: sessionId,-->
-<!--                    payName: payName,-->
-<!--                    payHp: payHp,-->
-<!--                    // payIscar: payIscar,-->
-<!--                    payMoney: prSprice,-->
-<!--                    payRoomName: payRoomName // hname 상호명 옮김-->
-<!--                }-->
-<!--            }-->
-<!--        }).then(-->
-<!--            //이거지금안됨-->
-<!--            alert('결제완료되었습니다'),-->
-<!--            location.href='/userindex/reservations'-->
-<!--        )-->
-<!--        return false;-->
-
-
-<!--    }-->
-<!--</script>-->
-
-
-
-
-<script>
-
-
-
-
-    console.log("userid :" + sessionId);
-    console.log("get멤버아이디 : "+sessionId);
-    const hostid = $("#id").val();
-    const tbRoomId2 = $("#tbRoomId").val();
-    console.log("get룸아이디"+tbRoomId2);
-    // const tbMemId2 = $("#tbMemId").val();
-
-
-
-    //room get
-    axios.get('/api/host/' + hostid + '/hostroom/', {
-
-    }).then(function (response) {
-        console.log(response);
-        for(let j in response.data.data.tbHostApiResponse.tbRoomApiResponseList){
-            //룸아이디가 일치시
-            if( response.data.data.tbHostApiResponse.tbRoomApiResponseList[j].id == tbRoomId2){
-            const hname = response.data.data.tbHostApiResponse.tbRoomApiResponseList[j].rmName; //룸이름
-                console.log("룸아이디일치 hname : "+hname)
-            const rmType = response.data.data.tbHostApiResponse.tbRoomApiResponseList[j].rmType; // 방타입
-                console.log("룸아이디일치 rmType : "+rmType)
-            const myStime =  response.data.data.tbHostApiResponse.tbRoomApiResponseList[j].myStime; // 체크인
-                console.log("룸아이디일치 myStime : "+myStime)
-            const myCtime =  response.data.data.tbHostApiResponse.tbRoomApiResponseList[j].myCtime; //체크아웃
-                console.log("룸아이디일치 myCtime : "+myCtime)
-            const prSprice =  response.data.data.tbHostApiResponse.tbRoomApiResponseList[j].prSprice; //총 결제 가격
-                console.log("룸아이디일치 prSprice : "+prSprice)
-
-        $('.hname').text(hname);
-        $('.rmType').text(rmType);
-        $('.myStime').text(myStime);
-        $('.myCtime').text(myCtime);
-        $('.prSprice').text(prSprice);
-
-        // $('#hname').attr(value, hname);
-        $('input[name=hname]').attr('value',hname);
-        $('input[name=rmType]').attr('value',rmType);
-        $('input[name=myStime]').attr('value',myStime);
-        $('input[name=myCtime]').attr('value',myCtime);
-        $('.prSprice').attr('value',prSprice);
-
-
-
-            }//if문 끝
-        }//for문 끝
-
-    }).catch(function (error) {
-
-    });
-
-
-    function sendit(){
-
-
-        const tbRoomId3 = $("#tbRoomId").val();
-        console.log(tbRoomId3);
-
-
-
-
-
+    <!--<script>-->
+    <script>
         console.log("userid :" + sessionId);
-        console.log("get멤버아이디 : "+sessionId);
-        // const sessionId = $("#tbMemId").val();
-        // $('input[name=tbMemId]').attr('value',sessionId);
-        // console.log(sessionId);
-
-        const tbHostId3 = $("#id").val(); //hostid
-        console.log(tbHostId3);
+        console.log("get멤버아이디 : " + sessionId);
+        const hostid = $("#id").val();
+        const tbRoomId2 = $("#tbRoomId").val();
+        console.log("get룸아이디" + tbRoomId2);
+        // const tbMemId2 = $("#tbMemId").val();
 
 
-        // const payName = $('input[name=userName]').val();
-        const payName = $("#userName").val();
-        console.log('sendit() payName : '+payName);
-        const payHp = $("#phoneNumber").val();
-        console.log('sendit() payHp : '+payHp);
-        // const payIscar = $("input[name=payIscar]").val();
-        const prSprice = $("#prSprice").attr('value'); //총결제액
-        console.log('sendit() prSprice : '+prSprice);
+        axios.get('/api/tbmem/phone/' + sessionId, {
 
-        const payRoomName = $('.hname').text(); // 룸 이름
-        console.log('sendit() payRoomName : '+payRoomName);
+        }).then(function (response) {
+            console.log(response)
+            let memHp = response.data;
+            console.log('memHp : ' + memHp);
+
+            $('#phoneNumber').val(memHp);
+
+        }).catch(function (err) {
+            console.log(err)
+        });
+
+        axios.get('/api/host/hostHp/' + hostid, {
+
+        }).then(function (response) {
+            let hostHp = response.data;
+            console.log('hostHp : ' + hostHp);
+
+        }).catch(function (err) {
+            console.log(err)
+        });
 
 
-        const payCheckIn = $('.myStime').text(); // 체크인
-        console.log('sendit() payCheckIn : '+payCheckIn);
-        const payCheckOut = $('.myCtime').text(); // 체크아웃
-        console.log('sendit() payCheckOut : '+payCheckOut);
 
 
 
-        if (confirm("예약자이름을 수정하시겠습니까??") == true){
-        axios.request({
-            method: 'POST',
-            url: '/api/pay/res',
-            headers: {'Content-type':'application/json'},
-            data: {
-                transaction_time:"2021-09-20",
-                resultCode:"OK",
-                description:"OK",
-                data:{
-                    tbRoomId: tbRoomId3,
-                    tbHostId: tbHostId3,
-                    tbMemId: sessionId,
-                    payName: payName,
-                    payHp: payHp,
-                    // payIscar: payIscar,
-                    // payHowpay: payHowpay,
-                    payRoomName: payRoomName, // hname 상호명 옮김
-                    // payHostName: payHostName,
-                    payCheckIn: payCheckIn,
-                    payCheckOut: payCheckOut,
-                    payMoney: prSprice,
+        //room get
+        axios.get('/api/host/' + hostid + '/hostroom/', {
 
+        }).then(function (response) {
+            console.log(response);
+
+
+            const myCorporate = response.data.data.tbHostApiResponse.myCorporate; // 숙소이름
+            $('.myCorporate').text(myCorporate);
+            console.log(`이거맞나요: ` + myCorporate);
+
+
+
+            for (let j in response.data.data.tbHostApiResponse.tbRoomApiResponseList) {
+
+                //룸아이디가 일치시
+                if (response.data.data.tbHostApiResponse.tbRoomApiResponseList[j].id == tbRoomId2) {
+                    const hname = response.data.data.tbHostApiResponse.tbRoomApiResponseList[j].rmName; //룸이름
+                    console.log("룸아이디일치 hname : " + hname)
+                    const rmType = response.data.data.tbHostApiResponse.tbRoomApiResponseList[j].rmType; // 방타입
+                    console.log("룸아이디일치 rmType : " + rmType)
+                    const myStime = response.data.data.tbHostApiResponse.tbRoomApiResponseList[j]
+                    .myStime; // 체크인
+                    console.log("룸아이디일치 myStime : " + myStime)
+                    const myCtime = response.data.data.tbHostApiResponse.tbRoomApiResponseList[j]
+                    .myCtime; //체크아웃
+                    console.log("룸아이디일치 myCtime : " + myCtime)
+                    const prSprice = response.data.data.tbHostApiResponse.tbRoomApiResponseList[j]
+                    .prSprice; //총 결제 가격
+                    console.log("룸아이디일치 prSprice : " + prSprice)
+
+                    $('.hname').text(hname);
+                    $('.rmType').text(rmType);
+                    $('.myStime').text(myStime);
+                    $('.myCtime').text(myCtime);
+                    $('.prSprice').text(prSprice);
+
+                    // $('#hname').attr(value, hname);
+                    $('input[name=hname]').attr('value', hname);
+                    $('input[name=rmType]').attr('value', rmType);
+                    $('input[name=myStime]').attr('value', myStime);
+                    $('input[name=myCtime]').attr('value', myCtime);
+                    $('.prSprice').attr('value', prSprice);
+
+
+
+                } //if문 끝
+            } //for문 끝
+
+        }).catch(function (error) {
+
+        });
+
+
+        $(".payIscar").click(function () {
+            let payIscar = $(this).val();
+            $('.iscar').attr('value', payIscar);
+            console.log('sendit() payIscar : ' + payIscar);
+        });
+
+
+        function sendit() {
+
+            const tbRoomId3 = $("#tbRoomId").val();
+            console.log(tbRoomId3);
+
+            console.log("userid :" + sessionId);
+            console.log("get멤버아이디 : " + sessionId);
+
+            const tbHostId3 = $("#id").val(); //hostid
+            console.log(tbHostId3);
+
+
+            // const payName = $('input[name=userName]').val();
+            const payName = $("#userName").val();
+            console.log('sendit() payName : ' + payName);
+
+            const payHp = $("#phoneNumber").val();
+            console.log('sendit() payHp : ' + payHp);
+
+            const payIscar = $(".iscar").val();
+            console.log(payIscar);
+
+            const payHowpay = $("select[name=payHowpay]").val();
+            console.log('결제수단:' + payHowpay);
+
+
+
+            const prSprice = $("#prSprice").attr('value'); //총결제액
+            console.log('sendit() prSprice : ' + prSprice);
+
+            const payRoomName = $('.rmType').text(); // 룸 이름(타입
+            console.log('sendit() payRoomName : ' + payRoomName);
+
+            const payHostName = $('.hname').text(); // 호스트 이름
+            console.log('sendit() payHostName : ' + payHostName);
+
+
+            const payCheckIn = $('.myStime').text(); // 체크인
+            console.log('sendit() payCheckIn : ' + payCheckIn);
+            const payCheckOut = $('.myCtime').text(); // 체크아웃
+            console.log('sendit() payCheckOut : ' + payCheckOut);
+
+
+
+            let payDate = $('#ahn_sel_date').val()
+            console.log(`앞에꺼니 : ` + payDate);
+            const myCorporate = $('.myCorporate').text()
+            console.log(`myCorporate :` + myCorporate);
+
+            // 문자발송
+            const phone = payHp; //폰 번호
+            const code = payName;
+            const mj = myCorporate;
+            const mj2 = payHostName;
+
+            console.log(payHp); //입력받은 폰번호
+            console.log(payName); //입력받은 예약자이름
+            console.log(mj); //해당 숙소이름
+            console.log(mj2); //해당 방 이름
+
+            let url = "/smspay?phone=" + phone + "&mj=" + mj + "&mj2=" + mj2 + "&code=" + code;
+            let send = window.open(url, '예약정보 전송', 'width=1,height=1,location=no,status=no');
+            $.ajax({ //url을 팝업으로 열어서 함수 실행이 완료되면, 자동으로 사라짐
+                type: "GET",
+                success: function () { //위 코드들이 성공적으로 실행된다면,
+                    send.close();
                 }
-            }
-        }).then(
-            //이거지금안됨
-            alert('결제완료되었습니다'),
+            });
 
-        )
-            location.href='/userindex/reservations'
-        }else{   //취소
 
-            return;
+            axios.request({
+                method: 'POST',
+                url: '/api/pay/res',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                data: {
+                    transaction_time: "2021-09-20",
+                    resultCode: "OK",
+                    description: "OK",
+                    data: {
+                        tbRoomId: tbRoomId3,
+                        tbHostId: tbHostId3,
+                        tbMemId: sessionId,
+                        payDate: payDate,
+                        payName: payName,
+                        payHp: payHp,
+                        payIscar: payIscar,
+                        payHowpay: payHowpay,
+                        payRoomName: payRoomName, // hname 상호명 옮김
+                        payHostName: payHostName,
+                        payCheckIn: payCheckIn,
+                        payCheckOut: payCheckOut,
+                        payMoney: prSprice,
+
+                    }
+                }
+            }).then(
+                alert('결제완료되었습니다'),
+
+            )
+            location.href = '/userindex/reservations'
+
+            return false;
+
 
         }
-        return false;
+    </script>
 
-
-    }
-</script>
 </body>
+
 </html>

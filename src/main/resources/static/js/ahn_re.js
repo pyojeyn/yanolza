@@ -14,8 +14,9 @@ function setThumbnail(event) {
 
 
       document.querySelector("div#image_container").appendChild(img).className = "childImg";
-      $(".childImg").css({height:'400px'});
-      $(".childImg").css({width:'400px'});
+      $(".childImg").css({height:'120px'});
+      $(".childImg").css({width:'120px'});
+
       
     };
     console.log(image);

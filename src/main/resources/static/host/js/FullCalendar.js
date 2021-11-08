@@ -44,7 +44,7 @@ const renderCalender = () => {
 
                       dates[i] = `<div class="date" id= ${date}><span class=${condition} >${date} 
                         <form method="get" action="/hosthousemain/scheduleManagement6" style="all: unset !important;;" >
-                      <a href="/hosthousemain/scheduleManagement6" ><button class="calendarbutton" type="submit" name="seldate" value="${viewYear}-${viewMonth + 1}-${date}">
+                      <a href="/hosthousemain/scheduleManagement6" ><button class="calendarbutton" type="submit" name="seldate" value="${viewYear}${viewMonth + 1}${date}">
                       <span style="color: white;">확인</span>
                     </button></a></form>  
                    

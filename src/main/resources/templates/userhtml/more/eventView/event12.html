@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+<!--얼리버드 숙소 특가-->
 
 <head>
     <meta charset="UTF-8">
@@ -12,16 +13,36 @@
     <!-- CSS -->
     <title>얼리버드 숙소 특가 - 이벤트 | 여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
-    <!-- <link rel="canonical" href="https://www.goodchoice.kr/more/eventView/1722"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            border: 0;
+            vertical-align: top;
+            margin-bottom: -1px;
+        }
+    </style>
     <script>
         var _BASE_URL = 'https://www.goodchoice.kr/';
         var _MOBILE = 'W';
         var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
         var _FACEBOOK_APP_ID = '607467975974643';
     </script>
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
@@ -30,7 +51,7 @@
     <div class="wrap">
 
         <!-- Header -->
-           <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
@@ -103,7 +124,7 @@
                         <ul>
                             <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
                                 <ul>
-                                   <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
+                                    <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
                                     <li><a href="/userindex/event">이벤트</a></li>
                                     <li><a href="/userindex/project">혁신 프로젝트</a></li>
                                     <li><a href="/userindex/faq">고객문의</a></li>
@@ -140,7 +161,7 @@
             <nav>
                 <ul>
                     <!-- <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class="active"  href="/userindex/event">이벤트</a></li>
+                    <li><a class="active" href="/userindex/event">이벤트</a></li>
                     <li><a class="" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
@@ -162,33 +183,27 @@
                         <link rel="stylesheet" href="/static/event/common/css/base-event.css">
                         <link rel="stylesheet" href="/frontend/admin/css/components/modules/dialog.css" />
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery-1.12.3.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery.lazyload.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/vue.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/service/button-scroll-top.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery-1.12.3.min.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery.lazyload.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/vue.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/button-scroll-top.js">
+                        </script>
 
                         <script type="text/javascript" src="/api3/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/underscore.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/userActionLog.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/common.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/userActionLog.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/common.js"></script>
                         <script src="/api3/js/service/evtBraze.js"></script>
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/moment.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/flipclock.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/library/swiper4.0/swiper.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/library/swiper4.0/swiper.min.js"></script>
                         <link rel="stylesheet" href="/api3/css/library/swiper.css">
 
                         <!-- keen vue list (기획전) -->
-                        <script type="text/javascript"
-                        src="/static/event/common/js/service/product-common.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/product-common.js"></script>
 
                         <script>
                             var eno = 1722;
@@ -202,16 +217,15 @@
                             });
                         </script>
                         <script>
-                            var eDefaultString = '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1722%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A02%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EC%97%B0%ED%9C%B4%20%EC%88%99%EC%86%8C%20%EC%96%BC%EB%A6%AC%EB%B2%84%EB%93%9C%20%ED%8A%B9%EA%B0%80%22%2C%22label%22%3A%228%EC%9B%94%EF%BD%9E9%EC%9B%94%20%EC%97%B0%ED%9C%B4%20%EC%9D%BC%EC%A0%95%20%ED%99%95%EC%9D%B8%ED%95%98%EA%B3%A0%7C%EC%97%B0%ED%9C%B4%20%EC%88%99%EC%86%8C%20%EC%96%BC%EB%A6%AC%EB%B2%84%EB%93%9C%20%ED%8A%B9%EA%B0%80%EB%A1%9C%7C%EC%A7%80%EA%B8%88%20%EC%98%88%EC%95%BD%ED%95%98%EC%84%B8%EC%9A%94%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1722%5C%2Fkakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1722%5Cu0026title%3D%EC%97%B0%ED%9C%B4%20%EC%88%99%EC%86%8C%20%EC%96%BC%EB%A6%AC%EB%B2%84%EB%93%9C%20%ED%8A%B9%EA%B0%80%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1722%5C%2Fkakao.jpg%5Cu0026label%3D8%EC%9B%94%EF%BD%9E9%EC%9B%94%20%EC%97%B0%ED%9C%B4%20%EC%9D%BC%EC%A0%95%20%ED%99%95%EC%9D%B8%ED%95%98%EA%B3%A0%7C%EC%97%B0%ED%9C%B4%20%EC%88%99%EC%86%8C%20%EC%96%BC%EB%A6%AC%EB%B2%84%EB%93%9C%20%ED%8A%B9%EA%B0%80%EB%A1%9C%7C%EC%A7%80%EA%B8%88%20%EC%98%88%EC%95%BD%ED%95%98%EC%84%B8%EC%9A%94%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1722%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1722%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
+                            var eDefaultString =
+                                '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1722%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A02%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EC%97%B0%ED%9C%B4%20%EC%88%99%EC%86%8C%20%EC%96%BC%EB%A6%AC%EB%B2%84%EB%93%9C%20%ED%8A%B9%EA%B0%80%22%2C%22label%22%3A%228%EC%9B%94%EF%BD%9E9%EC%9B%94%20%EC%97%B0%ED%9C%B4%20%EC%9D%BC%EC%A0%95%20%ED%99%95%EC%9D%B8%ED%95%98%EA%B3%A0%7C%EC%97%B0%ED%9C%B4%20%EC%88%99%EC%86%8C%20%EC%96%BC%EB%A6%AC%EB%B2%84%EB%93%9C%20%ED%8A%B9%EA%B0%80%EB%A1%9C%7C%EC%A7%80%EA%B8%88%20%EC%98%88%EC%95%BD%ED%95%98%EC%84%B8%EC%9A%94%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1722%5C%2Fkakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1722%5Cu0026title%3D%EC%97%B0%ED%9C%B4%20%EC%88%99%EC%86%8C%20%EC%96%BC%EB%A6%AC%EB%B2%84%EB%93%9C%20%ED%8A%B9%EA%B0%80%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1722%5C%2Fkakao.jpg%5Cu0026label%3D8%EC%9B%94%EF%BD%9E9%EC%9B%94%20%EC%97%B0%ED%9C%B4%20%EC%9D%BC%EC%A0%95%20%ED%99%95%EC%9D%B8%ED%95%98%EA%B3%A0%7C%EC%97%B0%ED%9C%B4%20%EC%88%99%EC%86%8C%20%EC%96%BC%EB%A6%AC%EB%B2%84%EB%93%9C%20%ED%8A%B9%EA%B0%80%EB%A1%9C%7C%EC%A7%80%EA%B8%88%20%EC%98%88%EC%95%BD%ED%95%98%EC%84%B8%EC%9A%94%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1722%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1722%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
                         </script>
 
                         <link rel="stylesheet" href="/api3/js/event_custom/event-default.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/event-custom.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/products-vue-custom.min.css">
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/event-custom.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/products-vue-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/event-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/products-vue-custom.min.js"></script>
 
                         <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
                         <script>
@@ -371,70 +385,56 @@
                                                     <div v-for="main in mainProduct.affiliates"
                                                         v-if="visibleProduct([main.startedAt],[main.endedAt])">
                                                         <div v-bind:class="[main.templateType]">
-                                                            <a v-bind:href="productTypeCheck([main.productType],[main.yg_index])"
-                                                                data-deepLink data-braze="productClick">
-                                                                <!-- <a v-bind:href="hotelScheme[0] + [main.ht_index]"> -->
-                                                                <div class="product-head">
-                                                                    <p v-if="main.label">{{main.label}}</p>
-                                                                    <strong>{{main.title}} </strong>
-                                                                    <div v-if="main.badge">
-                                                                        <span class="product-head-badge"
-                                                                            v-for="badge in computedBadge(main.badge)">
-                                                                            {{badge}}
-                                                                        </span>
-                                                                    </div>
+
+                                                            <!-- <a v-bind:href="hotelScheme[0] + [main.ht_index]"> -->
+                                                            <div class="product-head">
+                                                                <p v-if="main.label"></p>
+                                                                <strong></strong>
+                                                                <div v-if="main.badge">
+                                                                    <span class="product-head-badge"
+                                                                        v-for="badge in computedBadge(main.badge)">
+
+                                                                    </span>
                                                                 </div>
-                                                                <div class="product-image">
-                                                                    <div v-if="main.sale" class="product-image-sale">
-                                                                        <span>{{main.sale}}<em>%</em></span>
-                                                                    </div>
-                                                                    <img class="lazy"
-                                                                        src="https://static.goodchoice.kr/event/common/images/thumb-main.jpg"
-                                                                        v-bind:data-original="imagePath + [main.yg_index] + '.jpg'"
-                                                                        v-bind:alt="[main.title]">
-                                                                    <p v-if="main.black" class="mark-black"><i></i>
-                                                                    </p>
+                                                            </div>
+
+                                                            <div class="product-price">
+                                                                <div class="product-price__space-between product-price__default"
+                                                                    v-if="main.priceDefault">
+                                                                    <span>&nbsp;</span>
+                                                                    <span></span>
                                                                 </div>
-                                                                <div class="product-price">
-                                                                    <div class="product-price__space-between product-price__default"
-                                                                        v-if="main.priceDefault">
-                                                                        <span>&nbsp;</span>
-                                                                        <span>{{main.priceDefault}}</span>
-                                                                    </div>
-                                                                    <div class="product-price__space-between product-price__special"
-                                                                        v-if="main.priceSpecialLabel && main.priceSpecial">
-                                                                        <span>{{main.priceSpecialLabel}}</span>
-                                                                        <span>{{main.priceSpecial}}</span>
-                                                                    </div>
-                                                                    <div class="product-price__space-between product-price__coupon"
-                                                                        v-if="main.priceCouponLabel && main.priceCoupon">
-                                                                        <span>{{main.priceCouponLabel}}</span>
-                                                                        <span>{{main.priceCoupon}}</span>
-                                                                    </div>
-                                                                    <div class="product-price__space-between product-price__card"
-                                                                        v-if="main.priceCardLabel && main.priceCard">
-                                                                        <span>{{main.priceCardLabel}}</span>
-                                                                        <span>{{main.priceCard}}</span>
-                                                                    </div>
-                                                                    <div class="product-price-total"
-                                                                        v-if="main.totalPrice">
-                                                                        <span>{{main.totalPriceLabel}}</span>
-                                                                        <span>{{main.totalPrice}}</span>
-                                                                    </div>
-                                                                    <div class="notice-area" v-if="main.notice">
-                                                                        <p v-html="noticeConvert(main.notice)"></p>
-                                                                    </div>
+                                                                <div class="product-price__space-between product-price__special"
+                                                                    v-if="main.priceSpecialLabel && main.priceSpecial">
+                                                                    <span></span>
+                                                                    <span></span>
                                                                 </div>
-                                                                <span class="product-button" v-if="main.buttonText">
-                                                                    {{main.buttonText}}
-                                                                </span>
+                                                                <div class="product-price__space-between product-price__coupon"
+                                                                    v-if="main.priceCouponLabel && main.priceCoupon">
+                                                                    <span></span>
+                                                                    <span></span>
+                                                                </div>
+                                                                <div class="product-price__space-between product-price__card"
+                                                                    v-if="main.priceCardLabel && main.priceCard">
+                                                                    <span></span>
+                                                                    <span></span>
+                                                                </div>
+                                                                <div class="product-price-total" v-if="main.totalPrice">
+                                                                    <span></span>
+                                                                    <span></span>
+                                                                </div>
+                                                                <div class="notice-area" v-if="main.notice">
+                                                                    <p v-html="noticeConvert(main.notice)"></p>
+                                                                </div>
+                                                            </div>
+                                                            <span class="product-button" v-if="main.buttonText">
+
+                                                            </span>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="category-button-wrap" data-braze="productRecommend"
                                                         v-if="mainProduct.button">
-                                                        <a v-bind:href="areaLinkCheck([mainProduct.button.yg_linkUri],[mainProduct.button.ht_linkUri])"
-                                                            data-deepLink>{{mainProduct.button.buttonText}}</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -442,10 +442,8 @@
 
                                             <!-- //main 리스트 (vue) -->
                                             <div class="evt-activity-link">
-                                                <img src="https://image.goodchoice.kr/event/view/event/1722/1722_07.jpg"
-                                                    alt="" />
-                                                <a href="yeogi://details?schemetype=webview&anim=2&title=&titletype=1&url=https://web-exhibition.goodchoice.kr/planning/P20210804122803767"
-                                                    data-deepLink data-braze="productRecommend">링크</a>
+                                                <img src="/event/view/event/1722/1722_07.jpg" alt="" />
+                                                <a href="#" data-deepLink data-braze="productRecommend">링크</a>
                                             </div>
 
                                         </div>
@@ -460,66 +458,51 @@
                                                     <div v-for="sub in subProduct.affiliates"
                                                         v-if="visibleProduct([sub.startedAt],[sub.endedAt])">
                                                         <div v-bind:class="[sub.templateType]">
-                                                            <a v-bind:href="productTypeCheck([sub.productType],[sub.yg_index])"
-                                                                data-braze="productClick">
-                                                                <!-- <a v-bind:href="hotelScheme[0] + [sub.ht_index]"> -->
-                                                                <div class="product-head">
-                                                                    <p v-if="sub.label">{{sub.label}}</p>
-                                                                    <strong>{{sub.title}} </strong>
-                                                                    <div v-if="sub.badge">
-                                                                        <span class="product-head-badge"
-                                                                            v-for="badge in computedBadge(sub.badge)">{{badge}}</span>
-                                                                    </div>
+                                                            <!-- <a v-bind:href="hotelScheme[0] + [sub.ht_index]"> -->
+                                                            <div class="product-head">
+                                                                <p v-if="sub.label"></p>
+                                                                <strong></strong>
+                                                                <div v-if="sub.badge">
+                                                                    <span class="product-head-badge"
+                                                                        v-for="badge in computedBadge(sub.badge)"></span>
                                                                 </div>
-                                                                <div class="product-image">
-                                                                    <div v-if="sub.sale" class="product-image-sale">
-                                                                        <span>{{sub.sale}}<em>%</em></span>
-                                                                    </div>
-                                                                    <img class="lazy"
-                                                                        src="https://static.goodchoice.kr/event/common/images/thumb-sub.jpg"
-                                                                        v-bind:data-original="imagePath + [sub.yg_index] + '.jpg'"
-                                                                        v-bind:alt="[sub.title]">
-                                                                    <p v-if="sub.black" class="mark-black"><i></i></p>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="product-price__space-between product-price__default"
+                                                                    v-if="sub.priceDefault">
+                                                                    <span>&nbsp;</span>
+                                                                    <span></span>
                                                                 </div>
-                                                                <div class="product-price">
-                                                                    <div class="product-price__space-between product-price__default"
-                                                                        v-if="sub.priceDefault">
-                                                                        <span>&nbsp;</span>
-                                                                        <span>{{sub.priceDefault}}</span>
-                                                                    </div>
-                                                                    <div class="product-price__space-between product-price__special"
-                                                                        v-if="sub.priceSpecialLabel && sub.priceSpecial">
-                                                                        <span>{{sub.priceSpecialLabel}}</span>
-                                                                        <span>{{sub.priceSpecial}}</span>
-                                                                    </div>
-                                                                    <div class="product-price__space-between product-price__coupon"
-                                                                        v-if="sub.priceCouponLabel && sub.priceCoupon">
-                                                                        <span>{{sub.priceCouponLabel}}</span>
-                                                                        <span>{{sub.priceCoupon}}</span>
-                                                                    </div>
-                                                                    <div class="product-price__space-between product-price__card"
-                                                                        v-if="sub.priceCardLabel && sub.priceCard">
-                                                                        <span>{{sub.priceCardLabel}}</span>
-                                                                        <span>{{sub.priceCard}}</span>
-                                                                    </div>
-                                                                    <div class="product-price-total"
-                                                                        v-if="sub.totalPrice">
-                                                                        <span>{{sub.totalPriceLabel}}</span>
-                                                                        <span>{{sub.totalPrice}}</span>
-                                                                    </div>
-                                                                    <div class="notice-area" v-if="sub.notice">
-                                                                        <p v-html="noticeConvert(sub.notice)"></p>
-                                                                    </div>
+                                                                <div class="product-price__space-between product-price__special"
+                                                                    v-if="sub.priceSpecialLabel && sub.priceSpecial">
+                                                                    <span></span>
+                                                                    <span></span>
                                                                 </div>
-                                                                <span class="product-button"
-                                                                    v-if="sub.buttonText">{{sub.buttonText}}</span>
+                                                                <div class="product-price__space-between product-price__coupon"
+                                                                    v-if="sub.priceCouponLabel && sub.priceCoupon">
+                                                                    <span></span>
+                                                                    <span></span>
+                                                                </div>
+                                                                <div class="product-price__space-between product-price__card"
+                                                                    v-if="sub.priceCardLabel && sub.priceCard">
+                                                                    <span></span>
+                                                                    <span></span>
+                                                                </div>
+                                                                <div class="product-price-total" v-if="sub.totalPrice">
+                                                                    <span></span>
+                                                                    <span></span>
+                                                                </div>
+                                                                <div class="notice-area" v-if="sub.notice">
+                                                                    <p v-html="noticeConvert(sub.notice)"></p>
+                                                                </div>
+                                                            </div>
+                                                            <span class="product-button" v-if="sub.buttonText"></span>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="category-button-wrap" data-braze="productRecommend"
                                                         v-if="subProduct.button">
-                                                        <a v-bind:href="areaLinkCheck([subProduct.button.yg_linkUri],[subProduct.button.ht_linkUri])"
-                                                            data-deepLink>{{subProduct.button.buttonText}}</a>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -527,94 +510,21 @@
 
                                             <!-- //main 리스트 (vue) -->
                                             <div class="evt-activity-link">
-                                                <img src="https://image.goodchoice.kr/event/view/event/1722/1722_08.jpg"
-                                                    alt="" />
-                                                <a href="yeogi://details?schemetype=webview&anim=2&title=&titletype=1&url=https://web-exhibition.goodchoice.kr/planning/P20210804122908017"
-                                                    data-deepLink data-braze="productRecommend">링크</a>
+                                                <img src="/event/view/event/1722/1722_08.jpg" alt="" />
+                                                <a href="#" data-deepLink data-braze="productRecommend">링크</a>
                                             </div>
                                         </div>
 
                                         <div id="category_3" class="navigation-item">
                                             <!-- main 리스트 (vue) -->
 
-                                            <!-- 서브 상품-->
-                                            <div class="third-product cards area_3" id="category-third" data-product>
-                                                <div v-bind:class="makeClassName('third', index)"
-                                                    v-for="(thirdProduct, index) in thirdProducts">
-                                                    <div v-for="third in thirdProduct.affiliates"
-                                                        v-if="visibleProduct([third.startedAt],[third.endedAt])">
-                                                        <div v-bind:class="[third.templateType]">
-                                                            <a v-bind:href="productTypeCheck([third.productType],[third.yg_index])"
-                                                                data-braze="productClick">
-                                                                <!-- <a v-bind:href="hotelScheme[0] + [third.ht_index]"> -->
-                                                                <div class="product-head">
-                                                                    <p v-if="third.label">{{third.label}}</p>
-                                                                    <strong>{{third.title}} </strong>
-                                                                    <div v-if="third.badge">
-                                                                        <span class="product-head-badge"
-                                                                            v-for="badge in computedBadge(third.badge)">{{badge}}</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-image">
-                                                                    <div v-if="third.sale" class="product-image-sale">
-                                                                        <span>{{third.sale}}<em>%</em></span>
-                                                                    </div>
-                                                                    <img class="lazy"
-                                                                        src="https://static.goodchoice.kr/event/common/images/thumb-third.jpg"
-                                                                        v-bind:data-original="imagePath + [third.yg_index] + '.jpg'"
-                                                                        v-bind:alt="[third.title]">
-                                                                    <p v-if="third.black" class="mark-black"><i></i></p>
-                                                                </div>
-                                                                <div class="product-price">
-                                                                    <div class="product-price__space-between product-price__default"
-                                                                        v-if="third.priceDefault">
-                                                                        <span>&nbsp;</span>
-                                                                        <span>{{third.priceDefault}}</span>
-                                                                    </div>
-                                                                    <div class="product-price__space-between product-price__special"
-                                                                        v-if="third.priceSpecialLabel && third.priceSpecial">
-                                                                        <span>{{third.priceSpecialLabel}}</span>
-                                                                        <span>{{third.priceSpecial}}</span>
-                                                                    </div>
-                                                                    <div class="product-price__space-between product-price__coupon"
-                                                                        v-if="third.priceCouponLabel && third.priceCoupon">
-                                                                        <span>{{third.priceCouponLabel}}</span>
-                                                                        <span>{{third.priceCoupon}}</span>
-                                                                    </div>
-                                                                    <div class="product-price__space-between product-price__card"
-                                                                        v-if="third.priceCardLabel && third.priceCard">
-                                                                        <span>{{third.priceCardLabel}}</span>
-                                                                        <span>{{third.priceCard}}</span>
-                                                                    </div>
-                                                                    <div class="product-price-total"
-                                                                        v-if="third.totalPrice">
-                                                                        <span>{{third.totalPriceLabel}}</span>
-                                                                        <span>{{third.totalPrice}}</span>
-                                                                    </div>
-                                                                    <div class="notice-area" v-if="third.notice">
-                                                                        <p v-html="noticeConvert(third.notice)"></p>
-                                                                    </div>
-                                                                </div>
-                                                                <span class="product-button"
-                                                                    v-if="third.buttonText">{{third.buttonText}}</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="category-button-wrap" data-braze="productRecommend"
-                                                        v-if="thirdProduct.button">
-                                                        <a v-bind:href="areaLinkCheck([thirdProduct.button.yg_linkUri],[thirdProduct.button.ht_linkUri])"
-                                                            data-deepLink>{{thirdProduct.button.buttonText}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- //서브 상품-->
+
+
 
                                             <!-- //main 리스트 (vue) -->
                                             <div class="evt-activity-link">
-                                                <img src="https://image.goodchoice.kr/event/view/event/1722/1722_09.jpg"
-                                                    alt="" />
-                                                <a href="yeogi://details?schemetype=webview&anim=2&title=&titletype=1&url=https://web-exhibition.goodchoice.kr/planning/P20210804122949171"
-                                                    data-deepLink data-braze="productRecommend">링크</a>
+                                                <img src="/event/view/event/1722/1722_09.jpg" alt="" />
+                                                <a href="#" data-deepLink data-braze="productRecommend">링크</a>
                                             </div>
                                         </div>
 
@@ -674,10 +584,10 @@
                             // vue 사용시 로드완료에 대한 callback 함수 navigation-scroll-container
                             function vueMountedCallback() {
 
-                                $eventVue = $('.event-vue');                    // Vue 영역
-                                $mainProduct = $('.main-product');              // main products
-                                $subProduct = $('.sub-product');                // sub products
-                                $subProductsGroup = $subProduct.find('> div');  // 제품 그룹들
+                                $eventVue = $('.event-vue'); // Vue 영역
+                                $mainProduct = $('.main-product'); // main products
+                                $subProduct = $('.sub-product'); // sub products
+                                $subProductsGroup = $subProduct.find('> div'); // 제품 그룹들
 
                                 // vue가 그려진 후 scroll 이벤트 바이딩
                                 EC.navigationScroll.isInit = true;
@@ -687,9 +597,7 @@
 
                             window.vueMountedCallback = vueMountedCallback;
 
-                            $(window).ready(function () {
-                            });
-
+                            $(window).ready(function () {});
                         </script>
                     </div>
                     <!-- //이벤트 삽입 -->
@@ -700,24 +608,24 @@
                 <!-- Page -->
                 <div class="page">
                     <p>
-                        <a href="/event13">
+                        <a href="/userindex/event11">
                             <span class="ico_arr_up">다음글</span>
                             <b>맛집 7만원 쿠폰북</b>
                             <em>기간 : 2021.08.17 ~ 2021.09.13</em>
                         </a>
                     </p>
                     <p>
-                        <a href="/event11">
+                        <a href="/userindex/event13">
                             <span class="ico_arr_down">이전글</span>
                             <b>강원 여행 한방에 끝내기</b>
-                            <em>기간 : 2021.08.11 ~ 끝날 때 까지!</em>
+                            <em>기간: 2021.08.11 ~ 끝날 때 까지!</em>
                         </a>
                     </p>
                 </div>
 
                 <div class="align_center">
-                    <button onclick="window.location.href='https://www.goodchoice.kr/more/event#0'"
-                        class="btn_red_fill">목록보기</button>
+                    <button class="btn_red_fill"><a href="/userindex/event"
+                            style="text-decoration:none; color : white;">목록보기</a></button>
                 </div>
 
             </div>
@@ -757,7 +665,7 @@
     <!-- Body Spinner -->
     <div class="spinner show"><span></span></div>
 
-    
+
 </body>
 
 </html>

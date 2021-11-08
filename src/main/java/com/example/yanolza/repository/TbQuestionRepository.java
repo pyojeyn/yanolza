@@ -11,4 +11,5 @@ import java.util.Optional;
 public interface TbQuestionRepository extends JpaRepository<TbQuestion, Integer> {
     Optional<TbQuestion> findById(Integer id);
     List<TbQuestion> findAllById(Integer id);
+    List<TbQuestion> findAllByTbMemId(Integer tbMemId);
 }

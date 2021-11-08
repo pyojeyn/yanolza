@@ -16,26 +16,27 @@
     height: auto;
     margin-left: 65%;
     margin-top: 30%;
-    }
+}
 .ahn_t_div {
     width: 100%;
     text-align: left;
 }
 .ahn_t_1{
-    line-height: 45px;
-    text-shadow: 2px 2px 4px gray;
-    
+    line-height: 50px;
+    /*text-shadow: 2px 2px 4px gray;*/
+
     font-size: 40px;
     font-weight: bold;
-   
+
 }
 .ahn_t_2{
     line-height: 50px;
-    text-shadow: 4px 2px 2px gray;
+    /*text-shadow: 4px 2px 2px gray;*/
 
     font-size: 40px;
- 
-   
+    font-weight: bold;
+
+
 }
 .ahn_t_2::after{
     content:"여기어때";
@@ -56,12 +57,12 @@
     visibility: hidden;
     transition: opacity 0.6s ease-out, transform 1.2s ease-out;
     will-change: opacity, visibility;
-  }
-  .fade-in-section.is-visible {
+}
+.fade-in-section.is-visible {
     opacity: 1;
     transform: none;
     visibility: visible;
-  }
+}
 
 
 
@@ -71,14 +72,14 @@
 
 /* -------------------- */
 .animatedhover {
-   
+
     animation-play-state: paused;
-  }
-  .animatedhover:hover {
+}
+.animatedhover:hover {
     animation-play-state: running;
     animation-iteration-count:infinite;
- 
-  }
+
+}
 
 .ahn_another_them{
 
@@ -89,17 +90,16 @@
 
 .main_spot{height:50vw;background:#fff url('../img/images/web_v3/mainimg2.png') no-repeat;background-size:cover;text-indent:-9999px;}
 .main_spot{
-height:100vh;
-/* background-size: cover; */
+    height:100vh;
+    /* background-size: cover; */
 
 }
 
 
 @media screen and (max-width:1023px) {
     .ahn_t_div {
-       display: none;
+        display: none;
     }
-    }
-    
-   
+}
+
 

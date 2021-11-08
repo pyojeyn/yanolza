@@ -226,6 +226,7 @@ function daumPostCode() {
             document.getElementById('input_roadAddress').value = fullRoadAddr;
             // document.getElementById('input_jibunAddress').value = data.jibunAddress;
             document.getElementById('input_roadAddress2').value = fullRoadAddr;
+
             //안연주 주소값을 폼으로 보내는
 
             // daumGeo();

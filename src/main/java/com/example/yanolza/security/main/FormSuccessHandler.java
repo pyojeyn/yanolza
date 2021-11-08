@@ -21,8 +21,5 @@ public class FormSuccessHandler implements AuthenticationSuccessHandler {
         session.setAttribute("userid", authentication.getName());
         response.sendRedirect("/userindex/");
         LocalDateTime issuedAt = LocalDateTime.now();
-
     }
-
-
 }

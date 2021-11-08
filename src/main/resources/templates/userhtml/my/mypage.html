@@ -1,23 +1,22 @@
-<!doctype html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type">
-    <meta name="csrf-name" content="yeogi_token">
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type">
+	<meta name="csrf-name" content="yeogi_token">
 
-    <meta name="description" content="여기어때 회원 가입 | 전국 호텔, 펜션, 모텔부터 워터파크, 놀이공원, 아쿠아리움까지 최저가 할인 예약">
+	<meta name="description" content="여기어때 회원 가입 | 전국 호텔, 펜션, 모텔부터 워터파크, 놀이공원, 아쿠아리움까지 최저가 할인 예약">
 
-    <link rel="shortcut icon" href="/img/images/web_v3/favicon_170822.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/img/images/web_v3/favicon_170822.ico" type="image/x-icon">
 
 	<!-- CSS -->
 	<title>취향대로 머물다 여기어때</title>
 	<link rel="stylesheet" href="/css/common.css" />
 	<link rel="canonical" href="../../../../../../../../../s/lyju7/OneDrive/바탕%20화면">
-    <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
 
 	<script>
 		var _BASE_URL = '../';
@@ -25,99 +24,109 @@
 		var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
 		var _FACEBOOK_APP_ID = '607467975974643';
 	</script>
-	<script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+
+	<style>
+		.validate_msg_label {
+			margin-top: 30px;
+			display: inline-block;
+			font-size: 13px;
+			color: red;
+		}
+	</style>
+
+
 </head>
 
 <body>
 
 	<!-- Wrap -->
-	<div class="wrap">
+	< class="wrap">
 
-     <!-- 헤더 -->
-        <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
-        <!--헤더 끝 -->
+		<!-- 헤더 -->
+		<div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
+		<!--헤더 끝 -->
 
-        <!-- Bg Dimm -->
-        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-        <div class="bg_dimm_prevent">&nbsp;</div>
+		<!-- Bg Dimm -->
+		<div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+		<!--	<div class="bg_dimm_prevent">&nbsp;</div>-->
 
-        <!-- 추천검색어 -->
-        <div class="recommend_srch">
-            <div class="scroll_srch">
-                <div class="scroller">
-                    <div class="default" style="display:block">
-                        <strong>추천 검색어</strong>
-                        <ul></ul>
-                    </div>
-                    <!-- 연관검색어 -->
-                    <div class="chain">
-                        <ul></ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<!-- 추천검색어 -->
+		<div class="recommend_srch">
+			<div class="scroll_srch">
+				<div class="scroller">
+					<div class="default" style="display:block">
+						<strong>추천 검색어</strong>
+						<ul></ul>
+					</div>
+					<!-- 연관검색어 -->
+					<div class="chain">
+						<ul></ul>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!-- Mobile Menu -->
-        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-        <div class="menu_wrap">
+		<!-- Mobile Menu -->
+		<div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+		<div class="menu_wrap">
 
-            <div class="menu">
-                <div class="top">
-                    <!-- 회원 -->
-                    <div class="member">
-                        <div class="mem">
-                            <span class="pic"
-                                style="background:url('/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
-                            <p class="info">사과색깔</p>
-                        </div>
-                        <div class="bot">
-                        </div>
-                    </div>
-                </div>
-                <!-- Iscroll -->
-                <div class="scroll_nav">
-                    <div class="scroller">
-                        <ul>
-                            <li><a href="../userindex/">홈</a></li>
-                            <li class="depth_2">
-                                <button type="button" class="has_ul"><span>숙소유형</span></button>
-                                <ul>
-                                    <li><a href="/userindex/1">모텔</a></li>
-                                    <li><a href="/userindex/2">호텔/리조트</a></li>
-                                    <li><a href="/userindex/3">펜션</a></li>
-                                    <li><a href="/userindex/4">리조트</a></li>
-                                    <li><a href="/userindex/5">캠핑·글램핑</a></li>
-                                    <li><a href="/userindex/6">게스트하우스</a></li>
-                                    <li><a href="/userindex/7">한옥 </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/userindex/8">내주변</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="/userindex/reservations">예약 내역</a></li>
-                            <li><a href="/userindex/mypage">내 정보 관리</a></li>
-                        </ul>
-                        <ul>
-                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
-                                <ul>
-                                    <li><a href="/userindex/notice">공지사항</a></li>
-                                    <li><a href="/userindex/event">이벤트</a></li>
-                                    <li><a href="/userindex/project">혁신 프로젝트</a></li>
-                                    <li><a href="/userindex/faq">고객문의</a></li>
-                                    <li><a href="/userindex/terms">약관 및 정책</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="center">
-                            <p>여기어때 고객행복센터</p>
-                            <p><a href="tel:1670-6250">1670-6250</a></p>
-                            <p>오전 9시 - 새벽 3시</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //Mobile Menu -->
+			<div class="menu">
+				<div class="top">
+					<!-- 회원 -->
+					<div class="member">
+						<div class="mem">
+							<span class="pic"
+								style="background:url('/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
+							<p class="info">사과색깔</p>
+						</div>
+						<div class="bot">
+						</div>
+					</div>
+				</div>
+				<!-- Iscroll -->
+				<div class="scroll_nav">
+					<div class="scroller">
+						<ul>
+							<li><a href="../userindex/">홈</a></li>
+							<li class="depth_2">
+								<button type="button" class="has_ul"><span>숙소유형</span></button>
+								<ul>
+									<li><a href="/userindex/1">모텔</a></li>
+									<li><a href="/userindex/2">호텔/리조트</a></li>
+									<li><a href="/userindex/3">펜션</a></li>
+									<li><a href="/userindex/4">리조트</a></li>
+									<li><a href="/userindex/5">캠핑·글램핑</a></li>
+									<li><a href="/userindex/6">게스트하우스</a></li>
+									<li><a href="/userindex/7">한옥 </a></li>
+								</ul>
+							</li>
+							<li><a href="/userindex/8">내주변</a></li>
+						</ul>
+						<ul>
+							<li><a href="/userindex/reservations">예약 내역</a></li>
+							<li><a href="/userindex/mypage">내 정보 관리</a></li>
+						</ul>
+						<ul>
+							<li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+								<ul>
+									<li><a href="/userindex/notice">공지사항</a></li>
+									<li><a href="/userindex/event">이벤트</a></li>
+									<li><a href="/userindex/project">혁신 프로젝트</a></li>
+									<li><a href="/userindex/faq">고객문의</a></li>
+									<li><a href="/userindex/terms">약관 및 정책</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="center">
+							<p>여기어때 고객행복센터</p>
+							<p><a href="tel:1670-6250">1670-6250</a></p>
+							<p>오전 9시 - 새벽 3시</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Mobile Menu -->
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="/css/my.css" />
@@ -135,17 +144,17 @@
 			<p class="sub_title">내 정보 관리</p>
 
 			<!-- Nav -->
-            <nav>
-                <ul>
-                    <li><a class="active" href="/userindex/mypage">내 정보 관리</a></li>
-                    <li><a class="" href="/userindex/reservations">예약 내역</a></li>
-                    <li><a class="" href="/userindex/zzim">찜 목록</a></li>
-                </ul>
-            </nav>
+			<nav>
+				<ul>
+					<li><a class="active" href="/userindex/mypage">내 정보 관리</a></li>
+					<li><a class="" href="/userindex/reservations">예약 내역</a></li>
+					<li><a class="" href="/userindex/zzim">찜 목록</a></li>
+				</ul>
+			</nav>
 			<div class="align_rt">
 				<div class="mypage">
-					<form name="form1" action="../my/mypageInfoUpdate" autocomplete="off"
-						method="post" novalidate data-form="unick">
+					<form name="form1" action="../my/mypageInfoUpdate" autocomplete="off" method="post" novalidate
+						data-form="unick">
 						<!-- 폼전송시 전달되는 data target element -->
 						<div class="mypageForm__form-inputs-wrap" aria-hidden="true">
 							<input type="text" name="unick" id="test1" aria-hidden="true" value="노젓는사과" />
@@ -157,7 +166,7 @@
 						<input type="hidden" id="utype" name="utype" value="1">
 						<input type="hidden" name="utype" value="1">
 						<!--// 폼전송시 전달되는 data target element -->
-						<section class="top_area" >
+						<section class="top_area">
 							<strong>내 정보 수정</strong>
 							<div class="login_info">
 								<div><img src="/img/profile/ico/ico_21.png" alt=""></div>
@@ -171,23 +180,25 @@
 								</div>
 								<section class="modifying-section">
 									<p class="inp_wrap remove form-errors">
-										<input type="text" id="memNkname" class="memNkname" value="" placeholder="체크인시 필요한 정보입니다."
-											data-input="unick" data-msg-required="닉네임을 입력하세요." data-rule-minlength="2"
+										<input type="text" id="memNkname" class="memNkname" value=""
+											placeholder="체크인시 필요한 정보입니다." data-input="unick"
+											data-msg-required="닉네임을 입력하세요." data-rule-minlength="2"
 											data-rule-spaceChar="true" data-rule-specialChar="true" />
 									</p>
 									<button type="button" class="btn_etc btn_confirm active"
-											onclick="generator();">랜덤닉네임</button> <!-- 활성화 클래스 'active' -->
+										onclick="generator();">랜덤닉네임</button> <!-- 활성화 클래스 'active' -->
 								</section>
 								<div class="pw_input__btns-wrap">
 									<button class="btns-wrap__edit-btn" type="button">수정</button>
-									<button class="btns-wrap__submit-btn" type="button" onclick="renameit();">수정완료</button>
+									<button class="btns-wrap__submit-btn" type="button"
+										onclick="renameit();">수정완료</button>
 									<button class="btns-wrap__cancel-btn" type="button">수정취소</button>
 								</div>
 							</div>
 						</section>
 					</form>
-					<form name="form2" action="/userindex/mypage" autocomplete="off"
-						method="post" novalidate data-form="uname">
+					<form name="form2" action="/userindex/mypage" autocomplete="off" method="post" novalidate
+						data-form="uname">
 						<!-- 폼전송시 전달되는 data target element -->
 						<div class="mypageForm__form-inputs-wrap" aria-hidden="true">
 							<input type="text" name="unick" aria-hidden="true" value="노젓는사과" />
@@ -205,16 +216,17 @@
 								</div>
 								<section class="modifying-section">
 									<p class="inp_wrap remove form-errors">
-									<!--체크인 입력란-->
-										<input type="text" id="uname" class="rename" value="" placeholder="체크인시 필요한 정보입니다."
-											data-input="uname" data-rule-spaceChar="true"
+										<!--체크인 입력란-->
+										<input type="text" id="uname" class="rename" value=""
+											placeholder="체크인시 필요한 정보입니다." data-input="uname" data-rule-spaceChar="true"
 											data-rule-specialChar="true" />
 									</p>
 								</section>
 								<div class="pw_input__btns-wrap">
 									<button class="btns-wrap__edit-btn" type="button"
 										style="?android:attr/borderlessButtonStyle">수정</button>
-									<button class="btns-wrap__submit-btn renameBtn" type="button" onclick="repaynameit();">수정완료</button>
+									<button class="btns-wrap__submit-btn renameBtn" type="button"
+										onclick="repaynameit();">수정완료</button>
 									<button class="btns-wrap__cancel-btn" type="button"
 										style="?android:attr/borderlessButtonStyle">수정취소</button>
 								</div>
@@ -222,8 +234,8 @@
 						</section>
 					</form>
 
-					<form name="form3" action="/userindex/mypage" autocomplete="off"
-						method="post" novalidate data-form="uphone">
+					<form name="form3" action="/userindex/mypage" autocomplete="off" method="post" novalidate
+						data-form="uphone">
 						<section>
 							<!-- 폼전송시 전달되는 data target element -->
 							<div class="mypageForm__form-inputs-wrap" aria-hidden="true">
@@ -236,7 +248,7 @@
 							<div class="pw_input phone_confirm">
 								<div class="pw_input__title">
 									<b>휴대폰 번호</b>
-									<span class="title__uinfo memHp">010****8282</span>
+									<span class="title__uinfo memHp memHp2">010****8282</span>
 									<div class="safety_txt">개인 정보 보호를 위해 내 정보는 모두 안전하게 암호화됩니다.</div>
 								</div>
 								<div class="modifying-section">
@@ -252,12 +264,14 @@
 											<!-- 활성화 클래스 'active' -->
 										</section>
 									</div>
-									<div id="verificationCode">
+									<div id="verificationCode" style="display: none">
 										<b>인증 번호</b>
 										<section>
 											<div class="inp_wrap remove">
 												<input type="tel" id="digit" minlength="4" maxlength="4">
-												<span class="timer">&nbsp;</span>
+												<span class="time">&nbsp;</span>
+												<div id="digitResult" class="validate_msg_label"
+													style="margin-bottom: 0px;"></div>
 											</div>
 											<button type="button" class="btn_ok btn_confirm"
 												data-verification-type="call"
@@ -277,13 +291,12 @@
 					</form>
 					<!-- <button class="btn_submit disabled btn_one" type="submit">저장</button>-->
 
-					<p class="bot_link"><a href="/userindex/mypagePwChange">비밀번호 변경</a> &gt;</p>
+					<p class="bot_link"><a th:href="@{/userindex/forgot_password}">비밀번호 변경</a> &gt;</p>
 				</div>
 
 				<div class="bot_btn">
 					<p>여기어때를 이용하고 싶지 않으신가요?</p>
-					<button type="button"
-						onclick="pop_twobtn('ell','로그아웃 하시겠습니까?','취소','로그아웃','close_layer()','logoutPro()');">로그아웃</button>
+					<a class="junglogout" th:href="@{/dologout}" type="button">로그아웃</a>
 					<button type="button" onclick="withdrawPopOpen(1);">회원탈퇴</button>
 				</div>
 			</div>
@@ -313,8 +326,8 @@
 				</div>
 			</section>
 		</div>
-
 		<!-- 회원탈퇴 .new_pop_withdraw -->
+
 		<div class="layer_w new_pop_withdraw">
 			<section class="section_fix_title">
 				<div class="fix_title">
@@ -353,185 +366,54 @@
 					<!-- 탈퇴이유 -->
 					<ul class="reason-list">
 						<li>
-							<input id="reasonRdo0" type="radio" name="radios" value="UN_USE_FREQUENTLY">
+							<input id="reasonRdo0" type="radio" name="radios" value="사용을 잘 안하게 돼요">
 							<label for="reasonRdo0">사용을 잘 안하게 돼요</label>
 							<div class="reason-innder-box reason-innder-box0">
-								<textarea class="inner-textarea" id="reasonTextarea0" name="innerTextarea"
-									maxlength="80"
-									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-								<!-- 사용을 잘 안하게 돼요 -->
-								<div class="inner">
-									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-									<p>여기어때는 숙박 상품 외에도, 숙소 주변 맛집 정보와 모바일티켓 구매가 가능해요!</p>
-									<p>볼거리와 놀거리가 풍성해진 여기어때를 더 이용해보시겠어요?</p>
-									<a href="#none" class="toast-show" onclick="toastShow(event,this)">맛집 보러가기</a><br />
-									<a href="#none" class="toast-show" onclick="toastShow(event,this)">액티비티 • 모바일 티켓
-										보러가기</a>
-								</div>
+
 							</div>
 						</li>
 						<li>
-							<input id="reasonRdo1" type="radio" name="radios" value="HAVE_NO_LIKED_HOTEL">
+							<input id="reasonRdo1" type="radio" name="radios" value="예약하고 싶은 숙소가 없어요">
 							<label for="reasonRdo1">예약하고 싶은 숙소가 없어요</label>
 							<div class="reason-innder-box reason-innder-box1">
-								<textarea class="inner-textarea" id="reasonTextarea1" name="innerTextarea"
-									maxlength="80"
-									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-								<!-- 예약하고 싶은 숙소가 없어요 -->
-								<div class="inner">
-									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-									<p>전국 2만 여개의 숙소와 모바일 티켓을 최저가로 예약할 수 있어요.</p>
-									<p>원하는 여행지나 상품을 다시한번 찾아보세요!</p>
-									<a href="../../../../../../../../../s/lyju7/OneDrive/바탕%20화면">검색하기</a>
-								</div>
+
 							</div>
 						</li>
 						<li>
-							<input id="reasonRdo2" type="radio" name="radios" value="DIFFICULT_TO_USE">
+							<input id="reasonRdo2" type="radio" name="radios" value="예약, 취소, 혜택받기 등 사용이 어려워요">
 							<label for="reasonRdo2">예약, 취소, 혜택받기 등 사용이 어려워요</label>
 							<div class="reason-innder-box reason-innder-box2">
-								<textarea class="inner-textarea" id="reasonTextarea2" name="innerTextarea"
-									maxlength="80"
-									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-								<!-- 예약, 취소, 혜택받기 등 사용이 어려워요 -->
-								<div class="inner">
-									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-									<p>예약, 취소, 사용이 어려우신가요?</p>
-									<p>회원님들이 궁금해 하시는 내용을 위주로 도움말과 혜택꿀팁을 정리해 보았는데 이용해보시는건 어떠세요?</p>
-									<a href="../more/faq">자주 묻는 질문 보러가기</a><br />
-									<a href="#none" onclick="toastShow(event, this)">혜택꿀팁 보러가기</a>
-								</div>
 							</div>
 						</li>
 						<li>
-							<input id="reasonRdo3" type="radio" name="radios" value="POINT_COUPON_TOO_LITTLE">
+							<input id="reasonRdo3" type="radio" name="radios" value="혜택(포인트)이 너무 적어요">
 							<label for="reasonRdo3">혜택(포인트)이 너무 적어요</label>
 							<div class="reason-innder-box reason-innder-box3">
-								<textarea class="inner-textarea" id="reasonTextarea3" name="innerTextarea"
-									maxlength="80"
-									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-								<!-- 혜택 (쿠폰, 포인트)이 적어요 -->
-								<div class="inner">
-									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-									<p>혹시 놓치고 있던 이벤트가 있지는 않을까요?</p>
-									<p>다양한 이벤트를 둘러보고 혜택을 받아보시는건 어떠세요?</p>
-									<a href="../more/event">이벤트 보러가기</a>
-									<p>여기어때가 준비한 다양한 혜택들, 알고 계셨나요?</p>
-									<p>여기어때를 100% 활용하는 꿀팁을 구경해보시는건 어떠세요?</p>
-									<a href="#none" onclick="toastShow(event, this)">혜택꿀팁 보러가기</a>
-								</div>
 							</div>
 						</li>
 						<li>
-							<input id="reasonRdo4" type="radio" name="radios" value="INFO_TO_DELETE">
+							<input id="reasonRdo4" type="radio" name="radios" value="개인정보 보호를 위해 삭제할 정보가 있어요">
 							<label for="reasonRdo4">개인정보 보호를 위해 삭제할 정보가 있어요</label>
 							<div class="reason-innder-box reason-innder-box4">
-								<textarea class="inner-textarea" id="reasonTextarea4" name="innerTextarea"
-									maxlength="80"
-									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-								<!-- 개인정보 보호를 위해 삭제할 정보가 있어요 -->
-								<div class="inner">
-									<h5><span class="point-text">잠깐!</span> 이렇게 해보시면 어때요?</h5>
-									<p>고객님의 사용내역은 ‘App > 더보기>사용내역 관리’ 에서 변경, 삭제할 수 있어요. </p>
-									<p>회원탈퇴 없이 사용내역을 삭제해 보는 건 어떠세요?</p>
-									<p>- 삭제 가능 내용 : 예약내역, 찜한상품, 1:1문의</p>
-									<a href="#none" onclick="toastShow(event,this)">사용내역 관리</a>
-								</div>
+
 							</div>
 						</li>
 						<li>
-							<input id="reasonRdo5" type="radio" name="radios" value="EXISTING_ID">
+							<input id="reasonRdo5" type="radio" name="radios" value="다른 계정이 있어요">
 							<label for="reasonRdo5">다른 계정이 있어요</label>
 							<div class="reason-innder-box reason-innder-box5">
-								<textarea class="inner-textarea" id="reasonTextarea5" name="innerTextarea"
-									maxlength="80"
-									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
-							</div>
-						</li>
-						<li>
-							<input id="reasonRdo6" type="radio" name="radios" value="OTHER">
-							<label for="reasonRdo6">기타</label>
-							<div class="reason-innder-box reason-innder-box6">
-								<textarea class="inner-textarea" id="reasonTextarea6" name="innerTextarea"
-									maxlength="80"
-									placeholder="(선택사항) 서비스 이용 중 아쉬운 점에 대해 알려주세요. 고객님의 소리에 귀 기울일게요. 80자 이내"></textarea>
+
 							</div>
 						</li>
 					</ul>
 					<div class="password-wrap">
-						<label for="passwordUser">비밀번호 입력</label>
-						<input id="passwordUser" type="password" name="pwWithdraw" placeholder="비밀번호를 입력하세요." />
-
-						<div class="button-wrap"><button class="btn_submit disabled" onclick="userPasswordCheck(1)"
-								id="passwordCheckBtn">다음 단계로</button></div>
+						<div class="button-wrap"><button class="btn_submit disabled" onclick="del()"
+								id="passwordCheckBtn">회원탈퇴</button></div>
 					</div>
 				</div>
 				<!--// step2 -->
-				<!-- step3 -->
-				<div class="cont-step cont-step_03" id="contStep03">
-					<input type="hidden" id="reason" name="reason" value="" />
-					<input type="hidden" id="reasonMsg" name="reasonMsg" value="" />
-					<input type="hidden" id="uno" name="uno" value="14996134" />
-
-					<div class="cont-step_preface">
-						<h1>이제 더 가시면..<span class="break-tag"><span class="point-text">혜택이 영영 사라져요</span></span></h1>
-						<p>탈퇴하시면 지금껏 모으신 무료(무상) 포인트와<span class="break-tag">쿠폰들이 사라져 복구가 불가해요</span></p>
-					</div>
-
-					<ul class="retention-list destroyed">
-						<li>
-							<p>잔여 무료(무상)포인트 <em>0P</em></p>
-							<a href="#">즉시 소멸</a>
-						</li>
-						<li>
-							<p>잔여 쿠폰 <em>1</em></p>
-							<a href="#">즉시 소멸</a>
-						</li>
-					</ul>
-					<div class="guide-text">
-						<ul>
-							<li>무료(무상) 포인트는 숙박 및 모바일 티켓 구매시 사용 가능해요.</li>
-							<li><em>등록된 리뷰는 자동으로 삭제되지 않아요.</em> 탈퇴 전 개별적으로 삭제해 주세요.</li>
-							<li><em>계정 정보 및 찜 목록 등 서비스 이용정보는 복구가 불가</em>하며, 동일한 아이디로 24시간 이후 재가입이 가능해요.</li>
-						</ul>
-					</div>
-					<div class="password-wrap">
-						<p>
-							<input type="checkbox" class="inp_chk_03" name="withdrawAgreeChk"
-								id="withdrawAgreeCheck"><label for="withdrawAgreeCheck">위 주의사항을 모두 숙지했고, 탈퇴에
-								동의합니다</label>
-						</p>
-						<div class="button-wrap">
-							<button class="btn_submit disabled" id="agreeBtn" onclick="lastAgree(this)">진짜 안녕</button>
-						</div>
-					</div>
-				</div>
-				<!--// step3 -->
-				<!-- step4 로그아웃 이슈로 현재 미사용중(삭제 금지) -->
-				<div class="cont-step cont-step_04" id="contStep04">
-					<div class="cont-step_preface">
-						<h1>다음에 <span class="point-text">꼭 다시 만나요!</span> <span class="break-tag">더 나은 모습으로 기다릴게요</span>
-						</h1>
-					</div>
-					<div class="bg-img">
-						<img src="/img/images/web_v3/img-withdraw.png" alt="see you again next time" />
-					</div>
-					<div class="password-wrap">
-						<div class="button-wrap">
-							<button class="btn_submit home-btn" onclick="layer_w_close()">홈으로 돌아가기</button>
-						</div>
-					</div>
-				</div>
-				<!--// step4 -->
-			</section>
-			<!-- <div class="test-button">
-		<p>view test page</p>
-		<button onclick="moveStep(0)"> step 1</button>
-		<button onclick="moveStep(1)"> step 2</button>
-		<button onclick="moveStep(2)"> step 3</button>
-		<button onclick="moveStep(3)"> step 4</button>
-	</div> -->
 		</div>
+
 		<!--// 회원탈퇴 .new_pop_withdraw -->
 		<script>
 			$(document).ready(function () {
@@ -551,176 +433,338 @@
 		</script>
 
 
-        <!-- 푸터 -->
-        <div th:replace="userthy/user-footer :: user-footer"></div>
-        <!--푸터 끝 -->
+		<!-- 푸터 -->
+		<div th:replace="userthy/user-footer :: user-footer"></div>
+		<!--푸터 끝 -->
 
 
-	</div>
+		</div>
 
-	<!-- 상단으로 -->
-	<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+		<!-- 상단으로 -->
+		<button class="btn_go_top" onclick="moveTop();">상단으로</button>
 
-	<!-- //Wrap -->
+		<!-- //Wrap -->
 
-	<!-- Script -->
-	<!-- Library -->
-    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
-    <script type="text/javascript" src="/js/library/iscroll.js"></script>
+		<!-- Script -->
+		<!-- Library -->
+		<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+		<script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
+		<script type="text/javascript" src="/js/library/iscroll.js"></script>
 
-    <!-- Service -->
-    <script type="text/javascript" src="/js/service/common.js"></script>
-    <script type="text/javascript" src="/js/service/geolocation.js"></script>
+		<!-- Service -->
+		<script type="text/javascript" src="/js/service/common.js"></script>
+		<script type="text/javascript" src="/js/service/geolocation.js"></script>
 
-    <!-- Module -->
-    <script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
+		<!-- Module -->
+		<script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
 
-	<!-- Page Script -->
-	<script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
-	<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
-	<script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
-	<script type="text/javascript" src="/js/service/validate.js"></script>
-	<script type="text/javascript" src="/js/service/my.js"></script>
-	<script type="text/javascript" src="/js/service/mypage.js"></script>
-	<script type="text/javascript"
-		src="/js/service/phone-verification.js"></script>
+		<!-- Page Script -->
+		<script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
+		<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
+		<script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
+		<script type="text/javascript" src="/js/service/validate.js"></script>
+		<script type="text/javascript" src="/js/service/my.js"></script>
+		<script type="text/javascript" src="/js/service/mypage.js"></script>
+		<script type="text/javascript" src="/js/service/phone-verification.js"></script>
 
-	<!-- Body Spinner -->
-	<div class="spinner show"><span></span></div>
-<!--랜덤닉네임-->
-	<script>
-		var adjective = ["이구아나닮은", "몰리엄마", "동탄사는", "자취하는", "혼맥하는", "이천시민"]
-		var object = ["이정훈", "이민정", "조명준", "표제인", "안연주", "정상훈"]
-
-		function generator() {
-			document.getElementById("memNkname").value = adjective[Math.floor(Math.random() * adjective.length)] + object[Math.floor(Math.random() * object.length)]
-		};
-	</script>
-
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script>
-	axios.get('/api/tbmem/mlist/' + sessionId, {
-
-	}).then(function (response){
-		console.log(response)
-		let memEmail = response.data.data.memEmail;
-		let memNkname = response.data.data.memNkname
-		let memHp = response.data.data.memHp;
-		console.log('memEmail : '+ memEmail);
-		console.log('memNkname : '+ memNkname);
-		console.log('memHp : '+ memHp);
+		<!-- Body Spinner -->
 
 
-		$('.memEmail').text(memEmail);
+		<!--전화번호 인증-->
+		<script>
+			$(function () {
+				//문자 인증번호 전송
+				var code = ""; //매번 인증시 코드가 변경되어야 함으로 var를 사용
+				$(".btn_send").on("click", function () {
+					var regPhone = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/; //휴대폰 번호 유효성 검사 하이픈(-)제외
+					var text = document.getElementById('phone_number').value;
+					if (!regPhone.test(text)) {
+						alert('잘못된 휴대폰번호입니다.');
+						$('#phone_number').focus();
+						clearInterval(timer); // 타이머 멈추기
+						$('.time').html(""); //만약 타이머 보였다면 없애기
+						startTimer(180, display);
+						return false;
 
-		$('.memNkname').text(memNkname);
-		$('#memNkname').attr('value',memNkname);
-		$('.memHp').text(memHp);
+					} else {
 
+						$("#verificationCode").attr("style", "display: block;"); //인증번호 input태그 출력
 
+						const phone = $("#phone_number").val(); //폰 번호
+						code = (String(Math.random())).substring(3, 7); //랜덤 생성 index 3부터 7까지 substring으로 끊어냄
 
-	}).catch(function (err){
-		console.log(err)
-	});
+						console.log(phone); //입력받은 폰번호
+						console.log(code); // 입력받은 인증확인코드
 
+						//url 실행으로 팝업 사용
+						let url = "/sms?phone=" + phone + "&code=" +
+						code; //메일: "/mail?phone"  ,  //문자: "/sms?phone=" 이코드로 컨트롤러 메소드 실행
+						let send = window.open(url, '인증번호 전송',
+							'width=430,height=500,location=no,status=no,scrollbars=yes');
 
-	function renameit(){
-		let memNkname = $('#memNkname').val();
-		console.log('입력 memNkname : '+memNkname);
-		if (confirm("닉네임을 수정하시겠습니까??") == true){
-		axios.request({
-			method: 'PATCH',
-			url: '/api/tbmem/nkname/' + sessionId,
-			headers: {'Content-type':'application/json'},
-			data: {
-				transaction_time:"2019-10-01",
-				resultCode:"OK",
-				description:"OK",
-				data:{
-					memNkname: memNkname
-				}
-			}
-		}).then(
-				alert('닉네임이 수정되었습니다')
-
-		)
-		location.href='/userindex/mypage'
-
-
-	}else{   //취소
-
-		return;
-
-	}
-
-	}
-
-	function repaynameit(){
-
-		if (confirm("예약자이름을 수정하시겠습니까??") == true){
-			axios.request({
-			method: 'PATCH',
-			url: '/api/tbmem//' + sessionId,
-			headers: {'Content-type':'application/json'},
-			data: {
-				transaction_time:"2019-10-01",
-				resultCode:"OK",
-				description:"OK",
-				data:{
-					memNkname: memNkname
-				}
-			}
-		}).then(
-				alert('예약자이름이 수정되었습니다')
-
-		)
-		location.href='/userindex/mypage'
-
-
-		}else{   //취소
-
-			return;
-
-		}
-
-	}
-
-	function reHp(){
-		let memHp = $('.ahn_memHp').val();
-		console.log('입력 memHp : '+memHp);
-		if (confirm("휴대폰 번호를 수정하시겠습니까??") == true){    //확인
-
-			axios.request({
-				method: 'PATCH',
-				url: '/api/tbmem/hp/' + sessionId,
-				headers: {'Content-type':'application/json'},
-				data: {
-					transaction_time:"2019-10-01",
-					resultCode:"OK",
-					description:"OK",
-					data:{
-						memHp: memHp
+						$.ajax({ //url을 팝업으로 열어서 함수 실행이 완료되면, 자동으로 사라짐
+							type: "GET",
+							success: function () { //위 코드들이 성공적으로 실행된다면,
+								send.close();
+							}
+						});
 					}
+				});
+
+				//인증확인 클릭
+				$(".btn_send").click(function (e) {
+					var timer = null;
+					var isRunning = false;
+					var display = $('.time');
+					var leftSec = 180;
+					// 남은 시간
+					// 이미 타이머가 작동중이면 중지
+					if (isRunning) {
+						clearInterval(timer);
+						display.html("");
+						startTimer(leftSec, display);
+					} else {
+						startTimer(leftSec, display);
+					}
+				});
+
+				//인증번호 일치 확인 문구
+				$(".btn_ok").on("click", function () {
+					if ($("#digit").val() == code) {
+						($("#digitResult").html("일치합니다"));
+						clearInterval(timer); //인증확인 일치할경우 타이머멈추기
+						$('.time').html(""); //타이머 사라지게하기
+						$('.btn_ok').removeClass("active");
+						$('#verificationCode').css('display', 'none');
+						$('.btn_send').removeClass("active");
+						$('.btn_send').attr("style", "display: none;");
+						$('.btn_send').attr("disabled", "disabled");
+						$('.btn_send').css({
+							background: '#ccc'
+						});
+					} else {
+						($("#digitResult").html("일치하지 않습니다"));
+
+					}
+				})
+
+
+				// 타이머
+				function startTimer(count, display) {
+
+					var minutes, seconds;
+					timer = setInterval(function () {
+						minutes = parseInt(count / 60, 10);
+						seconds = parseInt(count % 60, 10);
+
+						minutes = minutes < 10 ? "0" + minutes : minutes;
+						seconds = seconds < 10 ? "0" + seconds : seconds;
+
+						display.html(minutes + ":" + seconds);
+
+						// 타이머 끝
+						if (--count < 0) {
+							clearInterval(timer);
+							alert("시간초과");
+							display.html("시간초과");
+							$('.btn_ok').attr("disabled", "disabled");
+							$('.btn_ok').css({
+								background: '#ccc'
+							});
+							isRunning = false;
+						}
+					}, 1000);
+					isRunning = true;
 				}
-			}).then(
-					alert('휴대폰 번호가 수정되었습니다')
-
-			)
-			location.href='/userindex/mypage'
-
-		}else{   //취소
-
-			return;
-
-		}
-
-
-	}
 
 
 
-	</script>
+			});
+		</script>
+		<!--랜덤닉네임-->
+		<script>
+			var adjective = ["이구아나닮은", "몰리엄마", "동탄사는", "자취하는", "혼맥하는", "이천시민"]
+			var object = ["이정훈", "이민정", "조명준", "표제인", "안연주", "정상훈"]
+
+			function generator() {
+				document.getElementById("memNkname").value = adjective[Math.floor(Math.random() * adjective.length)] + object[
+					Math.floor(Math.random() * object.length)]
+			};
+		</script>
+
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script>
+			axios.get('/api/tbmem/mlist/' + sessionId, {
+
+			}).then(function (response) {
+				console.log(response)
+				let memEmail = response.data.data.memEmail;
+				let memNkname = response.data.data.memNkname
+				let memHp = response.data.data.memHp;
+				console.log('memEmail : ' + memEmail);
+				console.log('memNkname : ' + memNkname);
+				console.log('memHp : ' + memHp);
+
+
+				$('.memEmail').text(memEmail);
+
+				$('.memNkname').text(memNkname);
+				$('#memNkname').attr('value', memNkname);
+				$('.memHp').text(memHp);
+
+
+
+			}).catch(function (err) {
+				console.log(err)
+			});
+
+
+			function renameit() {
+				let memNkname = $('#memNkname').val();
+				console.log('입력 memNkname : ' + memNkname);
+				if (confirm("닉네임을 수정하시겠습니까??") == true) {
+					axios.request({
+						method: 'PATCH',
+						url: '/api/tbmem/nkname/' + sessionId,
+						headers: {
+							'Content-type': 'application/json'
+						},
+						data: {
+							transaction_time: "2019-10-01",
+							resultCode: "OK",
+							description: "OK",
+							data: {
+								memNkname: memNkname
+							}
+						}
+					}).then(
+						alert('닉네임이 수정되었습니다')
+
+					)
+					location.href = '/userindex/mypage'
+
+
+				} else { //취소
+
+					return;
+
+				}
+
+			}
+
+			function repaynameit() {
+
+				if (confirm("예약자이름을 수정하시겠습니까??") == true) {
+					axios.request({
+						method: 'PATCH',
+						url: '/api/tbmem//' + sessionId,
+						headers: {
+							'Content-type': 'application/json'
+						},
+						data: {
+							transaction_time: "2019-10-01",
+							resultCode: "OK",
+							description: "OK",
+							data: {
+								memNkname: memNkname
+							}
+						}
+					}).then(
+						alert('예약자이름이 수정되었습니다')
+					)
+					location.href = '/userindex/mypage'
+
+
+				} else { //취소
+
+					return;
+
+				}
+
+			}
+
+			function reHp() {
+				let memHp = $('.ahn_memHp').val();
+				console.log('입력 memHp : ' + memHp);
+				if (confirm("휴대폰 번호를 수정하시겠습니까??") == true) { //확인
+
+					axios.request({
+						method: 'PATCH',
+						url: '/api/tbmem/hp/' + sessionId,
+						headers: {
+							'Content-type': 'application/json'
+						},
+						data: {
+							transaction_time: "2019-10-01",
+							resultCode: "OK",
+							description: "OK",
+							data: {
+								memHp: memHp
+							}
+						}
+					}).then(
+						alert('휴대폰 번호가 수정되었습니다')
+
+					)
+					location.href = '/userindex/mypage'
+
+				} else { //취소
+
+					return;
+
+				}
+
+
+			}
+
+			function del() {
+				let memNkname = $('#memNkname').val();
+				let memHp = $('.memHp2').text();
+				let memEmail = $('.memEmail').text();
+				var reason = $('input:radio[name="radios"]:checked').val();
+
+				console.log(memNkname);
+				console.log(memHp);
+				console.log(reason);
+				console.log(memEmail);
+				if (confirm("정말 탈퇴하시겠습니까?") == true) {
+					axios.request({
+						method: 'POST',
+						url: '/api/memc8/cc/',
+						headers: {
+							'Content-type': 'application/json'
+						},
+						data: {
+							transaction_time: "2019-10-01",
+							resultCode: "OK",
+							description: "OK",
+							data: {
+								id: sessionId,
+								memHp: memHp,
+								memNkname: memNkname,
+								reason: reason,
+								memEmail: memEmail
+							}
+						}
+
+					}).then(
+						axios.delete('/api/tbmem/mlist/' + sessionId, {}).then(function (response) {}).catch(function (err) {
+							console.log('삭제중 에러')
+							console.log(err);
+						}),
+						// session.invalidate(),
+						alert('성공적으로 탈퇴 되었습니다')
+
+					)
+					location.href = '/userindex/'
+				} else { //취소
+
+					return false;
+
+				}
+
+			}
+		</script>
 
 </body>
 

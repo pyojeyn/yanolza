@@ -1,6 +1,4 @@
-<html lang="ko"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 
 <header th:fragment="user-headerlogin">
     <link rel="stylesheet" href="/css/main.css" />
@@ -10,7 +8,7 @@
         <button type="button" class="btn_menu nav_open ">메뉴</button>
         <!--        <button type="button" class="btn_srch srch_open ">검색</button>-->
         <ul class="gnb_pc">
-            <li><a href="/userindex/8">내주변</a></li>
+            <!--            <li><a href="/userindex/8">내주변</a></li>-->
             <li><a href="/userindex/reservations">예약내역</a></li>
             <li class="over">
                 <button type="button"><span>더보기</span></button>
@@ -24,9 +22,8 @@
 
                 </ul>
             <li><a th:href="@{/userindex/login}" th:if="${session.userid eq null}" style="text-align: right;">로그인</a>
-           <th:block th:unless="${session.userid eq null}" >
-                <!--                <label> 당신의 아이디[[${session.userid}]]</label>-->
-                <a th:href="@{/dologout}" style="text-align: right">로그아웃</a></th:block>
+                <th:block th:unless="${session.userid eq null}">
+                    <a th:href="@{/dologout}" style="text-align: right">로그아웃</a></th:block>
             </li>
             <!--    안연주 세션용 userid(tbMemId)-->
             <input type="hidden" id="userid" class="userid">
@@ -51,8 +48,9 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--    정상훈 세션값-->
-    <script>const sessionId = sessionStorage.getItem('userid');
-    console.log("세션아이디"+sessionId);
+    <script>
+        const sessionId = sessionStorage.getItem('userid');
+        console.log("세션아이디" + sessionId);
     </script>
 
     <!--    정상훈 세션값끝-->

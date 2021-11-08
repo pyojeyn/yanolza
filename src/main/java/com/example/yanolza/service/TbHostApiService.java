@@ -2,6 +2,7 @@ package com.example.yanolza.service;
 
 import com.example.yanolza.model.entity.TbHost;
 import com.example.yanolza.model.entity.TbHostImg;
+import com.example.yanolza.model.entity.TbPay;
 import com.example.yanolza.model.entity.TbRoom;
 import com.example.yanolza.model.network.Header;
 import com.example.yanolza.model.network.request.TbHostApiRequest;
@@ -9,6 +10,7 @@ import com.example.yanolza.model.network.response.*;
 import com.example.yanolza.repository.TbHostImgRepository;
 import com.example.yanolza.repository.TbHostRepository;
 import com.example.yanolza.repository.TbMemRepository;
+import com.example.yanolza.repository.TbPayRepository;
 import com.example.yanolza.service.img.TbHostImgService;
 import com.example.yanolza.service.img.TbRoomImgService;
 import lombok.RequiredArgsConstructor;
@@ -36,10 +38,7 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
     @Autowired
     private final TbHostImgService tbHostImgService;
     @Autowired
-    private final TbHostImgRepository tbhostImgRepository;
-    @Autowired
     private final TbRoomImgService tbRoomImgService;
-
 
     //호스트 등록
     public Header<TbHostApiResponse> registh(Header<TbHostApiRequest> request) {
@@ -63,6 +62,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                 .myIntcom(tbHostApiRequest.getMyIntcom())
                 .myIntcomadd1(tbHostApiRequest.getMyIntcomadd1())
                 .myIntcomadd2(tbHostApiRequest.getMyIntcomadd2())
+                .latitude(tbHostApiRequest.getLatitude())
+                .longitude(tbHostApiRequest.getLongitude())
                 .myService(tbHostApiRequest.getMyService())
                 .myIntro(tbHostApiRequest.getMyIntro())
                 .myComeway(tbHostApiRequest.getMyComeway())
@@ -80,16 +81,16 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                 .pkCcdate(tbHostApiRequest.getPkCcdate())
                 .pkSdate(tbHostApiRequest.getPkSdate())
                 .pkCdate(tbHostApiRequest.getPkCdate())
-                .pkAdmit("n")   // 자동으로 n으로 들어가니 건들지마세용
-                .tbMem(tbMemRepository.getById(tbHostApiRequest.getTbMemId()))  // ?? get one?
+                .pkAdmit("n")
+                .tbMem(tbMemRepository.getById(tbHostApiRequest.getTbMemId()))
                 .build();
         TbHost newHost = baseRepository.save(tbHost);
         return Header.OK(response(newHost));
     }
+
     // 호스트 리스트(admin)
     public List<TbHostApiRequest> gethlist(){
         List<TbHost> tbHosts = tbHostRepository.findAllByPkAdmit("y");
-//        List<TbHostImg> tbHostImgs = tbhostImgRepository.findAll();
         List<TbHostApiRequest> tbHostApiRequestList = new ArrayList<>();
 
         for (TbHost tbHost  : tbHosts){
@@ -113,6 +114,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     .myIntcom(tbHost.getMyIntcom())
                     .myIntcomadd1(tbHost.getMyIntcomadd1())
                     .myIntcomadd2(tbHost.getMyIntcomadd2())
+                    .latitude(tbHost.getLatitude())
+                    .longitude(tbHost.getLongitude())
                     .myService(tbHost.getMyService())
                     .myIntro(tbHost.getMyIntro())
                     .myComeway(tbHost.getMyComeway())
@@ -148,7 +151,13 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                 );
     }
 
-//    //호스트 등록 글 수정 1
+    public String getHP(Integer id){
+        TbHost tbHost = tbHostRepository.getById(id);
+        return tbHost.getAlmHp();
+
+    }
+
+    // 호스트 등록 글 수정 1
     public Header<TbHostApiResponse> updateh1(Integer id, Header<TbHostApiRequest> request){
         TbHostApiRequest tbHostApiRequest = request.getData();
         Optional<TbHost> optional = baseRepository.findById(id);
@@ -171,10 +180,10 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         }).map(tbHost -> baseRepository.save(tbHost))
                 .map(tbHost -> response(tbHost))
                 .map(Header::OK)
-                .orElseGet(()-> Header.Error("에러다 임마"));
+                .orElseGet(()-> Header.Error("ERROR"));
     }
 
-    //호스트 등록 글 수정 2
+    // 호스트 등록 글 수정 2
     public Header<TbHostApiResponse> updateh2(Integer id, Header<TbHostApiRequest> request){
         TbHostApiRequest tbHostApiRequest = request.getData();
         Optional<TbHost> optional = baseRepository.findById(id);
@@ -182,6 +191,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     tbHost.setMyIntcom(tbHostApiRequest.getMyIntcom());
                     tbHost.setMyIntcomadd1(tbHostApiRequest.getMyIntcomadd1());
                     tbHost.setMyIntcomadd2(tbHostApiRequest.getMyIntcomadd2());
+                    tbHost.setLatitude(tbHostApiRequest.getLatitude());
+                    tbHost.setLongitude(tbHostApiRequest.getLongitude());
                     tbHost.setMyService(tbHostApiRequest.getMyService());
                     tbHost.setMyIntro(tbHostApiRequest.getMyIntro());
                     tbHost.setMyComeway(tbHostApiRequest.getMyComeway());
@@ -197,9 +208,9 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                 }).map(tbHost -> baseRepository.save(tbHost))
                 .map(tbHost -> response(tbHost))
                 .map(Header::OK)
-                .orElseGet(()-> Header.Error("에러다 임마"));
+                .orElseGet(()-> Header.Error("ERROR"));
     }
-    //호스트 등록 글 수정 3
+    // 호스트 등록 글 수정 3
     public Header<TbHostApiResponse> updateh3(Integer id, Header<TbHostApiRequest> request){
         TbHostApiRequest tbHostApiRequest = request.getData();
         Optional<TbHost> optional = baseRepository.findById(id);
@@ -213,8 +224,9 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                 }).map(tbHost -> baseRepository.save(tbHost))
                 .map(tbHost -> response(tbHost))
                 .map(Header::OK)
-                .orElseGet(()-> Header.Error("에러다 임마"));
+                .orElseGet(()-> Header.Error("ERROR"));
     }
+
     //숙소신청허가
     public Header<TbHostApiResponse> admith(Integer id,Header<TbHostApiRequest> request) {
         TbHostApiRequest tbHostApiRequest = request.getData();
@@ -225,9 +237,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                 }).map(tbHost -> baseRepository.save(tbHost))
                 .map(tbHost -> response(tbHost))
                 .map(Header::OK)
-                .orElseGet(() -> Header.Error("에러다 임마"));
+                .orElseGet(() -> Header.Error("ERROR"));
     }
-
 
     // 숙소신청한 호스트 리스트
     public List<TbHostApiRequest> getrhlist(){
@@ -254,6 +265,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     .myIntcom(tbHost.getMyIntcom())
                     .myIntcomadd1(tbHost.getMyIntcomadd1())
                     .myIntcomadd2(tbHost.getMyIntcomadd2())
+                    .latitude(tbHost.getLatitude())
+                    .longitude(tbHost.getLongitude())
                     .myService(tbHost.getMyService())
                     .myIntro(tbHost.getMyIntro())
                     .myComeway(tbHost.getMyComeway())
@@ -278,39 +291,37 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         }
         return tbHostApiRequestList;
     }
-    //숙소신청한 리스트 디테일(admin)  //String pkAdmit,
+    //숙소신청한 리스트 디테일(admin)
     public Header<TbHostApiResponse> getrhostdetail( Integer id){
         return tbHostRepository.findByPkAdmitAndId("n", id)
                 .map(tbHost -> response(tbHost))
                 .map(Header::OK)
                 .orElseGet(
-                        ()-> Header.Error("데이터 없음!")
+                        ()-> Header.Error("ERROR")
                 );
     }
 
-    //숙소신청한 호스트 삭제
+    // 숙소신청한 호스트 삭제
     public Header rhostdel(Integer id){
         Optional<TbHost> optional = baseRepository.findById(id);
         return optional.map(tbHost -> {
             baseRepository.delete(tbHost);
             return Header.OK();
-        }).orElseGet(()->Header.Error("없어임마"));
+        }).orElseGet(()->Header.Error("ERROR"));
     }
 
     // 호스트의 객실정보
-    public Header<TbHostTbRoomApiResponse> hostRoom(Integer id){    // 주체가 되는 엔티티의 response를 가지고있는 정보를 싹 뽑아올 수 있는거에 박아주고
+    public Header<TbHostTbRoomApiResponse> hostRoom(Integer id){
         TbHost tbHost = baseRepository.getById(id);
-        TbHostApiResponse tbHostApiResponse = response(tbHost);   // 호스트의
+        TbHostApiResponse tbHostApiResponse = response(tbHost);
 
-        List<TbRoom> tbRoomList = tbHost.getTbRoomList(); // 호스트가 가지고 있는 room 리스트 를 올려주고
-        List<TbRoomApiResponse> tbRoomApiResponseList = tbRoomList.stream() // 스트립에 올려주고
-                .map(tbRoom -> {    //원래는 여기에 pay올려주긴해야하는데 일단 패스
+        List<TbRoom> tbRoomList = tbHost.getTbRoomList();
+        List<TbRoomApiResponse> tbRoomApiResponseList = tbRoomList.stream()
+                .map(tbRoom -> {
                     TbRoomApiResponse tbRoomApiResponse = tbRoomApiService.response(tbRoom);
-                    return tbRoomApiResponse;   // 이게 의문이긴한데 일단 뽑히니까 보류
+                    return tbRoomApiResponse;
                 })
-                .collect(Collectors.toList()); //리스트화 시키기
-        // 주체 엔티티 밑의있는 response를  리스트로 바꿔서 리스트형식으로 선언 private List<TbRoomApiResponse> tbRoomApiResponseList;
-        //tbHostApiResponse setTbRoomApiResponseList 이걸 set해줬고
+                .collect(Collectors.toList());
         tbHostApiResponse.setTbRoomApiResponseList(tbRoomApiResponseList);
         TbHostTbRoomApiResponse tbHostTbRoomApiResponse = TbHostTbRoomApiResponse.builder()
                 .tbHostApiResponse(tbHostApiResponse)
@@ -318,19 +329,14 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         return Header.OK(tbHostTbRoomApiResponse);
     }
 
-
-
     // 호스트의 객실을 예약한 예약정보
-    public Header<TbHostTbRoomApiResponse> hostRoompay(Integer id){    // 주체가 되는 엔티티의 response를 가지고있는 정보를 싹 뽑아올 수 있는거에 박아주고
+    public Header<TbHostTbRoomApiResponse> hostRoompay(Integer id){
         TbHost tbHost = baseRepository.getById(id);
-        TbHostApiResponse tbHostApiResponse = response(tbHost);   // 호스트의
+        TbHostApiResponse tbHostApiResponse = response(tbHost);
 
-
-        List<TbRoom> tbRoomList = tbHost.getTbRoomList(); // 호스트가 가지고 있는 room 리스트 를 올려주고
-        List<TbRoomApiResponse> tbRoomApiResponseList = tbRoomList.stream() // 스트립에 올려주고
-
-
-                .map(tbRoom -> {    //원래는 여기에 pay올려주긴해야하는데 일단 패스
+        List<TbRoom> tbRoomList = tbHost.getTbRoomList();
+        List<TbRoomApiResponse> tbRoomApiResponseList = tbRoomList.stream()
+                .map(tbRoom -> {
                     TbRoomApiResponse tbRoomApiResponse = tbRoomApiService.response(tbRoom);
                     List<TbPayApiResponse> tbPayApiResponseList = tbRoom.getTbPayList().stream()
 
@@ -339,9 +345,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     tbRoomApiResponse.setTbPayApiResponseList(tbPayApiResponseList);
                     return tbRoomApiResponse;
                 })
-                .collect(Collectors.toList()); //리스트화 시키기
-        // 주체 엔티티 밑의있는 response를  리스트로 바꿔서 리스트형식으로 선언 private List<TbRoomApiResponse> tbRoomApiResponseList;
-        //tbHostApiResponse setTbRoomApiResponseList 이걸 set해줬고
+                .collect(Collectors.toList());
+
         tbHostApiResponse.setTbRoomApiResponseList(tbRoomApiResponseList);
         TbHostTbRoomApiResponse tbHostTbRoomApiResponse = TbHostTbRoomApiResponse.builder()
                 .tbHostApiResponse(tbHostApiResponse)
@@ -349,7 +354,7 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         return Header.OK(tbHostTbRoomApiResponse);
     }
 
-    // 호스트의 객실의 리뷰;;
+    // 호스트의 객실의 리뷰
     public Header<TbHostTbRoomApiResponse> hostRoomreview(Integer id){
         TbHost tbHost = baseRepository.getById(id);
         TbHostApiResponse tbHostApiResponse = response(tbHost);
@@ -391,9 +396,9 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
     //호스트 이미지
     public Header<TbHostImgUserApiResponse> HostImg (Integer id){
         TbHost tbHost = baseRepository.getById(id);
-        TbHostApiResponse tbHostApiResponse = response(tbHost);   // 호스트의
+        TbHostApiResponse tbHostApiResponse = response(tbHost);
 
-        List<TbHostImg> tbHostImgList = tbHost.getTbHostImgList(); // 호스트가 가지고 있는 room 리스트 를 올려주고
+        List<TbHostImg> tbHostImgList = tbHost.getTbHostImgList();
         List<TbHostImgResponse> tbHostImgResponseList = tbHostImgList.stream()
                 .map(tbHostImg -> {
                     TbHostImgResponse tbHostImgResponse = tbHostImgService.response(tbHostImg);
@@ -407,8 +412,6 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         return Header.OK(tbHostImgUserApiResponse);
     }
 
-
-    //// 여기부터는 음 리스트로 쏴줄 때 필요한것만 쏴줄지 말지 고민중인데, 일단은 얘기 된것들이 아직 없어서 그냥 다쏘는것으로
     //모텔리스트 (user)
     public List<TbHostApiRequest> motelList() {
         List<TbHost> tbHosts = tbHostRepository.findAllByPkAdmitAndMyType("y","모텔");
@@ -434,6 +437,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     .myIntcom(tbHost.getMyIntcom())
                     .myIntcomadd1(tbHost.getMyIntcomadd1())
                     .myIntcomadd2(tbHost.getMyIntcomadd2())
+                    .latitude(tbHost.getLatitude())
+                    .longitude(tbHost.getLongitude())
                     .myService(tbHost.getMyService())
                     .myIntro(tbHost.getMyIntro())
                     .myComeway(tbHost.getMyComeway())
@@ -459,7 +464,7 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         return tbHostApiRequestList;
     }
 
-    //호텔리스트 (user)
+    // 호텔리스트 (user)
     public List<TbHostApiRequest> hotelList() {
         List<TbHost> tbHosts = tbHostRepository.findAllByPkAdmitAndMyType("y","호텔");
         List<TbHostApiRequest> tbHostApiRequestList = new ArrayList<>();
@@ -484,6 +489,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     .myIntcom(tbHost.getMyIntcom())
                     .myIntcomadd1(tbHost.getMyIntcomadd1())
                     .myIntcomadd2(tbHost.getMyIntcomadd2())
+                    .latitude(tbHost.getLatitude())
+                    .longitude(tbHost.getLongitude())
                     .myService(tbHost.getMyService())
                     .myIntro(tbHost.getMyIntro())
                     .myComeway(tbHost.getMyComeway())
@@ -508,7 +515,7 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         }
         return tbHostApiRequestList;
     }
-    //펜션리스트 (user)
+    // 펜션리스트 (user)
     public List<TbHostApiRequest> panList() {
         List<TbHost> tbHosts = tbHostRepository.findAllByPkAdmitAndMyType("y","펜션");
         List<TbHostApiRequest> tbHostApiRequestList = new ArrayList<>();
@@ -533,6 +540,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     .myIntcom(tbHost.getMyIntcom())
                     .myIntcomadd1(tbHost.getMyIntcomadd1())
                     .myIntcomadd2(tbHost.getMyIntcomadd2())
+                    .latitude(tbHost.getLatitude())
+                    .longitude(tbHost.getLongitude())
                     .myService(tbHost.getMyService())
                     .myIntro(tbHost.getMyIntro())
                     .myComeway(tbHost.getMyComeway())
@@ -557,7 +566,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         }
         return tbHostApiRequestList;
     }
-    //리조트리스트 (user)
+
+    // 리조트리스트 (user)
     public List<TbHostApiRequest> reList() {
         List<TbHost> tbHosts = tbHostRepository.findAllByPkAdmitAndMyType("y","리조트");
         List<TbHostApiRequest> tbHostApiRequestList = new ArrayList<>();
@@ -582,6 +592,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     .myIntcom(tbHost.getMyIntcom())
                     .myIntcomadd1(tbHost.getMyIntcomadd1())
                     .myIntcomadd2(tbHost.getMyIntcomadd2())
+                    .latitude(tbHost.getLatitude())
+                    .longitude(tbHost.getLongitude())
                     .myService(tbHost.getMyService())
                     .myIntro(tbHost.getMyIntro())
                     .myComeway(tbHost.getMyComeway())
@@ -606,7 +618,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         }
         return tbHostApiRequestList;
     }
-    //게스트하우스 리스트 (user)
+
+    // 게스트하우스 리스트 (user)
     public List<TbHostApiRequest> guesthouselList() {
         List<TbHost> tbHosts = tbHostRepository.findAllByPkAdmitAndMyType("y", "게스트하우스");
         List<TbHostApiRequest> tbHostApiRequestList = new ArrayList<>();
@@ -631,6 +644,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     .myIntcom(tbHost.getMyIntcom())
                     .myIntcomadd1(tbHost.getMyIntcomadd1())
                     .myIntcomadd2(tbHost.getMyIntcomadd2())
+                    .latitude(tbHost.getLatitude())
+                    .longitude(tbHost.getLongitude())
                     .myService(tbHost.getMyService())
                     .myIntro(tbHost.getMyIntro())
                     .myComeway(tbHost.getMyComeway())
@@ -680,6 +695,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                         .myIntcom(tbHost.getMyIntcom())
                         .myIntcomadd1(tbHost.getMyIntcomadd1())
                         .myIntcomadd2(tbHost.getMyIntcomadd2())
+                        .latitude(tbHost.getLatitude())
+                        .longitude(tbHost.getLongitude())
                         .myService(tbHost.getMyService())
                         .myIntro(tbHost.getMyIntro())
                         .myComeway(tbHost.getMyComeway())
@@ -730,6 +747,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                     .myIntcom(tbHost.getMyIntcom())
                     .myIntcomadd1(tbHost.getMyIntcomadd1())
                     .myIntcomadd2(tbHost.getMyIntcomadd2())
+                    .latitude(tbHost.getLatitude())
+                    .longitude(tbHost.getLongitude())
                     .myService(tbHost.getMyService())
                     .myIntro(tbHost.getMyIntro())
                     .myComeway(tbHost.getMyComeway())
@@ -754,7 +773,7 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
         }
         return tbHostApiRequestList;
     }
-    //response
+
     public TbHostApiResponse response(TbHost tbHost) {
         TbHostApiResponse tbHostApiResponse = TbHostApiResponse.builder()
                 .id(tbHost.getId())
@@ -775,6 +794,8 @@ public class TbHostApiService extends BaseService<TbHostApiRequest, TbHostApiRes
                 .myIntcom(tbHost.getMyIntcom())
                 .myIntcomadd1(tbHost.getMyIntcomadd1())
                 .myIntcomadd2(tbHost.getMyIntcomadd2())
+                .latitude(tbHost.getLatitude())
+                .longitude(tbHost.getLongitude())
                 .myService(tbHost.getMyService())
                 .myIntro(tbHost.getMyIntro())
                 .myComeway(tbHost.getMyComeway())

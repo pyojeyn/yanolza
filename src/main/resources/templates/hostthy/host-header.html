@@ -1,6 +1,4 @@
-<html lang="ko"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 
 
 
@@ -61,7 +59,8 @@
                     <li>
                         <a href="javascript:void(0)">예약관리<span class="">&nbsp;</span></a>
                         <ul class="sub">
-                            <li><a href="/hosthousemain/scheduleManagement" class="scheduleManagement_hostid">실시간 예약 현황</a></li>
+                            <li><a href="/hosthousemain/scheduleManagement" class="scheduleManagement_hostid">실시간 예약
+                                    현황</a></li>
                             <li><a href="/hosthousemain/book">예약 관리</a></li>
                         </ul>
                     </li>
@@ -77,18 +76,17 @@
             <div class="divider_vertical2"></div>
         </div>
     </div>
-<!--    안연주 axios-->
+    <!--    안연주 axios-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-
-        const sessionId  = sessionStorage.getItem('userid');
+        const sessionId = sessionStorage.getItem('userid');
         console.log("userid :" + sessionId);
 
         //1은 임시 세션값 생기면 바꿈
         axios.get('/api/tbmem/tbhost/' + sessionId, {
 
         }).then(function (response) {
-        console.log(response)
+            console.log(response)
 
             const memid = response.data.data.tbMemApiResponse.id
             console.log(memid);
@@ -96,14 +94,14 @@
             // const memEmail = response.data.data.memEmail;
             // $('.memEmail').text(memEmail);
 
-            $(".mypageregist_hostid").attr("href", "/hosthousemain/mypageregist/"+ memid);
-            $(".introwrite_hostid").attr("href", "/hosthousemain/introwrite/"+ memid);
-            $(".guestdetail_hostid").attr("href", "/hosthousemain/guestdetail/"+ memid);
+            $(".mypageregist_hostid").attr("href", "/hosthousemain/mypageregist/" + memid);
+            $(".introwrite_hostid").attr("href", "/hosthousemain/introwrite/" + memid);
+            $(".guestdetail_hostid").attr("href", "/hosthousemain/guestdetail/" + memid);
 
             const hostid = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].id;
-            console.log("hostid"+hostid);
-            $(".guestroom_hostid").attr("href", "/hosthousemain/guestroom/"+ memid +"/"+ hostid);
-            $(".guestAllReview_hostid").attr("href", "/hosthousemain/guestAllReview/"+ memid +"/"+ hostid);
+            console.log("hostid" + hostid);
+            $(".guestroom_hostid").attr("href", "/hosthousemain/guestroom/" + memid + "/" + hostid);
+            $(".guestAllReview_hostid").attr("href", "/hosthousemain/guestAllReview/" + memid + "/" + hostid);
             //실시간 예약 현황
             $(".scheduleManagement_hostid").attr("href", "/hosthousemain/scheduleManagement/" + hostid);
             console.log("안찎힘")

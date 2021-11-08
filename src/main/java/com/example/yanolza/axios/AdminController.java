@@ -11,13 +11,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @AllArgsConstructor
 @Controller
-@RequestMapping("/adminindex")  //  /adminindex 기준으로 설정
+@RequestMapping("/adminindex")
 public class AdminController {
 
     //메인
     @GetMapping("/")
     public String index() { return  "admin/index"; }
 
+    @GetMapping("/login")
+    public String login(){
+        return "admin/login";
+    }
 
     @GetMapping("/index")
     public String index2() {
@@ -27,6 +31,11 @@ public class AdminController {
     @GetMapping("/all-staff")
     public String allstaff() {
         return "admin/all-staff";
+    }
+    //1 - 사이드바 회원관리 탈퇴회원관리
+    @GetMapping("/all-staff_cancle")
+    public String allstaffcancle() {
+        return "admin/all-staff_cancle";
     }
     //2 - 1 사이드바 호스트관리 전체 호스트관리
     @GetMapping("/all-host")
@@ -48,6 +57,24 @@ public class AdminController {
     public String reservationpayment() {
         return "admin/reservationpayment";
     }
+    //3 - 1 사이드바 예약/취소내역 취소내역
+    @GetMapping("/reservationcancle")
+    public String reservationcancle() {
+        return "admin/reservationcancle";
+    }
+    //3 - 2v 예약/결제 취소내역 닉네임 클릭
+    @GetMapping("/cancleinformation")
+    public String cancleinformation() {
+        return "admin/cancleinformation";
+    }
+
+    //3 - 2 - 1v 예약/결제 취소내역 닉네임 클릭
+    @RequestMapping(value="/cancleinformation/{id}", method= RequestMethod.GET)
+    public String cancleinformation2(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("id", id);
+        return "/admin/cancleinformation";
+    }
+
     //4 - 사이드바 문의관리 1:1문의관리
     @GetMapping("/qustion")
     public String qustion() {
@@ -58,10 +85,6 @@ public class AdminController {
     public String payments() {
         return "admin/payments";
     }
-
-
-
-
 
     //1 - v 전체 회원관리 닉네임 클릭
     @GetMapping("/customerinformation")
@@ -76,10 +99,6 @@ public class AdminController {
         return "/admin/customerinformation";
     }
 
-
-
-
-
     //2 - 1v 전체 호스트관리 호스트 정보(이름) 클릭 roomInformation
     @GetMapping("/roomInformation")
     public String roomInformation() {
@@ -93,6 +112,42 @@ public class AdminController {
         return "/admin/roomInformation";
     }
 
+    // 2-1v 리뷰 사진
+    @GetMapping("/roomphoto")
+    public String roomphoto() {
+        return "admin/roomphoto";
+    }
+
+    //2 - 1v  리뷰 사진 닉네임 클릭
+    @RequestMapping(value="/roomphoto/{id}", method= RequestMethod.GET)
+    public String roomphoto2(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("id", id);
+        return "/admin/roomphoto";
+    }
+    @GetMapping("/roomdetails")
+    public String roomdetails() {
+        return "admin/roomdetails";
+    }
+
+    //2 - 1v 전체 호스트관리 호스트 정보(이름) 클릭 글보기 페이지에서 숙소정보보기
+    @RequestMapping(value="/roomdetails/{id}/{tbMemId}", method= RequestMethod.GET)
+    public String roomdetails(@PathVariable("id") Integer id,@PathVariable("tbMemId") Integer tbMemId, Model model) {
+        model.addAttribute("id", id);
+        model.addAttribute("tbMemId",tbMemId);
+        return "/admin/roomdetails";
+    }
+    @GetMapping("/roomdetails_n")
+    public String roomdetails_n() {
+        return "admin/roomdetails_n";
+    }
+
+    //2 - 1v 전체 호스트관리 호스트 정보(이름) 클릭 글보기 페이지에서 숙소정보보기
+    @RequestMapping(value="/roomdetails_n/{id}/{tbMemId}", method= RequestMethod.GET)
+    public String roomdetails_n(@PathVariable("id") Integer id,@PathVariable("tbMemId") Integer tbMemId, Model model) {
+        model.addAttribute("id", id);
+        model.addAttribute("tbMemId",tbMemId);
+        return "/admin/roomdetails_n";
+    }
 
 
     //2 - 2v 숙소관리 호스트 정보(이름) 클릭/roomregistration/{id?}
@@ -109,10 +164,6 @@ public class AdminController {
         return "/admin/roomregistration";
     }
 
-
-
-
-
     //2 - 2vv 숙소관리 호스트 정보(이름) 숙소사진, 승인하기
     @GetMapping("/gallery")
     public String gallery() {
@@ -126,18 +177,7 @@ public class AdminController {
         return "/admin/gallery";
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    //회원정보 edit        현재 thymeleaf에러
+    //회원정보 edit
     @GetMapping("/edit-staff")
     public String editstaff() {
         return "admin/edit-staff";
@@ -166,10 +206,12 @@ public class AdminController {
     }
 
 
-
-
-
-
+    //2 - 1v  리뷰 사진 닉네임 클릭
+    @RequestMapping(value="/reviewphoto/{id}", method= RequestMethod.GET)
+    public String reviewphoto2(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("id", id);
+        return "/admin/reviewphoto";
+    }
 
     //3 - v 예약/결제내역 닉네임 클릭
     @GetMapping("/paymentinformation")
@@ -184,8 +226,6 @@ public class AdminController {
         return "/admin/paymentinformation";
     }
 
-
-
     //4 - v  1:1문의관리 닉네임 클릭
     @GetMapping("/qustionprofile")
     public String qustionprofile() {
@@ -199,14 +239,4 @@ public class AdminController {
         model.addAttribute("id", id);
         return "/admin/qustionprofile";
     }
-
-
-//-----------------------request
-//@GetMapping("/all-staff")
-//public String allstaff() {
-//    return "admin/all-staff";
-//}
-
-
-
 }

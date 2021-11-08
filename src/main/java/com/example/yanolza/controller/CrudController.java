@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
-@Component  // 이건 component로 쓸거임!
+@Component
 public abstract class CrudController<Req, Res, Entity>implements CrudInterface<Req, Res> {
 
-    @Autowired(required = false)// 상속받은쪽에서만 보이게
-    protected BaseService<Req, Res, Entity> baseService;    // 상속받은쪽에서만 보이게 protected사용
+    @Autowired(required = false)
+    protected BaseService<Req, Res, Entity> baseService;
 
     @Override
     @PostMapping("")

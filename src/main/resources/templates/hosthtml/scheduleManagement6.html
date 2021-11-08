@@ -52,19 +52,11 @@
                     <div class="" style="margin-top: 14px; height: 37px;">
 
                     </div>
-                    <!-- </span> -->
-                    <!--달력사이드바-->
-<!--                    <script type="text/javascript" src="./js/common17d0.css"></script>-->
-<!--                    <script type="text/javascript" src="./js/jquery-ui17d0.css"></script>-->
-<!--                    <script type="text/javascript" src="./js/datepick.js"></script>-->
-<!--                    <script type="text/javascript" src="./js/daterangepicker.js"></script>-->
                 </div>
 
                 <!--보드시작-->
                 <div nid="root" class="root">
                     <div nid="board1" class="board1">
-<!--                        <link href="https://c./js.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">-->
-                        <!--div붙일곳-->
                         <div class="article">
                             <div class="wrapper">
 
@@ -72,38 +64,24 @@
 
 
                                 <table>
-                                    <thead>
-                                    <tr>
-                                        <th class="num">예약번호</th>
-                                        <th class="paymentdate">결제일시</th>
-                                        <th class="bookclass">객실명</th>
-                                        <th class="bookname">예약자</th>
-                                        <th class="bookhp">연락처</th>
-                                        <th class="checkin_res">체크인</th>
-                                        <th class="checkout_res">체크아웃</th>
-                                        <th class="baksu">박수</th>
-                                        <th class="price1">판매가</th>
-                                        <th class="price2">입금가</th>
-                                        <th class="check_res">예약확인</th>
-                                    </tr>
+                                    <thead class="thead">
+                                        <tr>
+                                            <th class="num">예약번호</th>
+                                            <th class="paymentdate">예약일</th>
+                                            <th class="bookclass">객실명</th>
+                                            <th class="bookname">예약자</th>
+                                            <th class="bookhp">연락처</th>
+                                            <th class="checkin_res">체크인</th>
+                                            <th class="checkout_res">체크아웃</th>
+                                            <th class="price1">판매가</th>
+                                            <th class="check_res">예약확인</th>
+                                            <th class="check_res">방문방법</th>
+                                        </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td class="num">36783315</td>
-                                        <td class="paymentdate">08-12 10:28</td>
-                                        <td class="title">개인실1</td>
-                                        <td class="bookname">조엔젤</td>
-                                        <td class="bookhp">010-1111-1111</td>
-                                        <td class="checkin_res">08-12(토) 10:00</td>
-                                        <td class="checkout_res">08-13(일) 11:00</td>
-                                        <td class="baksu">1박</td>
-                                        <td class="price1">60,000</td>
-                                        <td class="price2">57,600</td>
-                                        <td class="check_res">완료</td>
-                                    </tr>
-                                    <tr>
+                                    <tbody class="tbody">
 
-                                    </tr></tbody>
+                                    </tbody>
+
                                 </table>
 
                             </div>
@@ -114,7 +92,7 @@
         </div>
 
     </section>
-      <!-- 가운데 흰 배경 끝 -->
+    <!-- 가운데 흰 배경 끝 -->
 
 
     <!-- 푸터 -->
@@ -124,6 +102,150 @@
 </body>
 
 <script src="../host/js/common.host.js?nocache=1629272224.4328"></script>
+
+
+<script>
+    $(function () {
+        function get_query() {
+            var url = document.location.href;
+            var qs = url.substring(url.indexOf('?') + 1).split('&');
+            for (var i = 0, result = {}; i < qs.length; i++) {
+                qs[i] = qs[i].split('=');
+                result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+            }
+            return result;
+        }
+
+
+        axios.get('/api/tbmem/tbhost/' + sessionId, {
+
+        }).then(function (response) {
+
+            var result = get_query();
+            console.log(result);
+            console.log(result.seldate);
+            let $seldate = result.seldate;
+            console.log($seldate.length);
+
+            if ($seldate.length == 7) {
+
+                let $hostid = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].id;
+                console.log("$hostid" + $hostid);
+
+                let $seldate2 = $seldate.slice(0, 6) + '0' + $seldate.slice(6, 7);
+                console.log($seldate2);
+                console.log('dwfwaf');
+                console.log('/api/pay/full/' + $hostid + '/' + $seldate2);
+
+                axios.get(`/api/pay/full/` + $hostid + `/` + $seldate2, {
+
+                }).then(function (response) {
+                    console.log(response);
+
+
+                    for (let i in response.data) {
+                        const $payid = response.data[i].id; // pay아이디 예약번호
+                        let $payDate = response.data[i].payDate; // 결제일시
+                        const $payRoomName = response.data[i].payRoomName; // 객실명
+                        const $payName = response.data[i].payName; // 투숙객이름(예약자)
+                        const $payHp = response.data[i].payHp; //연락처
+                        let $payCheckIn = response.data[i].payCheckIn; // 투숙일자 체크인
+                        let $payCheckOut = response.data[i].payCheckOut; //투숙일자 체크아웃
+                        // let $payCheckOut2 = response.data[i].payCheckOut; //투숙일수 (박 수)
+                        const $payMoney = response.data[i].payMoney; //판매가(입금가)
+                        const $payHowpay = response.data[i].payHowpay; //결제방식
+                        const $payIscar = response.data[i].payIscar; //도보/차도
+
+                        $payCheckIn = $payCheckIn.substr(0, 10);
+                        $payCheckIn = $payCheckIn + (":00 시");
+
+                        $payCheckOut = $payCheckOut.substr(0, 10);
+                        $payCheckOut = $payCheckOut + (":00 시");
+
+                        $payDate = $payDate.substr(0, 10);
+
+                        let row = $(
+                            `<tr style="height: 35px; background-color: rgb(245, 245, 245);">`
+                            ).append(
+                            `<td>` + $payid + `</td>` +
+                            `<td>` + $payDate + `</td>` +
+                            `<td>` + $payRoomName + `</td>` +
+                            `<td>` + $payName + `</td>` +
+                            `<td>` + $payHp + `</td>` +
+                            `<td>` + $payCheckIn + `</td>` +
+                            `<td>` + $payCheckOut + `</td>` +
+                            // `<td>` + $payCheckOut2 + `</td>` +
+                            `<td>` + $payMoney + `</td>` +
+                            `<td>` + $payHowpay + `</td>` +
+                            `<td>` + $payIscar + `</td>` +
+                            `</tr>`
+                        )
+                        $('.tbody').append(row);
+                    }
+
+                }).catch(function (err) {
+                    console.log('호출 중 에러');
+                    console.log(err);
+                });
+            }
+
+            if ($seldate.length == 8) {
+                let $hostid = response.data.data.tbMemApiResponse.tbHostApiResponseList[0].id;
+                console.log($hostid);
+                console.log($seldate);
+
+                axios.get(`/api/pay/full/` + $hostid + `/` + $seldate, {}).then(function (response) {
+                    console.log(response);
+
+                    for (let i in response.data) {
+                        const $payid = response.data[i].id; // pay아이디 예약번호
+                        let $payDate = response.data[i].payDate; // 결제일시
+                        const $payRoomName = response.data[i].payRoomName; // 객실명
+                        const $payName = response.data[i].payName; // 투숙객이름(예약자)
+                        const $payHp = response.data[i].payHp; //연락처
+                        let $payCheckIn = response.data[i].payCheckIn; // 투숙일자 체크인
+                        let $payCheckOut = response.data[i].payCheckOut; //투숙일자 체크아웃
+                        // let $payCheckOut2 = response.data[i].payCheckOut; //투숙일수 (박 수)
+                        const $payMoney = response.data[i].payMoney; //판매가(입금가)
+                        const $payHowpay = response.data[i].payHowpay; //결제방식
+                        const $payIscar = response.data[i].payIscar; //도보/차도
+
+                        $payCheckIn = $payCheckIn.substr(0, 10);
+                        $payCheckIn = $payCheckIn + (":00 시");
+
+                        $payCheckOut = $payCheckOut.substr(0, 10);
+                        $payCheckOut = $payCheckOut + (":00 시");
+
+                        $payDate = $payDate.substr(0, 10);
+
+                        let row = $(
+                            `<tr style="height: 35px; background-color: rgb(245, 245, 245);">`
+                            ).append(
+                            `<td>` + $payid + `</td>` +
+                            `<td>` + $payDate + `</td>` +
+                            `<td>` + $payRoomName + `</td>` +
+                            `<td>` + $payName + `</td>` +
+                            `<td>` + $payHp + `</td>` +
+                            `<td>` + $payCheckIn + `</td>` +
+                            `<td>` + $payCheckOut + `</td>` +
+                            `<td>` + $payMoney + `</td>` +
+                            `<td>` + $payHowpay + `</td>` +
+                            `<td>` + $payIscar + `</td>` +
+                            `</tr>`
+                        )
+                        $('.tbody').append(row);
+                    }
+
+                }).catch(function (err) {
+                    console.log('호출 중 에러');
+                    console.log(err);
+                });
+            }
+        }).catch(function (err) {
+            console.log(err);
+        })
+    });
+</script>
 </body>
 
 </html>

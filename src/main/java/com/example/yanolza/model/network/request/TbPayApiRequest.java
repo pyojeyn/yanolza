@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -24,8 +25,8 @@ public class TbPayApiRequest {
     private String payCheckIn;
     private String payCheckOut;
     private String payCancel;
-    private LocalDateTime payDate;
-    private LocalDateTime payCdate;
+    private LocalDate payDate;
+    private LocalDate payCdate;
 
 
     private Integer tbHostId;

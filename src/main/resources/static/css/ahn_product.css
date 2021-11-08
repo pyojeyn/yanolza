@@ -1,6 +1,44 @@
 @charset "UTF-8";
+/*안연주 날짜버튼 눌렀을시 줄어듬 용*/
+.applyBtn:active{
 
-/* 추천 */
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+.applyBtn:visited{
+
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+.cancelBtn:active{
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 3px;
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+}
+.cancelBtn:visited{
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 3px;
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+}
+	/* 추천 */
 .recommend_wrap{padding-top:48px;}
 .recommend_wrap.bg_area_02,
 .recommend_wrap.bg_area_03{padding-top:0 !important;background:#e8e8e8;}
@@ -686,7 +724,7 @@ article.on{display:block}
 .review .score_top p b{font-size:16px}
 .review .score_top p span{display:inline-block;width:32px;color:rgba(0,0,0,0.08)}
 .review .score_wrap{display:inline-block;overflow:hidden;text-align:center}
-.score_star{display:inline-block;width:120px;height:24px;background:url('/ahn_cssjs/img/bg_score.png') 0 0 no-repeat;background-size:120px auto}
+.score_star{display:inline-block;width:120px;height:24px;background:url('/img/images/web_v3/bg_score.png') 0 0 no-repeat;background-size:120px auto}
 .score_star.star_50 {background-position:0 0}
 .score_star.star_45 {background-position:0 -24.5px}
 .score_star.star_40 {background-position:0 -49px}
@@ -699,7 +737,7 @@ article.on{display:block}
 .score_star.star_05 {background-position:0 -220.5px}
 .score_star.star_00 {background-position:0 -245px}
 .review .score_wrap .num{display:inline-block;position:relative;top:-5px;padding-left:4px;font-size:24px}
-.score_wrap_sm .score_star{display:inline-block;width:80px;height:16px;background:url('/ahn_cssjs/img/bg_score.png') 0 0 no-repeat;background-size:80px auto}
+.score_wrap_sm .score_star{display:inline-block;width:80px;height:16px;background:url('/img/images/web_v3/bg_score.png') 0 0 no-repeat;background-size:80px auto}
 .score_wrap_sm .score_star.star_50 {background-position:0 0}
 .score_wrap_sm .score_star.star_45 {background-position:0 -16px}
 .score_wrap_sm .score_star.star_40 {background-position:0 -32px}
@@ -1182,7 +1220,7 @@ article.on{display:block}
 	.review .score_top p b{font-size:20px;font-weight:normal}
 	.review .score_top p span{display:inline-block;width:32px;color:rgba(0,0,0,0.08)}
 	.review .score_wrap{display:inline-block;overflow:hidden;text-align:center}
-	.score_star{display:inline-block;width:180px;height:36px;background:url('/ahn_cssjs/img/bg_score.png') 0 0 no-repeat;background-size:180px auto}
+	.score_star{display:inline-block;width:180px;height:36px;background:url('/img/images/web_v3/bg_score.png') 0 0 no-repeat;background-size:180px auto}
 	.score_star.star_50 {background-position:0 0}
 	.score_star.star_45 {background-position:0 -37px}
 	.score_star.star_40 {background-position:0 -74px}
@@ -1195,7 +1233,7 @@ article.on{display:block}
 	.score_star.star_05 {background-position:0 -329px}
 	.score_star.star_00 {background-position:0 -367px}
 	.review .score_wrap .num{display:inline-block;position:relative;top:-1px;padding-left:12px;font-size:32px;line-height:1;vertical-align:top}
-	.score_wrap_sm .score_star{display:inline-block;width:100px;height:20px;background:url('/ahn_cssjs/img/bg_score.png') 0 0		no-repeat;background-size:100px auto}
+	.score_wrap_sm .score_star{display:inline-block;width:100px;height:20px;background:url('/img/images/web_v3/bg_score.png') 0 0		no-repeat;background-size:100px auto}
 	.score_wrap_sm .score_star.star_50 {background-position:0 0}
 	.score_wrap_sm .score_star.star_45 {background-position:0 -20px}
 	.score_wrap_sm .score_star.star_40 {background-position:0 -40px}

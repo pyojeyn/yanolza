@@ -16,60 +16,72 @@
     <!-- CSS -->
     <title>비밀번호 재설정 | 여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
-    <!-- <link rel="canonical" href="https://www.goodchoice.kr/user/selectConfirm"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
 
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
 
     <!-- Wrap -->
 
-        <!-- 로그인 pop_layer_w('pop_login') -->
-        <div class="layer_fix layer_unfix pop_login pop_mem_reserve new-style-form">
-            <section>
-                <form id="selectWayConfirm" action="https://www.goodchoice.kr/user/selectConfirmProcess"
-                    autocomplete="off" method="post">
-                    <input type="hidden" name="returnUrl" value="">
-                    <input type="hidden" name="yeogi_token" value="00267c5ff944f9217285e2ec1989fc28">
-                    <input type="hidden" name="email" value="mhee9**@outlook.com">
-                    <input type="hidden" name="phone" value="010-****-6704">
+    <!-- 로그인 pop_layer_w('pop_login') -->
+    <div class="layer_fix layer_unfix pop_login pop_mem_reserve new-style-form">
+        <section>
+            <form id="selectWayConfirm" action="https://www.goodchoice.kr/user/selectConfirmProcess" autocomplete="off"
+                method="post">
+                <input type="hidden" name="returnUrl" value="">
+                <input type="hidden" name="yeogi_token" value="00267c5ff944f9217285e2ec1989fc28">
+                <input type="hidden" name="email" value="mhee9**@outlook.com">
+                <input type="hidden" name="phone" value="010-****-6704">
 
-                    <strong class="sub_title">인증수단 선택</strong>
-                    <p class="txt_top">인증번호가 전송 될 인증 수단을 선택해주세요.</p>
+                <strong class="sub_title">인증수단 선택</strong>
+                <p class="txt_top">인증번호가 전송 될 인증 수단을 선택해주세요.</p>
 
-                    <ul class="select_way">
-                        <li>
-                            <label>
-                                <input class="select_way_phone" type="radio" name="use" value="phone">
-                                <b>등록된 휴대폰번호로 인증</b>
-                                <span>010-****-6704</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input class="select_way_email" type="radio" name="use" value="email">
-                                <b>등록된 이메일 주소로 인증</b>
-                                <span>mhee9**@outlook.com</span>
-                            </label>
-                        </li>
-                    </ul>
+                <ul class="select_way">
+                    <li>
+                        <label>
+                            <input class="select_way_phone" type="radio" name="use" value="phone">
+                            <b>등록된 휴대폰번호로 인증</b>
+                            <span>010-****-6704</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input class="select_way_email" type="radio" name="use" value="email">
+                            <b>등록된 이메일 주소로 인증</b>
+                            <span>mhee9**@outlook.com</span>
+                        </label>
+                    </li>
+                </ul>
 
-                    <button type="submit" class="btn_link gra_left_right_red"><span>확인</span></button>
+                <button type="submit" class="btn_link gra_left_right_red"><span>확인</span></button>
 
-                </form>
-            </section>
-        </div>
+            </form>
+        </section>
+    </div>
 
-        <style>
-            /* layer_unfix 존재시 footer 숨김 */
-            .mobile_appdown,
-            header,
-            footer {
-                display: none !important
-            }
-        </style>
+    <style>
+        /* layer_unfix 존재시 footer 숨김 */
+        .mobile_appdown,
+        header,
+        footer {
+            display: none !important
+        }
+    </style>
 
     </div>
 

@@ -21,7 +21,20 @@
         var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
         var _FACEBOOK_APP_ID = '607467975974643';
     </script>
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
@@ -29,7 +42,7 @@
     <!-- Wrap -->
     <div class="wrap">
 
-           <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
@@ -80,7 +93,7 @@
                 <div class="scroll_nav">
                     <div class="scroller">
                         <ul>
-                            <li><a href="/index">홈</a></li>
+                            <li><a href="/userindex">홈</a></li>
                             <li class="depth_2">
                                 <button type="button" class="has_ul"><span>숙소유형</span></button>
                                 <ul>
@@ -102,7 +115,7 @@
                         <ul>
                             <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
                                 <ul>
-                                   <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
+                                    <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
                                     <li><a href="/userindex/event">이벤트</a></li>
                                     <li><a href="/userindex/project">혁신 프로젝트</a></li>
                                     <li><a href="/userindex/faq">고객문의</a></li>
@@ -141,11 +154,11 @@
             <nav>
                 <ul>
                     <!-- <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class=""  href="/userindex/event">이벤트</a></li>
+                    <li><a class="" href="/userindex/event">이벤트</a></li>
                     <li><a class="" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
-                    <li><a class="active" href="/terms">약관 및 정책</a></li>
+                    <li><a class="active" href="/userindex/terms">약관 및 정책</a></li>
                 </ul>
             </nav>
             <div class="align_rt">
@@ -159,16 +172,16 @@
                     <!-- 상단 탭 버튼 -->
                     <div class="top_link half_4 terms_tab" data-default="location">
                         <li>
-                            <a href="/terms" class="term">이용약관</a>
+                            <a href="/userindex/terms" class="term">이용약관</a>
                         </li>
                         <li>
-                            <a href="/location" class="on location">위치기반 서비스 이용약관</a>
+                            <a href="/userindex/location" class="on location">위치기반 서비스 이용약관</a>
                         </li>
                         <li>
-                            <a href="/privacy" class="privacy">개인정보 처리방침</a>
+                            <a href="/userindex/privacy" class="privacy">개인정보 처리방침</a>
                         </li>
                         <li>
-                            <a href="/teenager" class="teenager">청소년 보호정책</a>
+                            <a href="/userindex/teenager" class="teenager">청소년 보호정책</a>
                         </li>
                     </div>
                     <!-- //상단 탭 버튼 -->
@@ -5111,7 +5124,8 @@
                     </div>
 
                     <!-- #2 위치기반 서비스 이용약관 -->
-                    <div class="terms terms_new" data-user-action="load" data-log-page="signup/terms">
+                    <div class="terms terms_new" data-user-action="load" data-log-page="signup/terms"
+                        style="display: block;">
                         <div class="txt policy_03">
                             <div class="terms_title">
                                 <h2>위치기반 서비스 이용약관</h2>
@@ -5977,8 +5991,8 @@
                                         <strong>회사는 이용자의 권리를 보호하고 이용자는 안전한 이용에 대한 의무를 성실하게 이행하여야 합니다.</strong>
                                         <strong>■ 이용자 권리</strong>
                                         <ul>
-                                            <li>- 언제든지 자신의 개인정보를 조회하고 수정할 수 있습니다. (<a
-                                                    href="/my/mypage">[회원정보변경]</a> 클릭)</li>
+                                            <li>- 언제든지 자신의 개인정보를 조회하고 수정할 수 있습니다. (<a href="/my/mypage">[회원정보변경]</a> 클릭)
+                                            </li>
                                             <li>- 언제든지 개인정보 제공에 관한 동의철회/회원가입해지를 요청할 수 있습니다. (<a
                                                     href="/my/mypage">[회원탈퇴]</a> 클릭)</li>
                                             <li>- 정확한 개인정보의 이용 및 제공을 위해 수정이 완료될 때까지 이용자의 개인정보는 이용되거나 제공되지 않습니다. </li>
@@ -6565,8 +6579,7 @@
                                         </div>
                                         <strong>■ 정보보호경영시스템인증서(ISO27001) 인증 획득</strong>
                                         <div class="verify-block">
-                                            <img src="/img/images/web_v3/iso27001_mark.png"
-                                                alt="정보보호경영시스템인증서 인증">
+                                            <img src="/img/images/web_v3/iso27001_mark.png" alt="정보보호경영시스템인증서 인증">
                                             <div class="description">
                                                 <div>회사의 정보보호 수준 및 대내외 정보보호 신뢰도 제고 및 각종 위협으로부터 정보자산을 보호하기 위한 위험관리 기반의
                                                     체계성을 평가받아 정보보호경영시스템 인증을 획득하였습니다.</div>
@@ -6693,8 +6706,8 @@
                                         <strong>회사는 이용자의 권리를 보호하고 이용자는 안전한 이용에 대한 의무를 성실하게 이행하여야 합니다.</strong>
                                         <strong>■ 이용자 권리</strong>
                                         <ul>
-                                            <li>- 언제든지 자신의 개인정보를 조회하고 수정할 수 있습니다. (<a
-                                                    href="/my/mypage">[회원정보변경]</a> 클릭)</li>
+                                            <li>- 언제든지 자신의 개인정보를 조회하고 수정할 수 있습니다. (<a href="/my/mypage">[회원정보변경]</a> 클릭)
+                                            </li>
                                             <li>- 언제든지 개인정보 제공에 관한 동의철회/회원가입해지를 요청할 수 있습니다. (<a
                                                     href="/my/mypage">[회원탈퇴]</a> 클릭)</li>
                                             <li>- 정확한 개인정보의 이용 및 제공을 위해 수정이 완료될 때까지 이용자의 개인정보는 이용되거나 제공되지 않습니다. </li>
@@ -7273,8 +7286,7 @@
                                         </div>
                                         <strong>■ 정보보호경영시스템인증서(ISO27001) 인증 획득</strong>
                                         <div class="verify-block">
-                                            <img src="/img/images/web_v3/iso27001_mark.png"
-                                                alt="정보보호경영시스템인증서 인증">
+                                            <img src="/img/images/web_v3/iso27001_mark.png" alt="정보보호경영시스템인증서 인증">
                                             <div class="description">
                                                 <div>회사의 정보보호 수준 및 대내외 정보보호 신뢰도 제고 및 각종 위협으로부터 정보자산을 보호하기 위한 위험관리 기반의
                                                     체계성을 평가받아 정보보호경영시스템 인증을 획득하였습니다.</div>

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+<!--함께해요 여기어때 리서치-->
 
 <head>
     <meta charset="UTF-8">
@@ -12,16 +13,36 @@
     <!-- CSS -->
     <title>함께해요 여기어때 리서치 - 이벤트 | 여기어때</title>
     <link rel="stylesheet" href="/../css/common.css" />
-    <!-- <link rel="canonical" href="https://www.goodchoice.kr/more/eventView/1623"> -->
     <script type="text/javascript" src="/../js/library/jquery-1.12.4.min.js"></script>
-
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            border: 0;
+            vertical-align: top;
+            margin-bottom: -1px;
+        }
+    </style>
     <script>
         var _BASE_URL = 'https://www.goodchoice.kr/';
         var _MOBILE = 'W';
         var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
         var _FACEBOOK_APP_ID = '607467975974643';
     </script>
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
@@ -190,7 +211,7 @@
             <nav>
                 <ul>
                     <!-- <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class="active"  href="/userindex/event">이벤트</a></li>
+                    <li><a class="active" href="/userindex/event">이벤트</a></li>
                     <li><a class="" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
@@ -212,33 +233,28 @@
                         <link rel="stylesheet" href="/../static/event/common/css/base-event.css">
                         <link rel="stylesheet" href="/../frontend/admin/css/components/modules/dialog.css" />
 
-                        <script type="text/javascript"
-                            src="/../static/event/common/js/library/jquery-1.12.3.min.js"></script>
-                        <script type="text/javascript"
-                            src="/../static/event/common/js/library/jquery.lazyload.js"></script>
-                        <script type="text/javascript"
-                            src="/../static/event/common/js/library/vue.min.js"></script>
-                        <script type="text/javascript"
-                            src="/../static/event/common/js/service/button-scroll-top.js"></script>
+                        <script type="text/javascript" src="/../static/event/common/js/library/jquery-1.12.3.min.js">
+                        </script>
+                        <script type="text/javascript" src="/../static/event/common/js/library/jquery.lazyload.js">
+                        </script>
+                        <script type="text/javascript" src="/../static/event/common/js/library/vue.min.js"></script>
+                        <script type="text/javascript" src="/../static/event/common/js/service/button-scroll-top.js">
+                        </script>
 
                         <script type="text/javascript" src="/../api3/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/../api3/js/library/underscore.min.js"></script>
-                        <script type="text/javascript"
-                            src="/../api3/js/service/userActionLog.js"></script>
-                        <script type="text/javascript"
-                            src="/../api3/js/service/common.js"></script>
+                        <script type="text/javascript" src="/../api3/js/service/userActionLog.js"></script>
+                        <script type="text/javascript" src="/../api3/js/service/common.js"></script>
                         <script src="/../api3/js/service/evtBraze.js"></script>
 
-                        <script type="text/javascript"
-                            src="/../static/event/common/js/library/moment.min.js"></script>
+                        <script type="text/javascript" src="/../static/event/common/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/../api3/js/library/flipclock.js"></script>
-                        <script type="text/javascript"
-                            src="/../api3/js/library/swiper4.0/swiper.min.js"></script>
+                        <script type="text/javascript" src="/../api3/js/library/swiper4.0/swiper.min.js"></script>
                         <link rel="stylesheet" href="/../api3/css/library/swiper.css">
 
                         <!-- keen vue list (기획전) -->
-                        <script type="text/javascript"
-                        src="/../static/event/common/js/service/product-common.js"></script>
+                        <script type="text/javascript" src="/../static/event/common/js/service/product-common.js">
+                        </script>
 
                         <script>
                             var eno = 1623;
@@ -252,16 +268,16 @@
                             });
                         </script>
                         <script>
-                            var eDefaultString = '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1623%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A05%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%ED%95%A8%EA%BB%98%ED%95%B4%EC%9A%94%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C%20%EB%A6%AC%EC%84%9C%EC%B9%98%22%2C%22label%22%3A%22%ED%95%A8%EA%BB%98%20%EB%A7%8C%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%94%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C%20%EB%A6%AC%EC%84%9C%EC%B9%98%EF%BC%81%7C%EB%A6%AC%EC%84%9C%EC%B9%98%20%EC%B0%B8%EC%97%AC%EC%9E%90%EB%A1%9C%20%EC%84%A0%EC%A0%95%EB%90%98%EB%A9%B4%7C%EC%B5%9C%EB%8C%80%2010%EB%A7%8C%20%ED%8F%AC%EC%9D%B8%ED%8A%B8%20%EC%84%A0%EB%AC%BC%EC%9D%B4%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1623%5C%2F1623_kakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1623%5Cu0026title%3D%ED%95%A8%EA%BB%98%ED%95%B4%EC%9A%94%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C%20%EB%A6%AC%EC%84%9C%EC%B9%98%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1623%5C%2F1623_kakao.jpg%5Cu0026label%3D%ED%95%A8%EA%BB%98%20%EB%A7%8C%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%94%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C%20%EB%A6%AC%EC%84%9C%EC%B9%98%EF%BC%81%7C%EB%A6%AC%EC%84%9C%EC%B9%98%20%EC%B0%B8%EC%97%AC%EC%9E%90%EB%A1%9C%20%EC%84%A0%EC%A0%95%EB%90%98%EB%A9%B4%7C%EC%B5%9C%EB%8C%80%2010%EB%A7%8C%20%ED%8F%AC%EC%9D%B8%ED%8A%B8%20%EC%84%A0%EB%AC%BC%EC%9D%B4%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1623%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1623%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
+                            var eDefaultString =
+                                '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1623%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A05%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%ED%95%A8%EA%BB%98%ED%95%B4%EC%9A%94%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C%20%EB%A6%AC%EC%84%9C%EC%B9%98%22%2C%22label%22%3A%22%ED%95%A8%EA%BB%98%20%EB%A7%8C%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%94%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C%20%EB%A6%AC%EC%84%9C%EC%B9%98%EF%BC%81%7C%EB%A6%AC%EC%84%9C%EC%B9%98%20%EC%B0%B8%EC%97%AC%EC%9E%90%EB%A1%9C%20%EC%84%A0%EC%A0%95%EB%90%98%EB%A9%B4%7C%EC%B5%9C%EB%8C%80%2010%EB%A7%8C%20%ED%8F%AC%EC%9D%B8%ED%8A%B8%20%EC%84%A0%EB%AC%BC%EC%9D%B4%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1623%5C%2F1623_kakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1623%5Cu0026title%3D%ED%95%A8%EA%BB%98%ED%95%B4%EC%9A%94%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C%20%EB%A6%AC%EC%84%9C%EC%B9%98%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1623%5C%2F1623_kakao.jpg%5Cu0026label%3D%ED%95%A8%EA%BB%98%20%EB%A7%8C%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%94%20%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C%20%EB%A6%AC%EC%84%9C%EC%B9%98%EF%BC%81%7C%EB%A6%AC%EC%84%9C%EC%B9%98%20%EC%B0%B8%EC%97%AC%EC%9E%90%EB%A1%9C%20%EC%84%A0%EC%A0%95%EB%90%98%EB%A9%B4%7C%EC%B5%9C%EB%8C%80%2010%EB%A7%8C%20%ED%8F%AC%EC%9D%B8%ED%8A%B8%20%EC%84%A0%EB%AC%BC%EC%9D%B4%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1623%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1623%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
                         </script>
 
                         <link rel="stylesheet" href="/../api3/js/event_custom/event-default.min.css">
                         <link rel="stylesheet" href="/../api3/js/event_custom/event-custom.min.css">
                         <link rel="stylesheet" href="/../api3/js/event_custom/products-vue-custom.min.css">
-                        <script type="text/javascript"
-                            src="/../api3/js/event_custom/event-custom.min.js"></script>
-                        <script type="text/javascript"
-                            src="/../api3/js/event_custom/products-vue-custom.min.js"></script>
+                        <script type="text/javascript" src="/../api3/js/event_custom/event-custom.min.js"></script>
+                        <script type="text/javascript" src="/../api3/js/event_custom/products-vue-custom.min.js">
+                        </script>
 
                         <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
                         <script>
@@ -348,24 +364,24 @@
                 <!-- Page -->
                 <div class="page">
                     <p>
-                        <a href="/event17">
+                        <a href="/userindex/event13">
                             <span class="ico_arr_up">다음글</span>
-                            <b>제 8회 액티비티 공동구매 사전 신청</b>
-                            <em>기간 : 2021.08.23 ~ 2021.08.25</em>
+                            <b>강원 여행 한방에 끝내기</b>
+                            <em>기간: 2021.08.11 ~ 끝날 때 까지!</em>
                         </a>
                     </p>
                     <p>
-                        <a href="/event15">
+                        <a href="/userindex/event18">
                             <span class="ico_arr_down">이전글</span>
-                            <b>매일매일 도전룰렛</b>
-                            <em>기간 : 2021.04.14 ~ 끝날 때까지!</em>
+                            <b>특급호텔 공동구매 사전신청</b>
+                            <em>기간: 2021.08.19 ~ 2021.08.19</em>
                         </a>
                     </p>
                 </div>
 
                 <div class="align_center">
-                    <button onclick="window.location.href='https://www.goodchoice.kr/more/event#0'"
-                        class="btn_red_fill">목록보기</button>
+                    <button class="btn_red_fill"><a href="/userindex/event"
+                            style="text-decoration:none; color : white;">목록보기</a></button>
                 </div>
 
             </div>

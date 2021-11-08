@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 public class TbReviewApiRequest {
     private Integer id;
     private String tbHostname;
+    private String reNkname;
     private Integer reGrade;
     private String reTitle;
     private String reContent;
@@ -25,6 +26,7 @@ public class TbReviewApiRequest {
     private LocalDateTime reRpdate;
     private Integer tbRoomId;
     private Integer tbMemId;
+    private Integer tbHostId;
 
 
 

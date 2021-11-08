@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type">
     <meta name="csrf-name" content="yeogi_token">
@@ -18,270 +18,273 @@
     <link rel="stylesheet" href="/css/common.css" />
     <!-- <link rel="canonical" href="/user/passwdResetStart"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
 
-<!-- Wrap -->
-<div class="wrap">
+    <!-- Wrap -->
+    <div class="wrap">
 
-    <!-- Header -->
-    <header>
+        <!-- Header -->
+        <header>
 
-        <section>
-            <h1><a class="" href="https://www.goodchoice.kr/" title="여기어때">여기어때</a></h1>
-            <button type="button" class="btn_menu nav_open ">메뉴</button>
-            <button type="button" class="btn_srch srch_open ">검색</button>
-            <ul class="gnb_pc">
-                <li><a href="https://www.goodchoice.kr/product/srp">내주변</a></li>
-                <li><a href="https://www.goodchoice.kr/user/login?returnUrl=my%2FreserveList">예약내역</a></li>
-                <li class="over">
-                    <button type="button"><span>더보기</span></button>
-                    <ul class="list_03">
-                        <li><a href="https://www.goodchoice.kr/more/notice">공지사항</a></li>
-                        <li><a href="https://www.goodchoice.kr/more/event">이벤트</a></li>
-                        <li><a href="https://www.goodchoice.kr/more/project">혁신 프로젝트</a></li>
-                        <li><a href="https://www.goodchoice.kr/more/faq">자주 묻는 질문</a></li>
-                        <li><a href="https://www.goodchoice.kr/more/inquiry">1:1 문의</a></li>
-                        <li><a href="https://www.goodchoice.kr/more/terms">약관 및 정책</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://www.goodchoice.kr/user/login"><span>로그인</span></a></li>
-            </ul>
+            <section>
+                <h1><a class="" href="https://www.goodchoice.kr/" title="여기어때">여기어때</a></h1>
+                <button type="button" class="btn_menu nav_open ">메뉴</button>
+                <button type="button" class="btn_srch srch_open ">검색</button>
+                <ul class="gnb_pc">
+                    <li><a href="https://www.goodchoice.kr/product/srp">내주변</a></li>
+                    <li><a href="https://www.goodchoice.kr/user/login?returnUrl=my%2FreserveList">예약내역</a></li>
+                    <li class="over">
+                        <button type="button"><span>더보기</span></button>
+                        <ul class="list_03">
+                            <li><a href="https://www.goodchoice.kr/more/notice">공지사항</a></li>
+                            <li><a href="https://www.goodchoice.kr/more/event">이벤트</a></li>
+                            <li><a href="https://www.goodchoice.kr/more/project">혁신 프로젝트</a></li>
+                            <li><a href="https://www.goodchoice.kr/more/faq">자주 묻는 질문</a></li>
+                            <li><a href="https://www.goodchoice.kr/more/inquiry">1:1 문의</a></li>
+                            <li><a href="https://www.goodchoice.kr/more/terms">약관 및 정책</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.goodchoice.kr/user/login"><span>로그인</span></a></li>
+                </ul>
 
-            <!-- Search -->
-            <div class="srch_bar">
-                <div class="wrap_inp">
-                    <input type="text" id="keyword" placeholder="지역, 숙소명" autocomplete="off" />
-                    <button type="button" class="btn_srch">검색</button>
-                </div>
-                <button class="btn_cancel" onclick="srch_close()">취소</button>
-            </div>
-            <!-- //Search -->
-
-        </section>
-    </header>
-
-    <!-- Bg Dimm -->
-    <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-    <div class="bg_dimm_prevent">&nbsp;</div>
-
-    <!-- 추천검색어 -->
-    <div class="recommend_srch">
-        <div class="scroll_srch">
-            <div class="scroller">
-                <div class="default" style="display:block">
-                    <strong>추천 검색어</strong>
-                    <ul></ul>
-                </div>
-                <!-- 연관검색어 -->
-                <div class="chain">
-                    <ul></ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-    <div class="menu_wrap">
-
-        <div class="menu">
-            <div class="top">
-                <!-- 비회원 -->
-                <div class="guest">
-                    <div class="btn_join">
-                        로그인 후 예약하시면<br>할인 쿠폰과 추가 혜택을 받을 수 있어요.<br />
-                        <a href="https://www.goodchoice.kr/user/login"><span>로그인</span></a>
+                <!-- Search -->
+                <div class="srch_bar">
+                    <div class="wrap_inp">
+                        <input type="text" id="keyword" placeholder="지역, 숙소명" autocomplete="off" />
+                        <button type="button" class="btn_srch">검색</button>
                     </div>
-                    <div class="bot">
-                        <!-- 스크립트 링크 -->
-                        <a href="https://www.goodchoice.kr/user/login">
-                            <p>-<br /><span>포인트</span></p>
-                        </a>
-                        <a href="https://www.goodchoice.kr/user/login">
-                            <p>-<br /><span>쿠폰함</span></p>
-                        </a>
-                    </div>
+                    <button class="btn_cancel" onclick="srch_close()">취소</button>
                 </div>
-            </div>
-            <!-- Iscroll -->
-            <div class="scroll_nav">
+                <!-- //Search -->
+
+            </section>
+        </header>
+
+        <!-- Bg Dimm -->
+        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+        <div class="bg_dimm_prevent">&nbsp;</div>
+
+        <!-- 추천검색어 -->
+        <div class="recommend_srch">
+            <div class="scroll_srch">
                 <div class="scroller">
-                    <ul>
-                        <li><a href="https://www.goodchoice.kr/">홈</a></li>
-                        <li class="depth_2">
-                            <button type="button" class="has_ul"><span>숙소유형</span></button>
-                            <ul>
-                                <li><a href="https://www.goodchoice.kr/product/home/1">모텔</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/2">호텔/리조트</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/3">펜션</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/6">게스트하우스</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/5">캠핑·글램핑</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/7">한옥 </a></li>
-                            </ul>
-                        </li>
-                        <li><a href="https://www.goodchoice.kr/product/srp">내주변</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="https://www.goodchoice.kr/user/login?returnUrl=my%2FreserveList">예약 내역</a></li>
-                    </ul>
-                    <ul>
-                        <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
-                            <ul>
-                                <li><a href="https://www.goodchoice.kr/more/notice">공지사항</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/event">이벤트</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/project">혁신 프로젝트</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/faq">고객문의</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/terms">약관 및 정책</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="center">
-                        <p>여기어때 고객행복센터</p>
-                        <p><a href="tel:1670-6250">1670-6250</a></p>
-                        <p>오전 9시 - 새벽 3시</p>
+                    <div class="default" style="display:block">
+                        <strong>추천 검색어</strong>
+                        <ul></ul>
+                    </div>
+                    <!-- 연관검색어 -->
+                    <div class="chain">
+                        <ul></ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- //Mobile Menu -->
 
-    <!-- 로그인 pop_layer_w('pop_login') -->
-    <div class="layer_fix layer_unfix pop_login pop_mem_reserve new-style-form">
-        <section>
-            <form id="loginForm" action="https://www.goodchoice.kr/user/passwdResetEmailCheck" autocomplete="off"
-                  method="post">
-                <!--                    <input type="hidden" name="returnUrl" value="">-->
-                <!--                    <input type="hidden" name="yeogi_token" value="4797b6b69caf1da5d31b5325ab692137">-->
+        <!-- Mobile Menu -->
+        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+        <div class="menu_wrap">
 
-                <strong class="sub_title">비밀번호 재설정</strong>
-                <p class="txt_top">
-                    회원가입 시 등록한 이메일 주소를 입력해 주세요.
-                </p>
-
-                <div class="pop_login_errors">
-                    <ul>
-                    </ul>
+            <div class="menu">
+                <div class="top">
+                    <!-- 비회원 -->
+                    <div class="guest">
+                        <div class="btn_join">
+                            로그인 후 예약하시면<br>할인 쿠폰과 추가 혜택을 받을 수 있어요.<br />
+                            <a href="https://www.goodchoice.kr/user/login"><span>로그인</span></a>
+                        </div>
+                        <div class="bot">
+                            <!-- 스크립트 링크 -->
+                            <a href="https://www.goodchoice.kr/user/login">
+                                <p>-<br /><span>포인트</span></p>
+                            </a>
+                            <a href="https://www.goodchoice.kr/user/login">
+                                <p>-<br /><span>쿠폰함</span></p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="inp_type_1 ico_email form-errors">
-                    <!-- focus / err -->
-                    <input type="text" name="uid" id="memEmail" placeholder="이메일 주소" class="required"
-                           data-msg-required="이메일 주소를 확인해 주세요." />
-                    <label id="e_msg" class="validate_msg_label"></label>
+                <!-- Iscroll -->
+                <div class="scroll_nav">
+                    <div class="scroller">
+                        <ul>
+                            <li><a href="https://www.goodchoice.kr/">홈</a></li>
+                            <li class="depth_2">
+                                <button type="button" class="has_ul"><span>숙소유형</span></button>
+                                <ul>
+                                    <li><a href="https://www.goodchoice.kr/product/home/1">모텔</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/2">호텔/리조트</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/3">펜션</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/6">게스트하우스</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/5">캠핑·글램핑</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/7">한옥 </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://www.goodchoice.kr/product/srp">내주변</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="https://www.goodchoice.kr/user/login?returnUrl=my%2FreserveList">예약 내역</a></li>
+                        </ul>
+                        <ul>
+                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+                                <ul>
+                                    <li><a href="https://www.goodchoice.kr/more/notice">공지사항</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/event">이벤트</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/project">혁신 프로젝트</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/faq">고객문의</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/terms">약관 및 정책</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="center">
+                            <p>여기어때 고객행복센터</p>
+                            <p><a href="tel:1670-6250">1670-6250</a></p>
+                            <p>오전 9시 - 새벽 3시</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <!-- //Mobile Menu -->
+
+        <!-- 로그인 pop_layer_w('pop_login') -->
+        <div class="layer_fix layer_unfix pop_login pop_mem_reserve new-style-form">
+            <section>
+                <form id="loginForm" action="https://www.goodchoice.kr/user/passwdResetEmailCheck" autocomplete="off"
+                    method="post">
+                    <strong class="sub_title">비밀번호 재설정</strong>
+                    <p class="txt_top">
+                        회원가입 시 등록한 이메일 주소를 입력해 주세요.
+                    </p>
+
+                    <div class="pop_login_errors">
+                        <ul>
+                        </ul>
+                    </div>
+
+                    <div class="inp_type_1 ico_email form-errors">
+                        <!-- focus / err -->
+                        <input type="text" name="uid" id="memEmail" placeholder="이메일 주소" class="required"
+                            data-msg-required="이메일 주소를 확인해 주세요." />
+                        <label id="e_msg" class="validate_msg_label"></label>
+                    </div>
 
 
-                <button type="submit" data-js-validate-email class="btn_link gra_left_right_red mailconfirm"
+                    <button type="submit" data-js-validate-email class="btn_link gra_left_right_red mailconfirm"
                         disabled><span>확인</span></button>
-                <!-- <div class="layer_fix_footer">
-            <p>
-                <a href="http://www.withinnovation.co.kr/" target="_blank">회사소개</a>|
-                <a href="https://www.goodchoice.kr/more/terms">이용약관</a>|
-                <a href="https://www.goodchoice.kr/more/terms/privacy">개인정보처리방침</a>|
-                <a href="https://www.goodchoice.kr/more/terms/teenager">청소년보호정책</a>
-            </p>
-            <p class="copyright">Copyright WITHINOVATION Corp. All rights reserved.</p>
-        </div> -->
-            </form>
-        </section>
-    </div>
+                </form>
+            </section>
+        </div>
 
-    <script>
-        $(function(){
-            $("#memEmail").on("keyup", function () {
-                axios.get('/api/tbmem/mlist', {}).then(function (response) {
-                    for (let i = 0; i < response.data.length; i++) {
-                        if ($("#memEmail").val() == response.data[i].memEmail) {
-                            console.log("가입된 이메일");
-                            $("#e_msg").html("이메일이 있습니다.");
-                            $('.btn_link').css({ background: '#f7323f' });
-                            $('.btn_link').css({ color: '#fff' });
-                            break;
-                        } else {
-                            console.log("없는 이메일");
-                            $("#e_msg").html("이메일주소를 다시 확인해주세요");
-                            $('.btn_link').attr("disabled", "disabled");
-                            $('.btn_link').css({ background: '#ccc' });
-                            // $(".ico_email.inp_focus:after").css({ "background": "url(../img/images/web_v3/ico_inp_mail.png) 0 -28px no-repeat;" });
-                        }
-                    }
-                    ;
+        <script>
+            $(function () {
+                $("#memEmail").on("keyup", function () {
+                    axios.get('/api/tbmem/mlist', {}).then(function (response) {
+                        for (let i = 0; i < response.data.length; i++) {
+                            if ($("#memEmail").val() == response.data[i].memEmail) {
+                                console.log("가입된 이메일");
+                                $("#e_msg").html("이메일이 있습니다.");
+                                $('.btn_link').css({
+                                    background: '#f7323f'
+                                });
+                                $('.btn_link').css({
+                                    color: '#fff'
+                                });
+                                break;
+                            } else {
+                                console.log("없는 이메일");
+                                $("#e_msg").html("이메일주소를 다시 확인해주세요");
+                                $('.btn_link').attr("disabled", "disabled");
+                                $('.btn_link').css({
+                                    background: '#ccc'
+                                });
+                            }
+                        };
+                    });
                 });
-            });
 
-            function sendit(){
-                const memEmail = $("#memEmail").val();
-                axios.get('/api/regis/{memEmail}', {
-                    data: {
-                        memEmail: memEmail
-                    }
-                }).then(function (response){
-                })
+                function sendit() {
+                    const memEmail = $("#memEmail").val();
+                    axios.get('/api/regis/{memEmail}', {
+                        data: {
+                            memEmail: memEmail
+                        }
+                    }).then(function (response) {})
+                }
+
+            });
+        </script>
+        <style>
+            /* layer_unfix 존재시 footer 숨김 */
+            .mobile_appdown,
+            header,
+            footer {
+                display: none !important
             }
 
-        });
+            .validate_msg_label {
+                margin-top: 20px;
+                display: inline-block;
+                font-size: 13px;
+                color: red;
+            }
+        </style>
 
 
-
-    </script>
-    <style>
-        /* layer_unfix 존재시 footer 숨김 */
-        .mobile_appdown,
-        header,
-        footer {
-            display: none !important
-        }
-        .validate_msg_label {
-            margin-top: 20px;
-            display: inline-block;
-            font-size: 13px;
-            color: red;
-        }
-    </style>
+        <!-- 푸터 -->
+        <div th:replace="userthy/user-footer :: user-footer"></div>
+        <!--푸터 끝 -->
 
 
-    <!-- 푸터 -->
-    <div th:replace="userthy/user-footer :: user-footer"></div>
-    <!--푸터 끝 -->
+    </div>
 
+    <!-- 상단으로 -->
+    <button class="btn_go_top" onclick="moveTop();">상단으로</button>
 
-</div>
+    <!-- //Wrap -->
 
-<!-- 상단으로 -->
-<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+    <!-- Script -->
+    <!-- Library -->
+    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="/js/library/iscroll.js"></script>
 
-<!-- //Wrap -->
+    <!-- Service -->
+    <script type="text/javascript" src="/js/service/common.js"></script>
+    <script type="text/javascript" src="/js/service/geolocation.js"></script>
 
-<!-- Script -->
-<!-- Library -->
-<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
-<script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
-<script type="text/javascript" src="/js/library/iscroll.js"></script>
+    <!-- Module -->
+    <script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
 
-<!-- Service -->
-<script type="text/javascript" src="/js/service/common.js"></script>
-<script type="text/javascript" src="/js/service/geolocation.js"></script>
+    <!-- Page Script -->
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
+    <script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
+    <script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
+    <script type="text/javascript" src="/js/service/validate.js"></script>
+    <script type="text/javascript" src="/js/service/login.js"></script>
 
-<!-- Module -->
-<script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
-
-<!-- Page Script -->
-<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
-<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
-<script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
-<script type="text/javascript" src="/js/service/validate.js"></script>
-<script type="text/javascript" src="/js/service/login.js"></script>
-
-<!-- Body Spinner -->
-<div class="spinner show"><span></span></div>
+    <!-- Body Spinner -->
+    <div class="spinner show"><span></span></div>
 
 </body>
 

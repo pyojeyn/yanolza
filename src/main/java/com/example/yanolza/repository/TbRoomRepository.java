@@ -13,6 +13,4 @@ public interface TbRoomRepository extends JpaRepository<TbRoom, Integer> {
     Optional<TbRoom> findByid(Integer id);
     List<TbRoom> findAll();
     List<TbRoom> findAllById(Integer id);
-
-//    TbRoom getById();
 }

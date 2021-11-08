@@ -30,22 +30,21 @@ public class TbRoom {
     private String rmIntro;
     private String rmService;
     private String prSdate;   // 요일
-    private String prSprice; // 금액
-    private String prDate;   // 요일
-    private String prPrice; // 금액
+    private String prSprice;  // 금액
+    private String prDate;    // 요일
+    private String prPrice;   // 금액
 
     @ManyToOne
     @JoinColumn(name = "tb_host_id")
     private TbHost tbHost;
 
-
-    @OneToMany (fetch = FetchType.LAZY, mappedBy ="tbRoom" )
+    @OneToMany (fetch = FetchType.LAZY, mappedBy ="tbRoom" ,cascade = CascadeType.REMOVE  )
     private List<TbReview> tbReviewList;
 
-    @OneToMany (fetch = FetchType.LAZY, mappedBy = "tbRoom" )
+    @OneToMany (fetch = FetchType.LAZY, mappedBy = "tbRoom",cascade = CascadeType.REMOVE  )
     private List<TbPay> tbPayList;
 
-    @OneToMany (fetch = FetchType.LAZY, mappedBy = "tbRoom" )
+    @OneToMany (fetch = FetchType.LAZY, mappedBy = "tbRoom" ,cascade = CascadeType.REMOVE  )
     private List<TbRoomImg> tbRoomImgList;
 
 }

@@ -1,13 +1,11 @@
-<html lang="ko"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 
 <header th:fragment="user-header">
     <link rel="stylesheet" href="/css/main.css" />
     <section>
         <h1><a class="" href="/userindex/" title="여기어때">여기어때</a></h1>
         <button type="button" class="btn_menu nav_open ">메뉴</button>
-<!--        <button type="button" class="btn_srch srch_open ">검색</button>-->
+        <!--        <button type="button" class="btn_srch srch_open ">검색</button>-->
         <ul class="gnb_pc">
             <li><a href="/userindex/8">내주변</a></li>
             <li><a href="/userindex/reservations">예약내역</a></li>
@@ -24,16 +22,16 @@
             </li>
 
             <li class="over pic"><a href="/userindex/mypage">
-                <img src="/img/profile/ico/ico_21.png" alt="" /></a>
+                    <img src="/img/profile/ico/ico_21.png" alt="" /></a>
                 <ul class="list_04" style="display:none">
                     <li><b>사과색깔</b></li>
                     <li><a href="/userindex/mypage">내정보</a></li>
                     <li><a href="/userindex/point" data-point="0">포인트
-                    </a></li>
+                        </a></li>
                     <li><a href="/userindex/reservations">예약내역
-                    </a></li>
+                        </a></li>
                     <li><a href="/userindex/zzim">찜목록
-                    </a></li>
+                        </a></li>
                     <li><button type="button" class="pop_logout_open">로그아웃</button></li>
                 </ul>
             </li>

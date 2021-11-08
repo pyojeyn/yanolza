@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -24,10 +25,10 @@ public class TbPayApiResponse {
     private String payCheckIn;
     private String payCheckOut;
     private String payCancel;
-    private LocalDateTime payDate;
-    private LocalDateTime payCdate;
+    private LocalDate payDate;
+    private LocalDate payCdate;
 
-    private Integer tbHostId;   // 호스트idx   // 링크 타고 이동하려고
+    private Integer tbHostId;   // 호스트idx → 링크 통해 이동하기 위해
     private Integer tbRoomId;   //객실idx
     private Integer tbMemId;  //구매회원idx
 }

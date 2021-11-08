@@ -21,7 +21,20 @@
         var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
         var _FACEBOOK_APP_ID = '607467975974643';
     </script>
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
@@ -29,7 +42,7 @@
     <!-- Wrap -->
     <div class="wrap">
 
-           <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
@@ -102,7 +115,7 @@
                         <ul>
                             <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
                                 <ul>
-                                   <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
+                                    <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
                                     <li><a href="/userindex/event">이벤트</a></li>
                                     <li><a href="/userindex/project">혁신 프로젝트</a></li>
                                     <li><a href="/userindex/faq">고객문의</a></li>
@@ -139,7 +152,7 @@
             <nav>
                 <ul>
                     <!-- <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class=""  href="/userindex/event">이벤트</a></li>
+                    <li><a class="" href="/userindex/event">이벤트</a></li>
                     <li><a class="active" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
@@ -235,3 +248,48 @@
 </body>
 
 </html>
+
+<!-- List -->
+<div class="list_wrap">
+
+    <div class="search-min">
+        <div class="search-wrapper">
+            <div class="input-holder">
+                <input onkeyup="filter()" type="text" class="search-input" placeholder="검색어를 입력하세요" id="value" />
+                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+            </div>
+            <span class="close" onclick="searchToggle(this, event);"></span>
+        </div>
+    </div>
+
+    <div class="top_sort">
+
+        <!-- Mobile-->
+        <div class="mobile">
+            <button type="button" class="" onclick="filter_open();">상세조건</button>
+            <button type="button" onclick="sort_open();" class="mob_sort">추천 순</button>
+            <button type="button" onclick="pop_map_m();">지도</button>
+
+        </div>
+        <!-- PC-->
+        <div class="pc">
+
+            <div class="btn_wrap">
+                <button type="button" data-sort="HIT" class="on"><span>추천 순</span></button><button type="button"
+                    data-sort="DISTANCE" class=""><span>거리 순</span></button><button type="button" data-sort="LOWPRICE"
+                    class=""><span>낮은 가격 순</span></button><button type="button" data-sort="HIGHPRICE" class=""><span>높은
+                        가격 순</span></button>
+            </div>
+        </div>
+
+    </div>
+    <!-- 안연주 여백 -->
+    <div style="margin-bottom: 3em;"></div>
+    <!-- #안연주 여백 끝-->
+    <div id="poduct_list_area">
+
+
+
+    </div>
+
+</div>

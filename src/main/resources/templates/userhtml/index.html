@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="전국 호텔, 펜션, 모텔부터 워터파크, 놀이공원, 아쿠아리움까지 최저가 할인 예약">
     <link rel="shortcut icon" href="/img/images/web_v3/favicon_170822.ico" type="image/x-icon">
@@ -12,144 +12,201 @@
     <!-- CSS -->
     <title>취향대로 머물다 여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
-    <!-- <link rel="canonical" href="index.html"> -->
     <script src="/js/library/jquery-1.12.4.min.js"></script>
 
-
-
-    <!-- 안연주 AOS Animate.css 끝 -->
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- #안연주  AOS Animate.css  끝 -->
+    <!-- AOS Animate.css 끝 -->
 
-    <!--민정 메인-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-
     <link rel="stylesheet" href="/css/style.css">
-
-    <!--민정 메인-->
-
-
 
 </head>
 
-<body>
-<!-- 안연주 AOS Animate.css 끝 -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-<!-- #안연주  AOS Animate.css  끝 -->
-<!-- Wrap -->
-<div class="wrap">
+<body style="overflow-x: hidden">
+
+    <!-- AOS Animate.css 끝 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- AOS Animate.css  끝 -->
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- 헤더 -->
+        <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
+        <!--헤더 끝 -->
 
 
-    <!-- 헤더 -->
-    <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
-    <!--헤더 끝 -->
+        <!-- Bg Dimm -->
+        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+        <div class="bg_dimm_prevent">&nbsp;</div>
 
-
-    <!-- Bg Dimm -->
-    <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-    <div class="bg_dimm_prevent">&nbsp;</div>
-
-    <!-- 추천검색어 -->
-    <div class="recommend_srch">
-        <div class="scroll_srch">
-            <div class="scroller">
-                <div class="default" style="display:block">
-                    <strong>추천 검색어</strong>
-                    <ul></ul>
-                </div>
-                <!-- 연관검색어 -->
-                <div class="chain">
-                    <ul></ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-    <div class="menu_wrap">
-
-        <div class="menu">
-            <div class="top">
-                <!-- 회원 -->
-                <div class="member">
-                    <div class="mem">
-                            <span class="pic"
-                                  style="background:url('/static/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
-                        <p class="info">사과색깔</p>
-                    </div>
-                    <div class="bot">
-                        <a href="/userindex/point">
-                            <p>0P<br /><span>포인트</span></p>
-                        </a>
-                        <a href="/userindex/coupon">
-                            <p>1장<br /><span>쿠폰함</span></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Iscroll -->
-            <div class="scroll_nav">
+        <!-- 추천검색어 -->
+        <div class="recommend_srch">
+            <div class="scroll_srch">
                 <div class="scroller">
-                    <ul>
-                        <li><a href="/userindex/">홈</a></li>
-                        <li class="depth_2">
-                            <button type="button" class="has_ul"><span>숙소유형</span></button>
-                            <ul>
-                                <li><a href="/userindex/1">모텔</a></li>
-                                <li><a href="/userindex/2">호텔/리조트</a></li>
-                                <li><a href="/userindex/3">펜션</a></li>
-                                <li><a href="/userindex/4">리조트</a></li>
-                                <li><a href="/userindex/5">캠핑·글램핑</a></li>
-                                <li><a href="/userindex/6">게스트하우스</a></li>
-                                <li><a href="/userindex/7">한옥 </a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/userindex/8">내주변</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="/userindex/reservations">예약 내역</a></li>
-                        <li><a href="/userindex/mypage">내 정보 관리</a></li>
-                    </ul>
-                    <ul>
-                        <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
-                            <ul>
-                                <li><a href="/userindex/notice">공지사항</a></li>
-                                <li><a href="/userindex/event">이벤트</a></li>
-                                <li><a href="/userindex/project">혁신 프로젝트</a></li>
-                                <li><a href="/userindex/faq">고객문의</a></li>
-                                <li><a href="/userindex/terms">약관 및 정책</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="center">
-                        <p>여기어때 고객행복센터</p>
-                        <p><a href="tel:1670-6250">1670-6250</a></p>
-                        <p>오전 9시 - 새벽 3시</p>
+                    <div class="default" style="display:block">
+                        <strong>추천 검색어</strong>
+                        <ul></ul>
+                    </div>
+                    <!-- 연관검색어 -->
+                    <div class="chain">
+                        <ul></ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- //Mobile Menu -->
 
-    <!-- 안연주 CSS 추가 -->
-    <link rel="stylesheet" href="/css/swiper.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/ahn_M_slider.css">
-    <!-- #안연주 CSS 추가 끝 -->
+        <!-- Mobile Menu -->
+        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+        <div class="menu_wrap">
+
+            <div class="menu">
+                <div class="top">
+                    <!-- 회원 -->
+                    <div class="member">
+                        <div class="mem">
+                            <span class="pic"
+                                style="background:url('/static/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
+                            <p class="info">사과색깔</p>
+                        </div>
+                        <div class="bot">
+                            <a href="/userindex/point">
+                                <p>0P<br /><span>포인트</span></p>
+                            </a>
+                            <a href="/userindex/coupon">
+                                <p>1장<br /><span>쿠폰함</span></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Iscroll -->
+                <div class="scroll_nav">
+                    <div class="scroller">
+                        <ul>
+                            <li><a href="/userindex/">홈</a></li>
+                            <li class="depth_2">
+                                <button type="button" class="has_ul"><span>숙소유형</span></button>
+                                <ul>
+                                    <li><a href="/userindex/1">모텔</a></li>
+                                    <li><a href="/userindex/2">호텔/리조트</a></li>
+                                    <li><a href="/userindex/3">펜션</a></li>
+                                    <li><a href="/userindex/4">리조트</a></li>
+                                    <li><a href="/userindex/5">캠핑·글램핑</a></li>
+                                    <li><a href="/userindex/6">게스트하우스</a></li>
+                                    <li><a href="/userindex/7">한옥 </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/userindex/8">내주변</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/userindex/reservations">예약 내역</a></li>
+                            <li><a href="/userindex/mypage">내 정보 관리</a></li>
+                        </ul>
+                        <ul>
+                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+                                <ul>
+                                    <li><a href="/userindex/notice">공지사항</a></li>
+                                    <li><a href="/userindex/event">이벤트</a></li>
+                                    <li><a href="/userindex/project">혁신 프로젝트</a></li>
+                                    <li><a href="/userindex/faq">고객문의</a></li>
+                                    <li><a href="/userindex/terms">약관 및 정책</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="center">
+                            <p>여기어때 고객행복센터</p>
+                            <p><a href="tel:1670-6250">1670-6250</a></p>
+                            <p>오전 9시 - 새벽 3시</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile Menu -->
+
+        <!-- CSS 추가 -->
+        <link rel="stylesheet" href="/css/swiper.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/css/ahn_M_slider.css">
+        <!-- CSS 추가 끝 -->
 
 
 
-    <!-- Content (상단 배경) -->
-    <div id="content">
+        <!-- Content (상단 배경) -->
+        <div id="content">
             <span>
                 <div class="ahn_texting animate__animated animate__fadeInDown animate__delay-1s" data-aos="fade-up">
                     <div class="ahn_t_div">
+
+                        <!--mp3플레이어-->
+                        <div class="player">
+                            <div class="player__bar">
+                                <div class="player__album">
+                                    <div class="player__albumImg active-song" data-author="선우정아" data-song="도망가자" data
+                                        data-src="/도망가자.mp3"
+                                        style="background-image: url(/img/images/web_v3/music_app.png)">
+                                    </div>
+                                    <div class="player__albumImg" data-author="선우정아" data-song="도망가자" data
+                                        data-src="/도망가자.mp3"
+                                        style="background-image: url(/img/images/web_v3/music_app.png)">
+                                    </div>
+                                </div>
+                                <div class="player__controls">
+
+                                    <div class="player__prev">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                            <path d="M26.695 34.434v31.132L54.5 49.998z" />
+                                            <path
+                                                d="M24.07 34.434v31.132c0 2.018 2.222 3.234 3.95 2.267l27.804-15.568c1.706-.955 1.707-3.578 0-4.533L28.02 32.168c-2.957-1.655-5.604 2.88-2.649 4.533l27.805 15.564v-4.533L25.371 63.3l3.95 2.267V34.435c-.001-3.387-5.251-3.387-5.251-.001z" />
+                                            <g>
+                                                <path d="M55.5 34.434v31.132l27.805-15.568z" />
+                                                <path
+                                                    d="M52.875 34.434v31.132c0 2.018 2.222 3.234 3.949 2.267 9.27-5.189 18.537-10.379 27.805-15.568 1.705-.955 1.705-3.578 0-4.533L56.824 32.168c-2.957-1.655-5.604 2.88-2.648 4.533l27.803 15.564v-4.533L54.176 63.3l3.949 2.267V34.435c0-3.387-5.25-3.387-5.25-.001z" />
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div class="player__play">
+                                        <svg class="icon play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                                            <path
+                                                d="M51.109 30.335l-36-24A2 2 0 0 0 12 8v48a2.003 2.003 0 0 0 2 2c.388 0 .775-.113 1.109-.336l36-24a2 2 0 0 0 0-3.329z" />
+                                        </svg>
+                                        <svg class="icon pause" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 100 100">
+                                            <path
+                                                d="M22.537 8.046h17.791c1.104 0 2.003.898 2.003 1.993v79.912a2.005 2.005 0 0 1-2.003 2.003h-17.79a2.005 2.005 0 0 1-2.003-2.003V10.04c0-1.095.898-1.993 2.002-1.993zM59.672 8.046h17.8c1.095 0 1.993.898 1.993 1.993v79.912a2.003 2.003 0 0 1-1.993 2.003h-17.8a1.997 1.997 0 0 1-1.993-2.003V10.04c0-1.095.889-1.993 1.993-1.993z" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="player__next">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                            <path d="M26.695 34.434v31.132L54.5 49.998z" />
+                                            <path
+                                                d="M24.07 34.434v31.132c0 2.018 2.222 3.234 3.95 2.267l27.804-15.568c1.706-.955 1.707-3.578 0-4.533L28.02 32.168c-2.957-1.655-5.604 2.88-2.649 4.533l27.805 15.564v-4.533L25.371 63.3l3.95 2.267V34.435c-.001-3.387-5.251-3.387-5.251-.001z" />
+                                            <g>
+                                                <path d="M55.5 34.434v31.132l27.805-15.568z" />
+                                                <path
+                                                    d="M52.875 34.434v31.132c0 2.018 2.222 3.234 3.949 2.267 9.27-5.189 18.537-10.379 27.805-15.568 1.705-.955 1.705-3.578 0-4.533L56.824 32.168c-2.957-1.655-5.604 2.88-2.648 4.533l27.803 15.564v-4.533L54.176 63.3l3.949 2.267V34.435c0-3.387-5.25-3.387-5.25-.001z" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player__timeline">
+                                <p class="player__author"></p>
+                                <p class="player__song"></p>
+                                <div class="player__timelineBar">
+                                    <div id="playhead"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                         <p class="ahn_t_1">도망가자,<br> 걱정은 잠시 내려놓고</p>
                         <p class="ahn_t_2 animate__animated animate__fadeInDown animate__delay-2s">취향대로 머물다</p>
                     </div>
@@ -159,475 +216,399 @@
                 </div>
             </span>
 
-    </div>
-    <!-- #Content 끝 -->
-
-    <!-- 세션 정상-->
-    <script>
-
-        $(document).ready(function() {
-            const memEmail = $('#memEmail').text();
-            console.log(memEmail);  // 확인용
-            if(!(memEmail==null || memEmail=='')){
-                axios.get('/api/tbmem/session/'+memEmail,{
-
-                }).then(function(response){
-                    console.log(response)
-                    sessionStorage.setItem('userid', response.data);
-                }).catch(function(err){
-                    console.log(err);
-                });
-            };
-        });
-
-    </script>
-    <span id="memEmail" th:text="${session.userid}" style="display: none"></span>
-    <!-- 세션 정상-->
-
-    <!--민정 메인시작-->
-    <div class="player">
-        <div class="player__bar">
-            <div class="player__album">
-                <div class="player__albumImg active-song" data-author="선우정아" data-song="도망가자" data
-                     data-src="/도망가자.mp3" style="background-image: url(/img/images/web_v3/music_app.png)">
-                </div>
-                <div class="player__albumImg" data-author="선우정아" data-song="도망가자" data data-src="/도망가자.mp3"
-                     style="background-image: url(/img/images/web_v3/music_app.png)">
-                </div>
-            </div>
-            <div class="player__controls">
-
-                <div class="player__prev">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                        <path d="M26.695 34.434v31.132L54.5 49.998z" />
-                        <path
-                                d="M24.07 34.434v31.132c0 2.018 2.222 3.234 3.95 2.267l27.804-15.568c1.706-.955 1.707-3.578 0-4.533L28.02 32.168c-2.957-1.655-5.604 2.88-2.649 4.533l27.805 15.564v-4.533L25.371 63.3l3.95 2.267V34.435c-.001-3.387-5.251-3.387-5.251-.001z" />
-                        <g>
-                            <path d="M55.5 34.434v31.132l27.805-15.568z" />
-                            <path
-                                    d="M52.875 34.434v31.132c0 2.018 2.222 3.234 3.949 2.267 9.27-5.189 18.537-10.379 27.805-15.568 1.705-.955 1.705-3.578 0-4.533L56.824 32.168c-2.957-1.655-5.604 2.88-2.648 4.533l27.803 15.564v-4.533L54.176 63.3l3.949 2.267V34.435c0-3.387-5.25-3.387-5.25-.001z" />
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="player__play">
-                    <svg class="icon play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-                        <path
-                                d="M51.109 30.335l-36-24A2 2 0 0 0 12 8v48a2.003 2.003 0 0 0 2 2c.388 0 .775-.113 1.109-.336l36-24a2 2 0 0 0 0-3.329z" />
-                    </svg>
-                    <svg class="icon pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                        <path
-                                d="M22.537 8.046h17.791c1.104 0 2.003.898 2.003 1.993v79.912a2.005 2.005 0 0 1-2.003 2.003h-17.79a2.005 2.005 0 0 1-2.003-2.003V10.04c0-1.095.898-1.993 2.002-1.993zM59.672 8.046h17.8c1.095 0 1.993.898 1.993 1.993v79.912a2.003 2.003 0 0 1-1.993 2.003h-17.8a1.997 1.997 0 0 1-1.993-2.003V10.04c0-1.095.889-1.993 1.993-1.993z" />
-                    </svg>
-                </div>
-
-                <div class="player__next">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                        <path d="M26.695 34.434v31.132L54.5 49.998z" />
-                        <path
-                                d="M24.07 34.434v31.132c0 2.018 2.222 3.234 3.95 2.267l27.804-15.568c1.706-.955 1.707-3.578 0-4.533L28.02 32.168c-2.957-1.655-5.604 2.88-2.649 4.533l27.805 15.564v-4.533L25.371 63.3l3.95 2.267V34.435c-.001-3.387-5.251-3.387-5.251-.001z" />
-                        <g>
-                            <path d="M55.5 34.434v31.132l27.805-15.568z" />
-                            <path
-                                    d="M52.875 34.434v31.132c0 2.018 2.222 3.234 3.949 2.267 9.27-5.189 18.537-10.379 27.805-15.568 1.705-.955 1.705-3.578 0-4.533L56.824 32.168c-2.957-1.655-5.604 2.88-2.648 4.533l27.803 15.564v-4.533L54.176 63.3l3.949 2.267V34.435c0-3.387-5.25-3.387-5.25-.001z" />
-                        </g>
-                    </svg>
-                </div>
-            </div>
         </div>
-        <div class="player__timeline">
-            <p class="player__author"></p>
-            <p class="player__song"></p>
-            <div class="player__timelineBar">
-                <div id="playhead"></div>
+        <!-- #Content 끝 -->
+
+        <!-- 세션 정상-->
+        <script>
+            $(document).ready(function () {
+                const memEmail = $('#memEmail').text();
+                console.log(memEmail); // 확인용
+                if (!(memEmail == null || memEmail == '')) {
+                    axios.get('/api/tbmem/session/' + memEmail, {
+
+                    }).then(function (response) {
+                        console.log(response)
+                        sessionStorage.setItem('userid', response.data);
+                    }).catch(function (err) {
+                        console.log(err);
+                    });
+                };
+            });
+        </script>
+        <span id="memEmail" th:text="${session.userid}" style="display: none"></span>
+        <!-- 세션 정상-->
+
+
+
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
+        <script src="/js/script/script.js"></script>
+        <!-- //Main Spot -->
+
+
+        <!-- 컨텐츠 박스 -->
+        <div class="ahn_content_box">
+
+            <!-- Link -->
+            <div class="main_link " data-aos="fade-up">
+                <ul class="ahn_main_link">
+                    <li><a href="/userindex/1" menu-link="1"><span
+                                class="ico_01 animatedhover animate__animated animate__bounce">&nbsp;</span>
+                            <p>모텔</p>
+                        </a></li>
+                    <li><a href="/userindex/2" menu-link="2"><span
+                                class="ico_02 animatedhover animate__animated animate__bounce">&nbsp;</span>
+                            <p>호텔</p>
+                        </a></li>
+                    <li><a href="/userindex/3" menu-link="3"><span
+                                class="ico_03 animatedhover animate__animated animate__bounce">&nbsp;</span>
+                            <p>펜션</p>
+                        </a></li>
+                    <li><a href="/userindex/4" menu-link="4"><span
+                                class="ico_resort animatedhover animate__animated animate__bounce">&nbsp;</span>
+                            <p>리조트</p>
+                        </a></li>
+                    <li><a href="/userindex/5" menu-link="5"><span
+                                class="ico_05 animatedhover animate__animated animate__bounce">&nbsp;</span>
+                            <p>캠핑·글램핑</p>
+                        </a></li>
+                    <li><a href="/userindex/6" menu-link="6"><span
+                                class="ico_04 animatedhover animate__animated animate__bounce">&nbsp;</span>
+                            <p>게스트하우스</p>
+                        </a></li>
+                    <li><a href="/userindex/7" menu-link="7"><span
+                                class="ico_06 animatedhover animate__animated animate__bounce">&nbsp;</span>
+                            <p>한옥</p>
+                        </a></li>
+                    <li><a href="/userindex/8"><span
+                                class="ico_07 animatedhover animate__animated animate__bounce">&nbsp;</span>
+                            <p>내주변</p>
+                        </a></li>
+
+                </ul>
             </div>
-        </div>
-    </div>
+            <!-- //Link -->
 
 
 
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
-    <script src="/js/script/script.js"></script>
-    <!--민정 메인시작 끝-->
-    <!-- //Main Spot -->
+            <!-- 다른 테마 보기 스와이퍼 컨테이너 -->
+            <div class="event_main">
+                <section class="swiper-container">
+                    <div class="main_ahnyeonju_1" data-aos="fade-up">
 
+                        <section class="HomePlaceRecommend_container__380T6">
+                            <div class="SubHeader_container__mMQq5">
+                                <div class="SubHeader_titleWrap__3g5at">
 
-    <!-- 안연주 컨텐츠 박스 -->
-    <div class="ahn_content_box">
+                                    <div class="SubHeader_aside__1utqv">
+                                        <h2 class="SubHeader_title__1PFTQ">겨울 <span style="color: #f7323f;">여기어때?</span>
+                                        </h2>
 
-        <!-- Link -->
-        <div class="main_link " data-aos="fade-up">
-            <ul class="ahn_main_link">
-                <li><a href="/userindex/1" menu-link="1"><span
-                        class="ico_01 animatedhover animate__animated animate__bounce">&nbsp;</span>
-                    <p>모텔</p>
-                </a></li>
-                <li><a href="/userindex/2" menu-link="2"><span
-                        class="ico_02 animatedhover animate__animated animate__bounce">&nbsp;</span>
-                    <p>호텔</p>
-                </a></li>
-                <li><a href="/userindex/3" menu-link="3"><span
-                        class="ico_03 animatedhover animate__animated animate__bounce">&nbsp;</span>
-                    <p>펜션</p>
-                </a></li>
-                <li><a href="/userindex/4" menu-link="4"><span
-                        class="ico_resort animatedhover animate__animated animate__bounce">&nbsp;</span>
-                    <p>리조트</p>
-                </a></li>
-                <li><a href="/userindex/5" menu-link="5"><span
-                        class="ico_05 animatedhover animate__animated animate__bounce">&nbsp;</span>
-                    <p>캠핑·글램핑</p>
-                </a></li>
-                <li><a href="/userindex/6" menu-link="6"><span
-                        class="ico_04 animatedhover animate__animated animate__bounce">&nbsp;</span>
-                    <p>게스트하우스</p>
-                </a></li>
-                <li><a href="/userindex/7" menu-link="7"><span
-                        class="ico_06 animatedhover animate__animated animate__bounce">&nbsp;</span>
-                    <p>한옥</p>
-                </a></li>
-                <li><a href="/userindex/8"><span
-                        class="ico_07 animatedhover animate__animated animate__bounce">&nbsp;</span>
-                    <p>내주변</p>
-                </a></li>
-
-            </ul>
-        </div>
-        <!-- //Link -->
-
-
-
-
-        <!-- 안연주 다른 테마 보기 스와이퍼 컨테이너 -->
-        <div class="event_main">
-            <section class="swiper-container">
-                <div class="main_ahnyeonju_1" data-aos="fade-up">
-
-                    <!-- <span class="main_atte_title">여름 액티비티 여기어때?</span> -->
-                    <section class="HomePlaceRecommend_container__380T6">
-                        <div class="SubHeader_container__mMQq5">
-                            <div class="SubHeader_titleWrap__3g5at">
-
-                                <div class="SubHeader_aside__1utqv">
-                                    <h2 class="SubHeader_title__1PFTQ">여름 <span style="color: #f7323f;">여기어때?</span>
-                                    </h2>
-
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
 
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <!-- 안연주 다른 테마 보기 이동-->
 
-
-
-
-
-                        <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <!-- 안연주 다른 테마 보기 이동-->
-
-                                <div class="swiper-slide">
+                                    <div class="swiper-slide">
 
                                         <span class="ahn_di_span">
                                             <nav class="HomePlaceRecommend_nav__2BMjv">
                                                 <div class="HomePlaceRecommend_navItem__1tHAl"><span
-                                                        class="HomePlaceRecommend_navItemName__1TRUT HomePlaceRecommend_navItemActive__11gUs">경기</span>
+                                                        class="HomePlaceRecommend_navItemName__1TRUT HomePlaceRecommend_navItemActive__11gUs">서울</span>
                                                 </div>
                                                 <div class="HomePlaceRecommend_navItem__1tHAl"><span
-                                                        class="HomePlaceRecommend_navItemName__1TRUT">태안보령</span></div>
+                                                        class="HomePlaceRecommend_navItemName__1TRUT">서울</span></div>
                                                 <div class="HomePlaceRecommend_navItem__1tHAl"><span
-                                                        class="HomePlaceRecommend_navItemName__1TRUT">강원</span></div>
+                                                        class="HomePlaceRecommend_navItemName__1TRUT">부산</span></div>
                                                 <div class="HomePlaceRecommend_navItem__1tHAl"><span
-                                                        class="HomePlaceRecommend_navItemName__1TRUT">경상</span></div>
+                                                        class="HomePlaceRecommend_navItemName__1TRUT">서울</span></div>
                                             </nav>
 
-                                            <div class="HomePlaceRecommend_body__1dkl1"><a href="/userindex/1_005"
-                                                                                           class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
+                                            <div class="HomePlaceRecommend_body__1dkl1"><a href="/userindex/1_005/20/20"
+                                                    class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
                                                     <div class="ThemePlaceItem_image__2_Itg"
-                                                         style="background-image:url(https://yaimg.yanolja.com/v5/2021/08/13/09/640/61163d3c3b9206.99167035.jpg)">
+                                                        style="background-image: url(/img/hostimage/8acea186-d176-408c-815a-a143b23a40f2_10.jpg)">
                                                     </div>
                                                     <div class="ThemePlaceItem_body__2BjpH">
-                                                        <div class="ThemePlaceItem_title__1fyvQ">가평
-                                                            끄라비펜션(스파,키즈객실보유,계곡인근)</div>
+                                                        <div class="ThemePlaceItem_title__1fyvQ">서울 콘래드호텔</div>
 
                                                         <div class="LeisureRecommendItem_badgesInfo__1KmaW"><span
                                                                 class="Blank_ya"></span></div>
-                                                        <div class="subhome_priceDiscount__36Nn_">89,000<i>원</i></div>
+                                                        <div class="subhome_priceDiscount__36Nn_">490,000<i>원</i></div>
                                                     </div>
-                                                </a><a href="/userindex/1_005"
-                                                       class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
+                                                </a><a href="/userindex/1_005/11/11"
+                                                    class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
                                                     <div class="ThemePlaceItem_image__2_Itg"
-                                                         style="background-image:url(https://yaimg.yanolja.com/v5/2021/04/28/15/640/60897f3d674583.43275260.jpg)">
+                                                        style="background-image: url(/img/hostimage/8b1730aa-6d27-4876-bb9b-97a385d5fbc7_1.jpg)">
                                                     </div>
                                                     <div class="ThemePlaceItem_body__2BjpH">
-                                                        <div class="ThemePlaceItem_title__1fyvQ">가평 에스앤비스파펜션 (스파,수영장)
+                                                        <div class="ThemePlaceItem_title__1fyvQ">서울 신라호텔
                                                         </div>
 
                                                         <div class="LeisureRecommendItem_badgesInfo__1KmaW"><span
                                                                 class="Blank_ya"></span></div>
 
-                                                        <div class="subhome_priceDiscount__36Nn_">107,000<i>원</i></div>
+                                                        <div class="subhome_priceDiscount__36Nn_">300,000<i>원</i></div>
                                                     </div>
-                                                </a><a href="/userindex/1_005"
-                                                       class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
+                                                </a><a href="/userindex/1_005/14/14"
+                                                    class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
                                                     <div class="ThemePlaceItem_image__2_Itg"
-                                                         style="background-image:url(https://yaimg.yanolja.com/v5/2021/06/21/11/640/60d07ea3261609.98489764.jpg)">
+                                                        style="background-image: url(/img/hostimage/b8119df3-c468-4dae-8263-23b28cf070bc_4.jpg)">
                                                     </div>
                                                     <div class="ThemePlaceItem_body__2BjpH">
-                                                        <div class="ThemePlaceItem_title__1fyvQ">가평 예담펜션</div>
+                                                        <div class="ThemePlaceItem_title__1fyvQ">부산 웨스틴조선</div>
 
                                                         <div class="LeisureRecommendItem_badgesInfo__1KmaW"><span
                                                                 class="Blank_ya"></span></div>
 
-                                                        <div class="subhome_priceDiscount__36Nn_">100,000<i>원</i></div>
+                                                        <div class="subhome_priceDiscount__36Nn_">450,000<i>원</i></div>
                                                     </div>
-                                                </a><a href="/userindex/1_005"
-                                                       class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
+                                                </a><a href="/userindex/1_005/13/13"
+                                                    class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
                                                     <div class="ThemePlaceItem_image__2_Itg"
-                                                         style="background-image:url(https://yaimg.yanolja.com/v5/2021/06/25/11/640/60d5bbc5981988.29501532.jpg)">
+                                                        style="background-image: url(/img/hostimage/84374680-8671-4456-959e-40b6df4122b2_3.jpg)">
                                                     </div>
                                                     <div class="ThemePlaceItem_body__2BjpH">
-                                                        <div class="ThemePlaceItem_title__1fyvQ">가평 나비잠펜션 (넷플릭스,스파,MD추천)
+                                                        <div class="ThemePlaceItem_title__1fyvQ">서울 JW메리어트
                                                         </div>
 
                                                         <div class="LeisureRecommendItem_badgesInfo__1KmaW"><span
                                                                 class="Blank_ya"></span></div>
 
-                                                        <div class="subhome_priceDiscount__36Nn_">129,000<i>원</i></div>
+                                                        <div class="subhome_priceDiscount__36Nn_">350,000<i>원</i></div>
                                                     </div>
 
                                                 </a></div>
                                         </span>
-                                </div>
-                                <!--안연주  다른 테마 보기 이동 끝 -->
+                                    </div>
+                                    <!--다른 테마 보기 이동 끝 -->
 
 
 
 
 
-                                <!-- 안연주 다른 테마 보기 이동-->
-                                <div class="swiper-slide">
+                                    <!-- 다른 테마 보기 이동-->
+                                    <div class="swiper-slide">
                                         <span class="ahn_di_span">
                                             <nav class="HomePlaceRecommend_nav__2BMjv">
                                                 <div class="HomePlaceRecommend_navItem__1tHAl"><span
-                                                        class="HomePlaceRecommend_navItemName__1TRUT HomePlaceRecommend_navItemActive__11gUs">경기</span>
+                                                        class="HomePlaceRecommend_navItemName__1TRUT HomePlaceRecommend_navItemActive__11gUs">양양</span>
                                                 </div>
                                                 <div class="HomePlaceRecommend_navItem__1tHAl"><span
-                                                        class="HomePlaceRecommend_navItemName__1TRUT">태안보령</span></div>
+                                                        class="HomePlaceRecommend_navItemName__1TRUT">가평</span></div>
                                                 <div class="HomePlaceRecommend_navItem__1tHAl"><span
                                                         class="HomePlaceRecommend_navItemName__1TRUT">강원</span></div>
                                                 <div class="HomePlaceRecommend_navItem__1tHAl"><span
-                                                        class="HomePlaceRecommend_navItemName__1TRUT">경상</span></div>
+                                                        class="HomePlaceRecommend_navItemName__1TRUT">가평</span></div>
                                             </nav>
 
-                                            <div class="HomePlaceRecommend_body__1dkl1"><a href="/pension/3014812"
-                                                                                           class="ThemePlaceItem_container__1Clhm
+                                            <div class="HomePlaceRecommend_body__1dkl1"><a href="/userindex/1_005/55/55"
+                                                    class="ThemePlaceItem_container__1Clhm
                                                 HomePlaceRecommend_bodyItem__dZsES">
-                                                <div class="ThemePlaceItem_image__2_Itg"
-                                                     style="background-image:url(https://yaimg.yanolja.com/v5/2021/08/13/09/640/61163d3c3b9206.99167035.jpg)">
-                                                </div>
-                                                <div class="ThemePlaceItem_body__2BjpH">
-                                                    <div class="ThemePlaceItem_title__1fyvQ">가평 끄라비펜션(스파,키즈객실보유,계곡인근)
-                                                    </div>
-
-                                                    <div class="LeisureRecommendItem_badgesInfo__1KmaW"><span
-                                                            class="Blank_ya"></span></div>
-                                                    <div class="subhome_priceDiscount__36Nn_">89,000<i>원</i></div>
-                                                </div></a><a href="/user/pension/3016291"
-                                                             class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
                                                     <div class="ThemePlaceItem_image__2_Itg"
-                                                         style="background-image:url(https://yaimg.yanolja.com/v5/2021/04/28/15/640/60897f3d674583.43275260.jpg)">
+                                                        style="background-image: url(/img/hostimage/27fcdd24-90f3-4cc0-bf33-c03bc0e3c67f_5-1.jpg)">
                                                     </div>
                                                     <div class="ThemePlaceItem_body__2BjpH">
-                                                        <div class="ThemePlaceItem_title__1fyvQ">가평 에스앤비스파펜션 (스파,수영장)
+                                                        <div class="ThemePlaceItem_title__1fyvQ">그랑블루 글램핑
+                                                        </div>
+
+                                                        <div class="LeisureRecommendItem_badgesInfo__1KmaW"><span
+                                                                class="Blank_ya"></span></div>
+                                                        <div class="subhome_priceDiscount__36Nn_">120,000<i>원</i></div>
+                                                    </div>
+                                                </a><a href="/userindex/1_005/52/52"
+                                                    class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
+                                                    <div class="ThemePlaceItem_image__2_Itg"
+                                                        style="background-image: url(/img/hostimage/db45f701-4cf5-4805-9913-0b197dabb99f_2-1.jpg)">
+                                                    </div>
+                                                    <div class="ThemePlaceItem_body__2BjpH">
+                                                        <div class="ThemePlaceItem_title__1fyvQ">청춘 글램핑&카라반
                                                         </div>
 
                                                         <div class="LeisureRecommendItem_badgesInfo__1KmaW"><span
                                                                 class="Blank_ya"></span></div>
 
-                                                        <div class="subhome_priceDiscount__36Nn_">107,000<i>원</i></div>
+                                                        <div class="subhome_priceDiscount__36Nn_">150,000<i>원</i></div>
                                                     </div>
-                                                </a><a href="/pension/3014802"
-                                                       class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
+                                                </a><a href="/userindex/1_005/60/60"
+                                                    class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
                                                     <div class="ThemePlaceItem_image__2_Itg"
-                                                         style="background-image:url(https://yaimg.yanolja.com/v5/2021/06/21/11/640/60d07ea3261609.98489764.jpg)">
+                                                        style="background-image: url(/img/hostimage/4f9c5b36-9c40-4694-aea4-c3b6acd03ad2_캠핑2.jpg)">
                                                     </div>
                                                     <div class="ThemePlaceItem_body__2BjpH">
-                                                        <div class="ThemePlaceItem_title__1fyvQ">가평 예담펜션</div>
+                                                        <div class="ThemePlaceItem_title__1fyvQ">몰리 캠핑</div>
 
                                                         <div class="LeisureRecommendItem_badgesInfo__1KmaW"><span
                                                                 class="Blank_ya"></span></div>
 
-                                                        <div class="subhome_priceDiscount__36Nn_">100,000<i>원</i></div>
+                                                        <div class="subhome_priceDiscount__36Nn_">190,000<i>원</i></div>
                                                     </div>
-                                                </a><a href="/pension/1000101305"
-                                                       class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
+                                                </a><a href="/userindex/1_005/51/51"
+                                                    class="ThemePlaceItem_container__1Clhm HomePlaceRecommend_bodyItem__dZsES">
                                                     <div class="ThemePlaceItem_image__2_Itg"
-                                                         style="background-image:url(https://yaimg.yanolja.com/v5/2021/06/25/11/640/60d5bbc5981988.29501532.jpg)">
+                                                        style="background-image: url(/img/hostimage/f6b2a312-d682-42c0-979d-51b9c9093845_1-1.jpg)">
                                                     </div>
                                                     <div class="ThemePlaceItem_body__2BjpH">
-                                                        <div class="ThemePlaceItem_title__1fyvQ">가평 나비잠펜션 (넷플릭스,스파,MD추천)
+                                                        <div class="ThemePlaceItem_title__1fyvQ">스텔라 클램핑
                                                         </div>
 
                                                         <div class="LeisureRecommendItem_badgesInfo__1KmaW"><span
                                                                 class="Blank_ya"></span></div>
 
-                                                        <div class="subhome_priceDiscount__36Nn_">129,000<i>원</i></div>
+                                                        <div class="subhome_priceDiscount__36Nn_">180,000<i>원</i></div>
                                                     </div>
 
                                                 </a>
                                             </div>
                                         </span>
 
+                                    </div>
+                                    <!--다른 테마 보기 이동 끝 -->
                                 </div>
-                                <!--안연주  다른 테마 보기 이동 끝 -->
-                            </div>
 
-                            <!--안연주 클릭시 슬라이드 -->
-                            <div id="ahn_another_click"
-                                 class="HomePlaceRecommend_footer__3ttqp ahn_another_them swiper-button-next"><img
-                                    src="//yaimg.yanolja.com/joy/sunny/static/images/home-refresh.svg"
-                                    class="HomePlaceRecommend_refreshIcon__2kuGn"><span
-                                    class="HomePlaceRecommend_text__Cc7ME">다른 테마
+                                <!--클릭시 슬라이드 -->
+                                <div id="ahn_another_click"
+                                    class="HomePlaceRecommend_footer__3ttqp ahn_another_them swiper-button-next"><img
+                                        src="//yaimg.yanolja.com/joy/sunny/static/images/home-refresh.svg"
+                                        class="HomePlaceRecommend_refreshIcon__2kuGn"><span
+                                        class="HomePlaceRecommend_text__Cc7ME">다른 테마
                                         보기</span></div>
-                            <!-- <div class="ahn_another_them swiper-button-next"></div> -->
-                            <!-- #안연주 클릭시 슬라이드 끝-->
+                                <!--클릭시 슬라이드 끝-->
+
+                            </div>
+                        </section>
+                    </div>
 
 
+                    <!-- Swiper script-->
+                    <!-- Swiper JS -->
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+                    <!-- Initialize Swiper -->
+                    <script>
+                        var swiper = new Swiper(".mySwiper", {
+
+                            slidesPerView: 1,
+                            spaceBetween: 30,
+                            loop: true,
+                            pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+
+                        });
+                    </script>
+                    <!--Swiper script끝-->
+                    <!-- 다른 테마 보기 스와이퍼 컨테이너 끝-->
+
+
+                    <!-- EVENT -->
+                    <div class="event_main" data-aos="fade-up">
+                        <h2>이벤트</h2>
+                        <section class="swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class='swiper-slide'>
+                                    <a href="/userindex/event20">
+                                        <img src="/img/images/cms/home_img/67176f10a6fede776fec803d2504f31c.jpg"
+                                            alt="전국민 도망지원 캠페인 " />
+                                    </a>
+                                </li>
+                                <li class='swiper-slide'>
+                                    <a href="/userindex/event14">
+                                        <img src="/img/images/cms/home_img/437c2fd82079ba2fc65cfca2f9352cf8.jpg"
+                                            alt="얼리버드 숙소 특가" />
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </section>
+                    </div>
+                    <!-- //EVENT -->
+
+
+                    <!--lets get social -->
+                    <div class="mainbox" data-aos="fade-up">
+                        <div class="conbox01">
+                            <p class="mainTit"><img src="/img/mainimages/letsgetsocialfont.png" alt="소셜폰트이미지"
+                                    class="mainTit_img"></p>
+                            <div class="snsbox_div">
+                                <ul class="snsbox">
+                                    <li>
+                                        <a href="https://www.facebook.com/goodchoiceofficial/" target="_blank"><img
+                                                src="/img/mainimages/sns01_red.png" alt="facebook"
+                                                class="animatedhover animate__animated animate__bounce"></a>
+
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/goodchoice_official/" target="_blank"><img
+                                                src="/img/mainimages/sns02_red.png" alt="instagram"
+                                                class="animatedhover animate__animated animate__bounce"></a>
+
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/c/GoodchoiceKrvideo/featured"
+                                            target="_blank"><img src="/img/mainimages/sns04_red.png" alt="Youtube"
+                                                class="animatedhover animate__animated animate__bounce"></a>
+
+                                    </li>
+                                    <li>
+                                        <a href="https://blog.gccompany.co.kr/" target="_blank"><img
+                                                src="/img/mainimages/naverpost_red.png" alt="naverpost"
+                                                class="animatedhover animate__animated animate__bounce"></a>
+
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                    <!--let get social 끝  -->
 
 
-                <!-- 안연주 스와이퍼 script-->
-                <!-- Swiper JS -->
-                <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-                <!-- Initialize Swiper -->
-                <script>
-                    var swiper = new Swiper(".mySwiper", {
-
-                        slidesPerView: 1,
-                        spaceBetween: 30,
-                        loop: true,
-                        pagination: {
-                            el: ".swiper-pagination",
-                            clickable: true,
-                        },
-                        navigation: {
-                            nextEl: ".swiper-button-next",
-                            prevEl: ".swiper-button-prev",
-                        },
-
-                    });
-                </script>
-                <!-- #안연주 스와이퍼 script끝-->
-
-
-                <!-- #안연주 다른 테마 보기 스와이퍼 컨테이너 끝-->
-
-
-
-
-
-                <!-- EVENT -->
-                <div class="event_main" data-aos="fade-up">
-                    <h2>이벤트</h2>
-                    <section class="swiper-container">
-                        <ul class="swiper-wrapper">
-                            <li class='swiper-slide'>
-                                <a href="/user/more/eventView/1708?page=0">
-                                    <img src="/img/images/cms/home_img/67176f10a6fede776fec803d2504f31c.jpg"
-                                         alt="전국민 도망지원 캠페인 " />
+                    <!-- Ad -->
+                    <div class="ad_ask" data-aos="fade-up">
+                        <!-- Mobile -->
+                        <ul class="mobile">
+                            <li>
+                                <a href="#" onclick="alert('신규 업체 가입 문의는 고객센터 (1544-4087) 로 연락해주세요'); return false;"
+                                    target="_blank">
+                                    <img src="/img/images/web_v3/ad_mo_01_171013.png" alt="여기어때 광고 신청하기" />
                                 </a>
                             </li>
-                            <li class='swiper-slide'>
-                                <a href="/more/eventView/1722?page=0">
-                                    <img src="/img/images/cms/home_img/437c2fd82079ba2fc65cfca2f9352cf8.jpg"
-                                         alt="얼리버드 숙소 특가" />
+                            <li>
+                                <a href="/hosthousemain/">
+                                    <img src="/img/images/web_v3/ad_mo_02_171013.png" alt="게스트 하우스 숙소 등록하기" />
                                 </a>
                             </li>
                         </ul>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-                    </section>
-                </div>
-
-                <!-- //EVENT -->
-
-
-                <!-- 안연주 lets get social -->
-
-                <div class="mainbox" data-aos="fade-up">
-                    <div class="conbox01">
-                        <p class="mainTit"><span>pt</span><img src="/img/mainimages/letsgetsocialfont.png"
-                                                               alt="소셜폰트이미지" class="mainTit_img"><span>pt</span></p>
-                        <div class="snsbox_div">
-                            <ul class="snsbox">
-                                <li>
-                                    <a href="https://www.facebook.com/goodchoiceofficial/" target="_blank"><img
-                                            src="/img/mainimages/sns01_red.png" alt="facebook"
-                                            class="animatedhover animate__animated animate__bounce"></a>
-
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/goodchoice_official/" target="_blank"><img
-                                            src="/img/mainimages/sns02_red.png" alt="instagram"
-                                            class="animatedhover animate__animated animate__bounce"></a>
-
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/c/GoodchoiceKrvideo/featured"
-                                       target="_blank"><img src="/img/mainimages/sns04_red.png" alt="Youtube"
-                                                            class="animatedhover animate__animated animate__bounce"></a>
-
-                                </li>
-                                <li>
-                                    <a href="https://blog.gccompany.co.kr/" target="_blank"><img
-                                            src="/img/mainimages/naverpost_red.png" alt="naverpost"
-                                            class="animatedhover animate__animated animate__bounce"></a>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!--// #안연주 let get social 끝  -->
-
-
-                <!-- Ad -->
-                <div class="ad_ask" data-aos="fade-up">
-                    <!-- Mobile -->
-                    <ul class="mobile">
-                        <li>
-                            <a href="#" onclick="alert('신규 업체 가입 문의는 고객센터 (1544-4087) 로 연락해주세요'); return false;"
-                               target="_blank">
-                                <img src="/img/images/web_v3/ad_mo_01_171013.png" alt="여기어때 광고 신청하기" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/hosthousemain/" >
-                                <img src="/img/images/web_v3/ad_mo_02_171013.png" alt="게스트 하우스 숙소 등록하기" />
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Pc -->
-                    <ul class="pc">
-                        <li>
-                            <a href="#" onclick="alert('신규 업체 가입 문의는 고객센터 (1544-4087) 로 연락해주세요'); return false;"
-                               target="_blank">
-                                <img src="/img/images/web_v3/ad_01_171013.png" alt="여기어때 광고 신청하기" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/hosthousemain/" >
+                        <!-- Pc -->
+                        <ul class="pc">
+                            <li>
+                                <a href="#" onclick="alert('신규 업체 가입 문의는 고객센터 (1544-4087) 로 연락해주세요'); return false;"
+                                    target="_blank">
+                                    <img src="/img/images/web_v3/ad_01_171013.png" alt="여기어때 광고 신청하기" />
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{#}" th:if="${session.userid eq null}" onclick="alert('게스트 하우스는 로그인 후 이용해주세요.'); return false;">
                                 <img src="/img/images/web_v3/ad_02_171013.png" alt="게스트 하우스 숙소 등록하기" />
                             </a>
+                            <th:block th:unless="${session.userid eq null}" >
+                                <a th:href="@{/hosthousemain/}" >
+                                    <img src="/img/images/web_v3/ad_02_171013.png" alt="게스트 하우스 숙소 등록하기" />
+                                </a>
+                            </th:block>
                         </li>
                     </ul>
                 </div>
@@ -637,14 +618,12 @@
         </div>
     </div>
 </div>
-<!-- #안연주 컨텐츠 박스 끝 -->
-
+<!--컨텐츠 박스 끝 -->
 
 
 <!-- 푸터 -->
 <div th:replace="userthy/user-footer :: user-footer"></div>
 <!--푸터 끝 -->
-
 
 
 
@@ -675,7 +654,7 @@
 
 <!-- Body Spinner -->
 <!-- <div class="spinner show"><span></span></div> -->
-<!-- 안연주 AOS 초기화 -->
+<!--AOS 초기화 -->
 <script>
     AOS.init();
 </script>

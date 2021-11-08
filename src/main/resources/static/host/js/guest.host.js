@@ -270,6 +270,12 @@ function daumPostCode() {
             document.getElementById('input_roadAddress').value = fullRoadAddr;
             // document.getElementById('input_jibunAddress').value = jibun;
             document.getElementById('input_roadAddress2').value = fullRoadAddr;
+            document.getElementById('input_roadAddress3').value = fullRoadAddr;
+            console.log('보냄')
+
+            document.getElementById("ahn_map_btn").click();
+            console.log('클릭')
+            //안연주 주소값을 폼으로 보내는
 
             // daumGeo();
         }

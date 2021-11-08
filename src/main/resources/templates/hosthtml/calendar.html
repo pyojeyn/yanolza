@@ -42,8 +42,6 @@
         <link href="../host/css/bootstrap-timepicker.css" rel="stylesheet" />
         <!-- 달력 css -->
         <link rel="stylesheet" href="./css/calccss/fullcalendar.min.css">
-        <!-- <link rel="stylesheet" href="./css/calccss/fullcalendar.print.css">  -->
-
 
         <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="./css/vertical-swiper.min.css">
@@ -267,7 +265,7 @@
                 for (var i = 1; i <= 5; i++) {
                     var $div = $(
                         "<div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'></div>"
-                        );
+                    );
                     $event = $("<div class='fc-event-main'></div>").text("Event " + i);
                     $('#external-events-list').append($div.append($event));
                 }

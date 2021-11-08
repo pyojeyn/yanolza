@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface TbReviewImgRepository extends JpaRepository<TbReviewImg , Integer> {
-    List<TbReviewImg> findAllByTbReviewId(Integer tbReviewId);    //와이게되네 개꿀 Entity
-
+    List<TbReviewImg> findAllByTbReviewId(Integer tbReviewId);
 }

@@ -104,12 +104,12 @@
   
   .day:nth-child(7n + 1),
   .date:nth-child(7n + 1) {
-    color: #ff5656;
+    /*color: #ff5656;*/
   }
   
   .day:nth-child(7n),
   .date:nth-child(7n) {
-    color: #4b8aff;
+    /*color: #4b8aff;*/
   }
   
   .other {
@@ -129,8 +129,8 @@
   
   .today {
     position: relative;
-    color: red;
-    background-color: #e5caff;
+    color: #ff0a3f;
+    background-color: #e7e7e7;
     
   }
   
@@ -179,15 +179,18 @@
 }
 
 .go-today{
- color: #9a64ff;
+ /*color: #9a64ff;*/
+  color: rgb(255 185 11);
  font-size: 25px;
 }
+
 .calendarbutton{
 height: 40px;
 width: 150px;
 position: relative;
 left: 7px;
-top: 10px; background-color: rgb(52, 62, 95);
+/*top: 10px; background-color: rgb(52, 62, 95);*/
+  top: 10px; background-color: rgb(8 31 51 / 68%);
 border: none;
 border-radius: 5px;
 }

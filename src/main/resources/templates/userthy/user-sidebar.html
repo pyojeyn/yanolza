@@ -1,6 +1,4 @@
-<html lang="ko"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 
 
 <div class="filter_wrap" th:fragment="user-sidebar">
@@ -8,10 +6,10 @@
     <link rel="stylesheet" href="/css/owl.carousel.css" />
 
     <link rel="stylesheet" href="/css/jquery-ui.css" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet"  href="/css/daterangepicker-bs3.css"/>
-    <link rel="stylesheet" href="/css/ahn_product.css"/>
-    <link rel="stylesheet" href="/css/ahn_datepicker.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="/css/ahn_product.css" />
+    <link rel="stylesheet" href="/css/ahn_datepicker.css" />
 
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
 
@@ -26,10 +24,10 @@
         <input type="hidden" name="ahn_sel_date2" id="ahn_sel_date2" value="">
         <article class="wheredate on" style="height: 50px;">
             <div class="ahn_btn_date" style="position: relative; height: 37px; margin-bottom: 75px;">
-                                    <span class="date_view1">
-                                        <!-- Datepicker-->
-                                        <input type="text" class="ahn_product_date" id="ahn_product_date" autocomplete="off" >
-                                        </span>
+                <span class="date_view1">
+                    <!-- Datepicker-->
+                    <input type="text" class="ahn_product_date" id="ahn_product_date" autocomplete="off">
+                </span>
             </div>
         </article>
 
@@ -42,7 +40,7 @@
         <!--        <button type="button" onclick="window.location.href='/userindex/1'">초기화</button>-->
         <button type="button" onclick="window.location.reload()">초기화</button>
 
-        <button type="submit">적용</button>
+        <button type="button">적용</button>
     </div>
 
 
@@ -111,20 +109,20 @@
     </section>
 
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-    <link rel="stylesheet"  href="/css/daterangepicker-bs3.css"/>
+    <link rel="stylesheet" href="/css/daterangepicker-bs3.css" />
 
     <script>
         function filter() {
             console.log("");
 
-            var value, shname, items, i;    //검색어
-            var value1, value2, value3, value4, value5, value6, value7, value8, service;  //필터
-            var prices, min, max;    //가격
+            var value, shname, items, i; //검색어
+            var value1, value2, value3, value4, value5, value6, value7, value8, service; //필터
+            var prices, min, max; //가격
 
-            items = document.getElementsByClassName("items");   //범위
-            value = document.getElementById("value").value.toUpperCase();   //검색어
-            min = document.getElementById("min_price").value;   //낮은 가격
-            max = document.getElementById("max_price").value;   //높은 가격
+            items = document.getElementsByClassName("items"); //범위
+            value = document.getElementById("value").value.toUpperCase(); //검색어
+            min = document.getElementById("min_price").value; //낮은 가격
+            max = document.getElementById("max_price").value; //높은 가격
 
             console.log("min" + min);
             console.log("max" + max);
@@ -136,50 +134,42 @@
 
             if (($("input:checkbox").eq(0).prop("checked"))) {
                 value1 = "수영장";
-            }
-            else {
+            } else {
                 value1 = "";
             }
             if (($("input:checkbox").eq(1).prop("checked"))) {
                 value2 = "와이파이";
-            }
-            else {
+            } else {
                 value2 = "";
             }
             if (($("input:checkbox").eq(2).prop("checked"))) {
                 value3 = "욕실용품";
-            }
-            else {
+            } else {
                 value3 = "";
             }
             if (($("input:checkbox").eq(3).prop("checked"))) {
                 value4 = "반려견동반";
-            }
-            else {
+            } else {
                 value4 = "";
             }
             if (($("input:checkbox").eq(4).prop("checked"))) {
                 value5 = "발렛파킹";
-            }
-            else {
+            } else {
                 value5 = "";
             }
             if (($("input:checkbox").eq(5).prop("checked"))) {
                 value6 = "편의점";
-            }
-            else {
+            } else {
                 value6 = "";
             }
             if (($("input:checkbox").eq(6).prop("checked"))) {
                 value7 = "엘리베이터";
-            }
-            else {
+            } else {
                 value7 = "";
             }
             if (($("input:checkbox").eq(7).prop("checked"))) {
                 value8 = "조식포함";
-            }
-            else {
+            } else {
                 value8 = "";
             }
             console.log("2.");
@@ -195,29 +185,20 @@
 
 
             for (i = 0; i < items.length; i++) {
-                shname = items[i].getElementsByClassName("shname");     //검색어
-                service = items[i].getElementsByClassName("service");    //필터
-                prices = items[i].getElementsByClassName("prices");    //가격
+                shname = items[i].getElementsByClassName("shname"); //검색어
+                service = items[i].getElementsByClassName("service"); //필터
+                prices = items[i].getElementsByClassName("prices"); //가격
 
                 if (
-                    (shname[0].innerHTML.toUpperCase().indexOf(value) > -1)
-                    &&
-                    (service[0].innerHTML.indexOf(value1) > -1)
-                    &&
-                    (service[0].innerHTML.indexOf(value2) > -1)
-                    &&
-                    (service[0].innerHTML.indexOf(value3) > -1)
-                    &&
-                    (service[0].innerHTML.indexOf(value4) > -1)
-                    &&
-                    (service[0].innerHTML.indexOf(value5) > -1)
-                    &&
-                    (service[0].innerHTML.indexOf(value6) > -1)
-                    &&
-                    (service[0].innerHTML.indexOf(value7) > -1)
-                    &&
-                    (service[0].innerHTML.indexOf(value8) > -1)
-                    &&
+                    (shname[0].innerHTML.toUpperCase().indexOf(value) > -1) &&
+                    (service[0].innerHTML.indexOf(value1) > -1) &&
+                    (service[0].innerHTML.indexOf(value2) > -1) &&
+                    (service[0].innerHTML.indexOf(value3) > -1) &&
+                    (service[0].innerHTML.indexOf(value4) > -1) &&
+                    (service[0].innerHTML.indexOf(value5) > -1) &&
+                    (service[0].innerHTML.indexOf(value6) > -1) &&
+                    (service[0].innerHTML.indexOf(value7) > -1) &&
+                    (service[0].innerHTML.indexOf(value8) > -1) &&
                     ((Number(min) <= Number(prices[0].innerHTML)) && (Number(max) >= Number(prices[0].innerHTML)))
                 ) {
                     items[i].style.display = "flex";
@@ -244,10 +225,6 @@
             // console.log("value7: " + value7);
             // console.log("value8: " + value8);
         }
-
-
-
-
     </script>
 
 </div>

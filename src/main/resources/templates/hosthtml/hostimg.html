@@ -1,82 +1,129 @@
+<!DOCTYPE html>
+<html>
 
-<!doctype html>
-<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type">
-    <meta name="csrf-name" content="yeogi_token">
-
-
-
-    <!-- CSS -->
-    <title>취향대로 머물다 여기어때</title>
+    <title>Geocoding Service</title>
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link href="/css/ahn_googlemap.css" rel="stylesheet">
+    <script src="./index.js"></script>
+
+
+
+
 
 </head>
+
 <body>
+    <div id="map" class="pac-input"></div>
 
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB86lXOM5_phtfMCatkpGpcwTsNR82ine8&callback=initMap&v=weekly"
+        async></script>
+</body>
 
-<input type="hidden" id="tbHostId" th:value="${tbHostId}">
-    <!--	a태그 클릭시 넘어와야 하는 값-->
-    <!--안연주 room ID값 넘어옴-->
-<!--    <input type="hidden" id="tbRoomId" th:value="${tbRoomId}">-->
-
-    <!-- CSS -->
-
-    <!-- 여기부터 복사@@ -->
-    <!-- 안연주 리뷰작성 -->
-    <script src="/js/ahn_re.js"></script>
-<form  method="post" enctype="multipart/form-data"  id="form">
-
-    <div class="ahn_re_img">
-    <div class="ahn_tab_t">이미지 추가</div>
-    <!--dropfile-->
-    <div class="ahn_re_indent">
-                                <span class="ahn_di_span">
-                                    <input type="file" id="files" class="reImg file" accept="image/*"
-                                           onchange="setThumbnail(event);"
-                                           multiple="multiple"
-                                           name="files" />
-                                    <div id="image_container"></div>
-                                </span>
-
-<!--        <input type="file" id="files" name="files" class= multiple>-->
-    </div>
-    <!--dropfile끝-->
-
-</div>
-                        <div class="ahn_re_indent ahn_re_btn1">
-                            <span class="ahn_di_span">
-                                <button type="button" class="ahn_re_btn2" onclick="sendit()">
-									등록하기</button>
-                            </span>
-                        </div>
-</form>
-
-
-
-
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</html>
 
 <script>
-    const data = $('tbHostId').val();
-    function sendit() {
-        let formData = new FormData();
-        const data = {tbHostId : $("#tbHostId").val() }
-        formData.append("data", new Blob([JSON.stringify(data)], {type: "application/json"}));
-                axios.request({
-                    method: 'POST',
-                    url: '/host/img',
-                    headers: {'Content-type': 'multipart/form-data'},
-                    data: formData
-                }).then(
-                    alert("파일첨부완료")
-                )
-            }
+    let map;
+    let marker;
+    let geocoder;
+    let responseDiv;
+    let response;
 
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 8,
+            center: {
+                lat: -34.397,
+                lng: 150.644
+            },
+            mapTypeControl: false,
+        });
+        geocoder = new google.maps.Geocoder();
+
+        const inputText = document.createElement("input");
+
+        inputText.type = "text";
+        inputText.placeholder = "Enter a location";
+        inputText.classList.add("ahn_map_input");
+        const submitButton = document.createElement("input");
+
+        submitButton.type = "button";
+        submitButton.value = "Geocode";
+        submitButton.classList.add("button", "button-primary", "ahn_map_btn");
+
+        const clearButton = document.createElement("input");
+
+        clearButton.type = "button";
+        clearButton.value = "Clear";
+        clearButton.classList.add("button", "button-secondary", "ahn_map_clear");
+        response = document.createElement("pre");
+        response.id = "response";
+        response.innerText = "";
+        responseDiv = document.createElement("div");
+        responseDiv.id = "response-container";
+        responseDiv.appendChild(response);
+
+        const instructionsElement = document.createElement("p");
+
+        instructionsElement.id = "instructions";
+        instructionsElement.innerHTML =
+            "<strong>Instructions</strong>: Enter an address in the textbox to geocode or click on the map to reverse geocode.";
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
+        map.controls[google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
+        map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
+        marker = new google.maps.Marker({
+            map,
+        });
+        map.addListener("click", (e) => {
+            geocode({
+                location: e.latLng
+            });
+        });
+        submitButton.addEventListener("click", () =>
+            geocode({
+                address: inputText.value
+            })
+        );
+        clearButton.addEventListener("click", () => {
+            clear();
+        });
+        clear();
+    }
+
+    function clear() {
+        marker.setMap(null);
+        responseDiv.style.display = "none";
+    }
+
+    function geocode(request) {
+        clear();
+        geocoder
+            .geocode(request)
+            .then((result) => {
+                const {
+                    results
+                } = result;
+
+                map.setCenter(results[0].geometry.location);
+                marker.setPosition(results[0].geometry.location);
+                marker.setMap(map);
+                responseDiv.style.display = "block";
+                response.innerText = JSON.stringify(result, null, 2);
+                console.log(results[0].geometry.location.lat());
+                console.log(results[0].geometry.location.lng());
+                return results;
+
+            })
+            .catch((e) => {
+                alert("Geocode was not successful for the following reason: " + e);
+            });
+    }
+
+    document.getElementById("ahn_map_btn")[0].click();
+    console.log('클릭')
 </script>
-</body>
-</html>

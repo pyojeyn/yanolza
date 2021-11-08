@@ -16,12 +16,12 @@ public class TbMemberContext extends User{
     private TbMem tbMem;
 
     public TbMemberContext(TbMem tbMem) {
-        super(tbMem.getMemEmail(), tbMem.getMemPw(),getAuthorities(tbMem.getRole())); // 여기서 ....?
+        super(tbMem.getMemEmail(), tbMem.getMemPw(),getAuthorities(tbMem.getRole()));
         this.tbMem = tbMem;
     }
 
-    private static Collection<? extends GrantedAuthority> getAuthorities(TbMemRole role) { //인증정보보내는 메소드
-        return Collections.singleton(new SimpleGrantedAuthority(role.getKey())); //SimpleGrantedAuthority : 스프링 시큐리티 인증관련 객체
+    private static Collection<? extends GrantedAuthority> getAuthorities(TbMemRole role) {
+        return Collections.singleton(new SimpleGrantedAuthority(role.getKey()));
     }
     }
 

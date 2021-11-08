@@ -937,7 +937,7 @@ button.btn_link.gra_red {
 }
 
 /* 휴대폰 본인 확인 */
-.phone_confirm{margin-top: 16px;}
+/*.phone_confirm{margin-top: 16px;}*/
 .phone_confirm strong{display:block;margin-bottom: 8px;font-size:16px;font-weight: normal;color: rgba(0,0,0,0.87)}
 .phone_confirm section{position: relative;margin: 0 0 25px 0;padding-right: 110px;}
 .phone_confirm > div:nth-of-type(2){display: none;}

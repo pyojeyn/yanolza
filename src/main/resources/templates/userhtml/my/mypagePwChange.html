@@ -1,9 +1,10 @@
-
 <!doctype html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type">
     <meta name="csrf-name" content="yeogi_token">
@@ -42,504 +43,526 @@
     <meta property="al:android:package" content="kr.goodchoice.abouthere">
     <meta property="al:web:url" content="https://www.goodchoice.kr">
 
-    <meta name="naver-site-verification" content="27e1bd094d2f12af942addbf4afdb3f479ad0273"/>
+    <meta name="naver-site-verification" content="27e1bd094d2f12af942addbf4afdb3f479ad0273" />
 
     <link rel="shortcut icon" href="//image.goodchoice.kr/images/web_v3/favicon_170822.ico" type="image/x-icon">
 
-	<!-- CSS -->
+    <!-- CSS -->
     <title>취향대로 머물다 여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="canonical" href="https://www.goodchoice.kr/">
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-    
+
     <script>
-var _BASE_URL = 'https://www.goodchoice.kr/';
-var _MOBILE = 'W';
-var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
-var _FACEBOOK_APP_ID = '607467975974643';
-</script>
-    <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d    =d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        var _BASE_URL = 'https://www.goodchoice.kr/';
+        var _MOBILE = 'W';
+        var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
+        var _FACEBOOK_APP_ID = '607467975974643';
+    </script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
+
 <body>
 
-<!-- Wrap -->
-<div class="wrap">
+    <!-- Wrap -->
+    <div class="wrap">
 
-     <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
-    <!-- Bg Dimm -->
-    <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-    <div class="bg_dimm_prevent">&nbsp;</div>
+        <!-- Bg Dimm -->
+        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+        <div class="bg_dimm_prevent">&nbsp;</div>
 
-    <!-- 추천검색어 -->
-    <div class="recommend_srch">
-        <div class="scroll_srch">
-            <div class="scroller">
-                <div class="default"  style="display:block">
-                    <strong>추천 검색어</strong>
-                    <ul></ul>
-                </div>
-                <!-- 연관검색어 -->
-                <div class="chain">
-                    <ul></ul>
+        <!-- 추천검색어 -->
+        <div class="recommend_srch">
+            <div class="scroll_srch">
+                <div class="scroller">
+                    <div class="default" style="display:block">
+                        <strong>추천 검색어</strong>
+                        <ul></ul>
+                    </div>
+                    <!-- 연관검색어 -->
+                    <div class="chain">
+                        <ul></ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Mobile Menu -->
-    <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-    <div class="menu_wrap">
+        <!-- Mobile Menu -->
+        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+        <div class="menu_wrap">
 
-        <div class="menu">
-            <div class="top">
-                                    <!-- 회원 -->
+            <div class="menu">
+                <div class="top">
+                    <!-- 회원 -->
                     <div class="member">
                         <div class="mem">
-                            <span class="pic" style="background:url('https://image.goodchoice.kr/profile/ico/ico_25.png') 50% 50% no-repeat;"></span>
+                            <span class="pic"
+                                style="background:url('https://image.goodchoice.kr/profile/ico/ico_25.png') 50% 50% no-repeat;"></span>
                             <p class="info">전면적인비키니</p>
                         </div>
                         <div class="bot">
                         </div>
                     </div>
-                            </div>
-            <!-- Iscroll -->
-            <div class="scroll_nav">
-                <div class="scroller">
-                    <ul>
-                        <li><a href="https://www.goodchoice.kr/">홈</a></li>
-                        <li class="depth_2">
-                            <button type="button" class="has_ul"><span>숙소유형</span></button>
-                            <ul>
-                                <li><a href="https://www.goodchoice.kr/product/home/1">모텔</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/2">호텔/리조트</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/3">펜션</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/6">게스트하우스</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/5">캠핑·글램핑</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/7">한옥 </a></li>
-                            </ul>
-                        </li>
-                        <li><a href="https://www.goodchoice.kr/product/srp">내주변</a></li>
-                    </ul>
-                                            <ul>
-                            <li><a href="https://www.goodchoice.kr/my/reserveList">예약 내역</a></li>
-                                                        <li><a href="https://www.goodchoice.kr/my/mypage">내 정보 관리</a></li>
+                </div>
+                <!-- Iscroll -->
+                <div class="scroll_nav">
+                    <div class="scroller">
+                        <ul>
+                            <li><a href="https://www.goodchoice.kr/">홈</a></li>
+                            <li class="depth_2">
+                                <button type="button" class="has_ul"><span>숙소유형</span></button>
+                                <ul>
+                                    <li><a href="https://www.goodchoice.kr/product/home/1">모텔</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/2">호텔/리조트</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/3">펜션</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/6">게스트하우스</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/5">캠핑·글램핑</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/7">한옥 </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://www.goodchoice.kr/product/srp">내주변</a></li>
                         </ul>
-                                        <ul>
-                        <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
-                            <ul>
-                                <li><a href="https://www.goodchoice.kr/more/notice">공지사항</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/event">이벤트</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/project">혁신 프로젝트</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/faq">고객문의</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/terms">약관 및 정책</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="center">
-                        <p>여기어때 고객행복센터</p>
-                        <p><a href="tel:1670-6250">1670-6250</a></p>
-                        <p>오전 9시 - 새벽 3시</p>
+                        <ul>
+                            <li><a href="https://www.goodchoice.kr/my/reserveList">예약 내역</a></li>
+                            <li><a href="https://www.goodchoice.kr/my/mypage">내 정보 관리</a></li>
+                        </ul>
+                        <ul>
+                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+                                <ul>
+                                    <li><a href="https://www.goodchoice.kr/more/notice">공지사항</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/event">이벤트</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/project">혁신 프로젝트</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/faq">고객문의</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/terms">약관 및 정책</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="center">
+                            <p>여기어때 고객행복센터</p>
+                            <p><a href="tel:1670-6250">1670-6250</a></p>
+                            <p>오전 9시 - 새벽 3시</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- //Mobile Menu -->
+        <!-- //Mobile Menu -->
 
-    <!-- CSS -->
-<link rel="stylesheet" href="/css/my.css" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/my.css" />
 
-<!-- Custom Style -->
-<style type="text/css">
-	.validate_msg_label{
-		display:inline-block;
-		margin-bottom: 20px;
-		font-size: 12px;
-		color:red;
-	}
-	.mypage .inp_wrap{
-		margin-bottom: 5px;
-	}
-</style>
-<script>
-	//이벤트 등록
-	$(document).ready(function() {
-		$('#original_pw').keyup(function () {
-				original_pw_validate(true);
-				myPage_BtnDisabled_validate();
-			}
-		);
+        <!-- Custom Style -->
+        <style type="text/css">
+            .validate_msg_label {
+                display: inline-block;
+                margin-bottom: 20px;
+                font-size: 12px;
+                color: red;
+            }
 
-		$('#new_pw').keyup(function () {
-				new_pw_validate('gray',true);
-				myPage_BtnDisabled_validate();
-			}
-		);
+            .mypage .inp_wrap {
+                margin-bottom: 5px;
+            }
+        </style>
+        <script>
+            //이벤트 등록
+            $(document).ready(function () {
+                $('#original_pw').keyup(function () {
+                    original_pw_validate(true);
+                    myPage_BtnDisabled_validate();
+                });
 
-		$('#new_pw').focusout(function () {
-			var color = $('#new_pw_msg').css('color');
-			if(color != 'rgb(0, 0, 255)'){
-				$('#new_pw_msg').css('color', 'red');
-			} else {
-				$('#new_pw_msg').empty();
-			}
-			myPage_BtnDisabled_validate();
-		});
+                $('#new_pw').keyup(function () {
+                    new_pw_validate('gray', true);
+                    myPage_BtnDisabled_validate();
+                });
 
-		$('#new_pw_re').keyup(function () {
-				new_pw_re_validate(true);
-				myPage_BtnDisabled_validate();
-			}
-		);
+                $('#new_pw').focusout(function () {
+                    var color = $('#new_pw_msg').css('color');
+                    if (color != 'rgb(0, 0, 255)') {
+                        $('#new_pw_msg').css('color', 'red');
+                    } else {
+                        $('#new_pw_msg').empty();
+                    }
+                    myPage_BtnDisabled_validate();
+                });
 
-		myPage_BtnDisabled_validate();
-	});
-</script>
+                $('#new_pw_re').keyup(function () {
+                    new_pw_re_validate(true);
+                    myPage_BtnDisabled_validate();
+                });
 
-<!-- Sub Top -->
-<div class="sub_top_wrap">
-	<div class="sub_top bg_kong_2">
-		<h2>내정보</h2>
-	</div>
-</div>
-<!-- //Sub Top -->
+                myPage_BtnDisabled_validate();
+            });
+        </script>
 
-<!-- Content  -->
-<div id="content" class="sub_wrap my_wrap">
-    <p class="sub_title">내 정보 관리</p>
-
-    <!-- Nav -->
-       <!-- 사이드 바-->
-       <nav>
-        <ul>
-            <li><a class="active" href="/userindex/mypage">내 정보 관리</a></li>
-            <li><a class="" href="/userindex/reservations">예약 내역</a></li>
-            <li><a class="" href="/userindex/zzim">찜 목록</a></li>
-        </ul>
-    </nav>
-          <!-- 사이드 바 끝-->
-
-    <div class="align_rt">
-        <div class="mypage">
-         
-                <section>
-                    <strong>비밀번호 변경</strong>
-                    <form id="mypageForm" action="https://www.goodchoice.kr/my/mypagePasswdChangeProcess" autocomplete="off" method="post">
-                        <input type="hidden" name="yeogi_token" value="4066067e75fe507feea2f747a5348d0b">
-                    <div class="pw_input">
-                        <b>기존 비밀번호</b>
-                        <p class="inp_wrap remove form-errors">
-                            <input type="password" name="original_pw" id="original_pw"
-                                   placeholder="기존 비밀번호를 입력해 주세요.">
-						</p>
-						<label id="original_pw_msg" class="validate_msg_label"></label>
-
-
-                    </div>
-                    <div class="pw_input1">
-                        <b>새 비밀번호</b>
-                        <p class="inp_wrap remove form-errors form-user-password-rule">
-                            <input type="password" name="new_pw" id="new_pw"
-                                   placeholder="비밀번호(최소 8자 이상)">
-						</p>
-						<label id="new_pw_msg" class="validate_msg_label"></label>
-
-                    </div>
-                    <div class="pw_input">
-                        <b>새 비밀번호 확인</b>
-                        <p class="inp_wrap remove form-errors">
-                            <input type="password" placeholder="변경할 비밀번호를 재입력해 주세요." name="new_pw_re" id="new_pw_re">
-						</p>
-						<label id="new_pw_re_msg" class="validate_msg_label"></label>
-                    </div>
-                </section>
-
-                <p class="bot_link"></p>
-
-                <button class="btn_red_fill btn_one btn_user_submit" type="button" onclick="myFormSubmit();" disabled>변경</button>
-            </form>
-        </div>
-        
-        <div class="bot_btn">
-        	<p>여기어때를 이용하고 싶지 않으신가요?</p>
-        	<button type="button" onclick="pop_twobtn('ell','로그아웃 하시겠습니까?','취소','로그아웃','close_layer()','logoutPro()');">로그아웃</button>
-        	<button type="button" onclick="pop_layer_w('pop_withdraw');" type="button">회원탈퇴</button>	                	
-        </div>
-    </div>
-
-</div>
-<!-- //Content  -->
-
-
-<!-- 팝업 : 회원탈퇴 pop_layer_w('pop_withdraw') -->
-<div class="layer_w pop_withdraw">
-	<section>
-		<div class="fix_title">
-			<strong>회원탈퇴</strong>
-			<button onclick="layer_w_close();">닫기</button>
-		</div>
-		<div class="cont">
-			<b>주의사항</b>
-			<strong>회원탈퇴 전 반드시 확인해주세요.</strong>
-			<ul class="dot_txt">
-				<li>회원탈퇴 시 계정 정보는 복구가 불가하며 1일 이후 재가입 가능합니다.</li>
-				<li>현재 보유 중인 포인트, 마일리지, 쿠폰은 모두 소멸되며 복구할 수 없습니다.</li>
-				<li>탈퇴 후, 기존 가입 휴대기기로 재가입 시 첫 혜택을 받을 수 없습니다. (신규 회원 쿠폰, 첫 리뷰 작성 1000포인트 등)</li>
-			</ul>
-			<div class="fix_wrap">
-				<p><input type="checkbox" class="inp_chk_03" id="residue_night">
-				<label for="residue_night">주의사항 모두 동의합니다.</label></p>				
-				<button class="btn_red_fill" onclick="userout();">회원탈퇴</button>
-			</div>
-		</div>
-	</section>			
-</div>	
-
-    <!-- Footer -->
-    <footer>
-        <div class="align">
-            <ul class="link">
-                <li><a href="http://www.withinnovation.co.kr/" target="_blank">회사소개</a><span>|</span></li>
-                <li><a href="https://www.goodchoice.kr/more/terms" data-default="term">이용약관</a><span>|</span></li>
-                <li><a href="https://www.goodchoice.kr/more/terms/privacy" data-default="privacy">개인정보처리방침</a><span>|</span></li>
-                <li><button type="button" onclick="pop_licence();return false;">사업자 정보확인</button><span>|</span></li>
-                <li><a href="//ad.goodchoice.kr/" target="_blank">여기어때 마케팅센터</a><span>|</span></li>
-                <li><a href="//host.goodchoice.kr/" target="_blank">액티비티 호스트센터</a><span>|</span></li>
-                <li><a href="//hotel.goodchoice.kr/" target="_blank">HOTEL 여기어때</a><span>|</span></li>
-                <li><a href="https://www.goodchoice.kr/more/contentsInfo">콘텐츠산업진흥법에의한 표시</a></li>
-            </ul>
-            <p>
-                <b>고객행복센터 1670-6250</b>
-                오전 9시 - 새벽 3시
-            </p>
-            <address>
-                <span>(주) 여기어때컴퍼니</span>
-                주소 : 서울특별시 강남구 봉은사로 479, 479타워 11층<br/>
-                대표이사 : 정명훈 | 사업자등록번호: 742-86-00224<br/>
-                통신판매번호 : 2017-서울강남-01779 | 관광사업자 등록번호: 제1026-24호<br/>
-                전화번호 : 1670-6250<br/>
-                전자우편주소 : help@goodchoice.kr<br/>
-                Copyright GC COMPANY Corp. All rights reserved.
-            </address>
-            
-            <div class="ico">
-                <a href="//www.facebook.com/goodchoiceofficial" target="_black" class="icon-icn_login_facebook"><span>여기어때 페이스북</span></a>
-                <a href="//blog.gccompany.co.kr" target="_black" class="icon-ic_blog"><span>여기어때 블로그</span></a>
-                <a href="//post.naver.com/my.nhn?memberNo=25599212" target="_black" class="icon-ic_naverpost"><span>네이버포스트</span></a>
+        <!-- Sub Top -->
+        <div class="sub_top_wrap">
+            <div class="sub_top bg_kong_2">
+                <h2>내정보</h2>
             </div>
-            
+        </div>
+        <!-- //Sub Top -->
+
+        <!-- Content  -->
+        <div id="content" class="sub_wrap my_wrap">
+            <p class="sub_title">내 정보 관리</p>
+
+            <!-- Nav -->
+            <!-- 사이드 바-->
+            <nav>
+                <ul>
+                    <li><a class="active" href="/userindex/mypage">내 정보 관리</a></li>
+                    <li><a class="" href="/userindex/reservations">예약 내역</a></li>
+                    <li><a class="" href="/userindex/zzim">찜 목록</a></li>
+                </ul>
+            </nav>
+            <!-- 사이드 바 끝-->
+
+            <div class="align_rt">
+                <div class="mypage">
+
+                    <section>
+                        <strong>비밀번호 변경</strong>
+                        <form id="mypageForm" action="https://www.goodchoice.kr/my/mypagePasswdChangeProcess"
+                            autocomplete="off" method="post">
+                            <input type="hidden" name="yeogi_token" value="4066067e75fe507feea2f747a5348d0b">
+                            <div class="pw_input">
+                                <b>기존 비밀번호</b>
+                                <p class="inp_wrap remove form-errors">
+                                    <input type="password" name="original_pw" id="original_pw"
+                                        placeholder="기존 비밀번호를 입력해 주세요.">
+                                </p>
+                                <label id="original_pw_msg" class="validate_msg_label"></label>
+
+
+                            </div>
+                            <div class="pw_input1">
+                                <b>새 비밀번호</b>
+                                <p class="inp_wrap remove form-errors form-user-password-rule">
+                                    <input type="password" name="new_pw" id="new_pw" placeholder="비밀번호(최소 8자 이상)">
+                                </p>
+                                <label id="new_pw_msg" class="validate_msg_label"></label>
+
+                            </div>
+                            <div class="pw_input">
+                                <b>새 비밀번호 확인</b>
+                                <p class="inp_wrap remove form-errors">
+                                    <input type="password" placeholder="변경할 비밀번호를 재입력해 주세요." name="new_pw_re"
+                                        id="new_pw_re">
+                                </p>
+                                <label id="new_pw_re_msg" class="validate_msg_label"></label>
+                            </div>
+                    </section>
+
+                    <p class="bot_link"></p>
+
+                    <button class="btn_red_fill btn_one btn_user_submit" type="button" onclick="myFormSubmit();"
+                        disabled>변경</button>
+                    </form>
+                </div>
+
+                <div class="bot_btn">
+                    <p>여기어때를 이용하고 싶지 않으신가요?</p>
+                    <button type="button"
+                        onclick="pop_twobtn('ell','로그아웃 하시겠습니까?','취소','로그아웃','close_layer()','logoutPro()');">로그아웃</button>
+                    <button type="button" onclick="pop_layer_w('pop_withdraw');" type="button">회원탈퇴</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- //Content  -->
+
+
+        <!-- 팝업 : 회원탈퇴 pop_layer_w('pop_withdraw') -->
+        <div class="layer_w pop_withdraw">
+            <section>
+                <div class="fix_title">
+                    <strong>회원탈퇴</strong>
+                    <button onclick="layer_w_close();">닫기</button>
+                </div>
+                <div class="cont">
+                    <b>주의사항</b>
+                    <strong>회원탈퇴 전 반드시 확인해주세요.</strong>
+                    <ul class="dot_txt">
+                        <li>회원탈퇴 시 계정 정보는 복구가 불가하며 1일 이후 재가입 가능합니다.</li>
+                        <li>현재 보유 중인 포인트, 마일리지, 쿠폰은 모두 소멸되며 복구할 수 없습니다.</li>
+                        <li>탈퇴 후, 기존 가입 휴대기기로 재가입 시 첫 혜택을 받을 수 없습니다. (신규 회원 쿠폰, 첫 리뷰 작성 1000포인트 등)</li>
+                    </ul>
+                    <div class="fix_wrap">
+                        <p><input type="checkbox" class="inp_chk_03" id="residue_night">
+                            <label for="residue_night">주의사항 모두 동의합니다.</label></p>
+                        <button class="btn_red_fill" onclick="userout();">회원탈퇴</button>
+                    </div>
+                </div>
+            </section>
         </div>
 
-    </footer>
+        <!-- Footer -->
+        <footer>
+            <div class="align">
+                <ul class="link">
+                    <li><a href="http://www.withinnovation.co.kr/" target="_blank">회사소개</a><span>|</span></li>
+                    <li><a href="https://www.goodchoice.kr/more/terms" data-default="term">이용약관</a><span>|</span></li>
+                    <li><a href="https://www.goodchoice.kr/more/terms/privacy"
+                            data-default="privacy">개인정보처리방침</a><span>|</span></li>
+                    <li><button type="button" onclick="pop_licence();return false;">사업자 정보확인</button><span>|</span></li>
+                    <li><a href="//ad.goodchoice.kr/" target="_blank">여기어때 마케팅센터</a><span>|</span></li>
+                    <li><a href="//host.goodchoice.kr/" target="_blank">액티비티 호스트센터</a><span>|</span></li>
+                    <li><a href="//hotel.goodchoice.kr/" target="_blank">HOTEL 여기어때</a><span>|</span></li>
+                    <li><a href="https://www.goodchoice.kr/more/contentsInfo">콘텐츠산업진흥법에의한 표시</a></li>
+                </ul>
+                <p>
+                    <b>고객행복센터 1670-6250</b>
+                    오전 9시 - 새벽 3시
+                </p>
+                <address>
+                    <span>(주) 여기어때컴퍼니</span>
+                    주소 : 서울특별시 강남구 봉은사로 479, 479타워 11층<br />
+                    대표이사 : 정명훈 | 사업자등록번호: 742-86-00224<br />
+                    통신판매번호 : 2017-서울강남-01779 | 관광사업자 등록번호: 제1026-24호<br />
+                    전화번호 : 1670-6250<br />
+                    전자우편주소 : help@goodchoice.kr<br />
+                    Copyright GC COMPANY Corp. All rights reserved.
+                </address>
 
-</div>
+                <div class="ico">
+                    <a href="//www.facebook.com/goodchoiceofficial" target="_black"
+                        class="icon-icn_login_facebook"><span>여기어때 페이스북</span></a>
+                    <a href="//blog.gccompany.co.kr" target="_black" class="icon-ic_blog"><span>여기어때 블로그</span></a>
+                    <a href="//post.naver.com/my.nhn?memberNo=25599212" target="_black"
+                        class="icon-ic_naverpost"><span>네이버포스트</span></a>
+                </div>
 
-<!-- 상단으로 -->
-<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+            </div>
 
-<!-- //Wrap -->
+        </footer>
 
-<!-- Script -->
-<!-- Library -->
-<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
-<script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
-<script type="text/javascript" src="/js/library/iscroll.js"></script>
+    </div>
 
-<!-- Service -->
-<script type="text/javascript" src="/js/service/common.js"></script>
-<script type="text/javascript" src="/js/service/geolocation.js"></script>
+    <!-- 상단으로 -->
+    <button class="btn_go_top" onclick="moveTop();">상단으로</button>
 
-<!-- Module -->
-<script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
+    <!-- //Wrap -->
 
-<!-- Page Script -->
-<script type="text/javascript" src="/js/library/validation/jquery.validate.js" ></script>
-<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js" ></script>
-<script type="text/javascript" src="/js/library/validation/additional-methods.js" ></script>
-<script type="text/javascript" src="/js/service/validate.js" ></script>
-<script type="text/javascript" src="/js/service/my.js" ></script>
-<script type="text/javascript" src="/js/service/mypage.js" ></script>
-<script type="text/javascript" src="/js/service/phone-verification.js" ></script>
-<script type="text/javascript" src="/js/service/user-validate.js" ></script>
+    <!-- Script -->
+    <!-- Library -->
+    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="/js/library/iscroll.js"></script>
 
-<!-- Body Spinner -->
-<div class="spinner show"><span></span></div>
+    <!-- Service -->
+    <script type="text/javascript" src="/js/service/common.js"></script>
+    <script type="text/javascript" src="/js/service/geolocation.js"></script>
 
-<div style="display:none;">
-	<!-- 네이버 프리미엄 로그 분석(https://yeogirnd.atlassian.net/browse/SD-320)-->
-	<script type="text/javascript" src="../wcslog.js"></script>
+    <!-- Module -->
+    <script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
 
-	<script>
-        //스토어 랜딩 분기
-        function goAppStore(dialogCheck) {
-			const cookie_kcode = getCookie('k_code') //2.0: mkt_code^msid^device_type , 1.0: mkt_code only
-			const isBtmPop = !!dialogCheck
-			const DAUM_SHOP_TOP = 'du_dush_2',  //(채널링)카카오쇼핑 - 상단
-				  NAVER_SHOP_TOP = 'nj_njma_1', //(채널링)네이버지식쇼핑 - 상단
-				  CHAN_ETC_TOP = 'CH_CHPU_1',   //채널링 그외 - 상단
-				  DAUM_DA_TOP = 'mo_DAUM_1',  //다음DA - 상단
-				  DAUM_DA_BTM = 'mo_DAUM_2',  //다음DA - 하단
-				  ETC_ALL_TOP = 'na_bsrh_1',  //그외 - 상단
-				  ETC_ALL_BTM = 'na_bsrh_3'   //그외 - 하단
-			const sp = cookie_kcode.split('^')
-			let mktcode = ''
-			if(sp.length > 1) { //2.0의 광고로 판단
-				const _mktcode = sp[0].trim()
-				const _msid = Number(sp[1].trim())
-				if(_msid === 3) { // 다음DA:상/하단 분기
-					mktcode = isBtmPop ? DAUM_DA_BTM : DAUM_DA_TOP
-                } else if(_msid === 4 && _mktcode === 'ns_qu_0603_1') {
-                    mktcode = 'qu_cw01_2' //RUN-5249(퍼마팀요청)
-				} else if(_msid === 4 && _mktcode.startsWith('ns_ne_') && !isBtmPop) { //네이버지식쇼핑:상단
-					mktcode = NAVER_SHOP_TOP
-				} else if(_msid === 4 && _mktcode.startsWith('ns_ke_') && !isBtmPop) { //카카오쇼핑:상단
-					mktcode = DAUM_SHOP_TOP
-				} else if(_msid === 4 && !isBtmPop) { //그외채널링 하위 그룹:상단
-					mktcode = CHAN_ETC_TOP
-				}
-			}
-			if(!mktcode) mktcode = isBtmPop ? ETC_ALL_BTM : ETC_ALL_TOP
-			let _domain = document.domain === 'www.goodchoice.kr' ? 'm.goodchoice.kr' : 'dev-landing-mktpm.goodchoice.kr'
-			location.href = location.protocol + '//' + _domain + '/main/adKeywordLanding/' + encodeMkt(mktcode)
-        }
-		/**
-		 * 마케팅 랜딩 URL 구성시 필요한 코드해싱함수
-		 * @param mktcode : 원본 마케팅코드
-		 * @returns {string} 해싱 결과물
-		 */
-		function encodeMkt(mktcode) {
-        	//마케팅코드용 해시함수
-			function hashMkt(orig , reverse) {
-				if(typeof orig !== 'string') orig = String(orig)
-				let orgKey = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', encKey = 'sozmfnctkurqgviypexdawhjlbEBRALMUHTPCWVZXINFYQGJKODS8491357620'
-				orig = reverse ? orig.replace(/\*/gi, '+').replace(/\@/gi, '/').replace(/\-/gi, '=') : orig.replace(/\+/gi, '*').replace(/\//gi, '@').replace(/\=/gi, '-')
-				let source = reverse ? encKey : orgKey
-				let target = reverse ? orgKey : encKey
-				let result = ''
-				for (let i=0; i<orig.length; i++) {
-					let c = orig.charAt(i)
-					result += source.includes(c) ? target.charAt(source.indexOf(c)) : c
-				}
-				return result
-			}
-        	return hashMkt(btoa(mktcode)) // mktcode -> base64 -> hash
-		}
-		// 쿠키 생성
-		function setCookie(cName, cValue, cDay){
-			var expire = new Date();
-			expire.setDate(expire.getDate() + cDay);
-			cookies = cName + '=' + escape(cValue) + '; path=/ ';
-			if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
-			document.cookie = cookies;
-		}
+    <!-- Page Script -->
+    <script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
+    <script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
+    <script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
+    <script type="text/javascript" src="/js/service/validate.js"></script>
+    <script type="text/javascript" src="/js/service/my.js"></script>
+    <script type="text/javascript" src="/js/service/mypage.js"></script>
+    <script type="text/javascript" src="/js/service/phone-verification.js"></script>
+    <script type="text/javascript" src="/js/service/user-validate.js"></script>
 
-		// 쿠키 가져오기
-		function getCookie(cName) {
-			cName = cName + '=';
-			var cookieData = document.cookie;
-			var start = cookieData.indexOf(cName);
-			var cValue = '';
-			if(start != -1){
-				start += cName.length;
-				var end = cookieData.indexOf(';', start);
-				if(end == -1)end = cookieData.length;
-				cValue = cookieData.substring(start, end);
-			}
-			return unescape(cValue);
-		}
+    <!-- Body Spinner -->
+    <div class="spinner show"><span></span></div>
 
-		if (getCookie('marketing_type') != '') {
-			if (getCookie('marketing_type') == 'pay') {
-				var _nasa={};
-				_nasa["cnv"] = wcs.cnv("1",getCookie('marketing_price')); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
-			} else {
-				var _nasa={};
-				_nasa["cnv"] = wcs.cnv("2","1"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
-			}
+    <div style="display:none;">
+        <!-- 네이버 프리미엄 로그 분석(https://yeogirnd.atlassian.net/browse/SD-320)-->
+        <script type="text/javascript" src="../wcslog.js"></script>
 
-			//쿠키 삭제
-			setCookie('marketing_price', '', -1);
-			setCookie('marketing_type', '', -1);
-		}
-	</script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','../analytics.js','ga');
+        <script>
+            //스토어 랜딩 분기
+            function goAppStore(dialogCheck) {
+                const cookie_kcode = getCookie('k_code') //2.0: mkt_code^msid^device_type , 1.0: mkt_code only
+                const isBtmPop = !!dialogCheck
+                const DAUM_SHOP_TOP = 'du_dush_2', //(채널링)카카오쇼핑 - 상단
+                    NAVER_SHOP_TOP = 'nj_njma_1', //(채널링)네이버지식쇼핑 - 상단
+                    CHAN_ETC_TOP = 'CH_CHPU_1', //채널링 그외 - 상단
+                    DAUM_DA_TOP = 'mo_DAUM_1', //다음DA - 상단
+                    DAUM_DA_BTM = 'mo_DAUM_2', //다음DA - 하단
+                    ETC_ALL_TOP = 'na_bsrh_1', //그외 - 상단
+                    ETC_ALL_BTM = 'na_bsrh_3' //그외 - 하단
+                const sp = cookie_kcode.split('^')
+                let mktcode = ''
+                if (sp.length > 1) { //2.0의 광고로 판단
+                    const _mktcode = sp[0].trim()
+                    const _msid = Number(sp[1].trim())
+                    if (_msid === 3) { // 다음DA:상/하단 분기
+                        mktcode = isBtmPop ? DAUM_DA_BTM : DAUM_DA_TOP
+                    } else if (_msid === 4 && _mktcode === 'ns_qu_0603_1') {
+                        mktcode = 'qu_cw01_2' //RUN-5249(퍼마팀요청)
+                    } else if (_msid === 4 && _mktcode.startsWith('ns_ne_') && !isBtmPop) { //네이버지식쇼핑:상단
+                        mktcode = NAVER_SHOP_TOP
+                    } else if (_msid === 4 && _mktcode.startsWith('ns_ke_') && !isBtmPop) { //카카오쇼핑:상단
+                        mktcode = DAUM_SHOP_TOP
+                    } else if (_msid === 4 && !isBtmPop) { //그외채널링 하위 그룹:상단
+                        mktcode = CHAN_ETC_TOP
+                    }
+                }
+                if (!mktcode) mktcode = isBtmPop ? ETC_ALL_BTM : ETC_ALL_TOP
+                let _domain = document.domain === 'www.goodchoice.kr' ? 'm.goodchoice.kr' :
+                    'dev-landing-mktpm.goodchoice.kr'
+                location.href = location.protocol + '//' + _domain + '/main/adKeywordLanding/' + encodeMkt(mktcode)
+            }
+            /**
+             * 마케팅 랜딩 URL 구성시 필요한 코드해싱함수
+             * @param mktcode : 원본 마케팅코드
+             * @returns {string} 해싱 결과물
+             */
+            function encodeMkt(mktcode) {
+                //마케팅코드용 해시함수
+                function hashMkt(orig, reverse) {
+                    if (typeof orig !== 'string') orig = String(orig)
+                    let orgKey = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+                        encKey = 'sozmfnctkurqgviypexdawhjlbEBRALMUHTPCWVZXINFYQGJKODS8491357620'
+                    orig = reverse ? orig.replace(/\*/gi, '+').replace(/\@/gi, '/').replace(/\-/gi, '=') : orig.replace(
+                        /\+/gi, '*').replace(/\//gi, '@').replace(/\=/gi, '-')
+                    let source = reverse ? encKey : orgKey
+                    let target = reverse ? orgKey : encKey
+                    let result = ''
+                    for (let i = 0; i < orig.length; i++) {
+                        let c = orig.charAt(i)
+                        result += source.includes(c) ? target.charAt(source.indexOf(c)) : c
+                    }
+                    return result
+                }
+                return hashMkt(btoa(mktcode)) // mktcode -> base64 -> hash
+            }
+            // 쿠키 생성
+            function setCookie(cName, cValue, cDay) {
+                var expire = new Date();
+                expire.setDate(expire.getDate() + cDay);
+                cookies = cName + '=' + escape(cValue) + '; path=/ ';
+                if (typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+                document.cookie = cookies;
+            }
 
-        ga('create', 'UA-77719807-2', 'auto');
-        ga('send', 'pageview');
-    </script>
+            // 쿠키 가져오기
+            function getCookie(cName) {
+                cName = cName + '=';
+                var cookieData = document.cookie;
+                var start = cookieData.indexOf(cName);
+                var cValue = '';
+                if (start != -1) {
+                    start += cName.length;
+                    var end = cookieData.indexOf(';', start);
+                    if (end == -1) end = cookieData.length;
+                    cValue = cookieData.substring(start, end);
+                }
+                return unescape(cValue);
+            }
 
-    <!-- Daum  중요 용도가 아니라면 주석처리 여부 결정 문제 없을시 삭제
-    <script type="text/javascript">
-        var roosevelt_params = {
-            retargeting_id:'iaYgM3OBV.Uv.QOMJv.bqg00',
-            tag_label:'BTecd8srQJ2G5hhOmZIanw'
-        };
-    </script>
-    <script type="text/javascript" src="//adimg.daumcdn.net/rt/roosevelt.js" async></script -->
+            if (getCookie('marketing_type') != '') {
+                if (getCookie('marketing_type') == 'pay') {
+                    var _nasa = {};
+                    _nasa["cnv"] = wcs.cnv("1", getCookie('marketing_price')); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
+                } else {
+                    var _nasa = {};
+                    _nasa["cnv"] = wcs.cnv("2", "1"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
+                }
 
-    <!-- Google Code for &#50668;&#44592;&#50612;&#46412;_&#50937; Conversion Page -->
-    <script type="text/javascript">
-        /* <![CDATA[ */
-        var google_conversion_id = 964418007;
-        var google_conversion_language = "en";
-        var google_conversion_format = "3";
-        var google_conversion_color = "ffffff";
-        var google_conversion_label = "6YMHCM_i81wQ17PvywM";
-        var google_remarketing_only = false;
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="../pagead1/conversion.js"></script>
+                //쿠키 삭제
+                setCookie('marketing_price', '', -1);
+                setCookie('marketing_type', '', -1);
+            }
+        </script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '../analytics.js', 'ga');
 
-    <noscript>
-        <div style="display:inline;">
-            <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/964418007/?label=6YMHCM_i81wQ17PvywM&amp;guid=ON&amp;script=0"/>
-        </div>
-    </noscript>
+            ga('create', 'UA-77719807-2', 'auto');
+            ga('send', 'pageview');
+        </script>
 
-	<script type="text/javascript">
-		if (!wcs_add) var wcs_add={};
-		wcs_add["wa"] = "s_4540c185467c";
-		if (!_nasa) var _nasa={};
-		wcs.inflow("goodchoice.kr");
-		wcs_do(_nasa);
-	</script>
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            var google_conversion_id = 964418007;
+            var google_conversion_language = "en";
+            var google_conversion_format = "3";
+            var google_conversion_color = "ffffff";
+            var google_conversion_label = "6YMHCM_i81wQ17PvywM";
+            var google_remarketing_only = false;
+            /* ]]> */
+        </script>
+        <script type="text/javascript" src="../pagead1/conversion.js"></script>
 
-	<!-- Global site tag (gtag.js) - Google AdWords: 802163829 -->
-	<script async src="../gtag/js.js"></script>
-	<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <noscript>
+            <div style="display:inline;">
+                <img height="1" width="1" style="border-style:none;" alt=""
+                    src="//www.googleadservices.com/pagead/conversion/964418007/?label=6YMHCM_i81wQ17PvywM&amp;guid=ON&amp;script=0" />
+            </div>
+        </noscript>
 
-        gtag('config', 'AW-802163829');
+        <script type="text/javascript">
+            if (!wcs_add) var wcs_add = {};
+            wcs_add["wa"] = "s_4540c185467c";
+            if (!_nasa) var _nasa = {};
+            wcs.inflow("goodchoice.kr");
+            wcs_do(_nasa);
+        </script>
 
-        // Event snippet for WEB_다운로드_버튼 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button.
-        
-        $(function(){
-            $('.appdown_link').on('click',function(){
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-802163829/jxc6CN22x4MBEPWYwP4C'
+        <!-- Global site tag (gtag.js) - Google AdWords: 802163829 -->
+        <script async src="../gtag/js.js"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'AW-802163829');
+
+            $(function () {
+                $('.appdown_link').on('click', function () {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-802163829/jxc6CN22x4MBEPWYwP4C'
+                    });
                 });
             });
-        });
-	</script>
+        </script>
 
-    <!-- 채널제출 -->
-    <span itemscope="" itemtype="http://schema.org/Organization">
-        <link itemprop="url" href="https://www.goodchoice.kr">
-        <a itemprop="sameAs" href="https://www.facebook.com/goodchoiceofficial"></a>
-        <a itemprop="sameAs" href="https://play.google.com/store/apps/details?id=kr.goodchoice.abouthere"></a>
-        <a itemprop="sameAs" href="https://itunes.apple.com/kr/app/id884043462"></a>
-        <a itemprop="sameAs" href="https://post.naver.com/withinnovation"></a>
-        <a itemprop="sameAs" href="https://www.youtube.com/channel/UCLI1HOVJdhWdVl9pT__g2Zw"></a>
-    </span>
-</div>
+        <!-- 채널제출 -->
+        <span itemscope="" itemtype="http://schema.org/Organization">
+            <link itemprop="url" href="https://www.goodchoice.kr">
+            <a itemprop="sameAs" href="https://www.facebook.com/goodchoiceofficial"></a>
+            <a itemprop="sameAs" href="https://play.google.com/store/apps/details?id=kr.goodchoice.abouthere"></a>
+            <a itemprop="sameAs" href="https://itunes.apple.com/kr/app/id884043462"></a>
+            <a itemprop="sameAs" href="https://post.naver.com/withinnovation"></a>
+            <a itemprop="sameAs" href="https://www.youtube.com/channel/UCLI1HOVJdhWdVl9pT__g2Zw"></a>
+        </span>
+    </div>
 </body>
+
 </html>

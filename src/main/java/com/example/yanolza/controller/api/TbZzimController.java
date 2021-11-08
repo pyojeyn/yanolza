@@ -32,7 +32,6 @@ public class TbZzimController extends CrudController<TbZzimApiRequest, TbZzimApi
         return tbZzimApiService.zzimdel(id);
     }
 
-
     //예약 리스트 (user)
     @GetMapping("/zzzlist/{id}")
     public List<TbZzimApiRequest> listzzim(@PathVariable Integer id){

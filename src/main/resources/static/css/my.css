@@ -1138,6 +1138,7 @@
 	.bot_btn button {
 		height: auto;
 		margin-top: 0;
+		margin-bottom: 5.5px;
 		padding: 0 8px;
 		border: none;
 		background: none;

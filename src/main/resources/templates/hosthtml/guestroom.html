@@ -24,9 +24,9 @@
     <script src="/host/js/jquery-ui.min.js"></script>
     <script src="/host/js/jquery.lazyload.min.js"></script>
 
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-                <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
@@ -40,11 +40,11 @@
     <!--헤더 끝 -->
 
     <!--	a태그 클릭시 넘어와야 하는 값-->
-    <!--  안연주 hidden 값 끝  mem 아이디임-->
+    <!--  hidden 값 끝  mem 아이디임-->
 <!--    <input type="hidden" name="id" id="id" th:value="${id}">-->
     <!--    host id-->
     <input type="hidden" name="hostid" id="hostid" th:value="${hostid}">
-    <!--   안연주 hidden 값 끝 -->
+    <!--   hidden 값 끝 -->
     <section class="container">
         <div class="menu-step3">
             <div class="todo-layer">
@@ -105,16 +105,15 @@
         </div>
         <div class="guest-nav">
             <ul class="nav nav-tabs room-tabs">
-                <!-- <li class="active"><a href="./guest/room?mode=create">+ 객실추가</a></li> -->
                 <li class="active"><a href="/hosthousemain/guestroomregist" class="roomhostlinkadd">+ 객실추가</a></li>
             </ul>
         </div>
 
 
 <!-- 객실 추가 안쪽 -->
-        <div class="guest-title-layer" style="text-align: center; height: 300px;">
-         
-            <table class="tb1" border="1px" style="position: relative; right: 20px;">
+        <div class="guest-title-layer" style="text-align: center; height: 500px">
+            <strong style="font-size: 16px">객실정보/수정은 객실명을 선택해주세요</strong>
+            <table class="tb1" border="1px" style="position: relative; right: 20px; margin-top:10px;">
                 <thead class="thead">
                 <tr>
                     <th class="tdd">번호</th>
@@ -125,22 +124,6 @@
                     <th class="tdd">성수기</th>
                 </tr>
                 </thead>
-
-                <!--
-                <tbody class="">
-                <tr>
-                    <td>1</td>
-                    <td><a href="/guestroomdetail">애플</a></td>
-                    <td>도미토리</td>
-                    <td>1명</td>
-                    <td>25000원</td>
-                    <td>40000원</td>
-                </tr>
-                </tbody>
-
-
-
--->
 <!-- 객실 추가 안쪽  끝-->
 
 
@@ -148,9 +131,6 @@
             </table>
             </div>
     </section>
-    <!-- <div class="mo"></div> -->
-    <!-- <script src="../host/js/upload.js?nocache=2021-08-18 21:09:27"></script> -->
-    <!-- <script src="../host/js/dmuploader.js"></script> -->
 
     <script>
         function submitRoomInfo() { // 저장하기
@@ -550,31 +530,14 @@
     <!--푸터 끝 -->
 
 
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<!-- <script src="../host/js/ie10-viewport-bug-workaround.js"></script>
-<script src="../host/js/bootstrap.min.js"></script>
-<script src="../host/js/moment.min.js"></script>
-<script src="../host/js/daterangepicker.js"></script>
-<script src="../host/js/bootstrap-timepicker.js"></script> -->
 <script src="/host/js/common.host.js?nocache=1629288567.5037"></script>
 <script src="/host/js/guest.host.js?nocache=1629288567.5037"></script>
 <!--삭제하기 버튼 -->
-
-
-
-
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
 
         $(function (){
-            // const memid = $('#id').val();
-            // axios.get('/api/tbmem/mlist/'+ memid ,{
-            // }).then(function (response){
-            //     console.log(response);
-            //     const hostid = response.data.data.id;
-            //     $('#hostid').attr('value', hostid);
-            // })
 
             const memid = sessionId;
             console.log(' 멤버 id :' +memid);
@@ -618,8 +581,8 @@
                     console.log("성수기 $prDate : " + $prPrice)
                     let row = $(`<tr>`).append(
                             `<td>`+ $re_id2 +`</td>`+
-                            `<td>`+ $rmName +`</td>`+
-                            `<td><a href="/hosthousemain/guestroomdetail/` + $re_id2 + `">`+ $rmType +`</a></td>`+
+                            `<td><a href="/hosthousemain/guestroomdetail/` + $re_id2 + `">`+ $rmName +`</td>`+
+                            `<td>`+ $rmType +`</a></td>`+
                             `<td>` + $rmNumber + `</td>`+
                             `<td>` + $prSprice + `</td>` +
                             `<td>` + $prPrice + `</td>` +
@@ -640,35 +603,8 @@
                 console.log(err);
             })
 
-            // let re_count = 0;
-            // //리뷰 갯수 개산
-            // for (let i in response.data.data.tbHostApiResponse.tbRoomApiResponseList) {
-            //     re_count += Object.keys(response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].tbReviewApiResponseList).length//
-            // }
-            // console.log(re_count);
-            // $('.re_count').text(re_count);
-
-
-
-
-
-
-
-
-
-
-
-
         });//펑션 끝
 
-
-
-
-
     </script>
-
-
-
 </body>
-
 </html>

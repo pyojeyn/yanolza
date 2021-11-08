@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-  
+
   position: relative;
 }
 
@@ -23,11 +23,11 @@ body {
   top: 50%;
   left: 75%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .player.play .player__timeline {
   -webkit-transform: translateY(-90%);
-          transform: translateY(-90%);
+  transform: translateY(-90%);
 }
 .player.play .player__album:after {
   box-shadow: 0px 30px 28px -10px rgba(0, 0, 0, 0.2);
@@ -59,7 +59,7 @@ body {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background: #fff;
   border-radius: 50%;
 }
@@ -92,6 +92,8 @@ body {
   background: #fff;
   padding: 10px 25px;
   height: 100px;
+  margin-right: 325px;
+  margin-bottom: 310px;
   display: flex;
   justify-content: space-between;
   border-radius: 15px;
@@ -105,7 +107,7 @@ body {
 }
 .player__prev {
   -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
   height: 80px;
   width: 80px;
   display: flex;
@@ -146,7 +148,7 @@ body {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .player__play svg.pause {
   display: none;
@@ -173,11 +175,13 @@ body {
   height: 95px;
   border-radius: 15px;
   position: absolute;
+  margin-right: 325px;
+  margin-bottom: 310px;
   bottom: 0;
   left: 10px;
   right: 10px;
   -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
   transition: all .3s ease-in-out;
   z-index: 1;
   padding-left: 160px;

@@ -11,5 +11,4 @@ import lombok.NoArgsConstructor;
 @Builder
 public class TbMemTbHostApiResponse {
     private TbMemApiResponse tbMemApiResponse;
-
 }

@@ -15,5 +15,4 @@ public class TbReviewImgResoponse {
     private Long fileSize;
     private String safeFile;
     private Integer tbReviewId;
-
 }

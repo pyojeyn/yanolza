@@ -1,25 +1,12 @@
 <!doctype html>
 <html lang="ko">
 
-<!-- Mirrored from www.goodchoice.kr/product/detail?ano=2084&adcno=1&sel_date=2021-08-17&sel_date2=2021-08-18 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Aug 2021 17:08:36 GMT -->
-<!-- Added by HTTrack -->
-<!-- 
-        0907 안연주 -
-          <span class="ahn_di_span"></span>
-        데이터가 들어가는 부분은 .ahn_di_span span태그를 감아뒀습니다.
-        스타일같은거 적용 하나도 안된거니까 
-        데이터 가져올때 쓰셔도 되고 
-        이름바꾸셔도되고 상관없습니다.
-
-        숙박정보에 .half 쪽에 .ended 가 추가 되면 비활성화 상태가 됨(버튼과 가격이 칙칙해짐 근데 예약으로는 가짐주의)
-    -->
-
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type">
     <meta name="csrf-name" content="yeogi_token">
@@ -29,7 +16,7 @@
     <link rel="shortcut icon" href="/img/images/web_v3/favicon_170822.ico" type="image/x-icon">
 
     <!-- CSS -->
-    <title>역삼 컬리넌 | 여기어때</title>
+    <title>여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
     <!-- <link rel="canonical" href="detail7bfc.html?ano=2084"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
@@ -57,195 +44,149 @@
 </head>
 
 <body>
-<!--	a태그 클릭시 넘어와야 하는 값-->
-<!--안연주 ID값 넘어옴-->
-<input type="hidden" id="id" th:value="${id}">
-<input type="hidden" id="tbMemId" th:value="${tbMemId}">
+    <!--	a태그 클릭시 넘어와야 하는 값-->
+    <!--ID값 넘어옴-->
+    <input type="hidden" id="id" th:value="${id}">
+    <input type="hidden" id="tbMemId" th:value="${tbMemId}">
+    <input type="hidden" id="tbhostId" class="tbhostId">
+    <!--찜 했는지 확인 여부-->
+    <input type="hidden" id="zzim_overlap" class="zzim_overlap">
+    <input type="hidden" id="zzimiddel" class="zzimiddel">
 
 
-<!-- Wrap -->
-<div class="wrap">
+    <!-- Wrap -->
+    <div class="wrap">
 
-    <!-- Header -->
-    <header>
+        <!-- 헤더 -->
+        <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
+        <!--헤더 끝 -->
 
-        <section>
-            <h1><a class="" href="/index.html" title="여기어때">여기어때</a></h1>
-            <button type="button" class="btn_menu nav_open ">메뉴</button>
-            <button type="button" class="btn_srch srch_open ">검색</button>
-            <ul class="gnb_pc">
-                <li><a href="/product/search/8.html">내주변</a></li>
-                <li><a href="/reservation/reservations.html">예약내역</a></li>
-                <li class="over">
-                    <button type="button"><span>더보기</span></button>
-                    <ul class="list_03">
-                        <li><a href="/more/notice.html">공지사항</a></li>
-                        <li><a href="/more/event.html">이벤트</a></li>
-                        <li><a href="/more/project.html">혁신 프로젝트</a></li>
-                        <li><a href="/more/faq.html">자주 묻는 질문</a></li>
-                        <li><a href="/more/inquiry.html">1:1 문의</a></li>
-                        <li><a href="/more/terms.html">약관 및 정책</a></li>
-                    </ul>
-                </li>
+        <!-- Bg Dimm -->
+        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+        <div class="bg_dimm_prevent">&nbsp;</div>
 
-                <li class="over pic"><a href="/my/mypage.html">
-                    <img src="/img/profile/ico/ico_21.png" alt="" /></a>
-                    <ul class="list_04" style="display:none">
-                        <li><b>사과색깔</b></li>
-                        <li><a href="/my/mypage.html">내정보</a></li>
-                        <li><a href="/my/point.html" data-point="0">포인트
-                            <!-- span>0P</span -->
-                        </a></li>
-                        <li><a href="/my/coupon.html">쿠폰함
-                            <!-- span>1장</span -->
-                        </a></li>
-                        <li><a href="/reservation/reservations.html">예약내역
-                            <!-- span>0건</span -->
-                        </a></li>
-                        <li><button type="button" class="pop_logout_open">로그아웃</button></li>
-                    </ul>
-                </li>
-            </ul>
-
-            <!-- Search -->
-            <div class="srch_bar">
-                <div class="wrap_inp">
-                    <input type="text" id="keyword" placeholder="지역, 숙소명" autocomplete="off" />
-                    <button type="button" class="btn_srch">검색</button>
-                </div>
-                <button class="btn_cancel" onclick="srch_close()">취소</button>
-            </div>
-            <!-- //Search -->
-
-        </section>
-    </header>
-
-    <!-- Bg Dimm -->
-    <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-    <div class="bg_dimm_prevent">&nbsp;</div>
-
-    <!-- 추천검색어 -->
-    <div class="recommend_srch">
-        <div class="scroll_srch">
-            <div class="scroller">
-                <div class="default" style="display:block">
-                    <strong>추천 검색어</strong>
-                    <ul></ul>
-                </div>
-                <!-- 연관검색어 -->
-                <div class="chain">
-                    <ul></ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-    <div class="menu_wrap">
-
-        <div class="menu">
-            <div class="top">
-                <!-- 회원 -->
-                <div class="member">
-                    <div class="mem">
-                            <span class="pic"
-                                  style="background:url('./img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
-                        <p class="info">사과색깔</p>
-                    </div>
-                    <div class="bot">
-                        <a href="/my/point.html">
-                            <p>0P<br /><span>포인트</span></p>
-                        </a>
-                        <a href="/my/coupon.html">
-                            <p>1장<br /><span>쿠폰함</span></p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Iscroll -->
-            <div class="scroll_nav">
+        <!-- 추천검색어 -->
+        <div class="recommend_srch">
+            <div class="scroll_srch">
                 <div class="scroller">
-                    <ul>
-                        <li><a href="/index.html">홈</a></li>
-                        <li class="depth_2">
-                            <button type="button" class="has_ul"><span>숙소유형</span></button>
-                            <ul>
-                                <li><a href="/product/search/1.html">모텔</a></li>
-                                <li><a href="/product/search/2.html">호텔/리조트</a></li>
-                                <li><a href="/product/search/3.html">펜션</a></li>
-                                <li><a href="/product/search/4.html">리조트</a></li>
-                                <li><a href="/product/search/5.html">캠핑·글램핑</a></li>
-                                <li><a href="/product/search/6.html">게스트하우스</a></li>
-                                <li><a href="/product/search/7.html">한옥 </a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/product/search/8.html">내주변</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="/reservation/reservations.html">예약 내역</a></li>
-                        <li><a href="/my/mypage.html">내 정보 관리</a></li>
-                    </ul>
-                    <ul>
-                        <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
-                            <ul>
-                                <li><a href="/more/notice.html">공지사항</a></li>
-                                <li><a href="/more/event.html">이벤트</a></li>
-                                <li><a href="/more/project.html">혁신 프로젝트</a></li>
-                                <li><a href="/more/faq.html">고객문의</a></li>
-                                <li><a href="/more/terms.html">약관 및 정책</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="center">
-                        <p>여기어때 고객행복센터</p>
-                        <p><a href="tel:1670-6250">1670-6250</a></p>
-                        <p>오전 9시 - 새벽 3시</p>
+                    <div class="default" style="display:block">
+                        <strong>추천 검색어</strong>
+                        <ul></ul>
+                    </div>
+                    <!-- 연관검색어 -->
+                    <div class="chain">
+                        <ul></ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- //Mobile Menu -->
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/owl.carousel.css" />
-    <link rel="stylesheet" href="/css/swiper.css" />
-    <link rel="stylesheet" href="/css/theme_icon.css" />
-    <link rel="stylesheet" href="/css/jquery-ui.css" />
-    <link rel="stylesheet" href="/css/product.css" />
+        <!-- Mobile Menu -->
+        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+        <div class="menu_wrap">
 
+            <div class="menu">
+                <div class="top">
+                    <!-- 회원 -->
+                    <div class="member">
+                        <div class="mem">
+                            <span class="pic"
+                                style="background:url('./img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
+                            <p class="info">사과색깔</p>
+                        </div>
+                        <div class="bot">
+                            <a href="/my/point.html">
+                                <p>0P<br /><span>포인트</span></p>
+                            </a>
+                            <a href="/my/coupon.html">
+                                <p>1장<br /><span>쿠폰함</span></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Iscroll -->
+                <div class="scroll_nav">
+                    <div class="scroller">
+                        <ul>
+                            <li><a href="/index.html">홈</a></li>
+                            <li class="depth_2">
+                                <button type="button" class="has_ul"><span>숙소유형</span></button>
+                                <ul>
+                                    <li><a href="/product/search/1.html">모텔</a></li>
+                                    <li><a href="/product/search/2.html">호텔/리조트</a></li>
+                                    <li><a href="/product/search/3.html">펜션</a></li>
+                                    <li><a href="/product/search/4.html">리조트</a></li>
+                                    <li><a href="/product/search/5.html">캠핑·글램핑</a></li>
+                                    <li><a href="/product/search/6.html">게스트하우스</a></li>
+                                    <li><a href="/product/search/7.html">한옥 </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/product/search/8.html">내주변</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/reservation/reservations.html">예약 내역</a></li>
+                            <li><a href="/my/mypage.html">내 정보 관리</a></li>
+                        </ul>
+                        <ul>
+                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+                                <ul>
+                                    <li><a href="/more/notice.html">공지사항</a></li>
+                                    <li><a href="/more/event.html">이벤트</a></li>
+                                    <li><a href="/more/project.html">혁신 프로젝트</a></li>
+                                    <li><a href="/more/faq.html">고객문의</a></li>
+                                    <li><a href="/more/terms.html">약관 및 정책</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="center">
+                            <p>여기어때 고객행복센터</p>
+                            <p><a href="tel:1670-6250">1670-6250</a></p>
+                            <p>오전 9시 - 새벽 3시</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile Menu -->
 
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "LocalBusiness",
-            "name": "역삼 컬리넌",
-            "image": "https://image.goodchoice.kr/resize_490x348/adimg_new/2084/13542/f830edbc9f2e3a24be580fa1f15eb739.jpg",
-            "telephone": "050214653191",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "720-23 ",
-                "addressLocality": "서울 강남구 언주로87길 11"
-            },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "bestRating": "100",
-                "worstRating": "10",
-                "ratingValue": "93",
-                "ratingCount": "12219"
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/owl.carousel.css" />
+        <link rel="stylesheet" href="/css/swiper.css" />
+        <link rel="stylesheet" href="/css/theme_icon.css" />
+        <link rel="stylesheet" href="/css/jquery-ui.css" />
+        <link rel="stylesheet" href="/css/ahn_product.css" />
+        <link rel="stylesheet" href="/css/ahn_heartAnimationCss.css" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "LocalBusiness",
+                "name": "역삼 컬리넌",
+                "image": "https://image.goodchoice.kr/resize_490x348/adimg_new/2084/13542/f830edbc9f2e3a24be580fa1f15eb739.jpg",
+                "telephone": "050214653191",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "720-23 ",
+                    "addressLocality": "서울 강남구 언주로87길 11"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "bestRating": "100",
+                    "worstRating": "10",
+                    "ratingValue": "93",
+                    "ratingCount": "12219"
+                }
             }
-        }
-    </script>
-    <!-- Content  -->
-    <div id="content" class="detail  motel_room">
-        <!-- 비제휴점 inert_room 클래스 추가 -->
+        </script>
+        <!-- Content  -->
+        <div id="content" class="detail  motel_room">
+            <!-- 비제휴점 inert_room 클래스 추가 -->
 
-        <!-- Top -->
-        <div class="top">
+            <!-- Top -->
+            <div class="top">
 
-            <!-- Left -->
-            <div class="left">
+                <!-- Left -->
+                <div class="left">
                     <span class="ahn_di_span">
                         <!-- Gallery (Mobile) -->
                         <div class="gallery_m index_mobile">
@@ -253,62 +194,62 @@
                                 <ul class="swiper-wrapper">
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13542/f830edbc9f2e3a24be580fa1f15eb739.jpg"
-                                             alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13542/f830edbc9f2e3a24be580fa1f15eb739.jpg"
+                                            alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13542/2cb69425b6745a6d3b32fd0e997b62a2.jpg"
-                                             alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13542/2cb69425b6745a6d3b32fd0e997b62a2.jpg"
+                                            alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/328442/67c2aba3a70c780e1f54466fdade7307.jpg"
-                                             alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/328442/67c2aba3a70c780e1f54466fdade7307.jpg"
+                                            alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13543/33863ac48bc2c5ab256d9a33e8b85f53.jpg"
-                                             alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13543/33863ac48bc2c5ab256d9a33e8b85f53.jpg"
+                                            alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/328443/3f56f651795aa4313074e4f8eafc3055.jpg"
-                                             alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/328443/3f56f651795aa4313074e4f8eafc3055.jpg"
+                                            alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/328444/0547d8085ced9ea45876fd71235f0d8c.jpg"
-                                             alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/328444/0547d8085ced9ea45876fd71235f0d8c.jpg"
+                                            alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13544/f0f582245411bd8368d4f1d3dcaf6b4e.jpg"
-                                             alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13544/f0f582245411bd8368d4f1d3dcaf6b4e.jpg"
+                                            alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13545/b83e638019b9d662db83a72016f67c15.jpg"
-                                             alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13545/b83e638019b9d662db83a72016f67c15.jpg"
+                                            alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13546/99b8c0aae33594dff2e4f3d4b54eac8c.jpg"
-                                             alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13546/99b8c0aae33594dff2e4f3d4b54eac8c.jpg"
+                                            alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
                                     <li class="swiper-slide">
                                         <img src="/image.goodchoice.kr/images/web_v3/temp.png"
-                                             data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13546/99b8c0aae33594dff2e4f3d4b54eac8c.jpg"
-                                             alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
+                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13546/99b8c0aae33594dff2e4f3d4b54eac8c.jpg"
+                                            alt="역삼 컬리넌 | 스위트" class="swiper-lazy" />
                                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                     </li>
 
@@ -320,8 +261,8 @@
                             </div>
                         </div>
                     </span>
-                <!-- Gallery (PC) -->
-                <span class="ahn_di_span">
+                    <!-- Gallery (PC) -->
+                    <span class="ahn_di_span">
                         <div class="gallery_pc">
                             <!-- Image Size : 490 x 348 -->
 
@@ -330,44 +271,25 @@
                                 <ul class="swiper-wrapper ">
                                     <li class="swiper-slide ahn_img0"></li>
                                     <li class="swiper-slide ahn_img1"></li>
-                                     <li class="swiper-slide ahn_img2"></li>
+                                    <li class="swiper-slide ahn_img2"></li>
+                                    <li class="swiper-slide ahn_img3"></li>
                                     <li class="swiper-slide ahn_img0"></li>
                                     <li class="swiper-slide ahn_img1"></li>
-                                     <li class="swiper-slide ahn_img2"></li>
-<!--                                    <li class="swiper-slide ahn_img1"></li>-->
-<!--                                     <li class="swiper-slide ahn_img0"></li>-->
-<!--                                    <li class="swiper-slide ahn_img1"></li>-->
-<!--                                      <li class="swiper-slide ahn_img0"></li>-->
-<!--                                    <li class="swiper-slide ahn_img1"></li>-->
-<!--                                    <li class="swiper-slide"><img-->
-<!--                                            data-src="/mainimages/gochank.jpg"-->
-<!--                                            alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" /></li>-->
-<!--                                    <li class="swiper-slide"><img-->
-<!--                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13542/2cb69425b6745a6d3b32fd0e997b62a2.jpg"-->
-<!--                                            alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" /></li>-->
-<!--                                     <li class="swiper-slide"><img-->
-<!--                                             data-src="/mainimages/gochank.jpg"-->
-<!--                                             alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" /></li>-->
-<!--                                    <li class="swiper-slide"><img-->
-<!--                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13542/2cb69425b6745a6d3b32fd0e997b62a2.jpg"-->
-<!--                                            alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" /></li>-->
+                                    <li class="swiper-slide ahn_img2"></li>
+                                    <li class="swiper-slide ahn_img3"></li>
 
                                 </ul>
                             </div>
                             <div class="swiper-container gallery-thumbs">
                                 <ul class="swiper-wrapper ">
-                                     <li class="swiper-slide ahn_img0"></li>
-                                     <li class="swiper-slide ahn_img1"></li>
-                                     <li class="swiper-slide ahn_img2"></li>
-                                     <li class="swiper-slide ahn_img0"></li>
-                                     <li class="swiper-slide ahn_img1"></li>
-                                     <li class="swiper-slide ahn_img2"></li>
-<!--                                     <li class="swiper-slide"><img-->
-<!--                                             data-src="/mainimages/gochank.jpg"-->
-<!--                                             alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" /></li>-->
-<!--                                    <li class="swiper-slide"><img-->
-<!--                                            data-src="//image.goodchoice.kr/resize_490x348/adimg_new/2084/13542/2cb69425b6745a6d3b32fd0e997b62a2.jpg"-->
-<!--                                            alt="역삼 컬리넌 | 로얄스위트" class="swiper-lazy" /></li>-->
+                                    <li class="swiper-slide ahn_img0"></li>
+                                    <li class="swiper-slide ahn_img1"></li>
+                                    <li class="swiper-slide ahn_img2"></li>
+                                    <li class="swiper-slide ahn_img3"></li>
+                                    <li class="swiper-slide ahn_img0"></li>
+                                    <li class="swiper-slide ahn_img1"></li>
+                                    <li class="swiper-slide ahn_img2"></li>
+                                    <li class="swiper-slide ahn_img3"></li>
 
                                 </ul>
                             </div>
@@ -375,1155 +297,1135 @@
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
 
-                            <!-- //image.goodchoice.kr/resize_490x348/adimg_new/1491/8717/01.jpg? -->
-
-
                         </div>
                     </span>
-                <!-- 비제휴점 사진 -->
-                <div class="inert_pic">
-                    <img src="/image.goodchoice.kr/resize_490x348/adimg_new/detail_none.jpg" alt="" />
+                    <!-- 비제휴점 사진 -->
+                    <div class="inert_pic">
+                        <img src="/image.goodchoice.kr/resize_490x348/adimg_new/detail_none.jpg" alt="" />
+                    </div>
+
                 </div>
+                <!-- //Left -->
 
-            </div>
-            <!-- //Left -->
+                <!-- Datepicker -->
+                <input type="text" class="product_date" />
 
-            <!-- Datepicker -->
-            <input type="text" class="product_date" />
+                <!-- Right -->
+                <div class="right">
 
-            <!-- Right -->
-            <div class="right">
-
-                <!-- Info -->
-                <span class="ahn_di_span">
+                    <!-- Info -->
+                    <span class="ahn_di_span">
                         <div class="info">
                             <p class="badge">
                             </p>
-                            <!--                            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
-                            <script>
-                                'use strict';
-                                $(function() {
-                                    let heart = false;
-                                    let font1 = "♥";
-                                    let font2 = "♡";
-                                    $(".heart").css("color","red").on("click", function() {
-                                        if(!heart) {
-                                            $(".heart").html(font1);
-                                            heart = true;
-                                        } else {
-                                            $(".heart").html(font2);
-                                            heart = false;
-                                        }
-                                    });
-                                });
-                            </script>
 
                             <!--//숙박업소명-->
-                            <h2 class="myCorporate">역삼 컬리넌</h2> <h2 class="heart" style="font-size: 32px;">♡</h2>
-
+                            <h2 class="myCorporate" style="float: left">역삼 컬리넌</h2>
+                            <div class="HeartAnimation no_animate"></div>
                             <p class="address mySidein1">서울 강남구 역삼동 720-23</p>
-                            <!-- 안연주 빈공간 -->
+                            <!-- 빈공간 -->
                             <div style="margin-bottom: 20px;"></div>
-                            <!-- # 안연주 빈공간 끝-->
+                            <!-- 빈공간 끝-->
                             <div class="score_cnt">
                                 <b id="review_cnt">리뷰 <em class="re_count"></em>개</b>
                             </div>
-
-
 
                             <!-- 사장님 한마디 -->
                             <div class="comment">
                                 <strong>사장님 한마디</strong>
                                 <button>접기</button>
-                                <div class="myIntro" style="white-space:normal" >
+                                <div class="myIntro" style="white-space:normal">
 
                                 </div>
                             </div>
                         </div>
-                    <!-- # 사장님 한마디 끝 -->
+                        <!-- # 사장님 한마디 끝 -->
                     </span>
-                <!-- //Info -->
+                    <!-- //Info -->
 
+
+                </div>
+                <!-- //Right -->
 
             </div>
-            <!-- //Right -->
+            <!-- //Top -->
 
-        </div>
-        <!-- //Top -->
+            <!-- Tab Menu -->
+            <div class="tab">
+                <button class="on"><span>객실안내/예약</span></button>
+                <button onclick="init_map('37.50138975', '127.0420836');"><span>숙소정보</span></button>
+                <button class="tab_review"><span>리뷰</span></button>
+                <img src="" class="ahn_img2">
+            </div>
 
-        <!-- Tab Menu -->
-        <div class="tab">
-            <button class="on"><span>객실안내/예약</span></button>
-            <button onclick="init_map('37.50138975', '127.0420836');"><span>숙소정보</span></button>
-            <button class="tab_review"><span>리뷰</span></button>
-            <img src="" class="ahn_img2">
-<!--            <img src="/img/roomimg/215143ba-1bf1-4f53-9c29-e3d08912968e_ham.PNG" >-->
-<!--        뜨는경로    /img/hostimg/f21c93b2-7185-4c8e-9602-7ac0bb5a3a23_1.PNG-->
-        </div>
-
-        <form id="product_filter_form" method="get" action="https://www.goodchoice.kr/product/detail"
-              data-sel_date="2021-08-17" data-sel_date2="2021-08-18">
+            <form id="product_filter_form" method="get" action="https://www.goodchoice.kr/product/detail"
+                data-sel_date="2021-08-17" data-sel_date2="2021-08-18">
 
 
-            <input id="sel_date" type="hidden" name="sel_date" value="2021-08-17" />
+                <input id="sel_date" type="hidden" name="sel_date" value="2021-08-17" />
 
-            <input id="sel_date2" type="hidden" name="sel_date2" value="2021-08-18" />
+                <input id="sel_date2" type="hidden" name="sel_date2" value="2021-08-18" />
 
-            <input id="ano" type="hidden" name="ano" value="2084" />
+                <input id="ano" type="hidden" name="ano" value="2084" />
 
-            <input id="adcno" type="hidden" name="adcno" value="1" />
+                <input id="adcno" type="hidden" name="adcno" value="1" />
 
-
-
-
-
+                <!-- 객실안내/예약 -->
+                <article class="room_info on">
 
 
-
-            <!-- 객실안내/예약 -->
-            <article class="room_info on">
-
-                <div class="btn_date"><span
-                        class="date_view"><b></b><em>&nbsp;·&nbsp;1박</em></span><strong>변경</strong></div>
-
-                <!-- php -->
-                <span class="ahn_di_span_list">
-<!--00=======================================================================================================-->
-<!--안연주 room-->
-<div class="room">
-<!--첫썸네일-->
-<p class="pic_view ">
-<img class="lazy ahn_owl_img_thumbnail_0_0"
-     src="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743fc844448d.jpg"
-     alt="더 디자이너스 리즈 강남 프리미어 | " style="display: inline;">
-</p>
+                    <!-- php -->
+                    <span class="ahn_di_span_list">
+                        <!--안연주 room-->
+                        <div class="room">
+                            <!--첫썸네일-->
+                            <p class="pic_view ">
+                                <img class="lazy ahn_owl_img_thumbnail_0_0"
+                                    src="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743fc844448d.jpg"
+                                    alt="더 디자이너스 리즈 강남 프리미어 | " style="display: inline;">
+                            </p>
 
 
-    <!-- 닫기버튼-->
-<div class="cal_bg tb1_0">
-<button type="button">닫기</button>
-</div>
-    <!--모바일-->
-  <div class="pic_wrap">
-                    <div class="gallery_m index_mobile swiper_detail">
-                    <div class="swiper-container swiper-default swiper-container-horizontal">
-                    <ul class="swiper-wrapper" style="transition-duration: 0ms;">
-<!--                        swiper-slide-active지울지말지-->
-                    <li class="swiper-slide ">
-                    <img src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743fc844448d.jpg"
-                         alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                         class="swiper-lazy swiper-lazy-loaded">
+                            <!-- 닫기버튼-->
+                            <div class="cal_bg tb1_0">
+                                <button type="button">닫기</button>
+                            </div>
+                            <!--모바일-->
+                            <div class="pic_wrap">
+                                <div class="gallery_m index_mobile swiper_detail">
+                                    <div class="swiper-container swiper-default swiper-container-horizontal">
+                                        <ul class="swiper-wrapper" style="transition-duration: 0ms;">
+                                            <li class="swiper-slide ">
+                                                <img src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743fc844448d.jpg"
+                                                    alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
+                                                    class="swiper-lazy swiper-lazy-loaded">
                                             </li>
-                    </ul>
-                    <div class="spinner_slide"><span></span></div>
-                    <div class="index">
-                    <p><span>1</span> / <span>1</span></p>
-                    </div>
-                    </div>
-                    </div>
+                                        </ul>
+                                        <div class="spinner_slide"><span></span></div>
+                                        <div class="index">
+                                            <p><span>1</span> / <span>1</span></p>
+                                        </div>
+                                    </div>
+                                </div>
 
-      <!-- PC -->
-                    <div class="gallery_m index_mobile">
-           <ul class="nav owl-carousel owl-loaded owl-drag">
-<!--이미지 갯수-->
-               <!--0-0번째사진-->
-                    <li class="item ">
-                    <img class="owl-lazy ahn_owl_img_0_0"
-                         data-src=""
-                         alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                         src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-                    </li>
-               <!--0-1번째사진-->
-                    <li class="item ">
-                       <img class="owl-lazy ahn_owl_img_0_1"
-                            data-src=""
-                            alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                            src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-                    </li>
-               <!--0-2번째사진-->
-                    <li class="item ">
-                     <img class="owl-lazy ahn_owl_img_0_2"
-                          data-src=""
-                          alt="안연주 "
-                          src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-                    </li>
-               <!--야-->
+                                <!-- PC -->
+                                <div class="gallery_m index_mobile">
+                                    <ul class="nav owl-carousel owl-loaded owl-drag">
+                                        <!--이미지 갯수-->
+                                        <!--0-0번째사진-->
+                                        <li class="item ">
+                                            <img class="owl-lazy ahn_owl_img_0_0" data-src=""
+                                                alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
+                                                src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
+                                        </li>
+                                        <!--0-1번째사진-->
+                                        <li class="item ">
+                                            <img class="owl-lazy ahn_owl_img_0_1" data-src=""
+                                                alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
+                                                src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
+                                        </li>
+                                        <!--0-2번째사진-->
+                                        <li class="item ">
+                                            <img class="owl-lazy ahn_owl_img_0_2" data-src="" alt="안연주 "
+                                                src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
+                                        </li>
+                                        <!--야-->
 
 
-                    </ul>
-                    <div class="index">
-                    <p><span>1</span> / <span>1</span></p>
-                    </div>
-                    </div>
-                    </div>
+                                    </ul>
+                                    <div class="index">
+                                        <p><span>1</span> / <span>1</span></p>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!--info-->
-  <div class="info">
-                    <div class="hotel">
-                        <!--여기 버튼 03 after-->
-                    <div class="price tb3_0">
-                    <strong> 가격 </strong>
-                    <div><p class="tb2_0">
-                    <!--여기 가격02-->
+                            <!--info-->
+                            <div class="info">
+                                <div class="hotel">
+                                    <!--여기 버튼 03 after-->
+                                    <div class="price tb3_0">
+                                        <strong> 가격 </strong>
+                                        <div>
+                                            <p class="tb2_0">
+                                                <!--여기 가격02-->
 
-                    </p>
+                                            </p>
 
-                    </div>
+                                        </div>
 
- <button type="button" onclick="pop_room_detail();">
+                                        <button type="button" onclick="pop_room_detail();">
                                             객실 이용 안내
                                         </button>
-                    </div>
-                        <!--여기 버튼 03-->
- </div>
-                    </div>
-                    </div>
-                    <!--안연주 room끝-->
+                                    </div>
+                                    <!--여기 버튼 03-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--room끝-->
 
-<!--01=======================================================================================================-->
-<!--안연주 room-->
-<div class="room">
-<!--첫썸네일-->
-<p class="pic_view ">
-<img class="lazy  ahn_owl_img_thumbnail_1_0"
-     src="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743fc844448d.jpg"
-     alt="더 디자이너스 리즈 강남 프리미어 | " style="display: inline;">
-</p>
+                        <!--01=======================================================================================================-->
+                        <!--room-->
+                        <div class="room">
+                            <!--첫썸네일-->
+                            <p class="pic_view ">
+                                <img class="lazy  ahn_owl_img_thumbnail_1_0"
+                                    src="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743fc844448d.jpg"
+                                    alt="더 디자이너스 리즈 강남 프리미어 | " style="display: inline;">
+                            </p>
 
 
-<!-- 닫기버튼-->
-<div class="cal_bg tb1_1">
-<button type="button">닫기</button>
-</div>
-<!--모바일-->
-  <div class="pic_wrap">
-                    <div class="gallery_m index_mobile swiper_detail">
-                    <div class="swiper-container swiper-default swiper-container-horizontal">
-                    <ul class="swiper-wrapper" style="transition-duration: 0ms;">
-<!--                        swiper-slide-active지울지말지-->
-                    <li class="swiper-slide swiper-slide-active">
-                    <img src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743fc844448d.jpg"
-                          alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                          class="swiper-lazy swiper-lazy-loaded">
+                            <!-- 닫기버튼-->
+                            <div class="cal_bg tb1_1">
+                                <button type="button">닫기</button>
+                            </div>
+                            <!--모바일-->
+                            <div class="pic_wrap">
+                                <div class="gallery_m index_mobile swiper_detail">
+                                    <div class="swiper-container swiper-default swiper-container-horizontal">
+                                        <ul class="swiper-wrapper" style="transition-duration: 0ms;">
+                                            <!--                        swiper-slide-active지울지말지-->
+                                            <li class="swiper-slide swiper-slide-active">
+                                                <img src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743fc844448d.jpg"
+                                                    alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
+                                                    class="swiper-lazy swiper-lazy-loaded">
                                             </li>
-                    </ul>
-                    <div class="spinner_slide"><span></span></div>
-                    <div class="index">
-                    <p><span>1</span> / <span>1</span></p>
-                    </div>
-                    </div>
-                    </div>
+                                        </ul>
+                                        <div class="spinner_slide"><span></span></div>
+                                        <div class="index">
+                                            <p><span>1</span> / <span>1</span></p>
+                                        </div>
+                                    </div>
+                                </div>
 
-    <!-- PC -->
-                    <div class="gallery_m index_mobile">
-                    <ul class="nav owl-carousel owl-loaded owl-drag">
-<!--이미지 갯수-->
-                        <!--1-0번째사진-->
-                    <li class="item ">
-                    <img class="owl-lazy ahn_owl_img_1_0"
-                         data-src=""
-                         alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                         src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-                    </li>
-                        <!--1-1번째사진-->
-                    <li class="item ">
-                       <img class="owl-lazy ahn_owl_img_1_1"
-                            data-src=""
-                            alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                            src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-                    </li>
-                        <!--1-2번째사진-->
-                    <li class="item ">
-                     <img class="owl-lazy ahn_owl_img_2_2"
-                          data-src=""
-                          alt="안연주 "
-                          src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-                    </li>
-                        <!--야-->
+                                <!-- PC -->
+                                <div class="gallery_m index_mobile">
+                                    <ul class="nav owl-carousel owl-loaded owl-drag">
+                                        <!--이미지 갯수-->
+                                        <!--1-0번째사진-->
+                                        <li class="item ">
+                                            <img class="owl-lazy ahn_owl_img_1_0" data-src=""
+                                                alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
+                                                src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
+                                        </li>
+                                        <!--1-1번째사진-->
+                                        <li class="item ">
+                                            <img class="owl-lazy ahn_owl_img_1_1" data-src=""
+                                                alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
+                                                src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
+                                        </li>
+                                        <!--1-2번째사진-->
+                                        <li class="item ">
+                                            <img class="owl-lazy ahn_owl_img_2_2" data-src="" alt="안연주 "
+                                                src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
+                                        </li>
+                                        <!--야-->
 
-                    </ul>
-                    <div class="index">
-                    <p><span>1</span> / <span>1</span></p>
-                    </div>
-                    </div>
-                    </div>
+                                    </ul>
+                                    <div class="index">
+                                        <p><span>1</span> / <span>1</span></p>
+                                    </div>
+                                </div>
+                            </div>
 
-<!--info-->
-  <div class="info">
-                    <div class="hotel">
-                    <!--여기 버튼 03 after-->
-                    <div class="price tb3_1">
-                    <strong> 가격 </strong>
-                    <div><p class="tb2_1">
-                    <!--여기 가격02-->
+                            <!--info-->
+                            <div class="info">
+                                <div class="hotel">
+                                    <!--여기 버튼 03 after-->
+                                    <div class="price tb3_1">
+                                        <strong> 가격 </strong>
+                                        <div>
+                                            <p class="tb2_1">
+                                                <!--여기 가격02-->
 
-                    </p>
+                                            </p>
 
-                    </div>
+                                        </div>
 
- <button type="button" onclick="pop_room_detail();">
+                                        <button type="button" onclick="pop_room_detail();">
                                             객실 이용 안내
                                         </button>
-                    </div>
-<!--여기 버튼 03-->
- </div>
-                    </div>
-                    </div>
-<!--안연주 room끝-->
+                                    </div>
+                                    <!--여기 버튼 03-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--room끝-->
 
-<!--02=======================================================================================================-->
-                    <!--안연주 room-->
-<div class="room">
-<!--첫썸네일-->
-<p class="pic_view ">
-<!--    data-original="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743fc844448d.jpg"-->
-<img class="lazy  ahn_owl_img_thumbnail_2_0"
-     src="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743fc844448d.jpg"
-     alt="더 디자이너스 리즈 강남 프리미어 | " style="display: inline;">
-</p>
+                        <!--02=======================================================================================================-->
+                        <!--room-->
+                        <div class="room">
+                            <!--첫썸네일-->
+                            <p class="pic_view ">
+                                <img class="lazy  ahn_owl_img_thumbnail_2_0"
+                                    src="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743fc844448d.jpg"
+                                    alt="더 디자이너스 리즈 강남 프리미어 | " style="display: inline;">
+                            </p>
 
 
-    <!-- 닫기버튼-->
-<div class="cal_bg tb1_2">
-<button type="button">닫기</button>
-</div>
-    <!--모바일-->
-  <div class="pic_wrap">
-                    <div class="gallery_m index_mobile swiper_detail">
-                    <div class="swiper-container swiper-default swiper-container-horizontal">
-                    <ul class="swiper-wrapper" style="transition-duration: 0ms;">
-<!--                        swiper-slide-active지울지말지-->
-                    <li class="swiper-slide swiper-slide-active">
-                    <img src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743fc844448d.jpg"
-                         alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                         class="swiper-lazy swiper-lazy-loaded">
+                            <!-- 닫기버튼-->
+                            <div class="cal_bg tb1_2">
+                                <button type="button">닫기</button>
+                            </div>
+                            <!--모바일-->
+                            <div class="pic_wrap">
+                                <div class="gallery_m index_mobile swiper_detail">
+                                    <div class="swiper-container swiper-default swiper-container-horizontal">
+                                        <ul class="swiper-wrapper" style="transition-duration: 0ms;">
+                                            <!--                        swiper-slide-active지울지말지-->
+                                            <li class="swiper-slide swiper-slide-active">
+                                                <img src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743fc844448d.jpg"
+                                                    alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
+                                                    class="swiper-lazy swiper-lazy-loaded">
                                             </li>
-                    </ul>
-                    <div class="spinner_slide"><span></span></div>
-                    <div class="index">
-                    <p><span>1</span> / <span>1</span></p>
-                    </div>
-                    </div>
-                    </div>
+                                        </ul>
+                                        <div class="spinner_slide"><span></span></div>
+                                        <div class="index">
+                                            <p><span>1</span> / <span>1</span></p>
+                                        </div>
+                                    </div>
+                                </div>
 
-      <!-- PC -->
-                    <div class="gallery_m index_mobile">
-                    <ul class="nav owl-carousel owl-loaded owl-drag">
-<!--이미지 갯수-->
-                        <!--2-0번째사진-->
-                    <li class="item ">
-                    <img class="owl-lazy ahn_owl_img_2_0"
-                         data-src=""
-                         alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                         src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-                    </li>
-                        <!--2-1번째사진-->
-                    <li class="item ">
-                       <img class="owl-lazy ahn_owl_img_2_1"
-                            data-src=""
-                            alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                            src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-                    </li>
-                        <!--2-2번째사진-->
-                    <li class="item ">
-                     <img class="owl-lazy ahn_owl_img_2_2"
-                          data-src=""
-                          alt="안연주 "
-                          src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-                    </li>
-                        <!--야-->
+                                <!-- PC -->
+                                <div class="gallery_m index_mobile">
+                                    <ul class="nav owl-carousel owl-loaded owl-drag">
+                                        <!--이미지 갯수-->
+                                        <!--2-0번째사진-->
+                                        <li class="item ">
+                                            <img class="owl-lazy ahn_owl_img_2_0" data-src=""
+                                                alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
+                                                src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
+                                        </li>
+                                        <!--2-1번째사진-->
+                                        <li class="item ">
+                                            <img class="owl-lazy ahn_owl_img_2_1" data-src=""
+                                                alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
+                                                src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
+                                        </li>
+                                        <!--2-2번째사진-->
+                                        <li class="item ">
+                                            <img class="owl-lazy ahn_owl_img_2_2" data-src="" alt="안연주 "
+                                                src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
+                                        </li>
 
+                                    </ul>
+                                    <div class="index">
+                                        <p><span>1</span> / <span>1</span></p>
+                                    </div>
+                                </div>
+                            </div>
 
-<!--이미지 갯수끝-->
-<!--                    <div class="owl-nav disabled">-->
-<!--                    <div class="owl-prev disabled">prev</div>-->
-<!--                    <div class="owl-next disabled">next</div>-->
-<!--                    </div>-->
-<!--                    <div class="owl-dots disabled">-->
-<!--                    <div class="owl-dot active"><span></span></div>-->
-<!--                    </div>-->
-                    </ul>
-                    <div class="index">
-                    <p><span>1</span> / <span>1</span></p>
-                    </div>
-                    </div>
-                    </div>
+                            <!--info-->
+                            <div class="info">
+                                <div class="hotel">
+                                    <!--여기 버튼 03 after-->
+                                    <div class="price tb3_2">
+                                        <strong> 가격 </strong>
+                                        <div>
+                                            <p class="tb2_2">
+                                                <!--여기 가격02-->
 
-    <!--info-->
-  <div class="info">
-                    <div class="hotel">
-                        <!--여기 버튼 03 after-->
-                    <div class="price tb3_2">
-                    <strong> 가격 </strong>
-                    <div><p class="tb2_2">
-                    <!--여기 가격02-->
+                                            </p>
 
-                    </p>
+                                        </div>
 
-                    </div>
-
- <button type="button" onclick="pop_room_detail();">
+                                        <button type="button" onclick="pop_room_detail();">
                                             객실 이용 안내
                                         </button>
-                    </div>
-                        <!--여기 버튼 03-->
- </div>
-                    </div>
-                    </div>
-                    <!--안연주 room끝-->
+                                    </div>
+                                    <!--여기 버튼 03-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--room끝-->
+
+                        <!--03=======================================================================================================-->
+                        <span class="ahn_di_span">
+                        </span>
+
+                    </span>
+
+                    <!-- php -->
+
+                </article>
+                <!-- //객실안내/예약 -->
+            </form>
+            <!-- 예약 경고 -->
 
 
+            <!-- 숙소정보 -->
+            <article class="detail_info">
+                <!-- 기본 정보 -->
+                <button type="button" id="default_info_tab" class="category"><span>기본 정보</span></button>
+                <section class="default_info">
 
-<!--03=======================================================================================================-->
+                    <!-- h3과 ul 한번에 묶은 버전 -->
+                    <span class="ahn_di_span">
+                        <h3></h3>
+                        <ul></ul>
+                    </span>
 
 
                     <span class="ahn_di_span">
+                        <h3></h3>
+                    </span>
+                    <span class="ahn_di_span">
+                        <ul>
+                        </ul>
                     </span>
 
+
+
+
+                    <span class="ahn_di_span">
+                        <h3>업체주소</h3>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <ul>
+                            <li class="myIntcomadd"> </li>
+                        </ul>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <h3>오시는 길</h3>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <ul>
+                            <li class="myComeway"> </li>
+                        </ul>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <h3>주변정보</h3>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <ul>
+                            <li class="mySidein1"> </li>
+                            <li class="mySidein2"> </li>
+                            <li class="mySidein3"> </li>
+                        </ul>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <h3>이용규칙</h3>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <ul>
+                            <li class="myRmrule"> </li>
+                        </ul>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <h3>한줄평</h3>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <ul>
+                            <li class="myOneline"> </li>
+                        </ul>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <h3>현장추가요금</h3>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <ul>
+                            <li class="myPcash"> </li>
+                        </ul>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <h3>주차장 정보</h3>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <ul>
+                            <li class="myParking"> </li>
+                        </ul>
+                    </span>
+                    <span class="ahn_di_span">
+
+                        <h3>확인사항</h3>
+                    </span>
+
+                    <span class="ahn_di_span">
+                        <ul>
+                            <li class="myKakunin"> </li>
+                        </ul>
                     </span>
 
 
 
+                </section>
 
 
-                <!-- php -->
+                <!-- 요금 정보 -->
+                <button type="button" class="category"><span>요금 정보</span></button>
+
+                <section class="table_wrap">
+
+                    <!--span 끝 -->
+                    <!--span -->
+                    <span class="ahn_di_span">
+                        <div class="normal_day">
+                            <h3>숙박 이용요금</h3>
+                            <table class="table_type_02">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 25%;">객실 이름</th>
+                                        <th style="width: 25%;">일, 월, 화, 수, 목</th>
+                                        <th style="width: 25%;">금, 공휴일 전날</th>
+                                        <th style="width: 25%;">토</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="tb1_0"></span>
+                                        </td>
+                                        <td>
+                                            <span class="tb2_0"></span>
+                                        </td>
+                                        <td>
+                                            <span class="weekend_0"></span>
+                                        </td>
+                                        <td>
+                                            <span class="weekend_0"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="tb1_1"></span>
+                                        </td>
+                                        <td>
+                                            <span class="tb2_1"></span>
+                                        </td>
+                                        <td>
+                                            <span class="weekend_1"></span>
+                                        </td>
+                                        <td>
+                                            <span class="weekend_1"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="tb1_2"></span>
+                                        </td>
+                                        <td>
+                                            <span class="tb2_2"></span>
+                                        </td>
+                                        <td>
+                                            <span class="weekend_2"></span>
+                                        </td>
+                                        <td>
+                                            <span class="weekend_2"></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h3>숙박 이용시간</h3>
+                            <table class="table_type_02">
+                                <tr>
+                                    <th style="width: 25%;">객실 이름</th>
+                                    <th style="width: 25%;">일, 월, 화, 수, 목</th>
+                                    <th style="width: 25%;">금, 공휴일 전날</th>
+                                    <th style="width: 25%;">토</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="tb1_0"></span>
+                                    </td>
+                                    <td>
+                                        <span class="myStime_0"></span>
+                                        <span class="myCtime_0"></span>
+                                    </td>
+                                    <td>
+                                        <span class="myStime_0"></span>
+                                        <span class="myCtime_0"></span>
+                                    </td>
+                                    <td>
+                                        <span class="myStime_0"></span>
+                                        <span class="myCtime_0"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="tb1_1"></span>
+                                    </td>
+                                    <td>
+                                        <span class="myStime_1"></span>
+                                        <span class="myCtime_1"></span>
+                                    </td>
+                                    <td>
+                                        <span class="myStime_1"></span>
+                                        <span class="myCtime_1"></span>
+                                    </td>
+                                    <td>
+                                        <span class="myStime_1"></span>
+                                        <span class="myCtime_1"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="tb1_2"></span>
+                                    </td>
+                                    <td>
+                                        <span class="myStime_2"></span>
+                                        <span class="myCtime_2"></span>
+                                    </td>
+                                    <td>
+                                        <span class="myStime_2"></span>
+                                        <span class="myCtime_2"></span>
+                                    </td>
+                                    <td>
+                                        <span class="myStime_2"></span>
+                                        <span class="myCtime_2"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </span>
+                    <!--span 끝-->
+                </section>
 
             </article>
-            <!-- //객실안내/예약 -->
-        </form>
+            <!--숙소정보 -->
 
-        <!-- 예약 경고 -->
-
-
-        <!-- 숙소정보 -->
-
-        <article class="detail_info">
-            <!-- 기본 정보 -->
-            <button type="button" id="default_info_tab" class="category"><span>기본 정보</span></button>
-            <section class="default_info">
-
-                <!-- h3과 ul 한번에 묶은 버전 -->
-                <span class="ahn_di_span">
-                <h3></h3>
-                <ul></ul>
-            </span>
-
-
-                <span class="ahn_di_span">
-                <h3></h3>
-            </span>
-                <span class="ahn_di_span">
-                <ul>
-                </ul>
-            </span>
-
-                <span class="ahn_di_span">
-                <h3>주차장 정보</h3>
-            </span>
-
-                <span class="ahn_di_span">
-                <ul>
-                    <li>
-                    <li>주차는 객실당 1대 가능합니다.(발렛서비스)</li>
-                    <li>
-                        특수차량이용시(대형차량,특수차량, 슈퍼카, 개조차량등)주차가 불가할 수 있으니 호텔로 문의바랍니다.</li>
-                    </li>
-                    <li>총 1대 주차시설 보유</li>
-                </ul>
-            </span>
-
-                <span class="ahn_di_span">
-                <h3>지하철 정보</h3>
-            </span>
-
-                <span class="ahn_di_span">
-                <ul>
-                    <li>2호선 역삼역</li>
-                </ul>
-            </span>
-
-                <span class="ahn_di_span">
-                <h3>객실내부 시설</h3>
-            </span>
-
-                <span class="ahn_di_span">
-                <ul>
-                    <li>
-                    <li>객실은 랜덤배정으로 이미지와 다른 객실이 배정이 될 수 있습니다.</li>
-                    <li><br></li>
-                    <li>
-                        전객실 2인기준(코로나 확산 방지 대책으로 인해 스위트와 로얄스위트만 인원 추가가 가능하며, 인원추가시 추가요금 현장결재)</li>
-                    <li><br></li>
-                    <li>
-                        전 객실 Netflix 프리존(무료시청 가능, 자동 로그인)</li>
-                    <li>
-                        전체 건물, 전 객실 금연 구역 운영</li>
-                    </li>
-                </ul>
-            </span>
-
-                <span class="ahn_di_span">
-                <h3>프런트 및 그 외 시설</h3>
-            </span>
-                <span class="ahn_di_span">
-                <ul>
-                    <li>
-                    <li>로비에 방문하는 고객을 대상으로 간단한 음료가 제공됩니다.</li>
-                    </li>
-                </ul>
-            </span>
-            </section>
-
-
-            <!-- 요금 정보 -->
-            <button type="button" class="category"><span>요금 정보</span></button>
-
-            <section class="table_wrap">
-
-
-
-
-                <!-- 앱이랑 똑같음 참고해 주세요 /api_v2/application/views/ads/price_time.php -->
-                <!-- 안연주 span -->
-                <span class="ahn_di_span">
-                <div class="normal_day">
-                    <h3>대실 이용요금</h3>
-                    <table class="table_type_02">
-                        <tr>
-                            <th>객실 등급</th>
-                            <th>월, 화, 수, 목, 금</th>
-                            <th>일, 토, 공휴일</th>
-                        </tr>
-                        <tr>
-                            <td>로얄스위트</td>
-                            <td><span>70,000</span></td>
-                            <td><span>70,000</span></td>
-                        </tr>
-                        <tr>
-                            <td>스위트</td>
-                            <td><span>60,000</span></td>
-                            <td><span>60,000</span></td>
-                        </tr>
-                        <tr>
-                            <td>프리미엄</td>
-                            <td><span>40,000</span></td>
-                            <td><span>40,000</span></td>
-                        </tr>
-                        <tr>
-                            <td>디럭스</td>
-                            <td><span>35,000</span></td>
-                            <td><span>35,000</span></td>
-                        </tr>
-                        <tr>
-                            <td>디럭스(도보전용)</td>
-                            <td><span>30,000</span></td>
-                            <td><span>30,000</span></td>
-                        </tr>
-                        <tr>
-                            <td>[바이러스 케어] 스위트</td>
-                            <td><span>60,000</span></td>
-                            <td><span>60,000</span></td>
-                        </tr>
-                        <tr>
-                            <td>[바이러스 케어] 로얄스위트</td>
-                            <td><span>70,000</span></td>
-                            <td><span>70,000</span></td>
-                        </tr>
-                    </table>
-                    <h3>대실 이용시간</h3>
-                    <table class="table_type_02">
-                        <tr>
-                            <th>구분</th>
-                            <th>일, 월, 화, 수, 목</th>
-                            <th>토</th>
-                            <th>금</th>
-                        </tr>
-                        <tr>
-                            <td>이용시간</td>
-                            <td><span>4시간 </span></td>
-                            <td><span>4시간 </span></td>
-                            <td><span>4시간 </span></td>
-                        </tr>
-                        <tr>
-                            <td>마감시간</td>
-                            <td><span>24시 </span></td>
-                            <td><span>24시 </span></td>
-                            <td><span>24시 </span></td>
-                        </tr>
-                    </table>
-                </div>
-            </span>
-                <!--# 안연주 span 끝 -->
-                <!-- 안연주 span -->
-                <span class="ahn_di_span">
-                <div class="normal_day">
-                    <h3>숙박 이용요금</h3>
-                    <table class="table_type_02">
-                        <tr>
-                            <th>객실 등급</th>
-                            <th>일</th>
-                            <th>월, 화, 수, 목</th>
-                            <th>금</th>
-                            <th>토</th>
-                        </tr>
-                        <tr>
-                            <td>로얄스위트</td>
-                            <td><span>149,800</span></td>
-                            <td><span>169,800</span></td>
-                            <td><span>189,800</span></td>
-                            <td><span>199,800</span></td>
-                        </tr>
-                        <tr>
-                            <td>스위트</td>
-                            <td><span>129,800</span></td>
-                            <td><span>149,800</span></td>
-                            <td><span>169,800</span></td>
-                            <td><span>179,800</span></td>
-                        </tr>
-                        <tr>
-                            <td>프리미엄</td>
-                            <td><span>59,800</span></td>
-                            <td><span>69,800</span></td>
-                            <td><span>89,800</span></td>
-                            <td><span>99,800</span></td>
-                        </tr>
-                        <tr>
-                            <td>디럭스</td>
-                            <td><span>49,800</span></td>
-                            <td><span>59,800</span></td>
-                            <td><span>79,800</span></td>
-                            <td><span>89,800</span></td>
-                        </tr>
-                        <tr>
-                            <td>디럭스(도보전용)</td>
-                            <td><span>44,800</span></td>
-                            <td><span>49,800</span></td>
-                            <td><span>69,800</span></td>
-                            <td><span>79,800</span></td>
-                        </tr>
-                        <tr>
-                            <td>[바이러스 케어] 스위트</td>
-                            <td><span>129,800</span></td>
-                            <td><span>149,800</span></td>
-                            <td><span>169,800</span></td>
-                            <td><span>179,800</span></td>
-                        </tr>
-                        <tr>
-                            <td>[바이러스 케어] 로얄스위트</td>
-                            <td><span>149,800</span></td>
-                            <td><span>169,800</span></td>
-                            <td><span>189,800</span></td>
-                            <td><span>199,800</span></td>
-                        </tr>
-                    </table>
-                    <h3>숙박 이용시간</h3>
-                    <table class="table_type_02">
-                        <tr>
-                            <th>구분</th>
-                            <th>월, 화, 수, 목</th>
-                            <th>일</th>
-                            <th>금</th>
-                            <th>토</th>
-                        </tr>
-                        <tr>
-                            <td>입실</td>
-                            <td><span>21시 </span></td>
-                            <td><span>21시 </span></td>
-                            <td><span>21시 </span></td>
-                            <td><span>21시 </span></td>
-                        </tr>
-                        <tr>
-                            <td>퇴실</td>
-                            <td><span>정오 </span></td>
-                            <td><span>정오 </span></td>
-                            <td><span>정오 </span></td>
-                            <td><span>정오 </span></td>
-                        </tr>
-                    </table>
-                </div>
-            </span>
-                <!--# 안연주 span 끝-->
-            </section>
-
-            <!-- 테마 -->
-
-            <button type="button" class="category theme_category"><span>테마</span></button>
-            <section class="theme">
-                <ul></ul>
-            </section>
-
-
-            <button type="button" class="category on"><span>편의시설 및 서비스</span></button>
-            <section class="service" style="display: block;">
-            <span class="ahn_di_span">
-                <ul class="theme_wrap">
-                    <li class="theme_90">주방/식당</li>
-                    <li class="theme_91">세탁기</li>
-                    <li class="theme_96">와이파이</li>
-                    <li class="theme_98">욕실용품</li>
-                    <li class="theme_99">에어컨</li>
-                    <li class="theme_100">냉장고</li>
-                    <li class="theme_101">객실샤워실</li>
-                    <li class="theme_103">드라이기</li>
-                    <li class="theme_106">객실내흡연</li>
-                    <li class="theme_127">짐보관가능</li>
-                    <li class="theme_166">BBQ</li>
-                    <li class="theme_170">전자레인지</li>
-                    <li class="theme_171">취사가능</li>
-                    <li class="theme_172">개인콘센트</li>
-                    <li class="theme_295">TV</li>
-                </ul>
-            </span>
-            </section>
-
-        </article>
-        <!-- //숙소정보 -->
-
-        <!-- 리뷰 -->
-        <!-- 여긴 ahn_di_span안넣음 -->
-        <article class="review" id="review">
-            <div class="score_top" v-if="count > 0">
-                <strong>{{rate_textinfo}}</strong>
-                <div class="score_wrap">
-                    <!-- star_00 부터 5단위로 star_50 까지 반응형2.0과 같은구조 -->
-                    <div :class="'score_star star_'+ score_star"></div>
-                    <div class="num">{{rateavg}}</div>
-                </div>
-                <p v-if="ownercommcnt">
-                    전체 리뷰 <b>{{count}}</b>
-                    <span>|</span>
-                    제휴점 답변 <b>{{ownercommcnt}}</b>
-                </p>
-                <p v-else>
-                    전체 리뷰 <b>{{count}}</b>
-                </p>
-            </div>
-
-            <ul>
-                <template v-for="item in items">
-                    <li>
-                        <div class="guest">
-                            <!-- 유저 사진있으면 노출해주고 없을시 랜덤으로
-                        ico_01 ~ ico_05 에서 뿌려줌 -->
-                            <p class="pic">
-                                <img :src="'//image.goodchoice.kr'+ item.upath" :alt="item.unick" />
-                            </p>
-                            <span class="best_review" v-if="item.isBest === true">베스트 리뷰</span>
-                            <strong>{{item.epilrate_textinfo}}</strong>
-                            <div class="score_wrap_sm">
-                                <div :class="'score_star star_'+ get_score_star(item.epilrate)"></div>
-                                <div class="num">{{float_zero(item.epilrate)}}</div>
-                            </div>
-                            <div class="name" v-if="item.aerealstate == 'R'">
-                                <b>{{item.armgname}} · </b>{{item.unick}}
-                            </div>
-                            <div class="name" v-else>
-                                {{item.unick}}
-                            </div>
-                            <div class="txt" v-html="item.aepcont.replace(/\n/g, '<br />')"></div>
-                            <div class="gallery_re" v-if="getCount(item.aepimg) > 0">
-
-
-                                <div class="swiper-container swiper-type-3">
-                                    <ul class="swiper-wrapper">
-                                        <template v-for="aepimg in item.aepimg">
-                                            <li class="swiper-slide">
-                                                <img :src="'//image.goodchoice.kr'+ aepimg.aep_imgpath"
-                                                     :alt="item.epilrate_textinfo" />
-                                            </li>
-                                        </template>
-                                    </ul>
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-
-                                <!--
-                            <ul class="nav owl-carousel">
-                                <template v-for="aepimg in item.aepimg">
-                                    <li class="item">
-                                        <img class="owl-lazy" :src="" alt=""/>
-                                    </li>
-                                </template>
-                            </ul>
-                            -->
-
-                            </div>
-                            <span class="date">{{get_date_diff(item.aepreg, '전')}}</span>
-                        </div>
-                        <template v-for="o_comm in item.o_comm">
-                            <div class="boss">
-                                <p class="pic">
-                                    <img :src="'//image.goodchoice.kr'+ o_comm.upath" :alt="o_comm.unick" />
-                                </p>
-                                <strong>{{o_comm.unick}}</strong>
-                                <div class="txt" v-html="o_comm.aep_cmcont.replace(/\n/g, '<br />')"></div>
-                                <span class="date">{{get_date_diff(o_comm.aep_cmreg, '전')}}</span>
-                            </div>
-                        </template>
-                    </li>
-                </template>
-            </ul>
-
-            <div id="pagination">
-                <my-pagination></my-pagination>
-            </div>
-        </article>
-        <!-- //리뷰 -->
-
-    </div>
-    <!-- //Content  -->
-
-    <!-- #1 팝업 - 멤버쉽 혜택 pop_mem(); -->
-    <div class="layer pop_full pop_mem">
-        <div class="fix_title">
-            진행중인 이벤트
-            <button onclick="close_layer();">닫기</button>
-        </div>
-        <div class="iscroll_cp">
-            <div class="scroller">
-
-                <article>
-
-                    <strong>
-                        <span class="title_number">
-                            <span class="icon-img_event_title"></span>
-                            <span class="icon-img_number_1"></span>
-                        </span>
-                        <p>넷플릭스 프리존</p>
-                    </strong>
-
-                    <div class="stage">
-                        <!-- 				<p class="strong_info"></p> -->
-                        <div class="default_html">
-                            <p>넷플릭스 프리존</p>
-                            <p class="date_area">
-                                <span class="title">진행기간</span> 일, 월, 화, 수, 목, 금, 토, 공휴일, 공휴일 전날
-                            </p>
-                        </div>
+            <!-- 리뷰 -->
+            <!-- 여긴 ahn_di_span안넣음 -->
+            <article class="review " id="review">
+                <div class="score_top">
+                    <strong>추천해요</strong>
+                    <div class="score_wrap">
+                        <!-- star_00 부터 5단위로 star_50 까지 반응형2.0과 같은구조 -->
+                        <div class="score_star ahn_star_avg"></div>
+                        <div class="num re_average_total">5</div>
                     </div>
-                </article>
+                    <p>
+                        전체 리뷰 <b class="re_count">12</b>
+                    </p>
+                </div>
+                <ul class="re_list">
 
-            </div>
-        </div>
-    </div>
-
-    <!-- #2 팝업 - 이벤트(호텔) pop_evt();  -->
-    <div class="layer pop_full pop_evt">
-        <div class="fix_title">
-            진행중인 이벤트
-            <button onclick="close_layer();">닫기</button>
-        </div>
-        <div class="iscroll_cp">
-            <div class="scroller">
-
-
-            </div>
-        </div>
-    </div>
-
-    <!-- #3 팝업 - 객실 이용 안내 pop_useinfo();
-<div class="layer pop_full pop_useinfo">
-    <div class="fix_title">
-        이벤트
-        <button onclick="close_layer();">닫기</button>
-    </div>
-    <div class="iscroll_cp">
-        <div class="scroller">
-            <section>
-                <strong>기본 정보</strong>
-                <ul class="dot_txt">
-                    <li>2인 기준 최대 3인</li>
-                    <li>원룸형 15평 (침대룸+거실+주방+화장실)</li>
                 </ul>
-                <strong>기본 정보</strong>
-                <ul class="dot_txt">
-                    <li>2인 기준 최대 3인</li>
-                    <li>원룸형 15평 (침대룸+거실+주방+화장실)</li>
-                </ul>
-            </section>
-            <section>
-                <strong>기본 정보</strong>
-                <ul class="dot_txt">
-                    <li>2인 기준 최대 3인</li>
-                    <li>원룸형 15평 (침대룸+거실+주방+화장실)</li>
-                </ul>
-                <strong>기본 정보</strong>
-                <ul class="dot_txt">
-                    <li>2인 기준 최대 3인</li>
-                    <li>원룸형 15평 (침대룸+거실+주방+화장실)</li>
-                </ul>
-            </section>
-        </div>
-    </div>
-</div> -->
 
-    <!-- 팝업 객실 상세 -->
-    <div class="layer pop_full pop_useinfo" data-room-detail="306531">
-        <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-        <div class="iscroll_cp scroll_306531">
-            <div class="scroller">
+                <div id="pagination">
+                    <my-pagination></my-pagination>
+                </div>
+            </article>
+            <!-- //리뷰 -->
+        </div>
+        <!-- //Content  -->
+
+        <!-- 팝업 객실 상세 -->
+        <div class="layer pop_full pop_useinfo" data-room-detail="306531">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_306531">
+                <div class="scroller">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="layer pop_full pop_useinfo" data-room-detail="82375">
-        <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-        <div class="iscroll_cp scroll_82375">
-            <div class="scroller">
+        <div class="layer pop_full pop_useinfo" data-room-detail="82375">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_82375">
+                <div class="scroller">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="layer pop_full pop_useinfo" data-room-detail="8679">
-        <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-        <div class="iscroll_cp scroll_8679">
-            <div class="scroller">
+        <div class="layer pop_full pop_useinfo" data-room-detail="8679">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_8679">
+                <div class="scroller">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="layer pop_full pop_useinfo" data-room-detail="364764">
-        <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-        <div class="iscroll_cp scroll_364764">
-            <div class="scroller">
+        <div class="layer pop_full pop_useinfo" data-room-detail="364764">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_364764">
+                <div class="scroller">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="layer pop_full pop_useinfo" data-room-detail="8680">
-        <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-        <div class="iscroll_cp scroll_8680">
-            <div class="scroller">
+        <div class="layer pop_full pop_useinfo" data-room-detail="8680">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_8680">
+                <div class="scroller">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="layer pop_full pop_useinfo" data-room-detail="364763">
-        <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-        <div class="iscroll_cp scroll_364763">
-            <div class="scroller">
+        <div class="layer pop_full pop_useinfo" data-room-detail="364763">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_364763">
+                <div class="scroller">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="layer pop_full pop_useinfo" data-room-detail="8681">
-        <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-        <div class="iscroll_cp scroll_8681">
-            <div class="scroller">
+        <div class="layer pop_full pop_useinfo" data-room-detail="8681">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_8681">
+                <div class="scroller">
+                </div>
             </div>
         </div>
+
+
+
+        <!-- 푸터 -->
+        <div th:replace="userthy/user-footer :: user-footer"></div>
+        <!-- 푸터 끝 -->
+
     </div>
 
+    <!-- 상단으로 -->
+    <button class="btn_go_top" onclick="moveTop();">상단으로</button>
+
+    <!-- //Wrap -->
+
+    <!-- Script -->
+    <!-- Library -->
+    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="/js/library/iscroll.js"></script>
+
+    <!-- Service -->
+    <script type="text/javascript" src="/js/service/common.js"></script>
+    <script type="text/javascript" src="/js/service/geolocation.js"></script>
+
+    <!-- Module -->
+    <script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
+
+    <!-- Page Script -->
+    <script type="text/javascript" src="/js/library/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.comiseo.daterangepicker.min.js"></script>
+    <script type="text/javascript" src="/js/library/swiper.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script type="text/javascript" src="/js/library/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/js/library/moment.js"></script>
+    <script type="text/javascript" src="/js/service/datepick.js"></script>
+    <script type="text/javascript" src="/js/library/vue.min.js"></script>
+    <!--    ↓ 객실안내/예약/숙소정보/리뷰 클릭버튼-->
+    <script type="text/javascript" src="/js/service/product.detail.js"></script>
+    <!-- Body Spinner -->
+    <div class="spinner show"><span></span></div>
+    <script>
+    </script>
+    <script>
+        $(function () {
+
+            let id2 = $("#id").val();
+            console.log(id2);
+            let tbMemId2 = $("#tbMemId").val();
+            console.log(tbMemId2);
 
 
-    <!-- Footer -->
-    <footer>
-        <div class="align">
-            <ul class="link">
-                <li><a href="http://www.withinnovation.co.kr/" target="_blank">회사소개</a><span>|</span></li>
-                <li><a href="/more/terms.html" data-default="term">이용약관</a><span>|</span></li>
-                <li><a href="/more/terms/privacy.html" data-default="privacy">개인정보처리방침</a><span>|</span></li>
-                <li><button type="button" onclick="pop_licence();return false;">사업자 정보확인</button><span>|</span></li>
-                <li><a href="http://ad.goodchoice.kr/" target="_blank">여기어때 마케팅센터</a><span>|</span></li>
-                <li><a href="http://host.goodchoice.kr/" target="_blank">액티비티 호스트센터</a><span>|</span></li>
-                <li><a href="http://hotel.goodchoice.kr/" target="_blank">HOTEL 여기어때</a><span>|</span></li>
-                <li><a href="/more/contentsInfo.html">콘텐츠산업진흥법에의한 표시</a></li>
-            </ul>
-            <p>
-                <b>고객행복센터 1670-6250</b>
-                오전 9시 - 새벽 3시
-            </p>
-            <address>
-                <span>(주) 여기어때컴퍼니</span>
-                주소 : 서울특별시 강남구 봉은사로 479, 479타워 11층<br />
-                대표이사 : 정명훈 | 사업자등록번호: 742-86-00224<br />
-                통신판매번호 : 2017-서울강남-01779 | 관광사업자 등록번호: 제1026-24호<br />
-                전화번호 : 1670-6250<br />
-                전자우편주소 : help@goodchoice.kr<br />
-                Copyright GC COMPANY Corp. All rights reserved.
-            </address>
+            axios.get(`/api/host/` + id2 + `/hostroomreview/`, {
 
-            <div class="ico">
-                <a href="http://www.facebook.com/goodchoiceofficial" target="_black"
-                   class="icon-icn_login_facebook"><span>여기어때 페이스북</span></a>
-                <a href="http://blog.gccompany.co.kr/" target="_black" class="icon-ic_blog"><span>여기어때 블로그</span></a>
-                <a href="http://post.naver.com/my.nhn?memberNo=25599212" target="_black"
-                   class="icon-ic_naverpost"><span>네이버포스트</span></a>
-            </div>
+            }).then(function (response) {
+                console.log(response);
+                // let $id = response.data.id;
+                let myCorporate = response.data.data.tbHostApiResponse.myCorporate; // 숙박업소명
+                let myIntro = response.data.data.tbHostApiResponse.myIntro; // 주인장 소개글
 
-        </div>
-
-    </footer>
-
-</div>
-
-<!-- 상단으로 -->
-<button class="btn_go_top" onclick="moveTop();">상단으로</button>
-
-<!-- //Wrap -->
-
-<!-- Script -->
-<!-- Library -->
-<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
-<script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
-<script type="text/javascript" src="/js/library/iscroll.js"></script>
-
-<!-- Service -->
-<script type="text/javascript" src="/js/service/common.js"></script>
-<script type="text/javascript" src="/js/service/geolocation.js"></script>
-
-<!-- Module -->
-<script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
-
-<!-- Page Script -->
-<script type="text/javascript" src="/js/library/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/js/library/jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src="/js/library/jquery.comiseo.daterangepicker.min.js"></script>
-<script type="text/javascript" src="/js/library/swiper.min.js"></script>
-
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-<script type="text/javascript" src="/js/library/owl.carousel.min.js"></script>
-<script type="text/javascript" src="/js/library/moment.js"></script>
-<script type="text/javascript" src="/js/service/datepick.js"></script>
-<script type="text/javascript" src="/js/library/vue.min.js"></script>
-<!-- <script type="text/javascript" src="/dapi.kakao.com/v2/maps/sdk66c8.json?appkey=f6ffb505bb11d7cc3584d443ce35f704" ></script> -->
-<!--    ↓ 객실안내/예약/숙소정보/리뷰 클릭버튼-->
-<script type="text/javascript" src="/js/service/product.detail.js"></script>
-
-<!-- Body Spinner -->
-<div class="spinner show"><span></span></div>
-<script>
-    // $(document).ready(function(){
-    //     $('.owl-carousel').owlCarousel({
-    //         autoWidth:true,
-    //         items:3
-    //     });
-    // });
-</script>
-<script>
+                //추가
+                let myIntcomadd = response.data.data.tbHostApiResponse.myIntcomadd1 + response.data.data
+                    .tbHostApiResponse.myIntcomadd2; // 숙소주소
+                let myComeway = response.data.data.tbHostApiResponse.myComeway; // 오시는길
+                let mySidein1 = response.data.data.tbHostApiResponse.mySidein1; // 주변정보1
+                let mySidein2 = response.data.data.tbHostApiResponse.mySidein2; // 주변정보2
+                let mySidein3 = response.data.data.tbHostApiResponse.mySidein3; // 주변정보3
+                let myRmrule = response.data.data.tbHostApiResponse.myRmrule; // 이용규칙
+                let myOneline = response.data.data.tbHostApiResponse.myOneline; // 한줄평
+                let myPcash = response.data.data.tbHostApiResponse.myPcash; // 추가요금
+                let myParking = response.data.data.tbHostApiResponse.myParking; // 주차장정보
+                let myKakunin = response.data.data.tbHostApiResponse.myKakunin; // 확인사항
 
 
-    $(function () {
+                $('.myIntcomadd').text(myIntcomadd); // 숙소주소
+                $('.myComeway').text(myComeway); // 오시는길
+                $('.mySidein1').text(mySidein1); //주변정보1
+                $('.mySidein2').text(mySidein2); //주변정보2
+                $('.mySidein3').text(mySidein3); //주변정보3
+                $('.myRmrule').text(myRmrule); //이용규칙
+                $('.myOneline').text(myOneline); //한줄평
+                $('.myPcash').text(myPcash); //추가요금
+                $('.myParking').text(myParking); // 주차장 정보
+                $('.myKakunin').text(myKakunin); //확인사항
+                //추가 끝
+                $('.myCorporate').text(myCorporate); //상호명 숙박업소명
+                $('.myIntro').text(myIntro); //사장님 말씀
 
-        let id2 = $("#id").val();
-        console.log(id2);
-        let tbMemId2 = $("#tbMemId").val();
-        console.log(tbMemId2);
+                let re_count = 0;
+                let re_title = "";
+                let re_content = "";
+                let re_grade = "";
+                let re_average = 0;
+                let grade = "";
+                let tb_Hostname = "";
+                let re_Nkname = "";
+                let re_Regdate = "";
+                //리뷰 갯수 개산
+                for (let i in response.data.data.tbHostApiResponse.tbRoomApiResponseList) {
+                    re_count += Object.keys(response.data.data.tbHostApiResponse.tbRoomApiResponseList[
+                        i].tbReviewApiResponseList).length //
 
+                    for (let k in response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbReviewApiResponseList) {
+                        //리뷰제목
+                        re_title = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbReviewApiResponseList[k].reTitle;
+                        console.log('리뷰제목 : ' + re_title);
+                        //리뷰별등급
+                        re_grade = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbReviewApiResponseList[k].reGrade;
+                        console.log('리뷰별등급 : ' + re_grade);
+                        //리뷰 평균
+                        re_average += parseInt(re_grade);
+                        console.log("리뷰카운트_" + re_average);
 
-        axios.get(`/api/host/` + id2 + `/hostroomreview/`, {
+                        //리뷰내용
+                        re_content = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbReviewApiResponseList[k].reContent;
+                        console.log('리뷰내용 : ' + re_content);
+                        //숙박업소명 상호명 tbHostname
+                        tb_Hostname = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbReviewApiResponseList[k].tbHostname;
+                        console.log('상호명 : ' + tb_Hostname);
+                        //리뷰작성자 닉네임
+                        re_Nkname = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbReviewApiResponseList[k].reNkname;
+                        console.log('닉네임 : ' + re_Nkname);
+                        //리뷰 작성일
+                        re_Regdate = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbReviewApiResponseList[k].reRegdate;
+                        console.log('작성일 : ' + re_Regdate);
 
-        }).then(function (response) {
-            console.log(response);
-            // let $id = response.data.id;
-            let myCorporate = response.data.data.tbHostApiResponse.myCorporate; // 숙박업소명
-            let mySidein1 = response.data.data.tbHostApiResponse.mySidein1; // 주변정보1
-            let myIntro = response.data.data.tbHostApiResponse.myIntro;
+                        re_Regdate = re_Regdate.substr(0, 10);
 
-            $('.myCorporate').text(myCorporate); //상호명 숙박업소명
-            $('.mySidein1').text(mySidein1); //오시는길1
-            $('.myIntro').text(myIntro); //사장님 말씀
-            let re_count = 0;
-            //리뷰 갯수 개산
-            for (let i in response.data.data.tbHostApiResponse.tbRoomApiResponseList) {
-                re_count += Object.keys(response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].tbReviewApiResponseList).length//
-            }
-            console.log(re_count);
-            $('.re_count').text(re_count); //리뷰갯수
+                        //사장님 댓글 내용
+                        re_Reply = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbReviewApiResponseList[k].reReply;
+                        console.log('사장님 댓글내용 : ' + re_Reply);
+                        //사장님 댓글 작성일
+                        re_Rpdate = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbReviewApiResponseList[k].reRpdate;
+                        console.log('사장님 댓글내용 : ' + re_Rpdate);
 
-            //멤버 아이디
-            let $tbMemId = response.data.data.tbHostApiResponse.tbMemId;
-            console.log("멤버아이디"+$tbMemId);
-            let $tbhostId = response.data.data.tbHostApiResponse.id;
-            console.log("호스트아이디"+$tbhostId);
-
-
-            let $img2 = response.data.data.tbHostApiResponse.tbHostImgResponseList[0].safeFile
-            $img2 = $img2.substr(54);
-            console.log($img2);
-            $('.ahn_img2').attr('src', $img2);
+                        re_Rpdate = re_Rpdate.substr(0, 10);
+                        //별점이 n점 일때
+                        if (re_grade == '5' || '6' || '7' || '8' || '9' || '10') {
+                            grade = '50';
+                        }
+                        if (re_grade == '4') {
+                            grade = '40';
+                        }
+                        if (re_grade == '3') {
+                            grade = '30';
+                        }
+                        if (re_grade == '2') {
+                            grade = '20';
+                        }
+                        if (re_grade == '1') {
+                            grade = '10';
+                        }
 
 
 
+                        //제휴점답변
+                        let jehue = `<div class="boss">` +
+                            `<p class="pic"><img src="//image.goodchoice.kr/profile/ico/ico_owner.png" alt="제휴점 답변"></p>` +
+                            `<strong>제휴점 답변</strong><br>` +
+                            `<div>` + tb_Hostname + `</div>` +
+                            `<div class="txt">` + re_Reply + `</div>` +
+                            `<span class="date">` + re_Rpdate + `</span>` + `</div>`
+                        if (re_Reply == null) {
+                            jehue = ``;
+                        }
+                        //제휴답변
 
+                        let re_list = $(`<li>`).append(
+                            `<div class="guest"><p class="pic"></p><strong>` + re_title +
+                            `</strong>` +
+                            `<div class="score_wrap_sm"><div class="score_star star_` + grade +
+                            `"></div><div class="star num">` +
+                            re_grade + `</div></div>` +
+                            `<div class="name" ><b>` + `</b>` + re_Nkname + `</div>` +
+                            `<div class="txt" >` + re_content + `</div>` +
+                            `<div class="date">` + re_Regdate + `</div>` +
+                            `</div><div class="gallery_re ahn_imglist">` +
+                            `<div class=" ">` +
+                            `<ul class="">` +
+                            `<li class="">` +
+                            `</li>` +
+                            `</ul>` +
+                            `<div class=""></div>` +
+                            `<div class=""></div>` +
+                            `</div>` +
+                            `</div>` +
+                            jehue +
+                            `</li>`
 
-            for(let j in response.data.data.tbHostApiResponse.tbHostImgResponseList){
-                let $img = response.data.data.tbHostApiResponse.tbHostImgResponseList[j].safeFile.substr(54)
-                // $img = $img2.substr(55);
-                console.log("짜르기후" + $img);
-                let $img_cnt = 0;
+                        );
 
-                    // <li className="swiper-slide"><img
-                    //     data-src="/mainimages/gochank.jpg"
-                    //     alt="역삼 컬리넌 | 로얄스위트" className="swiper-lazy"/></li>
-
-                    let tb = $(`<img alt="안연주 | ` + j + `" src="`+ $img + `"  data-src="`+ $img + `" class="swiper-lazy swiper-lazy-loaded">`);
-                    $(`.ahn_img` + j).append(tb);
-                    console.log("반복 : "+ j);
-                console.log('이미지경로-----------')
-            }//host for 끝
-
-
-
-            //room
-            for (let i in response.data.data.tbHostApiResponse.tbRoomApiResponseList) {
-                let $rmName = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].rmName//room tb의룸 이름
-                let $prSprice = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].prSprice; //머니
-
-
-                //룸 아이디
-                let $roomid = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].id;
-                console.log($roomid);
-                //--------------------------------------------------------------------------01
-                let tb1 = $(`<strong class="title">` + $rmName + `</strong>`);
-
-                $('.tb1_' + i).after(tb1);
-
-                //--------------------------------------------------------------------------02
-                let tb2 = $(`<b style="color: rgba(0,0,0,1)">` + $prSprice + `원</b>`);
-
-
-                $('.tb2_' + i).append(tb2);
-                //--------------------------------------------------------------------------03
-                let tb3 = $(`<button type="button"`+
-                    `onclick="location.href='/userindex/checkout/` + $tbMemId + `/`+ $tbhostId +`/`+ $roomid + `';"`+
-                    `class="gra_left_right_red" style=""> 예약</button>`);
-
-                $('.tb3_' + i).after(tb3);
-                console.log("룸반복 : "+ i);
-
-
-                // <img className="owl-lazy"
-                //      data-src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG"
-                //      alt="더 디자이너스 리즈 강남 프리미어 | 디럭스 패밀리 트윈"
-                //      src="/img/hostimg/4abfb459-3846-454a-a418-28a230e47969_1 - 복사본.PNG">
-
-                for(let j in response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].tbRoomImgResponseList){
-                        let $roomImg = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].tbRoomImgResponseList[j].safeFile.substr(54);
-                    // data-original="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743fc844448d.jpg"
-                    if(j <=0){
-                    $('.ahn_owl_img_thumbnail_' + i + '_0').attr('attr', '안연주썸네일 |'+ i +'_0');
-                    $('.ahn_owl_img_thumbnail_' + i + '_0').attr('data-original', $roomImg);
-                    $('.ahn_owl_img_thumbnail_' + i + '_0').attr('src', $roomImg);
-                    console.log("j의 크기 : "+j)
+                        $('.re_list').append(re_list);
                     }
-                    $('.ahn_owl_img_' + i + '_' + j).attr('alt', '안연주 |'+ i +'_'+ j +'');
-                    $('.ahn_owl_img_' + i + '_' + j).attr('src', $roomImg);
-                    $('.ahn_owl_img_' + i + '_' + j).attr('data-src', $roomImg);
-                    console.log("룸이미지반복 : "+ i +"_"+j);
-                } //roomImg for 끝
-            } // room for 끝
-
-
-        }).catch(function (response) {
-
-        }) //엑시오스끝
-
-
-    })   //펑션끝
 
 
 
-</script>
+                }
+                //리뷰평균
+                let re_average_total = parseInt(re_average / re_count);
+                let ahn_avg_grade = 0;
+                console.log("리뷰평균" + re_average_total);
+
+                //평균별점이 n점 일때
+                if (re_average_total == '5' || '6' || '7' || '8' || '9' || '10') {
+                    ahn_avg_grade = '50';
+                }
+                if (re_average_total == '4') {
+                    ahn_avg_grade = '40';
+                }
+                if (re_average_total == '3') {
+                    ahn_avg_grade = '30';
+                }
+                if (re_average_total == '2') {
+                    ahn_avg_grade = '20';
+                }
+                if (re_average_total == '1') {
+                    ahn_avg_grade = '10';
+                }
+                console.log(Number.isNaN(re_average_total))
+                if (Number.isNaN(re_average_total)) {
+                    re_average_total = '0';
+                    ahn_avg_grade = '0';
+                }
+                $(".ahn_star_avg").toggleClass(`star_` + ahn_avg_grade);
+                $(".re_average_total").text(re_average_total);
 
 
+
+
+
+
+
+                console.log('리뷰 갯수' + re_count);
+                $('.re_count').text(re_count); //리뷰갯수
+
+                //멤버 아이디
+                let $tbMemId = response.data.data.tbHostApiResponse.tbMemId;
+                console.log("멤버아이디" + $tbMemId);
+                let $tbhostId = response.data.data.tbHostApiResponse.id;
+                $('.tbhostId').attr('value', $tbhostId);
+                console.log("호스트아이디" + $tbhostId);
+
+
+
+
+
+                console.log('여기부터 room for문 ');
+                //room
+                for (let i in response.data.data.tbHostApiResponse.tbRoomApiResponseList) {
+                    let $rmName = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                        .rmName //room tb의룸 이름
+                    let $prSprice = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                        .prSprice; // 평일요금
+                    let $prPrice = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                    .prPrice; //주말요금
+                    let $myStime = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                    .myStime; //입실시간
+                    let $myCtime = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                    .myCtime; //퇴실시간
+
+
+                    let weekend = $(`<b style="color: rgba(0,0,0,1)">` + $prPrice + `원</b>`);
+                    $('.weekend_' + i).after(weekend);
+
+                    let myStime = $(`<b style="color: rgba(0,0,0,1)">` + `입실 ` + $myStime + `시</b>`);
+                    $('.myStime_' + i).after(myStime);
+
+                    let myCtime = $(`<b style="color: rgba(0,0,0,1)">` + `퇴실 ` + $myCtime + `시</b>`);
+                    $('.myCtime_' + i).after(myCtime);
+
+                    //룸 아이디
+                    let $roomid = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].id;
+                    console.log($roomid);
+                    //--------------------------------------------------------------------------01
+                    let tb1 = $(`<strong class="title">` + $rmName + `</strong>`);
+
+                    $('.tb1_' + i).after(tb1);
+
+                    //--------------------------------------------------------------------------02
+                    let tb2 = $(`<b style="color: rgba(0,0,0,1)">` + $prSprice + `원</b>`);
+
+
+                    $('.tb2_' + i).append(tb2);
+                    //--------------------------------------------------------------------------03
+                    let tb3 = $(`<button type="button"` +
+                        `onclick="location.href='/userindex/checkout/` + $tbMemId + `/` +
+                        $tbhostId + `/` + $roomid + `';"` +
+                        `class="gra_left_right_red" style=""> 예약</button>`);
+
+                    $('.tb3_' + i).after(tb3);
+                    console.log("룸반복 : " + i);
+
+                    for (let j in response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbRoomImgResponseList) {
+                        let $roomImg = response.data.data.tbHostApiResponse.tbRoomApiResponseList[i]
+                            .tbRoomImgResponseList[j].safeFile.substr(58);
+                        if (j <= 0) {
+                            $('.ahn_owl_img_thumbnail_' + i + '_0').attr('attr', '안연주썸네일 |' + i + '_0');
+                            $('.ahn_owl_img_thumbnail_' + i + '_0').attr('data-original', $roomImg);
+                            $('.ahn_owl_img_thumbnail_' + i + '_0').attr('src', $roomImg);
+                            console.log("j의 크기 : " + j)
+                        }
+                        $('.ahn_owl_img_' + i + '_' + j).attr('alt', '안연주 |' + i + '_' + j + '');
+                        $('.ahn_owl_img_' + i + '_' + j).attr('src', $roomImg);
+                        $('.ahn_owl_img_' + i + '_' + j).attr('data-src', $roomImg);
+                        console.log("룸이미지반복 : " + i + "_" + j);
+                    } //roomImg for 끝
+                } // room for 끝
+
+
+                for (let j in response.data.data.tbHostApiResponse.tbHostImgResponseList) {
+                    let $img = response.data.data.tbHostApiResponse.tbHostImgResponseList[j].safeFile
+                        .substr(58)
+                    // $img = $img2.substr(55);
+                    console.log("짜르기후" + $img);
+                    let $img_cnt = 0;
+
+                    let tb = $(`<img alt="안연주 | ` + j + `" src="` + $img + `"  data-src="` + $img +
+                        `" class="swiper-lazy swiper-lazy-loaded saveZzimImg safefile_` + j + `">`);
+                    $(`.ahn_img` + j).append(tb);
+                    console.log("반복 : " + j);
+                    console.log('이미지경로-----------')
+                } //host for 끝
+
+
+                //    찜 ---------------------------------
+                //만약 찜 id를 들고다닐 수 있다면 돌려보고 비교한 memid가 같을때 찜 색을 미리 활성화
+                axios.get('/api/tbmem/zzimlist/' + sessionId, {}).then(function (response) {
+                    console.log('찜리스트');
+                    console.log(response);
+                    //찜 리스트에서 memid 가져옴
+                    console.log(response.data.data.tbMemApiResponse.tbZzimApiResponseList
+                        .length)
+
+                    //     if(response.data.data.tbMemApiResponse.tbZzimApiResponseList.length != 0){
+                    //         console.log('있음')
+                    for (let i in response.data.data.tbMemApiResponse.tbZzimApiResponseList) {
+                        let zzim_overlap = response.data.data.tbMemApiResponse
+                            .tbZzimApiResponseList[i].tbHostId;
+                        if (zzim_overlap == $tbhostId) {
+                            $(".HeartAnimation").toggleClass("animate")
+                            $(".HeartAnimation").toggleClass("no_animate")
+                        }
+                    }
+
+                    $(".no_animate").click(function () {
+
+                        if ($(".HeartAnimation").hasClass("no_animate")) {
+                            //             //찜하기
+                            let zzName = $('.myCorporate').text();
+                            let zzPic = $('.safefile_0').attr('src');
+                            console.log(zzName);
+                            console.log(zzPic);
+                            // alert('멈춰')
+                            axios.request({
+                                method: 'POST',
+                                url: '/api/zzim/zzim',
+                                headers: {
+                                    'Content-type': 'application/json'
+                                },
+                                data: {
+                                    transaction_time: "2021-09-27",
+                                    resultCode: "OK",
+                                    description: "OK",
+                                    data: {
+                                        tbMemId: sessionId,
+                                        tbHostId: $tbhostId,
+                                        zzName: zzName,
+                                        zzPic: zzPic
+                                    }
+                                }
+                            }).then(
+                                $(this).toggleClass("no_animate"),
+                                $(this).toggleClass("animate")
+                            )
+                            return false;
+                        }
+
+                    });
+
+                    $(".animate").click(function () {
+                        axios.get('/api/tbmem/zzimlist/' + sessionId, {
+
+                        }).then(function (response) {
+                            console.log('클릭시 값');
+                            console.log(response);
+                            for (let i in response.data.data.tbMemApiResponse
+                                    .tbZzimApiResponseList) {
+                                let hostid = response.data.data.tbMemApiResponse
+                                    .tbZzimApiResponseList[i].tbHostId;
+                                let $tbhostId2 = $('.tbhostId').val();
+                                //호스트 아이디가같을때 그 값을 넣어줌
+                                if (hostid == $tbhostId2) {
+                                    let zzimid = response.data.data
+                                        .tbMemApiResponse.tbZzimApiResponseList[
+                                            i].id;
+                                    $('.zzimiddel').attr('value', zzimid);
+                                }
+                            }
+
+
+                            if ($(".HeartAnimation").hasClass("animate")) {
+                                let zzimid = $('.zzimiddel').val();
+                                console.log("zzimdel" + zzimid);
+                                // $(".heart").html(font2);
+                                //찜삭제
+                                axios.request({
+                                    method: 'DELETE',
+                                    url: '/api/zzim/delete/' + zzimid,
+                                    headers: {
+                                        'Content-type': 'application/json'
+                                    },
+                                    data: {
+                                        transaction_time: "2021-09-27",
+                                        resultCode: "OK",
+                                        description: "OK",
+                                        data: {}
+                                    }
+                                }).then(
+                                    $('.HeartAnimation').toggleClass(
+                                        "no_animate"),
+                                    $('.HeartAnimation').toggleClass(
+                                        "animate")
+                                )
+                            }
+                        }).catch(function (err) {
+                            console.log(err);
+                        });
+                    });
+
+
+                }).catch(function (err) {
+                    console.log(err);
+                });
+
+                //    찜---------------------------------
+
+
+            }).catch(function (response) {
+
+            }) //엑시오스끝
+
+
+        }) //펑션끝
+    </script>
 </body>
-
-<!-- Mirrored from www.goodchoice.kr/product/detail?ano=2084&adcno=1&sel_date=2021-08-17&sel_date2=2021-08-18 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Aug 2021 17:08:38 GMT -->
 
 </html>

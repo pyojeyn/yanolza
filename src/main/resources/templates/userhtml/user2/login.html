@@ -1,96 +1,96 @@
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type">
-    <meta name="csrf-name" content="yeogi_token">
+<html xmlns:th="http://www.thymeleaf.org" <head>
+<meta charset="UTF-8">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type">
+<meta name="csrf-name" content="yeogi_token">
 
-    <meta name="description" content="여기어때 회원 가입 | 전국 호텔, 펜션, 모텔부터 워터파크, 놀이공원, 아쿠아리움까지 최저가 할인 예약">
+<meta name="description" content="여기어때 회원 가입 | 전국 호텔, 펜션, 모텔부터 워터파크, 놀이공원, 아쿠아리움까지 최저가 할인 예약">
 
-    <link rel="shortcut icon" href="/img/images/web_v3/favicon_170822.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/img/images/web_v3/favicon_170822.ico" type="image/x-icon">
 
-    <title>로그인 | 여기어때</title>
-    <link rel="stylesheet" href="/css/common.css"/>
+<title>로그인 | 여기어때</title>
+<link rel="stylesheet" href="/css/common.css" />
 
-    <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
 
 
 </head>
 
 <body>
 
-<div class="wrap">
+    <div class="wrap">
 
-    <div class="bg_dimm" onclick="close_layer();">&nbsp</div>
-    <div class="bg_dimm_prevent">&nbsp;</div>
+        <div class="bg_dimm" onclick="close_layer();">&nbsp</div>
+        <div class="bg_dimm_prevent">&nbsp;</div>
 
-    <div id="fb-root"></div>
-    <div class="layer_fix layer_unfix pop_login pop_mem_reserve">
-        <section>
-            <form id="loginForm" th:action="@{/login_proc}" autocomplete="off" method="post">
+        <div id="fb-root"></div>
+        <div class="layer_fix layer_unfix pop_login pop_mem_reserve">
+            <section>
+                <form id="loginForm" th:action="@{/login_proc}" autocomplete="off" method="post">
 
-                <div class="fix_title">
-                    <strong class="logo"><a href="/userindex/">여기어때</a></strong>
-                </div>
+                    <div class="fix_title">
+                        <strong class="logo"><a href="/userindex/">여기어때</a></strong>
+                    </div>
 
-                <p class="space_or"><span>또는</span></p>
+                    <p class="space_or"><span>또는</span></p>
 
-                <div class="inp_type_1 ico_email form-errors">
-                    <input type="text" name="memEmail" placeholder="이메일 주소" required class="required" value="required"
-                           data-msg-required="이메일 주소를 입력해 주세요." />
-                </div>
+                    <div class="inp_type_1 ico_email form-errors">
+                        <input type="text" name="memEmail" placeholder="이메일 주소" required class="required" value=""
+                            data-msg-required="이메일 주소를 입력해 주세요." />
+                    </div>
 
-                <div class="inp_type_1 ico_pw form-errors">
-                    <input type="password" name="memPw" placeholder="비밀번호" required class="required"
-                           data-msg-required="비밀번호를 입력해 주세요."/>
-                </div>
+                    <div class="inp_type_1 ico_pw form-errors">
+                        <input type="password" name="memPw" placeholder="비밀번호" required class="required"
+                            data-msg-required="비밀번호를 입력해 주세요." />
+                    </div>
 
-                <button class="btn_link gra_left_right_red" type="submit"><span>로그인</span></button>
+                    <button class="btn_link gra_left_right_red" type="submit"><span>로그인</span></button>
 
-                <div class="link_half">
-                    <div><a href="./passwdResetStart"><span>비밀번호 재설정</span></a></div>
-                    <div><a href="/userindex/join"><span>회원가입</span></a></div>
-                </div>
+                    <div class="link_half">
 
-            </form>
-        </section>
+                        <div>
+                            <a th:href="@{/userindex/forgot_password}">비밀번호 찾기</a>
+                        </div>
+                        <div><a href="/userindex/join"><span>회원가입</span></a></div>
+                    </div>
+
+                </form>
+            </section>
+        </div>
+
+
+        <style>
+            header footer {
+                display: none !important
+            }
+        </style>
     </div>
 
+    <!-- 상단으로 -->
+    <button class="btn_go_top" onclick="moveTop();">상단으로</button>
 
-    <style>
-        header
-        footer {
-            display: none !important
-        }
-    </style>
-</div>
+    <!-- //Wrap -->
 
-<!-- 상단으로 -->
-<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+    <!-- Script -->
+    <!-- Library -->
+    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="/js/library/iscroll.js"></script>
 
-<!-- //Wrap -->
+    <!-- Service -->
+    <script type="text/javascript" src="/js/service/common.js"></script>
+    <script type="text/javascript" src="/js/service/geolocation.js"></script>
 
-<!-- Script -->
-<!-- Library -->
-<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
-<script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
-<script type="text/javascript" src="/js/library/iscroll.js"></script>
+    <!-- Module -->
+    <script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
 
-<!-- Service -->
-<script type="text/javascript" src="/js/service/common.js"></script>
-<script type="text/javascript" src="/js/service/geolocation.js"></script>
-
-<!-- Module -->
-<script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
-
-<!-- Page Script -->
-<script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
-<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
-<script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
-<script type="text/javascript" src="/js/service/validate.js"></script>
+    <!-- Page Script -->
+    <script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
+    <script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
+    <script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
+    <script type="text/javascript" src="/js/service/validate.js"></script>
 
 
 </body>

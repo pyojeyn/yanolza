@@ -25,18 +25,20 @@ public class TbReview {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "review_seq")
     private Integer id;
     private String tbHostname;
+    private String reNkname;
     private Integer reGrade;
     private String reTitle;
     private String reContent;
     private String reReply;
     private String ische;
+    private Integer tbHostId;
+
     @CreatedDate
     private LocalDateTime reRpdate;
     @CreatedDate
     private LocalDateTime reRegdate;
 
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tbReview")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tbReview",cascade = CascadeType.REMOVE  )
     private List<TbReviewImg> tbReviewImgList;
 
     @ManyToOne

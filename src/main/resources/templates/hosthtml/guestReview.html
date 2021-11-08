@@ -23,9 +23,9 @@
     <script src="/host/js/jquery-ui.min.js"></script>
     <script src="/host/js/jquery.lazyload.min.js"></script>
 
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-                <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
@@ -55,11 +55,11 @@
         </div>
         <!-- //탭메뉴 -->
 
-        <!--  안연주 hidden 값 끝  mem 아이디임-->
+        <!--  hidden 값 끝  mem 아이디임-->
         <input type="hidden" name="id" id="id" th:value="${id}">
         <!--    host id-->
         <input type="hidden" name="hostid" id="hostid" th:value="${hostid}">
-        <!--   안연주 hidden 값 끝 -->
+        <!--   hidden 값 끝 -->
 
         <!-- 본문 -->
 
@@ -67,14 +67,18 @@
 
         <div class="list-layer review__content" style="height: 600px;">
             <!-- 검색 -->
-            <div class="row review__search">
-                <div class="col-md-6 guide_txt">
+            <div class="row review__search" style="display: block;">
+                <div class="col-md-6 guide_txt" >
                     <a href="#"
                         onclick="window.open('http://docs.google.com/gview?url=https://image.goodchoice.kr/images/newad/review_170627.pdf&amp;embedded=true', 'manual')">[사장님
                         답변 가이드(클릭)</a>]를 참고하여, 부정적인 리뷰에 적절하게 대응 해보세요.
+                 </div>
+            </div>
+            <div class="row review__search">
+                <div style="margin-left: 2%">
+                    각 리뷰의 제목을 누르면 세부정보를 볼 수 있습니다.
                 </div>
             </div>
-
             <article id="review" class="review on ">
                 <ul class="">
                     <li>
@@ -88,14 +92,6 @@
                                 <th class="tdd">답변여부</th>
                             </tr>
                             </thead>
-<!--                            <tbody class="">-->
-<!--                            <tr>-->
-<!--                                <td>1</td>-->
-<!--                                <td>박바나나</td>-->
-<!--                                <td><a href="/hosthousemain/guestReviewdetail">시설이 너무 깨끗하고 좋아요.</a></td>-->
-<!--                                <td>5점</td>-->
-<!--                            </tr>-->
-<!--                            </tbody>-->
                             </table>
                         </li>
                     </ul>
@@ -236,17 +232,7 @@
     <!--푸터 끝 -->
 
 
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<!-- <script src="../host/js/ie10-viewport-bug-workaround.js"></script>
-<script src="../host/js/bootstrap.min.js"></script>
-<script src="../host/js/moment.min.js"></script>
-<script src="../host/js/daterangepicker.js"></script>
-<script src="../host/js/bootstrap-timepicker.js"></script> -->
 <script src="/host/js/common.host.js?nocache=1629292302.1399"></script>
-<!-- <script src="../host/js/review.host.js?nocache=1629292302.1399"></script> -->
-
-
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
@@ -318,16 +304,7 @@
             console.log(err);
         })
 
-        // let re_count = 0;
-        // //리뷰 갯수 개산
-        // for (let i in response.data.data.tbHostApiResponse.tbRoomApiResponseList) {
-        //     re_count += Object.keys(response.data.data.tbHostApiResponse.tbRoomApiResponseList[i].tbReviewApiResponseList).length//
-        // }
-        // console.log(re_count);
-        // $('.re_count').text(re_count);
-
     </script>
 
 </body>
-
 </html>

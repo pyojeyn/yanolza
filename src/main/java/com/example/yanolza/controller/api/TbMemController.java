@@ -21,7 +21,6 @@ import java.util.List;
 public class TbMemController extends CrudController<TbMemApiRequest, TbMemApiResponse, TbMem> {
     private final TbMemApiService tbMemApiService;
 
-    //회원가입  (user)  로그인 따로있으니까 테스트 할 때만 사용해주세요!
     @PostMapping("/regist")
     public Header<TbMemApiResponse> mregist(@RequestBody Header<TbMemApiRequest> request){
         System.out.println(request);
@@ -48,6 +47,12 @@ public class TbMemController extends CrudController<TbMemApiRequest, TbMemApiRes
     @GetMapping("/session/{memEmail}")
     public Integer getsse(@PathVariable(name = "memEmail") String memEmail){
         return tbMemApiService.session(memEmail);
+    }
+
+    //닉네임 가져올때
+    @GetMapping("/nik/{id}")
+    public String getnik(@PathVariable(name = "id")Integer id){
+        return tbMemApiService.nik(id);
     }
 
     //회원 정보 삭제(admin) ok 탈퇴에도 쓰면됨
@@ -83,5 +88,12 @@ public class TbMemController extends CrudController<TbMemApiRequest, TbMemApiRes
     @GetMapping("/tbhost/{id}")
     public Header<TbMemTbHostApiResponse> gethost(@PathVariable Integer id){
         return tbMemApiService.getHhost(id);
+    }
+
+
+    // 예약결제쪽 전화번호 불러오기
+    @GetMapping("/phone/{id}")
+    public String getHP(@PathVariable(name = "id")Integer id){
+        return tbMemApiService.getHp(id);
     }
 }

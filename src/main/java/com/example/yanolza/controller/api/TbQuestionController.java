@@ -33,23 +33,22 @@ public class TbQuestionController extends CrudController<TbQuestionApiRequest, T
     }
 
     //1대1문의 리스트 (user)
-    @GetMapping("/qlist/{id}")
-    public List<TbQuestionApiRequest> qlist(Integer id){
-        return tbQuestionApiService.getlistu(id);
+    @GetMapping("/qlist/{tbMemId}")
+    public List<TbQuestionApiRequest> qlist(@PathVariable(name = "tbMemId") Integer tbMemId){
+        return tbQuestionApiService.getlistu(tbMemId);
     }
-
 
     //1대1문의 디테일 (admin)
     @GetMapping("/qulist/{id}")
     public Header<TbQuestionApiResponse> getque(@PathVariable(name = "id")Integer id){
         return tbQuestionApiService.queget(id);
     }
-    //1대1문의 삭제  (admin)
+    //1대1문의 삭제 (admin)
     @DeleteMapping("/qlist/{id}")
     public Header<TbQuestionApiResponse> delque(@PathVariable(name = "id")Integer id){
         return tbQuestionApiService.quedel(id);
     }
-    //관리자 답변   이것도 id값 꼮   (admin)
+    //관리자 답변 (admin)
     @PatchMapping("/qlist/{id}")
     public Header<TbQuestionApiResponse> qna(@RequestBody Header<TbQuestionApiRequest> request){
         return tbQuestionApiService.anq(request);

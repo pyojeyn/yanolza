@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+<!--8월 금토일 대실 세 번 할인!-->
 
 <head>
     <meta charset="UTF-8">
@@ -12,16 +13,36 @@
     <!-- CSS -->
     <title>8월 금토일 대실 세 번 할인! - 이벤트 | 여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
-    <!-- <link rel="canonical" href="https://www.goodchoice.kr/more/eventView/1698"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            border: 0;
+            vertical-align: top;
+            margin-bottom: -1px;
+        }
+    </style>
     <script>
         var _BASE_URL = 'https://www.goodchoice.kr/';
         var _MOBILE = 'W';
         var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
         var _FACEBOOK_APP_ID = '607467975974643';
     </script>
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
@@ -30,7 +51,7 @@
     <div class="wrap">
 
         <!-- Header -->
-           <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
@@ -103,7 +124,7 @@
                         <ul>
                             <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
                                 <ul>
-                                   <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
+                                    <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
                                     <li><a href="/userindex/event">이벤트</a></li>
                                     <li><a href="/userindex/project">혁신 프로젝트</a></li>
                                     <li><a href="/userindex/faq">고객문의</a></li>
@@ -140,7 +161,7 @@
             <nav>
                 <ul>
                     <!-- <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class="active"  href="/userindex/event">이벤트</a></li>
+                    <li><a class="active" href="/userindex/event">이벤트</a></li>
                     <li><a class="" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
@@ -162,33 +183,27 @@
                         <link rel="stylesheet" href="/static/event/common/css/base-event.css">
                         <link rel="stylesheet" href="/frontend/admin/css/components/modules/dialog.css" />
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery-1.12.3.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery.lazyload.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/vue.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/service/button-scroll-top.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery-1.12.3.min.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery.lazyload.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/vue.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/button-scroll-top.js">
+                        </script>
 
                         <script type="text/javascript" src="/api3/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/underscore.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/userActionLog.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/common.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/userActionLog.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/common.js"></script>
                         <script src="/api3/js/service/evtBraze.js"></script>
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/moment.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/flipclock.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/library/swiper4.0/swiper.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/library/swiper4.0/swiper.min.js"></script>
                         <link rel="stylesheet" href="/api3/css/library/swiper.css">
 
                         <!-- keen vue list (기획전) -->
-                        <script type="text/javascript"
-                        src="/static/event/common/js/service/product-common.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/product-common.js"></script>
 
                         <script>
                             var eno = 1698;
@@ -202,15 +217,14 @@
                             });
                         </script>
                         <script>
-                            var eDefaultString = '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1698%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A06%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EA%B8%88%ED%86%A0%EC%9D%BC%EC%97%94%20%EB%8C%80%EC%8B%A4%204%EC%B2%9C%EC%9B%90%20%ED%95%A0%EC%9D%B8%EF%BC%81%22%2C%22label%22%3A%22%EC%97%AC%EB%A6%84%EC%9D%B4%EB%8B%88%EA%B9%8C%20%EC%8B%9C%EC%9B%90%EF%BC%8D%EF%BC%8D%EF%BC%8D%ED%95%98%EA%B2%8C%7C%EB%88%84%EA%B5%AC%EB%82%98%20%EC%84%B8%20%EB%B2%88%20%EC%A3%BC%EB%A7%90%20%EB%8C%80%EC%8B%A4%204%EC%B2%9C%EC%9B%90%20%ED%95%A0%EC%9D%B8%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1698%5C%2Fkakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1698%5Cu0026title%3D%EA%B8%88%ED%86%A0%EC%9D%BC%EC%97%94%20%EB%8C%80%EC%8B%A4%204%EC%B2%9C%EC%9B%90%20%ED%95%A0%EC%9D%B8%EF%BC%81%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1698%5C%2Fkakao.jpg%5Cu0026label%3D%EC%97%AC%EB%A6%84%EC%9D%B4%EB%8B%88%EA%B9%8C%20%EC%8B%9C%EC%9B%90%EF%BC%8D%EF%BC%8D%EF%BC%8D%ED%95%98%EA%B2%8C%7C%EB%88%84%EA%B5%AC%EB%82%98%20%EC%84%B8%20%EB%B2%88%20%EC%A3%BC%EB%A7%90%20%EB%8C%80%EC%8B%A4%204%EC%B2%9C%EC%9B%90%20%ED%95%A0%EC%9D%B8%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1698%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1698%22%7D%2C%22couponCodes%22%3A%7B%22coupon-pack%22%3A%7B%22name%22%3A%22%EA%B8%88%ED%86%A0%EC%9D%BC%20%ED%95%A0%EC%9D%B8%20%EC%BF%A0%ED%8F%B0%22%2C%22issued%22%3Afalse%2C%22code%22%3A%2210000010286%2C10000010287%2C10000010288%22%7D%7D%2C%22responseHeader%22%3A%22%22%7D';
+                            var eDefaultString =
+                                '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1698%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A06%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EA%B8%88%ED%86%A0%EC%9D%BC%EC%97%94%20%EB%8C%80%EC%8B%A4%204%EC%B2%9C%EC%9B%90%20%ED%95%A0%EC%9D%B8%EF%BC%81%22%2C%22label%22%3A%22%EC%97%AC%EB%A6%84%EC%9D%B4%EB%8B%88%EA%B9%8C%20%EC%8B%9C%EC%9B%90%EF%BC%8D%EF%BC%8D%EF%BC%8D%ED%95%98%EA%B2%8C%7C%EB%88%84%EA%B5%AC%EB%82%98%20%EC%84%B8%20%EB%B2%88%20%EC%A3%BC%EB%A7%90%20%EB%8C%80%EC%8B%A4%204%EC%B2%9C%EC%9B%90%20%ED%95%A0%EC%9D%B8%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1698%5C%2Fkakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1698%5Cu0026title%3D%EA%B8%88%ED%86%A0%EC%9D%BC%EC%97%94%20%EB%8C%80%EC%8B%A4%204%EC%B2%9C%EC%9B%90%20%ED%95%A0%EC%9D%B8%EF%BC%81%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1698%5C%2Fkakao.jpg%5Cu0026label%3D%EC%97%AC%EB%A6%84%EC%9D%B4%EB%8B%88%EA%B9%8C%20%EC%8B%9C%EC%9B%90%EF%BC%8D%EF%BC%8D%EF%BC%8D%ED%95%98%EA%B2%8C%7C%EB%88%84%EA%B5%AC%EB%82%98%20%EC%84%B8%20%EB%B2%88%20%EC%A3%BC%EB%A7%90%20%EB%8C%80%EC%8B%A4%204%EC%B2%9C%EC%9B%90%20%ED%95%A0%EC%9D%B8%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1698%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1698%22%7D%2C%22couponCodes%22%3A%7B%22coupon-pack%22%3A%7B%22name%22%3A%22%EA%B8%88%ED%86%A0%EC%9D%BC%20%ED%95%A0%EC%9D%B8%20%EC%BF%A0%ED%8F%B0%22%2C%22issued%22%3Afalse%2C%22code%22%3A%2210000010286%2C10000010287%2C10000010288%22%7D%7D%2C%22responseHeader%22%3A%22%22%7D';
                         </script>
                         <link rel="stylesheet" href="/api3/js/event_custom/event-default.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/event-custom.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/products-vue-custom.min.css">
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/event-custom.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/products-vue-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/event-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/products-vue-custom.min.js"></script>
 
                         <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
                         <script>
@@ -314,7 +328,6 @@
                         </div>
 
                         <script>
-
                             // 타이틀바 공유버튼 활성화
                             EC.appShare.options.isAppShare = true;
 
@@ -324,7 +337,8 @@
                             EC.couponTimer = 0;
                             EC.checkTimeTerm = 1000;
                             EC.revCouponCnt = {
-                                total: ((typeof EC.couponCodes['coupon-pack'].code === 'string') ? EC.couponCodes['coupon-pack'].code.split(',').length : 0),
+                                total: ((typeof EC.couponCodes['coupon-pack'].code === 'string') ? EC.couponCodes[
+                                    'coupon-pack'].code.split(',').length : 0),
                                 success: 0,
                                 fail: 0,
                                 already: 0,
@@ -340,10 +354,31 @@
                                 messageCouponTimer: '쿠폰 지급 대상 확인 중입니다.<br>잠시만 기다려주세요.'
                             };
                             EC.message.buttons = {
-                                buttonLogin: [{ text: "닫기", onclick: "popup.close();" }, { text: "로그인", onclick: "go.login();" }],
-                                buttonClose: [{ text: "닫기", onclick: "popup.close();" }],
-                                buttonCouponList: [{ text: "닫기", onclick: "popup.close();" }, { text: "쿠폰함 가기", onclick: "go.couponList();" }],
-                                buttonTimeAttackList: [{ text: "닫기", onclick: "popup.close();" }, { text: "쿠폰확인하기", onclick: "go.couponList();" }]
+                                buttonLogin: [{
+                                    text: "닫기",
+                                    onclick: "popup.close();"
+                                }, {
+                                    text: "로그인",
+                                    onclick: "go.login();"
+                                }],
+                                buttonClose: [{
+                                    text: "닫기",
+                                    onclick: "popup.close();"
+                                }],
+                                buttonCouponList: [{
+                                    text: "닫기",
+                                    onclick: "popup.close();"
+                                }, {
+                                    text: "쿠폰함 가기",
+                                    onclick: "go.couponList();"
+                                }],
+                                buttonTimeAttackList: [{
+                                    text: "닫기",
+                                    onclick: "popup.close();"
+                                }, {
+                                    text: "쿠폰확인하기",
+                                    onclick: "go.couponList();"
+                                }]
                             };
                             EC.customMessages = {
                                 getEvtLayerMessage: function (messageType) {
@@ -353,25 +388,32 @@
                                     return EC.message.buttons[buttonType];
                                 },
                                 messageLogin: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton('buttonLogin'));
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton('buttonLogin'));
                                 },
                                 messageNotChoiceRun: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton());
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton());
                                 },
                                 messageCouponSuccess: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton('buttonCouponList'));
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton('buttonCouponList'));
                                 },
                                 messageCouponAlready: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton('buttonCouponList'));
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton('buttonCouponList'));
                                 },
                                 messageCouponAlreadyDevice: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton());
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton());
                                 },
                                 messageCouponFailed: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton());
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton());
                                 },
                                 messageCouponTimer: function () {
-                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this.getEvtLayerButton());
+                                    popup.show(this.getEvtLayerMessage(arguments.callee.name), this
+                                        .getEvtLayerButton());
                                 }
                             };
                             EC.messages = Object.assign(EC.messages, EC.customMessages);
@@ -390,25 +432,29 @@
                                             for (var key in list) {
                                                 if (list[key].issuable == false) {
                                                     if (list[key].error == 'NOT_ISSUABLE_ALREADY_ISSUED') {
-                                                        EC.revCouponCnt['already'] = EC.revCouponCnt['already'] + 1;
-                                                    } else if (list[key].error == 'NOT_ISSUABLE_ALREADY_DEVICE_ISSUED') {
-                                                        EC.revCouponCnt['alreadyDevice'] = EC.revCouponCnt['alreadyDevice'] + 1;
+                                                        EC.revCouponCnt['already'] = EC.revCouponCnt[
+                                                            'already'] + 1;
+                                                    } else if (list[key].error ==
+                                                        'NOT_ISSUABLE_ALREADY_DEVICE_ISSUED') {
+                                                        EC.revCouponCnt['alreadyDevice'] = EC.revCouponCnt[
+                                                            'alreadyDevice'] + 1;
                                                     } else {
                                                         EC.revCouponCnt['fail'] = EC.revCouponCnt['fail'] + 1;
                                                     }
                                                 }
                                             }
                                             // 이미 받은 갯수와 원 갯수가 같으면...
-                                            if ((EC.revCouponCnt['already'] + EC.revCouponCnt['alreadyDevice']) == EC.revCouponCnt['total']) {
+                                            if ((EC.revCouponCnt['already'] + EC.revCouponCnt[
+                                                'alreadyDevice']) == EC.revCouponCnt['total']) {
                                                 EC.couponCodes['coupon-pack'].issued = true;
-                                                if (EC.revCouponCnt['alreadyDevice'] > EC.revCouponCnt['already']) {
+                                                if (EC.revCouponCnt['alreadyDevice'] > EC.revCouponCnt[
+                                                        'already']) {
                                                     EC.couponCodes['coupon-pack'].deviceIssued = true;
                                                 }
                                             }
                                             console.log('coupon-pack is', EC.couponCodes['coupon-pack'].issued)
                                         }
-                                    }).done(function () {
-                                    });
+                                    }).done(function () {});
                                 }
                             }
 
@@ -463,17 +509,23 @@
                                                 } else {
                                                     // 이미 받은 쿠폰은 정상 쿠폰으로 판단한다.
                                                     if (list[key].error == 'NOT_ISSUABLE_ALREADY_ISSUED') {
-                                                        EC.revCouponCnt['success'] = EC.revCouponCnt['success'] + 1;
-                                                        EC.revCouponCnt['already'] = EC.revCouponCnt['already'] + 1;
-                                                    } else if (list[key].error == 'NOT_ISSUABLE_ALREADY_DEVICE_ISSUED') {
-                                                        EC.revCouponCnt['success'] = EC.revCouponCnt['success'] + 1;
-                                                        EC.revCouponCnt['alreadyDevice'] = EC.revCouponCnt['alreadyDevice'] + 1;
+                                                        EC.revCouponCnt['success'] = EC.revCouponCnt[
+                                                            'success'] + 1;
+                                                        EC.revCouponCnt['already'] = EC.revCouponCnt[
+                                                            'already'] + 1;
+                                                    } else if (list[key].error ==
+                                                        'NOT_ISSUABLE_ALREADY_DEVICE_ISSUED') {
+                                                        EC.revCouponCnt['success'] = EC.revCouponCnt[
+                                                            'success'] + 1;
+                                                        EC.revCouponCnt['alreadyDevice'] = EC.revCouponCnt[
+                                                            'alreadyDevice'] + 1;
                                                     } else {
                                                         EC.revCouponCnt['fail'] = EC.revCouponCnt['fail'] + 1;
                                                     }
                                                 }
                                             }
-                                            console.log('2222 : ', EC.revCouponCnt['success'], EC.revCouponCnt['total'])
+                                            console.log('2222 : ', EC.revCouponCnt['success'], EC.revCouponCnt[
+                                                'total'])
                                             // 모두 받음
                                             if (EC.revCouponCnt['success'] == EC.revCouponCnt['total']) {
                                                 EC.couponCodes['coupon-pack'].issued = true;
@@ -488,8 +540,10 @@
                                                 return false;
                                             } else {
                                                 // 이미 받은 수량이 총 갯수와 같으면 상황별 메시지 출력
-                                                if ((EC.revCouponCnt['already'] + EC.revCouponCnt['alreadyDevice']) == EC.revCouponCnt['total']) {
-                                                    if (EC.revCouponCnt['alreadyDevice'] > EC.revCouponCnt['already']) {
+                                                if ((EC.revCouponCnt['already'] + EC.revCouponCnt[
+                                                        'alreadyDevice']) == EC.revCouponCnt['total']) {
+                                                    if (EC.revCouponCnt['alreadyDevice'] > EC.revCouponCnt[
+                                                            'already']) {
                                                         EC.couponCodes['coupon-pack'].issued = true;
                                                         EC.messages.messageCouponAlreadyDevice();
                                                         return false;
@@ -505,8 +559,7 @@
                                                 }
                                             }
                                         }
-                                    }).done(function () {
-                                    });
+                                    }).done(function () {});
                                     // }
                                 } else {
                                     EC.messages.messageLogin();
@@ -559,24 +612,24 @@
                 <!-- Page -->
                 <div class="page">
                     <p>
-                        <a href="/event20">
+                        <a href="/userindex/event18">
                             <span class="ico_arr_up">다음글</span>
                             <b>특급호텔 공동구매 사전신청</b>
-                            <em>기간 : 2021.08.23 ~ 2021.08.26</em>
+                            <em>기간: 2021.08.19 ~ 2021.08.19</em>
                         </a>
                     </p>
                     <p>
-                        <a href="/event18">
+                        <a href="/userindex/event20">
                             <span class="ico_arr_down">이전글</span>
                             <b>전국민 도망지원 캠페인 </b>
-                            <em>기간 : 2021.08.10 ~ 2021.08.31</em>
+                            <em>기간: 2021.08.10 ~ 2021.08.31</em>
                         </a>
                     </p>
                 </div>
 
                 <div class="align_center">
-                    <button onclick="window.location.href='https://www.goodchoice.kr/more/event#0'"
-                        class="btn_red_fill">목록보기</button>
+                    <button class="btn_red_fill"><a href="/userindex/event"
+                            style="text-decoration:none; color : white;">목록보기</a></button>
                 </div>
 
             </div>

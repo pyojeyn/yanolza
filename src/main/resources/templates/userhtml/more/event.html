@@ -12,10 +12,7 @@
     <!-- CSS -->
     <title>더보기 - 이벤트 | 여기어때</title>
     <link rel="stylesheet" href="/css/common.css" />
-    <!-- <link rel="canonical" href="https://www.goodchoice.kr/more/event"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-
-    <!-- <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script> -->
 </head>
 
 <body>
@@ -23,7 +20,7 @@
     <!-- Wrap -->
     <div class="wrap">
 
-             <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
@@ -96,7 +93,7 @@
                         <ul>
                             <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
                                 <ul>
-                                   <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
+                                    <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
                                     <li><a href="/userindex/event">이벤트</a></li>
                                     <li><a href="/userindex/project">혁신 프로젝트</a></li>
                                     <li><a href="/userindex/faq">고객문의</a></li>
@@ -132,8 +129,7 @@
             <!-- Nav -->
             <nav>
                 <ul>
-<!--                    <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class="active"  href="/userindex/event">이벤트</a></li>
+                    <li><a class="active" href="/userindex/event">이벤트</a></li>
                     <li><a class="" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
@@ -142,101 +138,65 @@
             </nav>
             <div class="align_rt">
 
-                <!-- Event -->
-                <!-- <div class="event">
+                <div class="align_rt">
 
-                    <div class="mobile_top">이벤트</div>
+                    <!-- Event -->
+                    <div class="event">
 
-                    <ul id="event" class="event_list">
-                        <template v-for="row in result">
-                            <li v-bind:class="row.event_state != '1' ? 'end' : ''">
-                                <button v-if="row.win_confirm == 'Y'"
-                                    v-on:click="pop_win(row.win_confrim_list_url);">당첨자 확인</button>
-                                <b>{{row.event_title}}</b>
-                                <span>기간: {{row.event_date}}</span>
-                                <a :href="'./eventView/'+ row.event_no +'?page='+ page"
-                                    v-if="row.event_state == '1'">
-                                    <img :src="'//image.goodchoice.kr' + row.banner_src" alt="" />
-                                </a>
-                                <img :src="'//image.goodchoice.kr' + row.banner_src" alt="" v-else />
+                        <div class="mobile_top">이벤트</div>
+
+                        <ul id="event" class="event_list">
+                            <li class="">
+                                <b>전국민 도망지원 캠페인 </b>
+                                <span>기간: 2021.08.10 ~ 2021.08.31</span>
+                                <a href="/userindex/event20"><img src="/img/event/mainbanner/20.jpg" alt=""></a>
                             </li>
-                        </template>
-                    </ul>
+                            <li class="">
+                                <b>8월 금토일 대실 세 번 할인!</b>
+                                <span>기간: 2021.08.01 ~ 2021.08.31</span>
+                                <a href="/userindex/event19"><img src="/img/event/mainbanner/19.jpg" alt=""></a>
+                            </li>
+                            <li class="">
+                                <b>특급호텔 공동구매 사전신청</b>
+                                <span>기간: 2021.08.19 ~ 2021.08.19</span>
+                                <a href="/userindex/event18"><img src="/img/event/mainbanner/18.png" alt=""></a>
+                            </li>
+                            <li class="">
+                                <b>함께해요 여기어때 리서치</b>
+                                <span>기간: 2021.07.19 ~ 끝날 때까지!</span>
+                                <a href="/userindex/event16"><img src="/img/event/mainbanner/16.png" alt=""></a>
+                            </li>
+                            <li class="">
+                                <b>강원 여행 한방에 끝내기</b>
+                                <span>기간: 2021.08.11 ~ 끝날 때 까지!</span>
+                                <a href="/userindex/event13"><img src="/img/event/mainbanner/13.jpg" alt=""></a>
+                            </li>
+                            <li class=""> <b>얼리버드 숙소 특가</b>
+                                <span>기간: 2021.08.10 ~ 2021.08.30</span>
+                                <a href="/userindex/event12"><img src="/img/event/mainbanner/12.jpg" alt=""></a>
+                            </li>
+                            <li class="">
+                                <b>맛집 7만원 쿠폰북</b>
+                                <span>기간: 2021.08.17 ~ 2021.09.13</span>
+                                <a href="/userindex/event11"><img src="/img/event/mainbanner/11.jpg" alt=""></a>
+                            </li>
+                            <li class="">
+                                <b>랜덤여행 럭키백 4탄</b>
+                                <span>2021.08.11 ~ 끝날 때 까지!</span>
+                                <a href="/userindex/event14"><img src="/img/event/mainbanner/14.jpg" alt=""></a>
+                            </li>
+                            <li class="">
+                                <b>제 8회 액티비티 공동구매</b>
+                                <span>기간 : 2021.08.20 ~ 2021.08.26</span>
+                                <a href="/userindex/event15"><img src="/img/event/mainbanner/15.jpg" alt=""></a>
+                            </li>
+                        </ul>
 
-                    <div id="pagination">
-                        <my-pagination></my-pagination>
                     </div>
+                    <!-- //Event -->
 
-                </div> -->
-                <!-- //Event -->
-                <!-- Event -->
-            <div class="align_rt">
-
-                <!-- Event -->
-                <div class="event">
-    
-                    <div class="mobile_top">이벤트</div>
-    
-                    <ul id="event" class="event_list">
-                        <li class=""> 
-                            <b>전국민 도망지원 캠페인 </b>
-                            <span>기간: 2021.08.10 ~ 2021.08.31</span> 
-                            <a href="/userindex/event20"><img src="/img/event/mainbanner/20.jpg" alt=""></a>
-                        </li>
-                        <li class="">
-                            <b>8월 금토일 대실 세 번 할인!</b>
-                            <span>기간: 2021.08.01 ~ 2021.08.31</span>
-                            <a href="/userindex/event19"><img src="/img/event/mainbanner/19.jpg" alt=""></a>
-                        </li>
-                        <li class="">
-                            <b>목요일 게릴라 깜짝 쿠폰</b>
-                            <span>기간: 2021.08.19 ~ 2021.08.19</span>
-                            <a href="/userindex/event18"><img src="/img/event/mainbanner/18.jpg" alt=""></a>
-                        </li>
-                        <li class="">
-                            <b>매일매일 도전룰렛</b>
-                            <span>기간: 2021.04.14 ~ 끝날 때까지!</span>
-                            <a href="/userindex/event17"><img src="/img/event/mainbanner/17.jpg" alt=""></a>
-                        </li>
-                        <li class="">
-                            <b>함께해요 여기어때 리서치</b>
-                            <span>기간: 2021.07.19 ~ 끝날 때까지!</span>
-                            <a href="/userindex/event16"><img src="/img/event/mainbanner/16.png" alt=""></a>
-                        </li>
-                        <li class="">
-                            <b>강원 여행 한방에 끝내기</b>
-                            <span>기간: 2021.08.11 ~ 끝날 때 까지!</span>
-                            <a href="/userindex/event15"><img src="/img/event/mainbanner/15.jpg" alt=""></a>
-                        </li>
-                        <li class=""> <b>얼리버드 숙소 특가</b>
-                            <span>기간: 2021.08.10 ~ 2021.08.30</span>
-                            <a href="/userindex/event14"><img src="/img/event/mainbanner/14.jpg" alt=""></a>
-                        </li>
-                        <li class="">
-                            <b>맛집 7만원 쿠폰북</b>
-                            <span>기간: 2021.08.17 ~ 2021.09.13</span>
-                            <a href="/userindex/event13"><img src="/img/event/mainbanner/13.jpg" alt=""></a>
-                        </li>
-                        <li class="">
-                            <b>8월 국민 즉시할인 - 신용카드</b>
-                            <span>기간: 2021.08.01 ~ 2021.08.31</span>
-                            <a href="/userindex/event12"><img src="/img/event/mainbanner/12.jpg" alt=""></a>
-                        </li>
-                        <li class="">
-                            <b>8월 삼성 즉시할인 - 신용카드</b>
-                            <span>기간: 2021.08.01 ~ 2021.08.31</span>
-                            <a href="/userindex/event11"><img src="/img/event/mainbanner/11.jpg" alt=""></a>
-                        </li></ul>
-
-                            
-
-                    <div id="pagination"><div class="paging"><button class="on">1</button><button>2</button><button class="">3</button><button>4</button><button class="">5</button><button class="next">다음</button></div></div>
-    
                 </div>
                 <!-- //Event -->
-    
-            </div>
-			<!-- //Event -->
 
             </div>
 
@@ -297,7 +257,7 @@
     <!-- Body Spinner -->
     <div class="spinner show"><span></span></div>
 
-    
+
 
 </body>
 

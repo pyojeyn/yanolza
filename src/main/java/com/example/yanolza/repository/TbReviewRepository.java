@@ -11,4 +11,5 @@ import java.util.Optional;
 public interface TbReviewRepository extends JpaRepository<TbReview, Integer> {
     Optional<TbReview> findById(Integer id);
     List<TbReview> findAllByIsche(String ische);
+    List<TbReview> findAllByTbHostIdAndIsche(Integer tbHostId, String ische);
 }

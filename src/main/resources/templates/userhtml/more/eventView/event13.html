@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+<!--강원 여행 한방에 끝내기-->
 
 <head>
     <meta charset="UTF-8">
@@ -12,16 +13,36 @@
     <!-- CSS -->
     <title>강원 여행 한방에 끝내기 - 이벤트 | 여기어때</title>
     <link rel="stylesheet" href="https://www.goodchoice.kr/css/common.css?rand=1629703580" />
-    <!-- <link rel="canonical" href="https://www.goodchoice.kr/more/eventView/1725"> -->
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
-
+    <style>
+        img {
+            display: block;
+            width: 100%;
+            border: 0;
+            vertical-align: top;
+            margin-bottom: -1px;
+        }
+    </style>
     <script>
         var _BASE_URL = 'https://www.goodchoice.kr/';
         var _MOBILE = 'W';
         var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
         var _FACEBOOK_APP_ID = '607467975974643';
     </script>
-    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        (function (a, b, c) {
+            if (c in b && b[c]) {
+                var d, e = a.location,
+                    f = /^(a|html)$/i;
+                a.addEventListener("click", function (a) {
+                    d = a.target;
+                    while (!f.test(d.nodeName)) d = d.parentNode;
+                    "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a
+                    .preventDefault(), e.href = d.href)
+                }, !1)
+            }
+        })(document, window.navigator, "standalone")
+    </script>
 </head>
 
 <body>
@@ -30,7 +51,7 @@
     <div class="wrap">
 
         <!-- Header -->
-           <!-- 헤더 -->
+        <!-- 헤더 -->
         <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
         <!--헤더 끝 -->
 
@@ -103,7 +124,7 @@
                         <ul>
                             <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
                                 <ul>
-                                   <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
+                                    <!-- <li><a href="/userindex/notice">공지사항</a></li> -->
                                     <li><a href="/userindex/event">이벤트</a></li>
                                     <li><a href="/userindex/project">혁신 프로젝트</a></li>
                                     <li><a href="/userindex/faq">고객문의</a></li>
@@ -123,7 +144,7 @@
         <!-- //Mobile Menu -->
 
         <!-- CSS -->
-        <link rel="stylesheet" href="/css/common.css" />
+        <link rel="stylesheet" href="/css/more.css" />
 
         <!-- Sub Top -->
         <div class="sub_top_wrap">
@@ -140,7 +161,7 @@
             <nav>
                 <ul>
                     <!-- <li><a class="" href="/userindex/notice">공지사항</a></li> -->
-                    <li><a class="active"  href="/userindex/event">이벤트</a></li>
+                    <li><a class="active" href="/userindex/event">이벤트</a></li>
                     <li><a class="" href="/userindex/project">혁신 프로젝트</a></li>
                     <li><a class="" href="/userindex/faq">자주 묻는 질문</a></li>
                     <li><a class="" href="/userindex/inquiry">1:1 문의</a></li>
@@ -162,33 +183,27 @@
                         <link rel="stylesheet" href="/static/event/common/css/base-event.css">
                         <link rel="stylesheet" href="/frontend/admin/css/components/modules/dialog.css" />
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery-1.12.3.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/jquery.lazyload.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/vue.min.js"></script>
-                        <script type="text/javascript"
-                            src="/static/event/common/js/service/button-scroll-top.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery-1.12.3.min.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/jquery.lazyload.js">
+                        </script>
+                        <script type="text/javascript" src="/static/event/common/js/library/vue.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/button-scroll-top.js">
+                        </script>
 
                         <script type="text/javascript" src="/api3/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/underscore.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/userActionLog.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/service/common.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/userActionLog.js"></script>
+                        <script type="text/javascript" src="/api3/js/service/common.js"></script>
                         <script src="/api3/js/service/evtBraze.js"></script>
 
-                        <script type="text/javascript"
-                            src="/static/event/common/js/library/moment.min.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/library/moment.min.js"></script>
                         <script type="text/javascript" src="/api3/js/library/flipclock.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/library/swiper4.0/swiper.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/library/swiper4.0/swiper.min.js"></script>
                         <link rel="stylesheet" href="/api3/css/library/swiper.css">
 
                         <!-- keen vue list (기획전) -->
-                        <script type="text/javascript"
-                        src="/static/event/common/js/service/product-common.js"></script>
+                        <script type="text/javascript" src="/static/event/common/js/service/product-common.js"></script>
 
                         <script>
                             var eno = 1725;
@@ -202,15 +217,14 @@
                             });
                         </script>
                         <script>
-                            var eDefaultString = '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1725%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A04%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EA%B0%95%EC%9B%90%20%EC%97%AC%ED%96%89%20%ED%95%9C%EB%B0%A9%EC%97%90%20%EB%81%9D%EB%82%B4%EA%B8%B0%22%2C%22label%22%3A%22%EC%9D%B8%EA%B8%B0%20%EC%88%99%EC%86%8C%20%EC%B6%94%EC%B2%9C%EB%B6%80%ED%84%B0%7C%EB%A7%9B%EC%A7%91%20%ED%95%A0%EC%9D%B8%EA%B9%8C%EC%A7%80%EF%BC%81%7C%EA%B0%95%EC%9B%90%EB%8F%84%20%EC%97%AC%ED%96%89%7C%ED%95%9C%EB%B0%A9%EC%97%90%20%EB%81%9D%EB%82%B4%EA%B8%B0%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1725%5C%2F1725_kakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1725%5Cu0026title%3D%EA%B0%95%EC%9B%90%20%EC%97%AC%ED%96%89%20%ED%95%9C%EB%B0%A9%EC%97%90%20%EB%81%9D%EB%82%B4%EA%B8%B0%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1725%5C%2F1725_kakao.jpg%5Cu0026label%3D%EC%9D%B8%EA%B8%B0%20%EC%88%99%EC%86%8C%20%EC%B6%94%EC%B2%9C%EB%B6%80%ED%84%B0%7C%EB%A7%9B%EC%A7%91%20%ED%95%A0%EC%9D%B8%EA%B9%8C%EC%A7%80%EF%BC%81%7C%EA%B0%95%EC%9B%90%EB%8F%84%20%EC%97%AC%ED%96%89%7C%ED%95%9C%EB%B0%A9%EC%97%90%20%EB%81%9D%EB%82%B4%EA%B8%B0%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1725%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1725%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
+                            var eDefaultString =
+                                '%7B%22env%22%3A%22production%22%2C%22token%22%3A%22%22%2C%22eventNo%22%3A1725%2C%22uno%22%3A0%2C%22mode%22%3A%22event%22%2C%22deviceType%22%3A%22W%22%2C%22deviceId%22%3A%22%22%2C%22currentDate%22%3A%222021-08-25%2001%3A04%22%2C%22currentDay%22%3A%222021-08-25%22%2C%22serverURL%22%3A%22https%3A%5C%2F%5C%2Fstatic.goodchoice.kr%5C%2Fevent%5C%2F%22%2C%22appURL%22%3A%22http%3A%5C%2F%5C%2Fapi3.goodchoice.kr%22%2C%22kakao%22%3A%7B%22title%22%3A%22%EA%B0%95%EC%9B%90%20%EC%97%AC%ED%96%89%20%ED%95%9C%EB%B0%A9%EC%97%90%20%EB%81%9D%EB%82%B4%EA%B8%B0%22%2C%22label%22%3A%22%EC%9D%B8%EA%B8%B0%20%EC%88%99%EC%86%8C%20%EC%B6%94%EC%B2%9C%EB%B6%80%ED%84%B0%7C%EB%A7%9B%EC%A7%91%20%ED%95%A0%EC%9D%B8%EA%B9%8C%EC%A7%80%EF%BC%81%7C%EA%B0%95%EC%9B%90%EB%8F%84%20%EC%97%AC%ED%96%89%7C%ED%95%9C%EB%B0%A9%EC%97%90%20%EB%81%9D%EB%82%B4%EA%B8%B0%EF%BC%81%22%2C%22img%22%3A%22https%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1725%5C%2F1725_kakao.jpg%22%2C%22link%22%3A%22withcall%3A%5C%2F%5C%2Fnativecall%5C%2Fkakaotalk_share_web%3Feventno%3D1725%5Cu0026title%3D%EA%B0%95%EC%9B%90%20%EC%97%AC%ED%96%89%20%ED%95%9C%EB%B0%A9%EC%97%90%20%EB%81%9D%EB%82%B4%EA%B8%B0%5Cu0026mode%3Devent%5Cu0026img%3Dhttps%3A%5C%2F%5C%2Fimage.goodchoice.kr%5C%2Fevent%5C%2Fview%5C%2Fevent%5C%2F1725%5C%2F1725_kakao.jpg%5Cu0026label%3D%EC%9D%B8%EA%B8%B0%20%EC%88%99%EC%86%8C%20%EC%B6%94%EC%B2%9C%EB%B6%80%ED%84%B0%7C%EB%A7%9B%EC%A7%91%20%ED%95%A0%EC%9D%B8%EA%B9%8C%EC%A7%80%EF%BC%81%7C%EA%B0%95%EC%9B%90%EB%8F%84%20%EC%97%AC%ED%96%89%7C%ED%95%9C%EB%B0%A9%EC%97%90%20%EB%81%9D%EB%82%B4%EA%B8%B0%EF%BC%81%5Cu0026txt%3D%5Cu0026url%3Dhttps%253A%252F%252Fapi3.goodchoice.kr%252Fevent3%252Fmain%252FadEventView%253Faevno%253D1725%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fapi3.goodchoice.kr%5C%2Fevent3%5C%2Fmain%5C%2FadEventView%3Faevno%3D1725%22%7D%2C%22couponCodes%22%3A%5B%5D%2C%22responseHeader%22%3A%22%22%7D';
                         </script>
                         <link rel="stylesheet" href="/api3/js/event_custom/event-default.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/event-custom.min.css">
                         <link rel="stylesheet" href="/api3/js/event_custom/products-vue-custom.min.css">
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/event-custom.min.js"></script>
-                        <script type="text/javascript"
-                            src="/api3/js/event_custom/products-vue-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/event-custom.min.js"></script>
+                        <script type="text/javascript" src="/api3/js/event_custom/products-vue-custom.min.js"></script>
 
                         <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
                         <script>
@@ -526,7 +540,7 @@
                             // Product Vue Custom
                             PVC.options = {
                                 // env: 'dev',
-                                moveScroll: false,       // default scroll
+                                moveScroll: false, // default scroll
                                 callbackByVueMounted: pvcCallBack,
                             };
 
@@ -548,22 +562,25 @@
                                         calculateScroll = (scrollHeight - scrollPosition) / scrollHeight,
                                         targetButton = $('.button-icon');
 
-                                    calculateScroll === 0
-                                        ? targetButton.addClass('button-icon__opacity')
-                                        : targetButton.removeClass('button-icon__opacity')
+                                    calculateScroll === 0 ?
+                                        targetButton.addClass('button-icon__opacity') :
+                                        targetButton.removeClass('button-icon__opacity')
 
-                                    windowY > 500
-                                        ? targetButton.addClass('button-icon__active')
-                                        : targetButton.removeClass('button-icon__active');
+                                    windowY > 500 ?
+                                        targetButton.addClass('button-icon__active') :
+                                        targetButton.removeClass('button-icon__active');
                                 }
                                 window.addEventListener('scroll', evtToggle);
-                                var move = function () { window.scrollTo(0, 0); };
-                                return { move: move }
+                                var move = function () {
+                                    window.scrollTo(0, 0);
+                                };
+                                return {
+                                    move: move
+                                }
                             })();
 
 
-                            $(window).ready(function () {
-                            });
+                            $(window).ready(function () {});
                         </script>
                     </div>
                     <!-- //이벤트 삽입 -->
@@ -574,24 +591,24 @@
                 <!-- Page -->
                 <div class="page">
                     <p>
-                        <a href="/event14">
+                        <a href="/userindex/event12">
                             <span class="ico_arr_up">다음글</span>
                             <b>얼리버드 숙소 특가</b>
-                            <em>기간 : 2021.08.10 ~ 2021.08.30</em>
+                            <em>기간: 2021.08.10 ~ 2021.08.30</em>
                         </a>
                     </p>
                     <p>
-                        <a href="/event12">
+                        <a href="/userindex/event16">
                             <span class="ico_arr_down">이전글</span>
-                            <b>랜덤여행 럭키백 4탄</b>
-                            <em>기간 : 2021.08.20 ~ 2021.08.26</em>
+                            <b>함께해요 여기어때 리서치</b>
+                            <em>기간: 2021.07.19 ~ 끝날 때까지!</em>
                         </a>
                     </p>
                 </div>
 
                 <div class="align_center">
-                    <button onclick="window.location.href='https://www.goodchoice.kr/more/event#0'"
-                        class="btn_red_fill">목록보기</button>
+                    <button class="btn_red_fill"><a href="/userindex/event"
+                            style="text-decoration:none; color : white;">목록보기</a></button>
                 </div>
 
             </div>

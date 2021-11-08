@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TbZzimApiResponse {    // 아직안함
+public class TbZzimApiResponse {
     private Integer id;
     private String zzName;
     private String zzPic;

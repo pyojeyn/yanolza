@@ -14,4 +14,7 @@ public interface  TbMemRepository extends JpaRepository<TbMem, Integer> {
     Optional<TbMem> findByMemEmail(String memEmail);
     TbMem getByMemEmail(String memEmail);
     List<TbMem>getAllByMemEmail(String memEmail);
+
+    //비밀번호 재설정 토큰
+    TbMem getByResetPasswordToken(String resetPasswordToken);
 }

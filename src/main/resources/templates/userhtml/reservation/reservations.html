@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type">
     <meta name="csrf-name" content="yeogi_token">
@@ -13,493 +13,523 @@
 
     <link rel="shortcut icon" href="/img/images/web_v3/favicon_170822.ico" type="image/x-icon">
 
-	<!-- CSS -->
-	<title>취향대로 머물다 여기어때</title>
-	<link rel="stylesheet" href="/css/common.css" />
-	<link rel="canonical" href="/">
+    <!-- CSS -->
+    <title>취향대로 머물다 여기어때</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="canonical" href="/">
     <script type="text/javascript" src="/js/library/jquery-1.12.4.min.js"></script>
 
-	<script>
-		var _BASE_URL = '../';
-		var _MOBILE = 'W';
-		var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
-		var _FACEBOOK_APP_ID = '607467975974643';
-	</script>
-	<script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
+    <script>
+        var _BASE_URL = '../';
+        var _MOBILE = 'W';
+        var _KAKAOTALK_APP_KEY = 'f6ffb505bb11d7cc3584d443ce35f704';
+        var _FACEBOOK_APP_ID = '607467975974643';
+    </script>
+    <script>(function (a, b, c) { if (c in b && b[c]) { var d, e = a.location, f = /^(a|html)$/i; a.addEventListener("click", function (a) { d = a.target; while (!f.test(d.nodeName)) d = d.parentNode; "href" in d && (d.href.indexOf("http") || ~d.href.indexOf(e.host)) && (a.preventDefault(), e.href = d.href) }, !1) } })(document, window.navigator, "standalone")</script>
 </head>
 
 <body>
 
-	<!-- Wrap -->
-	<div class="wrap">
+<!-- Wrap -->
+<div class="wrap">
 
-        <!-- 헤더 -->
-        <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
-        <!--헤더 끝 -->
+    <!-- 헤더 -->
+    <div th:replace="userthy/user-headerlogin :: user-headerlogin"></div>
+    <!--헤더 끝 -->
 
-        <!-- Bg Dimm -->
-        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-        <div class="bg_dimm_prevent">&nbsp;</div>
+    <input type="hidden" name="id" id="id" th:value="${id}">
 
-        <!-- 추천검색어 -->
-        <div class="recommend_srch">
-            <div class="scroll_srch">
-                <div class="scroller">
-                    <div class="default" style="display:block">
-                        <strong>추천 검색어</strong>
-                        <ul></ul>
-                    </div>
-                    <!-- 연관검색어 -->
-                    <div class="chain">
-                        <ul></ul>
-                    </div>
+    <!-- Bg Dimm -->
+    <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+    <div class="bg_dimm_prevent">&nbsp;</div>
+
+    <!-- 추천검색어 -->
+    <div class="recommend_srch">
+        <div class="scroll_srch">
+            <div class="scroller">
+                <div class="default" style="display:block">
+                    <strong>추천 검색어</strong>
+                    <ul></ul>
+                </div>
+                <!-- 연관검색어 -->
+                <div class="chain">
+                    <ul></ul>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Mobile Menu -->
-        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-        <div class="menu_wrap">
+    <!-- Mobile Menu -->
+    <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+    <div class="menu_wrap">
 
-            <div class="menu">
-                <div class="top">
-                    <!-- 회원 -->
-                    <div class="member">
-                        <div class="mem">
+        <div class="menu">
+            <div class="top">
+                <!-- 회원 -->
+                <div class="member">
+                    <div class="mem">
                             <span class="pic"
-                                style="background:url('/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
-                            <p class="info">사과색깔</p>
-                        </div>
-                        <div class="bot">
-                        </div>
+                                  style="background:url('/img/profile/ico/ico_22.png') 50% 50% no-repeat;"></span>
+                        <p class="info">사과색깔</p>
+                    </div>
+                    <div class="bot">
                     </div>
                 </div>
-                <!-- Iscroll -->
-                <div class="scroll_nav">
-                    <div class="scroller">
-                        <ul>
-                            <li><a href="/userindex/">홈</a></li>
-                            <li class="depth_2">
-                                <button type="button" class="has_ul"><span>숙소유형</span></button>
-                                <ul>
-                                    <li><a href="/userindex/1">모텔</a></li>
-                                    <li><a href="/userindex/2">호텔/리조트</a></li>
-                                    <li><a href="/userindex/3">펜션</a></li>
-                                    <li><a href="/userindex/4">리조트</a></li>
-                                    <li><a href="/userindex/5">캠핑·글램핑</a></li>
-                                    <li><a href="/userindex/6">게스트하우스</a></li>
-                                    <li><a href="/userindex/7">한옥 </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/userindex/8">내주변</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="/userindex/reservations">예약 내역</a></li>
-                            <li><a href="/userindex/mypage">내 정보 관리</a></li>
-                        </ul>
-                        <ul>
-                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
-                                <ul>
-                                    <li><a href="/userindex/notice">공지사항</a></li>
-                                    <li><a href="/userindex/event">이벤트</a></li>
-                                    <li><a href="/userindex/project">혁신 프로젝트</a></li>
-                                    <li><a href="/userindex/faq">고객문의</a></li>
-                                    <li><a href="/userindex/terms">약관 및 정책</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="center">
-                            <p>여기어때 고객행복센터</p>
-                            <p><a href="tel:1670-6250">1670-6250</a></p>
-                            <p>오전 9시 - 새벽 3시</p>
-                        </div>
+            </div>
+            <!-- Iscroll -->
+            <div class="scroll_nav">
+                <div class="scroller">
+                    <ul>
+                        <li><a href="/userindex/">홈</a></li>
+                        <li class="depth_2">
+                            <button type="button" class="has_ul"><span>숙소유형</span></button>
+                            <ul>
+                                <li><a href="/userindex/1">모텔</a></li>
+                                <li><a href="/userindex/2">호텔/리조트</a></li>
+                                <li><a href="/userindex/3">펜션</a></li>
+                                <li><a href="/userindex/4">리조트</a></li>
+                                <li><a href="/userindex/5">캠핑·글램핑</a></li>
+                                <li><a href="/userindex/6">게스트하우스</a></li>
+                                <li><a href="/userindex/7">한옥 </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/userindex/8">내주변</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="/userindex/reservations">예약 내역</a></li>
+                        <li><a href="/userindex/mypage">내 정보 관리</a></li>
+                    </ul>
+                    <ul>
+                        <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+                            <ul>
+                                <li><a href="/userindex/notice">공지사항</a></li>
+                                <li><a href="/userindex/event">이벤트</a></li>
+                                <li><a href="/userindex/project">혁신 프로젝트</a></li>
+                                <li><a href="/userindex/faq">고객문의</a></li>
+                                <li><a href="/userindex/terms">약관 및 정책</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="center">
+                        <p>여기어때 고객행복센터</p>
+                        <p><a href="tel:1670-6250">1670-6250</a></p>
+                        <p>오전 9시 - 새벽 3시</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- //Mobile Menu -->
+    </div>
+    <!-- //Mobile Menu -->
 
-		<!-- CSS -->
-		<link rel="stylesheet" href="/css/my.css" />
-		<link rel="stylesheet" href="/css/withdraw.css" />
-		<link rel="stylesheet" href="/css/font.css" />
-		<!-- Sub Top -->
-		<div class="sub_top_wrap">
-			<div class="sub_top bg_kong_2">
-				<h2>내정보</h2>
-			</div>
-		</div>
-		<!-- //Sub Top -->
-		<!-- Content  -->
-		<div id="content" class="sub_wrap my_wrap">
-			<p class="sub_title">내 정보 관리</p>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/my.css" />
+    <link rel="stylesheet" href="/css/withdraw.css" />
+    <link rel="stylesheet" href="/css/font.css" />
+    <!-- Sub Top -->
+    <div class="sub_top_wrap">
+        <div class="sub_top bg_kong_2">
+            <h2>내정보</h2>
+        </div>
+    </div>
+    <!-- //Sub Top -->
+    <!-- Content  -->
+    <div id="content" class="sub_wrap my_wrap">
+        <p class="sub_title">내 정보 관리</p>
 
-			<!-- Nav -->
-            <nav>
-                <ul>
-                    <li><a class="" href="/userindex/mypage">내 정보 관리</a></li>
-                    <li><a class="active" href="/userindex/reservations">예약 내역</a></li>
-                    <li><a class="" href="/userindex/zzim">찜 목록</a></li>
-                </ul>
-            </nav>
-
-
-          
-                              
-                              <!-- 안연주 오른쪽 예약 내역  -->
-                              <style>
-                                .ahn_zzim_content{
-                                    border-radius: 2px 2px 0 0;
-                                    border: 1px solid rgba(0, 0, 0, 0.08);
-                                    clear:both;
-                                    margin-bottom: 100px;
-                                
-                                   
-                                }
-                                .ahn_zzim_history{
-                                    font-weight: bold;
-                                    display: block;
-                                    padding: 0 0 20px 0;
-                                    font-size: 18px;
-
-                                }
-                                .ahn_zzim_info1{ box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;}
-                                .ahn_zzim_info2{
-                                    /* float: left; */
-                                    /* width: 354px; */
-                                    height: auto;
-                                    margin: 0 0px 16px 0;
-                                }
-                                .ahn_zzim_img1{
-                                    
-                                    border: 1px solid rgba(0, 0, 0, 0.08);
-                                    /* background: rgba(107, 80, 80, 0.38); */
-                                    z-index: 100;
-                                }
-
-                                .ahn_zzim_img3{
-                                    z-index: 101;
-                                }
-                                /* 이미지 크기 조정 */
-                                .ahn_zzim_img1 img{
-                                    max-height: 1000px;
-                                    max-width: 100%;
-                                }
-                              
-                               .ahn_zzim_info3{
-                                display: block;
-                                position: relative;
-                                top: 0;
-                                left: 0;
-                                z-index: 10;
-                                width: 100%;
-                                height: auto;
-                                padding: 0 0;
-                                border: 1px solid rgba(0, 0, 0, 0.08);
-                                border-top: none;
-                                border-radius: 0 0 2px 2px;
-                                background: none;
-                                color: rgba(0, 0, 0, 0.87);
-                                text-align: center;
-                                box-sizing: border-box;
-                               }
-                            .ahn_zzim_title{
-                                padding-bottom: 16px;
-                                font-weight: bold;
-                                font-size: 20px;
-                            }
-
-                          .ahn_re_btn1{
-                            padding-bottom: 10px;
-                          }
-
-                            .ahn_re_btn2 {
-
-                                width: 144px;
-                                height: 48px;
-                                display: inline-block;
-                                border: none;
-                                border-radius: 4px;
-                                font-size: 16px;
-                                color: #fff;
-                                text-align: center;
-                                box-sizing: border-box;
-                                vertical-align: top;
-                                background: linear-gradient(to bottom, #ff0055 0%, #e62243 100%);
-                            }
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a class="" href="/userindex/mypage">내 정보 관리</a></li>
+                <li><a class="active" href="/userindex/reservations">예약 내역</a></li>
+                <li><a class="" href="/userindex/zzim">찜 목록</a></li>
+            </ul>
+        </nav>
 
 
 
 
-                            </style>
+
+        <style>
+            .ahn_zzim_content{
+                border-radius: 2px 2px 0 0;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                clear:both;
+                margin-bottom: 100px;
 
 
-   <!-- !안연주 예약, 찜 내역 -->
-   
-   <!-- 이 페이지에 왔을때 회원이 구매한 숙박업소의 정보가 필요함 -->
-   <!-- 버튼 클릭시 숙소 보러가기 리뷰 작성에 각각 정보를 들고 가야함 -->
-                        <form action="예약찜리스트" method="get">
-                            <div class="align_rt" >
-                            
-                                  <div class="reserve_list" >
-                                 
-                                
-                             
+            }
+            .ahn_zzim_history{
+                font-weight: bold;
+                display: block;
+                padding: 0 0 20px 0;
+                font-size: 18px;
 
-                                    <!-- 제목 -->
+            }
+            .ahn_zzim_info1{ box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;}
+            .ahn_zzim_info2{
+                /* float: left; */
+                /* width: 354px; */
+                height: auto;
+                margin: 0 0px 16px 0;
+            }
+            .ahn_zzim_img1{
+
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                position: relative;
+                z-index: 1;
+            }
+
+            .ahn_zzim_img3{
+                /*z-index: 101;*/
+            }
+            /* 이미지 크기 조정 */
+            .ahn_zzim_img1 img{
+                max-height: 1000px;
+                max-width: 100%;
+                opacity: 100%;
+                filter: brightness(100%);
+            }
+
+            .ahn_zzim_info3{
+                display: block;
+                position: relative;
+                top: 0;
+                left: 0;
+                /*z-index: 10;*/
+                width: 100%;
+                height: auto;
+                padding: 0 0;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-top: none;
+                border-radius: 0 0 2px 2px;
+                background: none;
+                color: rgba(0, 0, 0, 0.87);
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .ahn_zzim_title{
+                padding-bottom: 16px;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            .ahn_re_btn1{
+                padding-bottom: 10px;
+            }
+
+            .ahn_re_btn2 {
+
+                width: 144px;
+                height: 48px;
+                display: inline-block;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                box-sizing: border-box;
+                vertical-align: top;
+                background: linear-gradient(to bottom, #ff0055 0%, #e62243 100%);
+            }
+
+            /*예약할 시 생성되는 예약내역 취소 버튼 class*/
+            .ahn_re_btn3{
+
+                width: 144px;
+                height: 48px;
+                display: inline-block;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                box-sizing: border-box;
+                vertical-align: top;
+                background: linear-gradient(to bottom, #ff0055 0%, #e62243 100%);
+                margin-left: 35px;
+            }
+            /*예약할 시 생성되는 예약내역 버튼 class*/
+            .ahn_re_btn4{
+                width: 144px;
+                height: 48px;
+                display: inline-block;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                box-sizing: border-box;
+                vertical-align: top;
+                background: linear-gradient(to bottom, #ff0055 0%, #e62243 100%);
+                margin-left: 35px;
+            }
+
+            .black-background{
+                background: rgba(0,0,0,0.5);
+                position: relative;
+                z-index: 100;
+                width: 100%;
+                height: 100%;
+            }
+
+            .btn_delete2{
+                display: none;
+            }
+
+        </style>
+
+        <!-- 이 페이지에 왔을때 회원이 구매한 숙박업소의 정보가 필요함 -->
+        <!-- 버튼 클릭시 숙소 보러가기 리뷰 작성에 각각 정보를 들고 가야함 -->
+        <form action="예약찜리스트" method="get">
+            <div class="align_rt" >
+
+                <div class="reserve_list" >
+
+
+
+
+                    <!-- 제목 -->
                     <div class="ahn_zzim_history">예약 내역</div>
                     <div style="margin-bottom: 2rem" class="userli_add"></div>
-<!-- !안연주 예약, 찜 info box -->
-                    <div class="ahn_zzim_content"> 
-                        
-                        
-                        <div class="ahn_zzim_info1">
-                                     <!-- 오른쪽 주제 제목 -->
-                          
-                            <div class="ahn_zzim_info2">
-                                
-                                <div class="ahn_zzim_img1">
-                                    <span class="ahn_di_span">
-                                    <img src="/img/mainimages/userMainImg.jpg" alt="" class="ahn_zzim_img2">
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="ahn_x"></div>
-                            <div class="ahn_zzim_info3">
-                                <div class="ahn_zzim_title"><a href="#"></a> 이천 힐링</a></div>
-                                <div class="ahn_x"></div>
-                                <div class="ahn_zzim_btn ahn_re_btn1">
-                                    
-                                 <!--  -->
-                                    <span class="ahn_di_span"> 
-                                    <button type="button" href="#" class="ahn_re_btn2">
-                                            숙소 보러가기
-                                        </button>
-                                    </span>
-                                        <!-- 리뷰 작성 시 원래 비활성화되야겠지만... 일단 보류? -->
-                                        <span class="ahn_di_span"> 
-                                            <button type="button" class="ahn_re_btn2">
-                                                <a href="/userindex/review" style="color: white;">
-                                                    리뷰 작성
-                                                </a>
-                                                
-                                                </button>
 
-                                            </span>
-                                </div>
-                            </div>
-    
-                        </div>
-                    </div>
-    <!-- //!안연주 예약, 찜 info box 끝-->
-    <!-- !안연주 예약, 찜 info box -->
-                    <div class="ahn_zzim_content"> 
-                        
-                        
-                        <div class="ahn_zzim_info1">
-                                     <!-- 오른쪽 주제 제목 -->
-                          
-                            <div class="ahn_zzim_info2">
-                                <div class="ahn_zzim_img1">
-                                    <span class="ahn_di_span">
-                                    <img src="/img/mainimages/userMainImg.jpg" alt="" class="ahn_zzim_img2">
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="ahn_x"></div>
-                            <div class="ahn_zzim_info3">
-                                <div class="ahn_zzim_title"><a href="#"></a> 이천 힐링</a></div>
-                                <div class="ahn_x"></div>
-                                <div class="ahn_zzim_btn ahn_re_btn1">
-                                    
-                                    <!-- <a href="#" class="ahn_re_btn2">숙소 보러가기</a> -->
-                                    <span class="ahn_di_span"> 
-                                    <button type="button" href="#" class="ahn_re_btn2">
-                                            숙소 보러가기
-                                        </button>
-                                    </span>
-                                        <!-- 리뷰 작성 시 원래 비활성화되야겠지만... 일단 보류? -->
-                                        <span class="ahn_di_span"> 
-                                            <button type="button" class="ahn_re_btn2">
-                                                <a href="/userindex/review" style="color: white;">
-                                                    리뷰 작성
-                                                </a>
-                                            </span>
-                                </div>
-                            </div>
-    
-                        </div>
-                    </div>
-    <!-- //!안연주 예약, 찜 info box 끝-->
-    
-                    <!-- 원본예시 
-                    <ul class="list_wrap" data-v-e4ab9f08="">
-                        <li class="reservation-detail" data-v-e4ab9f08=""><div data-v-7a3075bf="" data-v-e4ab9f08=""><button type="button" data-dono="73913052" data-target-list="usedList" class="btn_del" data-v-7a3075bf="">
-            삭제
-          </button> <p class="pic" data-v-7a3075bf=""><img loading="lazy" srcset="" src="" alt="영등포 굿데이" class="align" data-v-7a3075bf=""></p> 
-              <a href="/reservation-detail/73913052" class="product-title" data-v-7a3075bf="">
-              <strong data-v-7a3075bf="">영등포 굿데이</strong>
-              </a>
+                </div>
 
-               <p class="btn_re" data-v-7a3075bf="">
-                   <a href="https://www.goodchoice.kr/product/detail?ano=66959&amp;adcno=1&amp;sel_date=2021-09-09&amp;sel_date2=2021-09-09" data-v-7a3075bf=""> 다시 예약 </a>
-              </p>
-              </div>
-          </li>
-      </ul> -->
-                         
-                   
-            
-                         
-                        </div>
-                    </form>
-                     <!-- //!안연주 예약, 찜 내역 끝--><!--// 안연주 오른쪽 예약 내역 끝 -->
-			
-			
-			
-		</div>
-		<!-- //Content  -->
+            </div>
+        </form>
+        <!-- //Content  -->
+    </div>
 
-		
-		
-		</div>
-		
+    </form>
 
-        <!-- 푸터 -->
-        <div th:replace="userthy/user-footer :: user-footer"></div>
-        <!--푸터 끝 -->
+    <!-- 푸터 -->
+    <div th:replace="userthy/user-footer :: user-footer"></div>
+    <!--푸터 끝 -->
 
 
-	</div>
+</div>
 
-	<!-- 상단으로 -->
-	<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+<!-- 상단으로 -->
+<button class="btn_go_top" onclick="moveTop();">상단으로</button>
 
-	<!-- //Wrap -->
+<!-- //Wrap -->
 
-	<!-- Script -->
-	<!-- Library -->
-    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
-    <script type="text/javascript" src="/js/library/iscroll.js"></script>
+<!-- Script -->
+<!-- Library -->
+<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/library/jquery.lazyload.js"></script>
+<script type="text/javascript" src="/js/library/iscroll.js"></script>
 
-    <!-- Service -->
-    <script type="text/javascript" src="/js/service/common.js"></script>
-    <script type="text/javascript" src="/js/service/geolocation.js"></script>
+<!-- Service -->
+<script type="text/javascript" src="/js/service/common.js"></script>
+<script type="text/javascript" src="/js/service/geolocation.js"></script>
 
-    <!-- Module -->
-    <script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
+<!-- Module -->
+<script type="text/javascript" src="/js/modules/dialogPopup.js"></script>
 
-	<!-- Page Script -->
-	<script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
-	<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
-	<script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
-	<script type="text/javascript" src="/js/service/validate.js"></script>
-	<script type="text/javascript" src="/js/service/my.js"></script>
-	<script type="text/javascript" src="/js/service/mypage.js"></script>
-	<script type="text/javascript"
-		src="/js/service/phone-verification.js"></script>
+<!-- Page Script -->
+<script type="text/javascript" src="/js/library/validation/jquery.validate.js"></script>
+<script type="text/javascript" src="/js/library/validation/localization/messages_ko.js"></script>
+<script type="text/javascript" src="/js/library/validation/additional-methods.js"></script>
+<script type="text/javascript" src="/js/service/validate.js"></script>
+<script type="text/javascript" src="/js/service/my.js"></script>
+<script type="text/javascript" src="/js/service/mypage.js"></script>
+<script type="text/javascript"
+        src="/js/service/phone-verification.js"></script>
 
-	<!-- Body Spinner -->
-	<div class="spinner show"><span></span></div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-        // sessionId
-        // axios.get('/api/tbmem/paylistu/' + sessionId)
+<!-- Body Spinner -->
+<div class="spinner show"><span></span></div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+    console.log("memid :" + sessionId);
+
+    //1은 임시 세션값 생기면 바꿈
+    axios.get('/api/tbmem/tbhost/' + sessionId, {
+
+    }).then(function (response) {
+        console.log("tbmem/tbhost 정보")
+        console.log(response)
+
+    }).catch(function (error) {
+
+    });
+
+    //hostid roomid
+    axios.get('/api/tbmem/paylistu/' +sessionId , {
+    }).then(function (response){
+        console.log(response);
+
+        let tb = $('');
+
+        for(let i in response.data.data.tbMemApiResponse.tbPayApiResponseList){
+            let $id = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].id// payid
+            let $paycancel = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].payCancel // paycancel
+            console.log("payid "+ i +"번 : "+ $id);
+
+
+            // let $tbMemId = response.data[i].tbMemId//memid
+            let $tbHostId = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].tbHostId//hostid
+            console.log("hostid "+ i +"번 : "+ $tbHostId);
+
+            let $tbRoomId = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].tbRoomId // roomid
+            console.log("roomid "+ i +"번 : "+ $tbRoomId);
+            let $payHostName = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].payHostName // 상호명(숙박업소명)
+            // let $payRoomName = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].payRoomName
 
 
 
-        console.log("memid :" + sessionId);
+            //날짜 계산=======================================================================
+//                 참고사이트
+//                 https://www.delftstack.com/ko/howto/javascript/how-to-compare-two-dates-with-javascript/
+//                https://jsikim1.tistory.com/103 몇일 전, 몇일 후 날짜 계산하는 방법
+//                http://lab.naminsik.com/3007 마지막 줄 (yyyy-mm-dd)
 
-        //1은 임시 세션값 생기면 바꿈
-        axios.get('/api/tbmem/tbhost/' + sessionId, {
+            //하려는것
+            // 지금 14 일에 결제했을때
+            //     [그 날짜 + 5일이 지난날 > 오늘 ]=true
+            //내가 가진 날짜
+            let $payDate = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].payDate;
+            // $payDate = $payDate.substr(0,10);
+            console.log("내날짜 : " + $payDate);
+            var now = new Date($payDate);
+            var mydate_plus = new Date(now.setDate(now.getDate() + 1)).toISOString().substr(0, 10).replace('T', ' ');
+            console.log("내날짜+1 : " + mydate_plus);
+            //오늘
+            var now = new Date();   // 현재 날짜 및 시간
+            var dateToday = new Date().toISOString().substr(0, 10).replace('T', ' ');
+            console.log("오늘 : " + dateToday);
 
-        }).then(function (response) {
-            console.log("tbmem/tbhost 정보")
-            console.log(response)
-
-
-        }).catch(function (error) {
-
-        });
-
-
-
-
-
-
-
-        // axios.get('/api/tbmem/paylistu/' + sessionId
-
-//hostid roomid
-        axios.get('/api/tbmem/paylistu/' +sessionId , {
-        }).then(function (response){
-            console.log(response);
-
-            let tb = $('');
-
-
-            for(let i in response.data.data.tbMemApiResponse.tbPayApiResponseList){
-                let $id = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].id// payid
-                console.log("payid "+ i +"번 : "+ $id);
+            //비교
+            //
+            //[pay 날짜 + 5일이 지난날 < 오늘 ] 5일이상 지났다는 뜻이 되므로 그때 실행될 문장
+            console.log(mydate_plus>dateToday);
+            console.log(mydate_plus<dateToday);
+            let st = `<button type="button" class="ahn_re_btn4" style="background: gray" onclick="alert('리뷰는 예약일로부터 5일이 지난 뒤 작성가능합니다.')">리뷰 작성</button>`
+                +`<span class="ahn_di_span"><button type="button" class="ahn_re_btn3 btn_delete" id="btn_delete" value="`+$id+`" onclick="delreser(this)">`+
+                `예약취소</button>` + `<span class="ahn_di_span"><button type="button" class="ahn_re_btn3 btn_delete2" id="btn_delete2" style="display: none;" value="`+$id+`">`
+                + `</div></div></div></div>`
 
 
-                // let $tbMemId = response.data[i].tbMemId//memid
-                let $tbHostId = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].tbHostId//hostid
-                console.log("hostid "+ i +"번 : "+ $tbHostId);
+            // 이미지 사진
+            let stimg =  `<div class="ahn_zzim_img1 black-background">`
 
-                let $tbRoomId = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].tbRoomId // roomid
-                console.log("roomid "+ i +"번 : "+ $tbRoomId);
-                let $payHostName = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].payHostName // 상호명(숙박업소명)
-                let $payRoomName = response.data.data.tbMemApiResponse.tbPayApiResponseList[i].payRoomName
+            // 전체 에약 div
+            let paycan = `<div class="ahn_zzim_content">`
 
-
-                let userli = $(`<div class="ahn_zzim_content">`).append(
-                    `<div class="ahn_zzim_info1">`+
-                    <!-- 오른쪽 주제 제목 -->
-                    `<div class="ahn_zzim_info2">`+
-                    `<div class="ahn_zzim_img1">`+
-                    `<span class="ahn_di_span">`+
-                    `<img src="../user/img/mainimages/userMainImg.jpg" alt="" class="ahn_zzim_img2">`+
-                    `</span>`+
-                    `</div>`+
-                    `</div>`+
-                    `<div class="ahn_x"></div>`+
-                    `<div class="ahn_zzim_info3">`+
-                    `<div class="ahn_zzim_title">` + $payHostName + `<i>`+$payRoomName+`</i></div>`+
-                    `<div class="ahn_x"></div>`+
-                    `<div class="ahn_zzim_btn ahn_re_btn1">`+
-                    <!--  -->
-                    `<span class="ahn_di_span">`+
-                    `<button type="button"  class="ahn_re_btn2" onclick="location.href='/userindex/1_005/` + $tbHostId + `/` + $tbRoomId + `'">` +
-                    '숙소보러가기' +
-                    `</button>`+
-                    `</span>`+
-                    <!-- 리뷰 작성 시 원래 비활성화되야겠지만... 일단 보류? -->
-                    `<span class="ahn_di_span"><button type="button" class="ahn_re_btn2" onclick="location.href='/userindex/review/` + $tbHostId + `/` + $tbRoomId + `'">`+
-                    `꾸뷰 작성</button>`+
-                    `</span>`+
-                    `</div></div></div></div>`
-                );
-
-                $('.userli_add').append(userli);
-                // tb.append(userli);
-            } // for문 끝
-            tb.append('');
-            // $('#poduct_list_area').append(userli);
-            console.log('했니?');
+            // 숙소보러가기 버튼
+            let payhost =  `<button type="button"  class="ahn_re_btn4"  onclick="location.href='/userindex/1_005/` + $tbHostId + `/` + $tbRoomId + `'">` +
+                '숙소보러가기'
 
 
-        }).catch(function(err){
-            console.log('all-staff axios list 호출중 에러');
-            console.log(err);
-        }) // axios끝
-        //    $(function)끝
+            // 예약취소버튼 삭제하기 버튼 $paycancel == 'y' 일때 예약취소버튼 안보고 삭제하기버튼 보이게
+            if($paycancel == 'y') {
+                st = `<button type="button" class="ahn_re_btn4" style="background: gray;">리뷰 작성</button>`
+                    +`<span class="ahn_di_span"><button type="button" class="ahn_re_btn3 btn_delete" id="btn_delete" style="display: none" value="`+$id+`" onclick="delreser(this)">`+
+                    `예약취소</button>`
+                    // `<span class="ahn_di_span"><button type="button" class="ahn_re_btn3 btn_delete2" id="btn_delete2"  style="display: inline-block;" value="`+$id+`">`+ `삭제하기</button>`
+                    + `</div></div></div></div>`
+            }
 
 
+            // 이미지 사진 $paycancel == 'y' 일때 밝기 어둡게
+            if($paycancel == 'y') {
+                stimg = `<div class="ahn_zzim_img1 black-background" style="filter: brightness(40%)">`
+            }
 
-    </script>
+            // 숙소보러가기버튼 $paycancel == 'y' 비활성화
+            if($paycancel == 'y') {
+                payhost = `<button type="button"  class="ahn_re_btn4" disabled style="background: gray;" onclick="location.href='/userindex/1_005/` + $tbHostId + `/` + $tbRoomId + `'">` +
+                    '숙소보러가기'
+            }
 
+            //true일때 리뷰버튼 활성화
+            if (mydate_plus<dateToday){
+                st = `<button type="button" class="ahn_re_btn4" style="background: linear-gradient(to bottom, #ff0055 0%, #e62243 100%)" onclick="location.href='/userindex/review/`  + $tbHostId + `/` + $tbRoomId + `'">리뷰작성가능</button>`
+                    + `</div></div></div></div>`
+
+                console.log(st);
+                console.log('결제일 지남');
+            }
+
+
+            let userli = $(paycan).append(
+                `<div class="ahn_zzim_info1">`+
+                <!-- 오른쪽 주제 제목 -->
+                `<div class="ahn_zzim_info2">`+
+                stimg+
+                `<span class="ahn_di_span">`+
+                `<img src="/img/mainimages/userMainImg.jpg" alt="" class="ahn_zzim_img2" >`+
+                `</span>`+
+                `</div>`+
+                `</div>`+
+                `<div class="ahn_x"></div>`+
+                `<div class="ahn_zzim_info3">`+
+                `<div class="ahn_zzim_title">` + $payHostName + `</div>`+
+                `<div class="ahn_x"></div>`+
+                `<div class="ahn_zzim_btn ahn_re_btn1">`+
+                <!--  -->
+                `<span class="ahn_di_span">`+
+                payhost +
+                `</button>`+
+                `</span>`+
+                <!-- 리뷰 작성 시 원래 비활성화되야겠지만... 일단 보류? -->
+                `<span class="ahn_di_span">`+
+                st+
+                `</span>`+
+                `</div></div></div></div>`
+            );
+
+            $('.userli_add').append(userli);
+            // tb.append(userli);
+
+            // $paycancel[i] == 'n'
+
+
+//날짜 계산=======================================================================끝
+        } // for문 끝
+        tb.append('');
+        // $('#poduct_list_area').append(userli);
+        console.log('했니?');
+
+
+    }).catch(function(err){
+        console.log('all-staff axios list 호출중 에러');
+        console.log(err);
+    }) // axios끝
+    //    $(function)끝
+
+
+    function delreser(e){
+        //아이디
+        const payid = $(e).attr('value')
+        console.log("아이디 :" + payid)
+        //예약내역 취소하기
+        axios.request({
+            method: 'PATCH',
+            url: '/api/pay/paylistc/'+ payid,
+            headers: {'Content-type':'application/json'},
+            data: {
+                transaction_time:"2021-09-27",
+                resultCode:"OK",
+                description:"OK",
+                data:{
+                    id: payid
+                }
+            }
+        }).then(
+            alert('취소하였습니다!'),
+        )
+
+        location.href='/userindex/reservations/'
+        return false;
+    }
+
+
+    $('#btn_delete').click(function delreser(e) {
+        $('.ahn_re_btn4').attr('disabled', "disabled");
+        $('.ahn_re_btn4').css('background', 'gray');
+    });
+
+</script>
 </body>
-
 </html>
