@@ -16,8 +16,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class TbMemCApiService extends BaseService<TbMemCRequest, TbMemCResponse, TbMemC> {
-
-
+    
     @Override
     public Header<TbMemCResponse> create(Header<TbMemCRequest> request) {
         TbMemCRequest tbMemCRequest = request.getData();
